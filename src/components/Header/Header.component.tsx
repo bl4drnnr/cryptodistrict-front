@@ -1,5 +1,5 @@
 import { Button } from "@components/Button/Button.component";
-import { Container, Box } from '@styles/Header.style'
+import { Container, Box, Buttons } from '@styles/Header.style'
 
 export const Header = () => {
   return (
@@ -7,10 +7,10 @@ export const Header = () => {
       <Container>
         <Box>
           <h1>Cryptodistrict</h1>
-          <>
-            <Button/>
-            <Button/>
-          </>
+          <Buttons>
+            <Button text={"Log in"}/>
+            <Button text={"Register"}/>
+          </Buttons>
         </Box>
       </Container>
     </>

@@ -16,3 +16,5 @@ export const Box = styled.div`
   display: flex;
   justify-content: space-between;
 `
+
+export const Buttons = styled.div``
