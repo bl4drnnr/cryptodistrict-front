@@ -1,5 +1,7 @@
-export default function register() {
+const Register = () => {
   return (
     <></>
   )
 }
+
+export default Register

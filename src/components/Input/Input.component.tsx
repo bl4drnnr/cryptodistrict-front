@@ -1,4 +1,4 @@
-export default function Input() {
+export const Input = () => {
   return (
     <></>
   )
