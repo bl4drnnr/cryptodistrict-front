@@ -1,14 +1,20 @@
+import React from "react";
+
 import { Header } from "@components/Header/Header.component";
+import { Footer } from "@components/Footer/Footer.component";
+
+import { Container, Wrapper } from "@styles/layouts/Default.style";
 import { ThemeProvider } from "styled-components";
+
 import darkTheme from "@styles/themes/Dark.theme";
 import lightTheme from "@styles/themes/Light.theme";
 import useDarkMode from "@hooks/useDarkMode";
-import { Container, Wrapper } from "@styles/layouts/Default.style";
-import { Footer } from "@components/Footer/Footer.component";
-import React from "react";
 
+interface DefaultLayoutProps {
+  children: React.ReactElement | React.ReactElement[];
+}
 
-const DefaultLayout = ({ children }: any): React.ReactElement => {
+const DefaultLayout = ({ children }: DefaultLayoutProps): React.ReactElement => {
   const [theme] = useDarkMode();
 
   return (
