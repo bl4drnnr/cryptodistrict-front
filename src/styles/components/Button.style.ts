@@ -9,9 +9,14 @@ export const Container = styled.div`
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  border: 1px solid rgba(${(props) => props.theme.colors.primary}, .3);
 
   :hover {
-    border: 1px solid red;
+    border: 1px solid rgb(${(props) => props.theme.colors.primary});
+  }
+  
+  &.disabled {
+    background: red;
   }
 `;
 

@@ -34,7 +34,7 @@ export const Link = styled.h3`
   transition: .2s;
   
   :hover {
-    color: rgb(${(props) => props.theme.colors.primary})
+    color: rgb(${(props) => props.theme.colors.primary});
   }
 `
 
