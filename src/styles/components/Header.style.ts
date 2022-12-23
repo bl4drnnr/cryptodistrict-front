@@ -17,4 +17,16 @@ export const Box = styled.div`
   justify-content: space-between;
 `
 
-export const Buttons = styled.div``
+export const Buttons = styled.div`
+  display: flex;
+  width: 250px;
+`
+
+export const Links = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const Link = styled.h3`
+  margin: 0 30px;
+`
