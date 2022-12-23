@@ -1,20 +1,23 @@
 import { UseLoginService } from "@services/login/login.service";
 import { Container, Box, Side } from "@styles/pages/login.style";
+import EmptyLayout from "@layouts/Empty.layout";
 
 
 const Login = () => {
   return (
-    <Container>
-      <Side>
-        <Box>
-        </Box>
-      </Side>
-      <Side>
-        <Box>
+    <EmptyLayout>
+      <Container>
+        <Side>
+          <Box>
+          </Box>
+        </Side>
+        <Side>
+          <Box>
 
-        </Box>
-      </Side>
-    </Container>
+          </Box>
+        </Side>
+      </Container>
+    </EmptyLayout>
   )
 }
 

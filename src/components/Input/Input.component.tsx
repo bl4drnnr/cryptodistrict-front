@@ -1,11 +1,15 @@
-import { BasicInput } from "@styles/Input.style";
+import { BasicInput, Placeholder } from "@styles/Input.style";
+import { InputProps} from "@components/Input/Input.interface";
 
-export const Input = ({ value, placeholder, onChange }: any) => {
+export const Input = ({ value, placeholder, type, onChange }: InputProps) => {
   return (
-    <BasicInput
-      value={value}
-      placeholder={placeholder}
-      onChange={onChange}
-    />
+    <>
+      <Placeholder>{placeholder}</Placeholder>
+      <BasicInput
+        type={type}
+        value={value}
+        onChange={onChange}
+      />
+    </>
   )
 }

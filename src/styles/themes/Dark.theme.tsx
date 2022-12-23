@@ -2,7 +2,8 @@ import { ThemeProps } from './Theme.interface';
 
 const DarkTheme: ThemeProps = {
   colors: {
-    primary: 'rgba(255, 215, 0)',
+    primary: '255, 215, 0',
+    lightBackground: '24, 26, 31, 255'
   }
 };
 

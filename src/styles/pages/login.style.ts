@@ -12,11 +12,30 @@ export const Side = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &.lightSide {
+    background: rgba(${(props) => props.theme.colors.lightBackground});
+  }
 `
 
 export const Box = styled.div`
   width: 500px;
   height: 500px;
   position: absolute;
-  background: coral;
+`
+
+export const Link = styled.p`
+  text-decoration: underline;
+  display: inline;
+  cursor: pointer;
+  color: rgb(${(props) => props.theme.colors.primary})
+`
+
+export const Tea = styled.span`
+  font-size: 12px;
+  opacity: .75;
+`
+
+export const MarginWrapper = styled.div`
+  margin: 15px 0;
 `

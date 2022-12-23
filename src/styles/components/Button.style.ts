@@ -7,12 +7,11 @@ export const Container = styled.div`
   background-color: rgba(35, 36, 40, 0.85);
   width: 100%;
   padding: 8px;
-  margin: 0 5px;
   border-radius: 8px;
   cursor: pointer;
 
   :hover {
-    border: 1px solid ${(props) => props.theme.colors.primary};
+    border: 1px solid red;
   }
 `;
 
