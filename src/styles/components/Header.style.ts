@@ -19,7 +19,8 @@ export const Box = styled.div`
 
 export const Buttons = styled.div`
   display: flex;
-  width: 250px;
+  width: 190px;
+  justify-content: space-between;
 `
 
 export const Links = styled.div`
@@ -29,4 +30,40 @@ export const Links = styled.div`
 
 export const Link = styled.h3`
   margin: 0 30px;
+  cursor: pointer;
+  transition: .2s;
+  
+  :hover {
+    color: ${(props) => props.theme.colors.primary}
+  }
+`
+
+export const Button = styled.div`
+  width: 90px;
+  height: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  
+  &.logIn {
+    :hover {
+      background: rgba(255, 255, 255, .15);
+      color: ${(props) => props.theme.colors.primary};
+    }
+  }
+  
+  &.register {
+    background: ${(props) => props.theme.colors.primary};
+    color: black;
+  }
+`
+
+export const Logo = styled.h1`
+  cursor: pointer;
+  :hover {
+    color: ${(props) => props.theme.colors.primary};
+  }
 `

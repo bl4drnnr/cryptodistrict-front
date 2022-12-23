@@ -1,4 +1,5 @@
 import {Box, Container, Side} from "@styles/pages/login.style";
+import {Input} from "@components/Input/Input.component";
 
 const Register = () => {
   return (
@@ -9,7 +10,7 @@ const Register = () => {
       </Side>
       <Side>
         <Box>
-
+          <Input/>
         </Box>
       </Side>
     </Container>

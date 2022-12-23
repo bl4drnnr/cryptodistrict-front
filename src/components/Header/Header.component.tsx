@@ -1,6 +1,6 @@
-import { Button } from "@components/Button/Button.component";
-import { Container, Box, Buttons, Links, Link } from '@styles/Header.style'
-import {useRouter} from "next/router";
+import { Container, Box, Buttons, Links, Link, Button, Logo } from '@styles/Header.style'
+import { useRouter } from "next/router";
+import classNames from "classnames";
 
 export const Header = () => {
   const router = useRouter();
@@ -13,15 +13,25 @@ export const Header = () => {
     <>
       <Container>
         <Box>
-          <h1>Cryptodistrict</h1>
+          <Logo onClick={() => handleRedirect('/')}>Cryptodistrict</Logo>
           <Links>
-            <Link>Home</Link>
-            <Link>About project</Link>
-            <Link>Contact</Link>
+            <Link onClick={() => handleRedirect('/')}>Home</Link>
+            <Link onClick={() => handleRedirect('/about')}>About project</Link>
+            <Link onClick={() => handleRedirect('/contact')}>Contact</Link>
           </Links>
           <Buttons>
-            <Button text={"Log in"} onClick={() => handleRedirect('/login')}/>
-            <Button text={"Register"} onClick={() => handleRedirect('/register')}/>
+            <Button
+              className={classNames({ logIn: true })}
+              onClick={() => handleRedirect('/login')}
+            >
+              Log In
+            </Button>
+            <Button
+              className={classNames({ register: true })}
+              onClick={() => handleRedirect('/register')}
+            >
+              Register
+            </Button>
           </Buttons>
         </Box>
       </Container>

@@ -12,11 +12,11 @@ export const Container = styled.div`
   cursor: pointer;
 
   :hover {
-    border: 1px solid rgba(255, 215, 0, .5);
+    border: 1px solid ${(props) => props.theme.colors.primary};
   }
 `;
 
 export const ButtonContent = styled.p`
   color: rgba(238, 238, 238, .85);
-  font-size: 16px;
+  font-size: 18px;
 `;
