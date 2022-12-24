@@ -163,7 +163,8 @@ const Signup = () => {
         onClick={() => handleRedirect('/signin')}
       >Sign In now!</Link>
       </p>
-    } rightDarkSide={true}/>
+    } rightDarkSide={true}
+    />
   )
 }
 

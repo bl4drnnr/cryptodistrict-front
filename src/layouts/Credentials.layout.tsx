@@ -8,6 +8,7 @@ import useDarkMode from "@hooks/useDarkMode";
 import { Container, Side, LoginHeader, LoginHeaderButton, LoginHeaderTitle } from "@styles/Credentials.style";
 import { useRouter } from "next/router";
 import classNames from "classnames";
+import {Loader} from "@components/Loader/Loader.component";
 
 interface CredentialsLayoutProps {
   leftSide: React.ReactElement | React.ReactElement[];
@@ -16,6 +17,7 @@ interface CredentialsLayoutProps {
   leftDarkSide?: boolean;
   rightDarkSide?: boolean;
   mirroredHeader?: boolean;
+  loading?: boolean;
 }
 
 const CredentialsLayout = ({
@@ -24,7 +26,8 @@ const CredentialsLayout = ({
   headerLink,
   leftDarkSide = false,
   rightDarkSide = false,
-  mirroredHeader = false
+  mirroredHeader = false,
+  loading = false
 }: CredentialsLayoutProps): React.ReactElement => {
   const router = useRouter()
   const [theme] = useDarkMode();
@@ -35,6 +38,7 @@ const CredentialsLayout = ({
 
   return (
     <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
+      <Loader loading={loading} />
       <Container>
 
         <LoginHeader>
