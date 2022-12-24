@@ -137,11 +137,7 @@ const Signup = () => {
             <Tea>I confirm that I have read and accepted <Link
               onClick={() => handleRedirect('/terms-and-conditions')}>Terms and Conditions</Link>
             </Tea>
-          }/>
-        </MarginWrapper>
-
-        <MarginWrapper>
-          <Button disabled={!validateFields()} highHeight={true} text={'Sign Up'} />
+          } onChange={() => setTac(!tac)}/>
         </MarginWrapper>
 
         {passwordError.passwordRules ? (
@@ -155,6 +151,11 @@ const Signup = () => {
             })}
           </PasswordCheckBox>
         ) : (<></>)}
+
+        <MarginWrapper>
+          <Button disabled={!validateFields()} highHeight={true} text={'Sign Up'} />
+        </MarginWrapper>
+
       </Box>
     } headerLink={
       <p>
