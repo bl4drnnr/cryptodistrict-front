@@ -10,7 +10,7 @@ import {
   PasswordCheckLine,
   WelcomeTitle,
   WelcomeText,
-  LoginHeader, LoginHeaderTitle, LoginHeaderButton, LoginOptions, LoginOption, VerticalLine
+  LoginHeader, LoginHeaderTitle, LoginHeaderButton, LoginOptions, LoginOption, VerticalLine, TextBox
 } from "@styles/login.style";
 import { useRouter } from "next/router";
 import EmptyLayout from "@layouts/Empty.layout";
@@ -31,23 +31,18 @@ const ForgotPassword = () => {
       <Container>
 
         <Side>
-          <Box>
+          <TextBox>
             <WelcomeTitle>
-              Hello there, cryptogeek!
+              Forgot password?
             </WelcomeTitle>
-            <WelcomeText>
-              Welcome to Cryptodistrict - platform that will keep you in touch
-              with everything that happens in the world of cryptocurrencies.
-            </WelcomeText>
-            <WelcomeText>
-              We are quite sure you have been doing this hundreds times before,
-              so, no need to explain what you need to do, fields on the right side.
-              See ya!
-            </WelcomeText>
+            <WelcomeTitle>
+              Nah... Not a big deal
+            </WelcomeTitle>
+
             <WelcomeText>
               In case on any issues see <Link onClick={() => handleRedirect('/helpdesk')}>Helpdesk</Link>
             </WelcomeText>
-          </Box>
+          </TextBox>
         </Side>
 
         <LoginHeader>

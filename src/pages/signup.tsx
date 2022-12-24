@@ -10,7 +10,7 @@ import {
   PasswordCheckLine,
   WelcomeTitle,
   WelcomeText,
-  LoginHeader, LoginHeaderTitle, LoginHeaderButton
+  LoginHeader, LoginHeaderTitle, LoginHeaderButton, TextBox
 } from "@styles/login.style";
 import { Input } from "@components/Input/Input.component";
 import { Button } from "@components/Button/Button.component";
@@ -38,7 +38,7 @@ const Signup = () => {
       <Container>
 
         <Side>
-          <Box>
+          <TextBox>
             <WelcomeTitle>
               Hello there, cryptogeek!
             </WelcomeTitle>
@@ -54,7 +54,7 @@ const Signup = () => {
             <WelcomeText>
               In case on any issues see <Link onClick={() => handleRedirect('/helpdesk')}>Helpdesk</Link>
             </WelcomeText>
-          </Box>
+          </TextBox>
         </Side>
 
         <LoginHeader>

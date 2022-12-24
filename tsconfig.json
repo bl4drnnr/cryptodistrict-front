@@ -22,7 +22,8 @@
         "src/styles/layoutComponents/*",
         "src/styles/themes/*",
         "src/styles/layouts/*",
-        "src/styles/pages/*"
+        "src/styles/pages/*",
+        "src/styles/*"
       ],
       "@layouts/*": ["src/layouts/*"],
       "@services/*": ["src/services/*"],

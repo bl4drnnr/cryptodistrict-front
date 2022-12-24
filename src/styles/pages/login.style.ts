@@ -26,6 +26,10 @@ export const Box = styled.div`
   position: absolute;
 `
 
+export const TextBox = styled.div`
+  width: 500px;
+`
+
 export const Link = styled.span`
   text-decoration: underline;
   display: inline;

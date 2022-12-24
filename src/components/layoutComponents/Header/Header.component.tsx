@@ -1,8 +1,9 @@
 import { Container, Box, Buttons, Links, Link, Button, Logo } from '@styles/Header.style'
 import { useRouter } from "next/router";
+import { HeaderProps } from "@components/Header/Header.interace";
 import classNames from "classnames";
 
-export const Header = () => {
+export const Header = ({}: HeaderProps) => {
   const router = useRouter();
 
   const handleRedirect = async (path: string) => {

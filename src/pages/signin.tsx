@@ -6,7 +6,13 @@ import {
   LoginHeaderButton,
   Link,
   LoginHeader,
-  WelcomeTitle, WelcomeText, LoginOptions, VerticalLine, LoginOption, MarginWrapper
+  WelcomeTitle,
+  WelcomeText,
+  LoginOptions,
+  VerticalLine,
+  LoginOption,
+  MarginWrapper,
+  TextBox
 } from "@styles/login.style";
 import { useRouter } from "next/router";
 import { Input } from "@components/Input/Input.component";
@@ -84,7 +90,7 @@ const Signin = () => {
         </LoginHeader>
 
         <Side>
-          <Box>
+          <TextBox>
             <WelcomeTitle>
               Welcome back!
             </WelcomeTitle>
@@ -98,7 +104,7 @@ const Signin = () => {
             <WelcomeText>
               In case on any issues see <Link onClick={() => handleRedirect('/helpdesk')}>Helpdesk</Link>
             </WelcomeText>
-          </Box>
+          </TextBox>
         </Side>
 
       </Container>
