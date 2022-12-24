@@ -26,7 +26,7 @@ const Signin = () => {
   };
 
   return (
-    <CredentialsLayout leftSide={
+    <CredentialsLayout pageTitle={'Sign In'} leftSide={
       <Box>
         <h1>Sign In</h1>
 

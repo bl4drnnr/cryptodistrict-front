@@ -10,17 +10,22 @@ import { ThemeProvider } from "styled-components";
 import { DarkTheme } from "@styles/Dark.theme";
 import { LightTheme } from "@styles/Light.theme";
 import useDarkMode from "@hooks/useDarkMode";
+import Head from 'next/head'
 
 interface DefaultLayoutProps {
   children: React.ReactElement | React.ReactElement[];
+  pageTitle: string;
   loading?: boolean;
 }
 
-const DefaultLayout = ({ children, loading = false }: DefaultLayoutProps): React.ReactElement => {
+const DefaultLayout = ({ children, pageTitle, loading = false }: DefaultLayoutProps): React.ReactElement => {
   const [theme] = useDarkMode();
 
   return (
     <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
+      <Head>
+        <title>Cryptodistrict | {pageTitle}</title>
+      </Head>
       <Loader loading={loading} />
       <Wrapper>
         <Container>

@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 
 const About = () => {
   return (
-    <DefaultLayout>
+    <DefaultLayout pageTitle={'About'}>
       <Container>
         <Box>
           <Wrapper>
