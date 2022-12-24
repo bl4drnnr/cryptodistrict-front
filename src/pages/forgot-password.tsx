@@ -8,12 +8,12 @@ import {
   VerticalLine,
   MarginWrapper
 } from "@styles/login.style";
-import React from "react";
-import CredentialsLayout from "@layouts/Credentials.layout";
 import { InputButton } from "@components/InputButton/InputButton.component";
 import { useRouter } from "next/router";
 import { Input } from "@components/Input/Input.component";
-import {Button} from "@components/Button/Button.component";
+import { Button } from "@components/Button/Button.component";
+import React from "react";
+import CredentialsLayout from "@layouts/Credentials.layout";
 
 const ForgotPassword = () => {
   const router = useRouter();
