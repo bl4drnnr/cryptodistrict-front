@@ -15,7 +15,7 @@ export const BasicButton = styled.button`
   border: 1px solid rgb(${(props) => props.theme.colors.primary}, .3);
   transition: .3s;
   
-  &.codeButton {
+  &.fillButton {
     background-color: rgb(${(props) => props.theme.colors.primary});
     color: black;
   }
@@ -35,7 +35,7 @@ export const BasicButton = styled.button`
 
 export const ButtonContent = styled.p`
   margin: 0;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 100;
   font-family: "Inter", sans-serif;
 `;

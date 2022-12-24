@@ -35,7 +35,7 @@ export const InputButton = ({
               className={classNames({
                 disabled: buttonDisabled,
                 highHeight: true,
-                codeButton: true
+                fillButton: true
               })}
             >
               <ButtonContent>{buttonTitle}</ButtonContent>

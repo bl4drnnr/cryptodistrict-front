@@ -2,7 +2,17 @@ import styled from "styled-components";
 
 export const Box = styled.div`
   width: 500px;
- `
+  &.scrollable {
+   height: 100vh;
+   overflow-y: auto;
+   padding: 20px;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+   &::-webkit-scrollbar {
+    display: none;
+   }
+  }
+`
 
 export const Link = styled.span`
   text-decoration: underline;
@@ -18,6 +28,11 @@ export const Tea = styled.span`
 
 export const MarginWrapper = styled.div`
   margin: 15px 0;
+`
+
+export const MarginVerticalWrapper = styled.span`
+  width: 100%;
+  margin: 0 10px;
 `
 
 export const PasswordCheckBox = styled.div`
@@ -78,4 +93,9 @@ export const VerticalLine = styled.div`
   height: 50px;
   float: left;
   opacity: .5;
+`
+
+export const Buttons = styled.div`
+  display: flex;
+  //justify-content: space-between;
 `

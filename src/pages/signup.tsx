@@ -7,7 +7,9 @@ import {
   Dot,
   PasswordCheckLine,
   WelcomeTitle,
-  WelcomeText
+  WelcomeText,
+  Buttons,
+  MarginVerticalWrapper
 } from "@styles/login.style";
 import { Input } from "@components/Input/Input.component";
 import { Button } from "@components/Button/Button.component";
@@ -31,9 +33,11 @@ const Signup = () => {
   const [firstName, setFirstName] = React.useState('')
   const [lastName, setLastName] = React.useState('')
   const [twitter, setTwitter] = React.useState('')
+  const [linkedIn, setLinkedIn] = React.useState('')
   const [personalWebsite, setPersonalWebsite] = React.useState('')
   const [title, setTitle] = React.useState('')
   const [bio, setBio] = React.useState('')
+  const [publicEmail, setPublicEmail] = React.useState(false)
   const [password, setPassword] = React.useState({password: '', repeatPassword: ''})
   const [passwordError, setPasswordError] = React.useState({
     passwordMismatch: false,
@@ -174,7 +178,7 @@ const Signup = () => {
 
           </Box>
           ) : (step === 2 ? (
-            <Box>
+            <Box className={'scrollable'}>
               <MarginWrapper>
                 <h3>Tell us a little about yourself</h3>
               </MarginWrapper>
@@ -201,12 +205,20 @@ const Signup = () => {
               <MarginWrapper>
                 <h3>Provide your nickname of link</h3>
               </MarginWrapper>
+              <hr/>
 
               <MarginWrapper>
                 <Input
                   value={twitter}
                   onChange={(e) => setTwitter(e.target.value)}
                   placeholder={'Twitter'}
+                />
+              </MarginWrapper>
+              <MarginWrapper>
+                <Input
+                  value={linkedIn}
+                  onChange={(e) => setTwitter(e.target.value)}
+                  placeholder={'LinkedIn'}
                 />
               </MarginWrapper>
               <MarginWrapper>
@@ -220,12 +232,13 @@ const Signup = () => {
               <MarginWrapper>
                 <h3>What do you want to tell this world?</h3>
               </MarginWrapper>
+              <hr/>
 
               <MarginWrapper>
                 <Input
-                  value={personalWebsite}
-                  onChange={(e) => setPersonalWebsite(e.target.value)}
-                  placeholder={'Personal website'}
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder={'Title'}
                 />
               </MarginWrapper>
               <MarginWrapper>
@@ -235,7 +248,18 @@ const Signup = () => {
                   onChange={(e) => setBio(e.target.value)}
                 />
               </MarginWrapper>
+              <Checkbox
+                label={'Show my email as public email for contact'}
+                onChange={() => setPublicEmail(!publicEmail)}
+              />
 
+              <Buttons>
+                <Button text={'Go Back'} onClick={() => setStep(step - 1)} />
+                <MarginVerticalWrapper>
+                  <Button text={'Skip'} />
+                </MarginVerticalWrapper>
+                <Button fillButton={true} text={'Next'} />
+              </Buttons>
             </Box>
           ) : (<></>)
         )}
