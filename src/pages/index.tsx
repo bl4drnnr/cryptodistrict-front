@@ -19,7 +19,7 @@ const Home: NextPage = () => {
   }
 
   return (
-    <DefaultLayout>
+    <DefaultLayout pageTitle={'Home'}>
       <HomeWelcomeContainer>
         <HomeWelcomeBox className={'name'}>
           <HomeWelcomeTitle><Bold>CRYPTODISTRICT</Bold></HomeWelcomeTitle>

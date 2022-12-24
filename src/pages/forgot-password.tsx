@@ -28,7 +28,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <CredentialsLayout leftSide={
+    <CredentialsLayout pageTitle={'Password recovery'} leftSide={
       <Box>
         <WelcomeTitle>
           Forgot password?

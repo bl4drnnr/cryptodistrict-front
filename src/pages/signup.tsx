@@ -96,7 +96,7 @@ const Signup = () => {
   };
 
   return (
-    <CredentialsLayout leftSide={
+    <CredentialsLayout pageTitle={'Sign Up'} leftSide={
       <Box>
         <WelcomeTitle>
           Hello there, cryptogeek!

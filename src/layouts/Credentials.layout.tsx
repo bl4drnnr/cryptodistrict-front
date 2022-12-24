@@ -9,11 +9,13 @@ import { Container, Side, LoginHeader, LoginHeaderButton, LoginHeaderTitle } fro
 import { useRouter } from "next/router";
 import { Loader } from "@components/Loader/Loader.component";
 import classNames from "classnames";
+import Head from "next/head";
 
 interface CredentialsLayoutProps {
   leftSide: React.ReactElement | React.ReactElement[];
   rightSide: React.ReactElement | React.ReactElement[];
   headerLink: React.ReactElement | React.ReactElement[];
+  pageTitle: string;
   leftDarkSide?: boolean;
   rightDarkSide?: boolean;
   mirroredHeader?: boolean;
@@ -24,6 +26,7 @@ const CredentialsLayout = ({
   leftSide,
   rightSide,
   headerLink,
+  pageTitle,
   leftDarkSide = false,
   rightDarkSide = false,
   mirroredHeader = false,
@@ -38,6 +41,9 @@ const CredentialsLayout = ({
 
   return (
     <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
+      <Head>
+        <title>Cryptodistrict | {pageTitle}</title>
+      </Head>
       <Loader loading={loading} />
       <Container>
 
