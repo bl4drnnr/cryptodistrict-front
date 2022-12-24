@@ -8,7 +8,11 @@ export const Button = ({ text, onClick, disabled, highHeight, fillButton }: Butt
       onClick={onClick}
     >
       <BasicButton
-        className={classNames({ disabled, highHeight, fillButton })}
+        className={classNames({
+          disabled,
+          highHeight,
+          fillButton
+        })}
       >
         <ButtonContent>{text}</ButtonContent>
       </BasicButton>

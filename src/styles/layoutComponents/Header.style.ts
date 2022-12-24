@@ -47,6 +47,7 @@ export const Button = styled.div`
   align-items: center;
   cursor: pointer;
   font-weight: bold;
+  transition: .2s;
   
   &.logIn {
     &:hover {
@@ -63,6 +64,7 @@ export const Button = styled.div`
 
 export const Logo = styled.h1`
   cursor: pointer;
+  transition: .2s;
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
   }

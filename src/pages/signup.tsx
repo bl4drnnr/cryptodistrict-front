@@ -217,7 +217,7 @@ const Signup = () => {
               <MarginWrapper>
                 <Input
                   value={linkedIn}
-                  onChange={(e) => setTwitter(e.target.value)}
+                  onChange={(e) => setLinkedIn(e.target.value)}
                   placeholder={'LinkedIn'}
                 />
               </MarginWrapper>
