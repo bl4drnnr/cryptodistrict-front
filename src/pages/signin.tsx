@@ -79,7 +79,7 @@ const Signin = () => {
           so, no need to explain what you need to do, fields on the left side.
         </WelcomeText>
         <WelcomeText>
-          In case on any issues see <Link onClick={() => handleRedirect('/helpdesk')}>Helpdesk</Link>
+          In case on any issues see <Link onClick={() => handleRedirect('/about')}>Helpdesk</Link>
         </WelcomeText>
       </Box>
     } headerLink={

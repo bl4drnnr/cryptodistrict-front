@@ -38,7 +38,7 @@ const ForgotPassword = () => {
         </WelcomeTitle>
 
         <WelcomeText>
-          In case on any issues see <Link onClick={() => handleRedirect('/helpdesk')}>Helpdesk</Link>
+          In case on any issues see <Link onClick={() => handleRedirect('/about')}>Helpdesk</Link>
         </WelcomeText>
       </Box>
     } rightSide={

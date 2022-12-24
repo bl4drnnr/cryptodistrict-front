@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 90%;
-  height: 80px;
-  margin: 0 auto;
+  width: 100%;
+  height: 60px;
   border-bottom: 1px solid rgba(255, 255, 255, .25);
-  position: relative;
+  background-color: rgb(${(props) => props.theme.colors.lightBackground});
+  position: fixed;
+  z-index: 999;
 `
 
 export const Box = styled.div`
-  width: 100%;
+  width: 90%;
   height: 50%;
-  top: 25%;
-  position: absolute;
+  margin: 15px auto;
   display: flex;
   justify-content: space-between;
 `
@@ -29,7 +29,7 @@ export const Links = styled.div`
 `
 
 export const Link = styled.p`
-  margin: 0 30px;
+  margin: 0 15px;
   cursor: pointer;
   transition: .2s;
   
@@ -46,8 +46,9 @@ export const Button = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-weight: bold;
   transition: .2s;
+  font-weight: 200;
+  font-size: 14px;
   
   &.logIn {
     &:hover {
@@ -62,9 +63,10 @@ export const Button = styled.div`
   }
 `
 
-export const Logo = styled.h1`
+export const Logo = styled.h2`
   cursor: pointer;
   transition: .2s;
+  margin-right: 35px;
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
   }

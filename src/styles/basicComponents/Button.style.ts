@@ -36,6 +36,6 @@ export const BasicButton = styled.button`
 export const ButtonContent = styled.p`
   margin: 0;
   font-size: 14px;
-  font-weight: 100;
+  font-weight: 500;
   font-family: "Inter", sans-serif;
 `;

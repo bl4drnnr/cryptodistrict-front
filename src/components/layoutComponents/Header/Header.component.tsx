@@ -14,13 +14,12 @@ export const Header = ({}: HeaderProps) => {
     <>
       <Container>
         <Box>
-          <Logo onClick={() => handleRedirect('/')}>Cryptodistrict</Logo>
-          <Links>
-            <Link onClick={() => handleRedirect('/')}>Home</Link>
-            <Link onClick={() => handleRedirect('/about')}>About project</Link>
-            <Link onClick={() => handleRedirect('/contact')}>Contact</Link>
-            <Link onClick={() => handleRedirect('/helpdesk')}>Helpdesk</Link>
-          </Links>
+          <div style={{display: 'flex'}}>
+            <Logo onClick={() => handleRedirect('/')}>Cryptodistrict</Logo>
+            <Links>
+              <Link onClick={() => handleRedirect('/about')}>About</Link>
+            </Links>
+          </div>
           <Buttons>
             <Button
               className={classNames({ logIn: true })}
