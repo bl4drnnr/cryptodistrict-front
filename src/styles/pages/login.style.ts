@@ -1,30 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-`
-
-export const Side = styled.div`
-  height: 100vh;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &.lightSide {
-    background: rgba(${(props) => props.theme.colors.lightBackground});
-  }
-`
-
 export const Box = styled.div`
   width: 500px;
-  height: 500px;
-  position: absolute;
-`
+ `
 
-export const Link = styled.p`
+export const Link = styled.span`
   text-decoration: underline;
   display: inline;
   cursor: pointer;
@@ -32,7 +12,7 @@ export const Link = styled.p`
 `
 
 export const Tea = styled.span`
-  font-size: 12px;
+  font-size: 14px;
   opacity: .75;
 `
 
@@ -66,4 +46,36 @@ export const Dot = styled.div`
   &.error {
     background-color: #e85656;
   }
+`
+
+export const WelcomeTitle = styled.h1`
+  text-align: center;
+`
+
+export const WelcomeText = styled.p`
+  font-size: 20px;
+  margin-top: 20px;
+`
+
+export const LoginOptions = styled.div`
+  display: flex;
+  margin: 20px 0;
+`
+
+export const LoginOption = styled.p`
+  cursor: pointer;
+  transition: .2s;
+  margin: 16px 0;
+  &:hover {
+    color: rgb(${(props) => props.theme.colors.primary})
+  }
+`
+
+export const VerticalLine = styled.div`
+  margin: 0 20px;
+  width: 1px;
+  background-color: white;
+  height: 50px;
+  float: left;
+  opacity: .5;
 `
