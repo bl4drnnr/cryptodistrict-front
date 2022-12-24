@@ -5,7 +5,7 @@ import {
   Link,
   Tea,
   MarginWrapper,
-  PasswordCheckBox, Dot, PasswordCheckLine
+  PasswordCheckBox, Dot, PasswordCheckLine, WelcomeTitle, WelcomeText
 } from "@styles/pages/login.style";
 import { Input } from "@components/Input/Input.component";
 import { Button } from "@components/Button/Button.component";
@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import classNames from "classnames";
 import EmptyLayout from "@layouts/Empty.layout";
 import React from "react";
+import {Checkbox} from "@components/Checkbox/Checkbox.component";
 
 const Register = () => {
   const router = useRouter();
@@ -30,14 +31,20 @@ const Register = () => {
   return (
     <EmptyLayout>
       <Container>
+
         <Side>
           <Box>
-            Hello there, cryptogeek.
-            We are quite sure you have been doing this hundreds times before,
-            so, no need to explain what you need to do, fields on the right side.
-            See ya!
+            <WelcomeTitle>
+              Hello there, cryptogeek.
+            </WelcomeTitle>
+            <WelcomeText>
+              We are quite sure you have been doing this hundreds times before,
+              so, no need to explain what you need to do, fields on the right side.
+              See ya!
+            </WelcomeText>
           </Box>
         </Side>
+
         <Side className={classNames({ lightSide: true })}>
           <Box>
             <h1>Register</h1>
@@ -65,13 +72,14 @@ const Register = () => {
               />
             </MarginWrapper>
             <MarginWrapper>
+              <Checkbox></Checkbox>
               <Tea>
                 By clicking Register button I confirm that I have read and accepted <Link
                 onClick={() => handleRedirect('/terms-and-conditions')}>Terms and Conditions</Link>
               </Tea>
             </MarginWrapper>
             <MarginWrapper>
-              <Button text={'Register'} />
+              <Button highHeight={true} text={'Register'} />
             </MarginWrapper>
 
             <PasswordCheckBox>

@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  position: fixed;
 `
 
 export const Side = styled.div`
@@ -67,3 +68,14 @@ export const Dot = styled.div`
     background-color: #e85656;
   }
 `
+
+export const WelcomeTitle = styled.h1`
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  font-weight: 900;
+`
+
+export const WelcomeText = styled.p`
+  font-size: 22px;
+`
+

@@ -3,4 +3,5 @@ export interface ButtonProps {
   small?: boolean;
   onClick?: () => void|never;
   disabled?: boolean
+  highHeight?: boolean
 }

@@ -33,7 +33,7 @@ export const Link = styled.h3`
   cursor: pointer;
   transition: .2s;
   
-  :hover {
+  &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
   }
 `
@@ -49,7 +49,7 @@ export const Button = styled.div`
   font-weight: bold;
   
   &.logIn {
-    :hover {
+    &:hover {
       background: rgba(255, 255, 255, .15);
       color: rgb(${(props) => props.theme.colors.primary});
     }
@@ -63,7 +63,7 @@ export const Button = styled.div`
 
 export const Logo = styled.h1`
   cursor: pointer;
-  :hover {
+  &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
   }
 `

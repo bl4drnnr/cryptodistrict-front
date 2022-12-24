@@ -1,17 +1,31 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  width: 100%;
+  padding: 0 5px;
+`
+
 export const Placeholder = styled.p`
-  opacity: .75;
+  opacity: .9;
+  font-size: 14px;
+  margin: 14px 0;
+  font-weight: 200;
 `
 
 export const BasicInput = styled.input`
   background-color: rgba(35, 36, 40, 0.85);
   border: 1px solid rgba(${(props) => props.theme.colors.primary}, .3);
+  border-radius: 5px;
+  outline: none;
+  padding: 0 16px 0 16px;
   width: 100%;
+  box-sizing: border-box;
+  height: 48px;
   font-size: 16px;
-
-  padding: 12px;
-  border-radius: 8px;
+  line-height: 24px;
+  transition: .3s;
+  font-weight: 100;
+  font-family: "Inter", sans-serif;
   
   :focus {
     outline: none !important;
