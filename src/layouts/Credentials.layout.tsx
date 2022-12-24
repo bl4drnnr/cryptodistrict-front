@@ -7,8 +7,8 @@ import { LightTheme } from "@styles/Light.theme";
 import useDarkMode from "@hooks/useDarkMode";
 import { Container, Side, LoginHeader, LoginHeaderButton, LoginHeaderTitle } from "@styles/Credentials.style";
 import { useRouter } from "next/router";
+import { Loader } from "@components/Loader/Loader.component";
 import classNames from "classnames";
-import {Loader} from "@components/Loader/Loader.component";
 
 interface CredentialsLayoutProps {
   leftSide: React.ReactElement | React.ReactElement[];
