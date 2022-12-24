@@ -15,6 +15,11 @@ export const BasicButton = styled.button`
   border: 1px solid rgb(${(props) => props.theme.colors.primary}, .3);
   transition: .3s;
   
+  &.codeButton {
+    background-color: rgb(${(props) => props.theme.colors.primary});
+    color: black;
+  }
+  
   &.highHeight {
     height: 48px;
   }
