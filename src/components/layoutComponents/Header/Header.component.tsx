@@ -22,15 +22,15 @@ export const Header = () => {
           <Buttons>
             <Button
               className={classNames({ logIn: true })}
-              onClick={() => handleRedirect('/login')}
+              onClick={() => handleRedirect('/signin')}
             >
-              Log In
+              Sign In
             </Button>
             <Button
-              className={classNames({ register: true })}
-              onClick={() => handleRedirect('/register')}
+              className={classNames({ signup: true })}
+              onClick={() => handleRedirect('/signup')}
             >
-              Register
+              Sign Up
             </Button>
           </Buttons>
         </Box>

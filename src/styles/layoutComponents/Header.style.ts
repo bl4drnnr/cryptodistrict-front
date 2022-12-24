@@ -28,7 +28,7 @@ export const Links = styled.div`
   align-items: center;
 `
 
-export const Link = styled.h3`
+export const Link = styled.p`
   margin: 0 30px;
   cursor: pointer;
   transition: .2s;
@@ -55,7 +55,7 @@ export const Button = styled.div`
     }
   }
   
-  &.register {
+  &.signup {
     background: rgb(${(props) => props.theme.colors.primary});
     color: black;
   }

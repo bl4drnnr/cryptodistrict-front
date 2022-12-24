@@ -3,11 +3,11 @@ import React from "react";
 import { Header } from "@components/Header/Header.component";
 import { Footer } from "@components/Footer/Footer.component";
 
-import { Container, Wrapper } from "@styles/layouts/Default.style";
+import { Container, Wrapper } from "@styles/Default.style";
 import { ThemeProvider } from "styled-components";
 
-import darkTheme from "@styles/themes/Dark.theme";
-import lightTheme from "@styles/themes/Light.theme";
+import { DarkTheme } from "@styles/Dark.theme";
+import { LightTheme } from "@styles/Light.theme";
 import useDarkMode from "@hooks/useDarkMode";
 
 interface DefaultLayoutProps {
@@ -18,7 +18,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps): React.ReactElement => 
   const [theme] = useDarkMode();
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
       <Wrapper>
         <Container>
 

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  padding: 0 5px;
 `
 
 export const Placeholder = styled.p`
@@ -27,7 +26,11 @@ export const BasicInput = styled.input`
   font-weight: 100;
   font-family: "Inter", sans-serif;
   
-  :focus {
+  &.onError {
+    border: 1px solid rgba(${(props) => props.theme.colors.primary}, 1);
+  }
+
+  &:focus {
     outline: none !important;
     border: 1px solid rgba(${(props) => props.theme.colors.primary}, 1);
   }

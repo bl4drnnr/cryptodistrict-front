@@ -1,10 +1,11 @@
 import { ThemeProps } from './Theme.interface';
 
-const DarkTheme: ThemeProps = {
+export const DarkTheme: ThemeProps = {
   colors: {
     primary: '255, 215, 0',
-    lightBackground: '24, 26, 31, 255'
+    lightBackground: '13, 17, 23',
+    darkBackground: '22, 27, 34',
+    error: '255, 51, 51'
   }
 };
 
-export default DarkTheme;
