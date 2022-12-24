@@ -2,13 +2,14 @@ import DefaultLayout from '@layouts/Default.layout';
 import {
   Bold,
   BoldWeb3,
+  ButtonText,
   HomeWelcomeBox,
   HomeWelcomeContainer,
-  HomeWelcomeTitle
+  HomeWelcomeTitle, Line, Lines,
+  StartButton
 } from "@styles/home.style";
 import { useRouter } from "next/router";
 import type { NextPage } from 'next';
-import { Button } from "@components/Button/Button.component";
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -31,7 +32,18 @@ const Home: NextPage = () => {
         </HomeWelcomeBox>
 
         <HomeWelcomeBox>
+          <StartButton>
+            <ButtonText>
+              HERE WE GO
+            </ButtonText>
+          </StartButton>
         </HomeWelcomeBox>
+
+        <Lines>
+          {[...Array(7)].map((x, i) =>
+            <Line key={i} />
+          )}
+        </Lines>
       </HomeWelcomeContainer>
     </DefaultLayout>
   )

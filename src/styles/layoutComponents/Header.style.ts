@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 90%;
+  width: 100%;
   height: 80px;
-  margin: 0 auto;
   border-bottom: 1px solid rgba(255, 255, 255, .25);
-  position: relative;
+  background-color: rgb(22, 27, 34);
+  position: fixed;
+  z-index: 999;
 `
 
 export const Box = styled.div`
-  width: 100%;
+  width: 80%;
   height: 50%;
-  top: 25%;
-  position: absolute;
+  margin: 20px auto;
   display: flex;
   justify-content: space-between;
 `
@@ -32,6 +32,7 @@ export const Link = styled.p`
   margin: 0 30px;
   cursor: pointer;
   transition: .2s;
+  font-weight: 500;
   
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary});

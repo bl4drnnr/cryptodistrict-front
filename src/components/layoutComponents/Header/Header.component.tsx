@@ -16,7 +16,6 @@ export const Header = ({}: HeaderProps) => {
         <Box>
           <Logo onClick={() => handleRedirect('/')}>Cryptodistrict</Logo>
           <Links>
-            <Link onClick={() => handleRedirect('/')}>Home</Link>
             <Link onClick={() => handleRedirect('/about')}>About project</Link>
             <Link onClick={() => handleRedirect('/contact')}>Contact</Link>
             <Link onClick={() => handleRedirect('/helpdesk')}>Helpdesk</Link>
