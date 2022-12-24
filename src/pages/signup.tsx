@@ -13,6 +13,8 @@ import { Input } from "@components/Input/Input.component";
 import { Button } from "@components/Button/Button.component";
 import { useRouter } from "next/router";
 import { Checkbox } from "@components/Checkbox/Checkbox.component";
+import { useSignUpService } from "@services/signup/signup.service";
+import { Textarea } from "@components/Textarea/Textarea.component";
 import { validateEmail, validatePasswordRules, validatePassword } from "@hooks/useValidators";
 import React from "react";
 import CredentialsLayout from "@layouts/Credentials.layout";
@@ -21,8 +23,17 @@ import classNames from "classnames";
 const Signup = () => {
   const router = useRouter();
 
+  const { loading, signUp } = useSignUpService();
+
+  const [step, setStep] = React.useState(1);
   const [tac, setTac] = React.useState(false)
   const [email, setEmail] = React.useState({email: '', emailError: false})
+  const [firstName, setFirstName] = React.useState('')
+  const [lastName, setLastName] = React.useState('')
+  const [twitter, setTwitter] = React.useState('')
+  const [personalWebsite, setPersonalWebsite] = React.useState('')
+  const [title, setTitle] = React.useState('')
+  const [bio, setBio] = React.useState('')
   const [password, setPassword] = React.useState({password: '', repeatPassword: ''})
   const [passwordError, setPasswordError] = React.useState({
     passwordMismatch: false,
@@ -100,63 +111,135 @@ const Signup = () => {
         </WelcomeText>
       </Box>
     } rightSide={
-      <Box>
-        <h1>Sign Up</h1>
+      <>
+        {step === 1 ? (
+          <Box>
+            <h1>Sign Up</h1>
 
-        <MarginWrapper>
-          <Input
-            onError={email.emailError}
-            value={email.email}
-            onChange={(e) => setEmail({ ...email, email: e.target.value })}
-            placeholder={'Email'}
-          />
-        </MarginWrapper>
+            <MarginWrapper>
+              <Input
+                high={true}
+                onError={email.emailError}
+                value={email.email}
+                onChange={(e) => setEmail({ ...email, email: e.target.value })}
+                placeholder={'Email'}
+              />
+            </MarginWrapper>
 
-        <MarginWrapper>
-          <Input
-            onError={passwordError.passwordMismatch || passwordError.passwordRequirement}
-            value={password.password}
-            onChange={(e) => setPassword({ ...password, password: e.target.value })}
-            type={'password'}
-            placeholder={'Password'}
-          />
-        </MarginWrapper>
+            <MarginWrapper>
+              <Input
+                high={true}
+                onError={passwordError.passwordMismatch || passwordError.passwordRequirement}
+                value={password.password}
+                onChange={(e) => setPassword({ ...password, password: e.target.value })}
+                type={'password'}
+                placeholder={'Password'}
+              />
+            </MarginWrapper>
 
-        <MarginWrapper>
-          <Input
-            onError={passwordError.passwordMismatch || passwordError.passwordRequirement}
-            value={password.repeatPassword}
-            onChange={(e) => setPassword({ ...password, repeatPassword: e.target.value })}
-            type={'password'}
-            placeholder={'Repeat password'}
-          />
-        </MarginWrapper>
+            <MarginWrapper>
+              <Input
+                high={true}
+                onError={passwordError.passwordMismatch || passwordError.passwordRequirement}
+                value={password.repeatPassword}
+                onChange={(e) => setPassword({ ...password, repeatPassword: e.target.value })}
+                type={'password'}
+                placeholder={'Repeat password'}
+              />
+            </MarginWrapper>
 
-        <MarginWrapper>
-          <Checkbox label={
-            <Tea>I confirm that I have read and accepted <Link
-              onClick={() => handleRedirect('/terms-and-conditions')}>Terms and Conditions</Link>
-            </Tea>
-          } onChange={() => setTac(!tac)}/>
-        </MarginWrapper>
+            <MarginWrapper>
+              <Checkbox label={
+                <Tea>I confirm that I have read and accepted <Link
+                  onClick={() => handleRedirect('/terms-and-conditions')}>Terms and Conditions</Link>
+                </Tea>
+              } onChange={() => setTac(!tac)}/>
+            </MarginWrapper>
 
-        {passwordError.passwordRules ? (
-          <PasswordCheckBox>
-            {passwordRulesList.map(rule => {
-              return (
-                <PasswordCheckLine key={rule.text}>
-                  <Dot className={classNames({ error: !rule.error })}/>
-                  <p>{rule.text}</p>
-                </PasswordCheckLine>)
-            })}
-          </PasswordCheckBox>
-        ) : (<></>)}
+            {passwordError.passwordRules ? (
+              <PasswordCheckBox>
+                {passwordRulesList.map(rule => {
+                  return (
+                    <PasswordCheckLine key={rule.text}>
+                      <Dot className={classNames({ error: !rule.error })}/>
+                      <p>{rule.text}</p>
+                    </PasswordCheckLine>)
+                })}
+              </PasswordCheckBox>
+            ) : (<></>)}
 
-        <MarginWrapper>
-          <Button disabled={!validateFields()} highHeight={true} text={'Sign Up'} />
-        </MarginWrapper>
+            <MarginWrapper>
+              <Button disabled={!validateFields()} highHeight={true} text={'Sign Up'} />
+            </MarginWrapper>
 
-      </Box>
+          </Box>
+          ) : (step === 2 ? (
+            <Box>
+              <MarginWrapper>
+                <h3>Tell us a little about yourself</h3>
+              </MarginWrapper>
+              <MarginWrapper>
+                <p>Don&apos;t worry, you can skip this step and fill information you want later</p>
+              </MarginWrapper>
+
+              <MarginWrapper>
+                <Input
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder={'First name'}
+                />
+              </MarginWrapper>
+
+              <MarginWrapper>
+                <Input
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  placeholder={'Last name'}
+                />
+              </MarginWrapper>
+
+              <MarginWrapper>
+                <h3>Provide your nickname of link</h3>
+              </MarginWrapper>
+
+              <MarginWrapper>
+                <Input
+                  value={twitter}
+                  onChange={(e) => setTwitter(e.target.value)}
+                  placeholder={'Twitter'}
+                />
+              </MarginWrapper>
+              <MarginWrapper>
+                <Input
+                  value={personalWebsite}
+                  onChange={(e) => setPersonalWebsite(e.target.value)}
+                  placeholder={'Personal website'}
+                />
+              </MarginWrapper>
+
+              <MarginWrapper>
+                <h3>What do you want to tell this world?</h3>
+              </MarginWrapper>
+
+              <MarginWrapper>
+                <Input
+                  value={personalWebsite}
+                  onChange={(e) => setPersonalWebsite(e.target.value)}
+                  placeholder={'Personal website'}
+                />
+              </MarginWrapper>
+              <MarginWrapper>
+                <Textarea
+                  value={bio}
+                  placeholder={'Bio'}
+                  onChange={(e) => setBio(e.target.value)}
+                />
+              </MarginWrapper>
+
+            </Box>
+          ) : (<></>)
+        )}
+      </>
     } headerLink={
       <p>
         Already have an account? <Link
