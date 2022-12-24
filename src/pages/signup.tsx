@@ -13,17 +13,54 @@ import { Input } from "@components/Input/Input.component";
 import { Button } from "@components/Button/Button.component";
 import { useRouter } from "next/router";
 import { Checkbox } from "@components/Checkbox/Checkbox.component";
+import { validateEmail, validatePasswordRules, validatePassword } from "@hooks/useValidators";
 import React from "react";
 import CredentialsLayout from "@layouts/Credentials.layout";
+import classNames from "classnames";
 
 const Signup = () => {
   const router = useRouter();
 
-  const [email, setEmail] = React.useState('')
-  const [password, setPassword] = React.useState('')
-  const [repeatPassword, setRepeatPassword] = React.useState('')
+  const [email, setEmail] = React.useState({email: '', emailError: false})
+  const [password, setPassword] = React.useState({password: '', repeatPassword: ''})
+  const [passwordError, setPasswordError] = React.useState({
+    passwordMismatch: false,
+    passwordRequirement: false,
+    passwordRules: false
+  })
+  const [passwordRulesList, setPasswordRulesList] = React.useState([
+    {eightChars: false, text: 'Password length should be more than 8 characters'},
+    {uppCase: false, text: 'Password should contain at least one uppercase character'},
+    {lowCase: false, text: 'Password should contain at least one lowercase character'},
+    {specChar: false, text: 'Password should contain at least one special character'},
+    {digitChar: false, text: 'Password should contain at least one digit character'}
+  ])
 
-  const [passwordRules, setPasswordRules] = React.useState([])
+  React.useEffect(() => {
+    if (!validateEmail(email.email)) setEmail({ ...email, emailError: true })
+    else if (validateEmail(email.email) === 1) setEmail({ ...email, emailError: false })
+    else setEmail({ ...email, emailError: false })
+  }, [email.email])
+
+  React.useEffect(() => {
+    if (password.password === password.repeatPassword)
+      setPasswordError({...passwordError, passwordMismatch: false})
+
+    const passwordRuleCheck = validatePasswordRules(password.password)
+    setPasswordRulesList(passwordRuleCheck)
+
+    setPasswordError({ ...passwordError, passwordMismatch: !!((password.password && password.repeatPassword) && (password.password !== password.repeatPassword)) })
+    setPasswordError({ ...passwordError, passwordRequirement: !password.password || !password.repeatPassword })
+    setPasswordError({ ...passwordError, passwordRules: (!validatePassword(password.password) || !validatePassword(password.repeatPassword)) })
+
+    if (!password.password && !password.repeatPassword) {
+      setPasswordError({
+        passwordMismatch: false,
+        passwordRequirement: false,
+        passwordRules: false
+      })
+    }
+  }, [password.password])
 
   const handleRedirect = async (path: string) => {
     await router.push(path);
@@ -54,16 +91,18 @@ const Signup = () => {
 
         <MarginWrapper>
           <Input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onError={email.emailError}
+            value={email.email}
+            onChange={(e) => setEmail({ ...email, email: e.target.value })}
             placeholder={'Email'}
           />
         </MarginWrapper>
 
         <MarginWrapper>
           <Input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onError={passwordError.passwordMismatch || passwordError.passwordRequirement}
+            value={password.password}
+            onChange={(e) => setPassword({ ...password, password: e.target.value })}
             type={'password'}
             placeholder={'Password'}
           />
@@ -71,8 +110,9 @@ const Signup = () => {
 
         <MarginWrapper>
           <Input
-            value={repeatPassword}
-            onChange={(e) => setRepeatPassword(e.target.value)}
+            onError={passwordError.passwordMismatch || passwordError.passwordRequirement}
+            value={password.repeatPassword}
+            onChange={(e) => setPassword({ ...password, repeatPassword: e.target.value })}
             type={'password'}
             placeholder={'Repeat password'}
           />
@@ -90,32 +130,23 @@ const Signup = () => {
           <Button highHeight={true} text={'Sign Up'} />
         </MarginWrapper>
 
-        {/*<PasswordCheckBox>*/}
-        {/*  <PasswordCheckLine>*/}
-        {/*    <Dot />*/}
-        {/*    Password should be at least 8 symbols long*/}
-        {/*  </PasswordCheckLine>*/}
-        {/*  <PasswordCheckLine>*/}
-        {/*    <Dot />*/}
-        {/*    Password should contain at least 1 lowercase letter*/}
-        {/*  </PasswordCheckLine>*/}
-        {/*  <PasswordCheckLine>*/}
-        {/*    <Dot />*/}
-        {/*    Password should contain at least 1 uppercase letter*/}
-        {/*  </PasswordCheckLine>*/}
-        {/*  <PasswordCheckLine>*/}
-        {/*    <Dot />*/}
-        {/*    Password should contain at least 1 number*/}
-        {/*  </PasswordCheckLine>*/}
-        {/*  <PasswordCheckLine>*/}
-        {/*    <Dot />*/}
-        {/*    Password should contain at least 1 special symbol*/}
-        {/*  </PasswordCheckLine>*/}
-        {/*  <PasswordCheckLine>*/}
-        {/*    <Dot />*/}
-        {/*    Passwords should match*/}
-        {/*  </PasswordCheckLine>*/}
-        {/*</PasswordCheckBox>*/}
+        {passwordError.passwordRules ? (
+          <PasswordCheckBox>
+            {passwordRulesList.map(rule => {
+              return (
+                <PasswordCheckLine key={rule.text}>
+                  <Dot className={classNames({ error: !rule[Object.keys(rule)[0]] })}/>
+                  <p>{rule.text}</p>
+                </PasswordCheckLine>)
+            })}
+          </PasswordCheckBox>
+        ) : (<></>)}
+
+          {/*<PasswordCheckBox>*/}
+          {/*  <PasswordCheckLine>*/}
+          {/*    <Dot />*/}
+          {/*    Password should be at least 8 symbols long*/}
+          {/*  </PasswordCheckLine>*/}
       </Box>
     } headerLink={
       <p>

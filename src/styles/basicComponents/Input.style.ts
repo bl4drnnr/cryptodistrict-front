@@ -27,7 +27,7 @@ export const BasicInput = styled.input`
   font-family: "Inter", sans-serif;
   
   &.onError {
-    border: 1px solid rgba(${(props) => props.theme.colors.primary}, 1);
+    border: 1px solid rgba(${(props) => props.theme.colors.error}) !important;
   }
 
   &:focus {
