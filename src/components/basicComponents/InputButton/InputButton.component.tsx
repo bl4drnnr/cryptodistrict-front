@@ -20,7 +20,7 @@ export const InputButton = ({
       <InputButtonContainer>
         <InputWrapper>
           <BasicInput
-            className={classNames({ onError })}
+            className={classNames({ onError, high: true })}
             type={type}
             value={value}
             onChange={onChange}
@@ -35,7 +35,7 @@ export const InputButton = ({
               className={classNames({
                 disabled: buttonDisabled,
                 highHeight: true,
-                codeButton: true
+                fillButton: true
               })}
             >
               <ButtonContent>{buttonTitle}</ButtonContent>

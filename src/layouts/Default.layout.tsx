@@ -2,6 +2,7 @@ import React from "react";
 
 import { Header } from "@components/Header/Header.component";
 import { Footer } from "@components/Footer/Footer.component";
+import { Loader } from "@components/Loader/Loader.component";
 
 import { Container, Wrapper } from "@styles/Default.style";
 import { ThemeProvider } from "styled-components";
@@ -12,13 +13,15 @@ import useDarkMode from "@hooks/useDarkMode";
 
 interface DefaultLayoutProps {
   children: React.ReactElement | React.ReactElement[];
+  loading?: boolean;
 }
 
-const DefaultLayout = ({ children }: DefaultLayoutProps): React.ReactElement => {
+const DefaultLayout = ({ children, loading = false }: DefaultLayoutProps): React.ReactElement => {
   const [theme] = useDarkMode();
 
   return (
     <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
+      <Loader loading={loading} />
       <Wrapper>
         <Container>
 

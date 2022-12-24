@@ -2,7 +2,17 @@ import styled from "styled-components";
 
 export const Box = styled.div`
   width: 500px;
- `
+  &.scrollable {
+   height: 100vh;
+   overflow-y: auto;
+   padding: 20px;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+   &::-webkit-scrollbar {
+    display: none;
+   }
+  }
+`
 
 export const Link = styled.span`
   text-decoration: underline;
@@ -20,10 +30,13 @@ export const MarginWrapper = styled.div`
   margin: 15px 0;
 `
 
+export const MarginVerticalWrapper = styled.span`
+  width: 100%;
+  margin: 0 10px;
+`
+
 export const PasswordCheckBox = styled.div`
   width: 100%;
-  border: 1px solid rgb(${(props) => props.theme.colors.primary}, .3);
-  border-radius: 8px;
   padding: 15px;
 `
 
@@ -32,19 +45,21 @@ export const PasswordCheckLine = styled.div`
   grid-template-columns: max-content max-content;
   align-items: center;
   padding: 5px;
+  margin: 5px 0;
+  font-weight: 100;
 `
 
 export const Dot = styled.div`
-  height: 10px;
-  width: 10px;
-  background-color: #34c523;
+  height: 16px;
+  width: 16px;
+  background-color: rgb(${(props) => props.theme.colors.success});
   border-radius: 50%;
   display: inline-block;
   margin-right: 10px;
   vertical-align: top;
 
   &.error {
-    background-color: #e85656;
+    background-color: rgb(${(props) => props.theme.colors.error});
   }
 `
 
@@ -78,4 +93,9 @@ export const VerticalLine = styled.div`
   height: 50px;
   float: left;
   opacity: .5;
+`
+
+export const Buttons = styled.div`
+  display: flex;
+  //justify-content: space-between;
 `

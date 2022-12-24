@@ -70,6 +70,7 @@ const ForgotPassword = () => {
 
         <MarginWrapper>
           <Input
+            high={true}
             value={verificationCode}
             onChange={(e) => setVerificationCode(e.target.value)}
             placeholder={'Verification code'}

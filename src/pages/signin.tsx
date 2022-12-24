@@ -38,6 +38,7 @@ const Signin = () => {
 
         <MarginWrapper>
           <Input
+            high={true}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={'Email'}
@@ -46,6 +47,7 @@ const Signin = () => {
 
         <MarginWrapper>
           <Input
+            high={true}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type={'password'}
