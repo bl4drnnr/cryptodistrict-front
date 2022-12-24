@@ -24,6 +24,10 @@ export const BasicButton = styled.button`
     height: 48px;
   }
   
+  &.disabled {
+    background-color: rgba(255, 255, 255, 0.20);
+  }
+  
   &:hover {
     border: 1px solid rgb(${(props) => props.theme.colors.primary}, 1);
   }

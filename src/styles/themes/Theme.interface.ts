@@ -3,6 +3,7 @@ export interface ThemeProps {
     primary: string;
     lightBackground: string;
     darkBackground: string;
-    error: string
+    error: string;
+    success: string;
   }
 }

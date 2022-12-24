@@ -22,8 +22,6 @@ export const MarginWrapper = styled.div`
 
 export const PasswordCheckBox = styled.div`
   width: 100%;
-  border: 1px solid rgb(${(props) => props.theme.colors.primary}, .3);
-  border-radius: 8px;
   padding: 15px;
 `
 
@@ -32,19 +30,21 @@ export const PasswordCheckLine = styled.div`
   grid-template-columns: max-content max-content;
   align-items: center;
   padding: 5px;
+  margin: 5px 0;
+  font-weight: 100;
 `
 
 export const Dot = styled.div`
-  height: 10px;
-  width: 10px;
-  background-color: #34c523;
+  height: 16px;
+  width: 16px;
+  background-color: rgb(${(props) => props.theme.colors.success});
   border-radius: 50%;
   display: inline-block;
   margin-right: 10px;
   vertical-align: top;
 
   &.error {
-    background-color: #e85656;
+    background-color: rgb(${(props) => props.theme.colors.error});
   }
 `
 

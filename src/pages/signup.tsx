@@ -21,6 +21,7 @@ import classNames from "classnames";
 const Signup = () => {
   const router = useRouter();
 
+  const [tac, setTac] = React.useState(false)
   const [email, setEmail] = React.useState({email: '', emailError: false})
   const [password, setPassword] = React.useState({password: '', repeatPassword: ''})
   const [passwordError, setPasswordError] = React.useState({
@@ -29,11 +30,11 @@ const Signup = () => {
     passwordRules: false
   })
   const [passwordRulesList, setPasswordRulesList] = React.useState([
-    {eightChars: false, text: 'Password length should be more than 8 characters'},
-    {uppCase: false, text: 'Password should contain at least one uppercase character'},
-    {lowCase: false, text: 'Password should contain at least one lowercase character'},
-    {specChar: false, text: 'Password should contain at least one special character'},
-    {digitChar: false, text: 'Password should contain at least one digit character'}
+    {error: false, text: 'Password length should be more than 8 characters'},
+    {error: false, text: 'Password should contain at least one uppercase character'},
+    {error: false, text: 'Password should contain at least one lowercase character'},
+    {error: false, text: 'Password should contain at least one special character'},
+    {error: false, text: 'Password should contain at least one digit character'}
   ])
 
   React.useEffect(() => {
@@ -49,9 +50,11 @@ const Signup = () => {
     const passwordRuleCheck = validatePasswordRules(password.password)
     setPasswordRulesList(passwordRuleCheck)
 
-    setPasswordError({ ...passwordError, passwordMismatch: !!((password.password && password.repeatPassword) && (password.password !== password.repeatPassword)) })
-    setPasswordError({ ...passwordError, passwordRequirement: !password.password || !password.repeatPassword })
-    setPasswordError({ ...passwordError, passwordRules: (!validatePassword(password.password) || !validatePassword(password.repeatPassword)) })
+    setPasswordError({
+      passwordMismatch: !!((password.password && password.repeatPassword) && (password.password !== password.repeatPassword)),
+      passwordRequirement: !password.password || !password.repeatPassword,
+      passwordRules: (!validatePassword(password.password) || !validatePassword(password.repeatPassword))
+    })
 
     if (!password.password && !password.repeatPassword) {
       setPasswordError({
@@ -60,10 +63,21 @@ const Signup = () => {
         passwordRules: false
       })
     }
-  }, [password.password])
+  }, [password.password, password.repeatPassword])
 
   const handleRedirect = async (path: string) => {
     await router.push(path);
+  };
+
+  const validateFields = () => {
+    return tac &&
+      !email.emailError &&
+      email.email &&
+      password.password &&
+      password.repeatPassword &&
+      !passwordError.passwordMismatch &&
+      !passwordError.passwordRequirement &&
+      !passwordError.passwordRules
   };
 
   return (
@@ -127,7 +141,7 @@ const Signup = () => {
         </MarginWrapper>
 
         <MarginWrapper>
-          <Button highHeight={true} text={'Sign Up'} />
+          <Button disabled={!validateFields()} highHeight={true} text={'Sign Up'} />
         </MarginWrapper>
 
         {passwordError.passwordRules ? (
@@ -135,18 +149,12 @@ const Signup = () => {
             {passwordRulesList.map(rule => {
               return (
                 <PasswordCheckLine key={rule.text}>
-                  <Dot className={classNames({ error: !rule[Object.keys(rule)[0]] })}/>
+                  <Dot className={classNames({ error: !rule.error })}/>
                   <p>{rule.text}</p>
                 </PasswordCheckLine>)
             })}
           </PasswordCheckBox>
         ) : (<></>)}
-
-          {/*<PasswordCheckBox>*/}
-          {/*  <PasswordCheckLine>*/}
-          {/*    <Dot />*/}
-          {/*    Password should be at least 8 symbols long*/}
-          {/*  </PasswordCheckLine>*/}
       </Box>
     } headerLink={
       <p>
