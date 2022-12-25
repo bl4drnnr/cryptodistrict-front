@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import { ChangeLanguageProps } from '@components/ChangeLanguage/ChangeLanguage.interface';
 import { ChangeLanguageContainer, LanguageItem, LanguagesList, PickedLanguage } from '@styles/ChangeLanguage.style';
+import {Modal} from "@components/Modal/Modal.component";
 
 export const ChangeLanguage = ({ defaultLanguage, path }: ChangeLanguageProps) => {
   const router = useRouter();
@@ -53,7 +54,7 @@ export const ChangeLanguage = ({ defaultLanguage, path }: ChangeLanguageProps) =
       >{pickedLanguage}</PickedLanguage>
       <ChangeLanguageContainer>
         {showLanguages ? (
-          <LanguagesList>
+          <Modal description={'asd'} header={'fdjgn'} onClose={() => setShowLanguages(false)}>
             {languages.map(item => (
               <LanguageItem
                 key={item.language}
@@ -62,7 +63,7 @@ export const ChangeLanguage = ({ defaultLanguage, path }: ChangeLanguageProps) =
                 {item.flag} {item.language}
               </LanguageItem>
             ))}
-          </LanguagesList>
+          </Modal>
         ):  null}
       </ChangeLanguageContainer>
     </>
