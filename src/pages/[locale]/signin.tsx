@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { Button } from '@components/Button/Button.component';
 import { Input } from '@components/Input/Input.component';
 import CredentialsLayout from '@layouts/Credentials.layout';
+import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import {
   Box,
   Link,
@@ -16,7 +17,11 @@ import {
   MarginWrapper
 } from '@styles/login.style';
 
-const Signin = () => {
+interface SignInProps {
+  locale: string
+}
+
+const Signin = ({ locale }: SignInProps) => {
   const router = useRouter();
 
   const [loginOption, setLoginOption] = React.useState('email');
@@ -24,7 +29,7 @@ const Signin = () => {
   const [password, setPassword] = React.useState('');
 
   const handleRedirect = async (path: string) => {
-    await router.push(path);
+    await router.push(`${locale}${path}`);
   };
 
   return (
@@ -90,5 +95,8 @@ const Signin = () => {
     } leftDarkSide={true} mirroredHeader={true}/>
   );
 };
+
+const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+export { getStaticPaths, getStaticProps };
 
 export default Signin;

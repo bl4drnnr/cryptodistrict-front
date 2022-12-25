@@ -1,3 +1,3 @@
 export interface HeaderProps {
-  defaultLanguage: string;
+  locale: string;
 }

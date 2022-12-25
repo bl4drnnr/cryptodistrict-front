@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
@@ -20,14 +20,13 @@ import {
   NavigationButtons, SearchBarWrapper
 } from '@styles/Header.style';
 
-export const Header = ({ defaultLanguage }: HeaderProps) => {
-  const [currentTheme, setCurrentTheme] = useRecoilState(theme);
+export const Header = ({ locale }: HeaderProps) => {
   const router = useRouter();
-
+  const [currentTheme, setCurrentTheme] = useRecoilState(theme);
   const [searchModal, setSearchModal] = useState(false);
 
   const handleRedirect = async (path: string) => {
-    await router.push(path);
+    await router.push(`/${locale}${path}`);
   };
 
   const setTheme = (theme: 'dark' | 'light') => {
@@ -78,7 +77,7 @@ export const Header = ({ defaultLanguage }: HeaderProps) => {
             />
             <ChangeLanguage
               path={router.asPath}
-              defaultLanguage={defaultLanguage}
+              defaultLanguage={locale}
             />
           </Buttons>
         </Box>
