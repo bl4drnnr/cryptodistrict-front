@@ -211,31 +211,6 @@ export const Line = styled.div`
   }
 `;
 
-export const ImageBlock = styled.div`
-  display: flex;
-  width: 100%;
-  height: 500px;
-  position: relative;
-  .image {
-    position: absolute;
-    top: 10%;
-    transition: .2s;
-    &:hover {
-      transform: scale(1.1);
-      z-index: 2;
-    }
-    &.btc {
-      right: 10%;
-    }
-    &.ltc {
-      right: 0;
-    }
-    &.usdt {
-      right: 15%;
-    }
-  }
-`;
-
 export const CryptoDescriptionContainer = styled.div`
   height: 80%;
   width: 50%;
@@ -259,5 +234,39 @@ export const CryptoDescriptionHeader = styled.h1`
     font-size: 28px;
     font-weight: 100;
     margin: 30px 0;
+  }
+`;
+
+export const ImageBlock = styled.div`
+  display: flex;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  &.mirrored {
+    justify-content: space-between;
+    ${CryptoDescriptionContainer} {
+      text-align: end;
+    }
+  }
+  .image-nft {
+    margin-left: 10%;
+  }
+  .image {
+    position: absolute;
+    top: 10%;
+    transition: .2s;
+    &:hover {
+      transform: scale(1.1);
+      z-index: 2;
+    }
+    &.btc {
+      right: 10%;
+    }
+    &.ltc {
+      right: 0;
+    }
+    &.usdt {
+      right: 15%;
+    }
   }
 `;

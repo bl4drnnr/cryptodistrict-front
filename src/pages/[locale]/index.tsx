@@ -111,7 +111,24 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
       </HomeWelcomeContainer>
 
       <HomeWelcomeContainer className={'dark'}>
-        <Image src={'/img/skeleton.gif'} alt={'skeleton'} width={540} height={540}/>
+        <ImageBlock className={'mirrored'}>
+          <Image className={'image-nft'} src={'/img/skeleton.gif'} alt={'skeleton'} width={500} height={500}/>
+
+          <CryptoDescriptionContainer>
+            <CryptoDescriptionBox>
+              <CryptoDescriptionHeader>{t('pages:home.nft')}</CryptoDescriptionHeader>
+              <CryptoDescriptionHeader className={'subHeader'}>
+                We bet you definitely have heard about this modern form of digital art? You ask if you have got a couple? You God damn right!
+              </CryptoDescriptionHeader>
+              <StartButton onClick={() => handleRedirect(`/signup?email=${email}`)}>
+                <ButtonText>
+                  Oh! You have got this also?
+                </ButtonText>
+              </StartButton>
+            </CryptoDescriptionBox>
+          </CryptoDescriptionContainer>
+
+        </ImageBlock>
       </HomeWelcomeContainer>
 
       <Widget />
