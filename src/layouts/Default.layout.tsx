@@ -9,7 +9,7 @@ import { ThemeProvider } from "styled-components";
 
 import { DarkTheme } from "@styles/Dark.theme";
 import { LightTheme } from "@styles/Light.theme";
-import useDarkMode from "@hooks/useDarkMode";
+import useDarkMode from "@hooks/useDarkMode.hook";
 import Head from 'next/head'
 
 interface DefaultLayoutProps {

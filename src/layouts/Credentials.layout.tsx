@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 import { DarkTheme } from "@styles/Dark.theme";
 import { LightTheme } from "@styles/Light.theme";
-import useDarkMode from "@hooks/useDarkMode";
+import useDarkMode from "@hooks/useDarkMode.hook";
 import { Container, Side, LoginHeader, LoginHeaderButton, LoginHeaderTitle } from "@styles/Credentials.style";
 import { useRouter } from "next/router";
 import { Loader } from "@components/Loader/Loader.component";

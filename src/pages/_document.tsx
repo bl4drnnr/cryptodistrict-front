@@ -1,13 +1,22 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-export default function Document() {
-  return (
-    <Html lang="en">
-      <Head />
-      <body>
+import i18nextConfig from '@i18config';
+
+class AppDocument extends Document {
+  render() {
+    const currentLocale: string | string[] = this.props.__NEXT_DATA__.query.locale || i18nextConfig.i18n.defaultLocale;
+    return (
+      <Html lang={currentLocale as string}>
+        <Head>
+          <link rel="icon" type="image/png" href="/favicon.ico" />
+        </Head>
+        <body>
         <Main />
         <NextScript />
-      </body>
-    </Html>
-  )
+        </body>
+      </Html>
+    );
+  }
 }
+
+export default AppDocument;

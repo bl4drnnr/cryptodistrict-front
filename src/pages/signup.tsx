@@ -17,7 +17,7 @@ import { useRouter } from "next/router";
 import { Checkbox } from "@components/Checkbox/Checkbox.component";
 import { useSignUpService } from "@services/signup/signup.service";
 import { Textarea } from "@components/Textarea/Textarea.component";
-import { validateEmail, validatePasswordRules, validatePassword } from "@hooks/useValidators";
+import { validateEmail, validatePasswordRules, validatePassword } from "@hooks/useValidators.hook";
 import React from "react";
 import CredentialsLayout from "@layouts/Credentials.layout";
 import classNames from "classnames";

@@ -86,15 +86,15 @@ const Home: NextPage = () => {
             </CryptoDescriptionBox>
           </CryptoDescriptionContainer>
 
-          <Image className={'image usdt'} src={'/tether.png'} alt={'tether'} width={400} height={400}/>
-          <Image className={'image ltc'} src={'/litecoin.png'} alt={'ltc'} width={400} height={400}/>
-          <Image className={'image btc'} src={'/bitcoin.png'} alt={'btc'} width={400} height={400}/>
+          <Image className={'image usdt'} src={'/img/tether.png'} alt={'tether'} width={400} height={400}/>
+          <Image className={'image ltc'} src={'/img/litecoin.png'} alt={'ltc'} width={400} height={400}/>
+          <Image className={'image btc'} src={'/img/bitcoin.png'} alt={'btc'} width={400} height={400}/>
 
         </ImageBlock>
       </HomeWelcomeContainer>
 
       <HomeWelcomeContainer className={'dark'}>
-        <Image src={'/skeleton.gif'} alt={'skeleton'} width={540} height={540}/>
+        <Image src={'/img/skeleton.gif'} alt={'skeleton'} width={540} height={540}/>
       </HomeWelcomeContainer>
 
       <Widget />
