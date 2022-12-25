@@ -15,8 +15,9 @@ import { theme } from "@store/global/global.state";
 import { useRecoilState } from "recoil";
 import React from "react";
 import classNames from "classnames";
+import { ChangeLanguage } from "@components/ChangeLanguage/ChangeLanguage.component";
 
-export const Header = ({}: HeaderProps) => {
+export const Header = ({ defaultLanguage }: HeaderProps) => {
   const [currentTheme, setCurrentTheme] = useRecoilState(theme);
   const router = useRouter();
 
@@ -65,6 +66,10 @@ export const Header = ({}: HeaderProps) => {
             <ThemeToggler
               theme={currentTheme}
               onClick={() => toggleTheme()}
+            />
+            <ChangeLanguage
+              path={router.asPath}
+              defaultLanguage={'en'}
             />
           </Buttons>
         </Box>
