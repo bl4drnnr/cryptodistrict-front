@@ -23,7 +23,7 @@ export const NavigationButtons = styled.div`
 
 export const Buttons = styled.div`
   display: flex;
-  width: 190px;
+  width: 250px;
   justify-content: space-between;
 `
 

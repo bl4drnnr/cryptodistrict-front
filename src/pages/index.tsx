@@ -17,6 +17,7 @@ import {
 } from "@styles/home.style";
 import { useRouter } from "next/router";
 import { Input } from "@components/Input/Input.component";
+import { Widget } from "@components/Widget/Widget.component";
 import type { NextPage } from 'next';
 import React from "react";
 import Image from "next/image";
@@ -84,11 +85,19 @@ const Home: NextPage = () => {
               </StartButton>
             </CryptoDescriptionBox>
           </CryptoDescriptionContainer>
-          <Image className={'image usdt'} src={'/tether.png'} alt={'tether'} width={512} height={512}/>
-          <Image className={'image ltc'} src={'/litecoin.png'} alt={'ltc'} width={512} height={512}/>
-          <Image className={'image btc'} src={'/bitcoin.png'} alt={'btc'} width={512} height={512}/>
+
+          <Image className={'image usdt'} src={'/tether.png'} alt={'tether'} width={400} height={400}/>
+          <Image className={'image ltc'} src={'/litecoin.png'} alt={'ltc'} width={400} height={400}/>
+          <Image className={'image btc'} src={'/bitcoin.png'} alt={'btc'} width={400} height={400}/>
+
         </ImageBlock>
       </HomeWelcomeContainer>
+
+      <HomeWelcomeContainer className={'dark'}>
+        <Image src={'/skeleton.gif'} alt={'skeleton'} width={540} height={540}/>
+      </HomeWelcomeContainer>
+
+      <Widget />
     </DefaultLayout>
   )
 }

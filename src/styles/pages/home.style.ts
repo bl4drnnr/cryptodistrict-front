@@ -214,7 +214,7 @@ export const Line = styled.div`
 export const ImageBlock = styled.div`
   display: flex;
   width: 100%;
-  height: 512px;
+  height: 400px;
   .image {
     position: absolute;
     transition: .2s;
@@ -235,9 +235,10 @@ export const ImageBlock = styled.div`
 `
 
 export const CryptoDescriptionContainer = styled.div`
-  height: 100%;
+  height: 80%;
   width: 50%;
   position: relative;
+  margin-top: 40px;
 `
 
 export const CryptoDescriptionBox = styled.div`
