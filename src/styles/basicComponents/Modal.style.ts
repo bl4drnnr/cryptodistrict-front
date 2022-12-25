@@ -9,9 +9,9 @@ export const Container = styled.div`
   justify-content: center;
   overflow: hidden;
   position: fixed;
-  z-index: 99;
+  //z-index: 999;
   display: flex;
-  background: rgba(#000, .5) 0 0 no-repeat padding-box;
+  background: rgba(0, 0, 0, .5) 0 0 no-repeat padding-box;
 `;
 
 export const Wrapper = styled.div`
@@ -36,6 +36,7 @@ export const WindowHeader = styled.div`
   justify-content: center;
   position: relative;
   display: flex;
+  color: black;
   
   img {
     position: absolute;
