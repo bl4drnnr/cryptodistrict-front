@@ -1,5 +1,2 @@
-const Account = () => {
-  return (<></>)
-}
-
-export default Account
+import { Redirect } from '@lib/redirect';
+export default Redirect;

@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
   position: fixed;
-`
+`;
 
 export const LoginHeader = styled.div`
   height: 50px;
@@ -14,7 +14,7 @@ export const LoginHeader = styled.div`
   display: flex;
   top: 0;
   justify-content: space-between;
-`
+`;
 
 export const LoginHeaderTitle = styled.h3`
   margin-top: 30px;
@@ -25,13 +25,13 @@ export const LoginHeaderTitle = styled.h3`
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary})
   }
-`
+`;
 
 export const LoginHeaderButton = styled.div`
   display: flex;
   align-items: baseline;
   padding: 30px;
-`
+`;
 
 export const Side = styled.div`
   height: 100vh;
@@ -44,4 +44,4 @@ export const Side = styled.div`
   &.lightSide {
     background: rgba(${(props) => props.theme.colors.lightBackground});
   }
-`
+`;

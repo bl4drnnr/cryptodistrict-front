@@ -1,6 +1,7 @@
-import React from "react";
-import { ApiClient } from "@api-client";
-import { SignUpPayload, SignUpResponse } from "@services/signup/signup.interface";
+import React from 'react';
+
+import { ApiClient } from '@api-client';
+import { SignUpPayload, SignUpResponse } from '@services/signup/signup.interface';
 
 export const useSignUpService = () => {
   const [loading, setLoading] = React.useState(false);
@@ -11,13 +12,13 @@ export const useSignUpService = () => {
       setLoading(true);
       const { data } = await ApiClient.post<SignUpResponse>('/user/sign-up', payload);
 
-      return data
+      return data;
     } catch (error) {
-      throw error
+      throw error;
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return { signUp, loading };
-}
+};

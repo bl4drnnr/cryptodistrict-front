@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-`
+`;
 
 export const Placeholder = styled.p`
   opacity: .9;
   font-size: 14px;
   margin: 14px 0;
   font-weight: 200;
-`
+`;
 
 export const BasicTextarea = styled.textarea`
   background-color: rgba(35, 36, 40, 0.85);
@@ -39,4 +39,4 @@ export const BasicTextarea = styled.textarea`
     outline: none !important;
     border: 1px solid rgba(${(props) => props.theme.colors.primary}, 1);
   }
-`
+`;

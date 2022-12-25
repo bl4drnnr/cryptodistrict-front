@@ -1,21 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import { ThemeProvider } from "styled-components";
+import classNames from 'classnames';
+import { useRouter } from 'next/router';
+import { ThemeProvider } from 'styled-components';
 
-import { DarkTheme } from "@styles/Dark.theme";
-import { LightTheme } from "@styles/Light.theme";
-import useDarkMode from "@hooks/useDarkMode";
-import { Container, Side, LoginHeader, LoginHeaderButton, LoginHeaderTitle } from "@styles/Credentials.style";
-import { useRouter } from "next/router";
-import { Loader } from "@components/Loader/Loader.component";
-import classNames from "classnames";
-import Head from "next/head";
+import { Loader } from '@components/Loader/Loader.component';
+import useDarkMode from '@hooks/useDarkMode.hook';
+import { Container, Side, LoginHeader, LoginHeaderButton, LoginHeaderTitle } from '@styles/Credentials.style';
+import { DarkTheme } from '@styles/Dark.theme';
+import { LightTheme } from '@styles/Light.theme';
+
 
 interface CredentialsLayoutProps {
   leftSide: React.ReactElement | React.ReactElement[];
   rightSide: React.ReactElement | React.ReactElement[];
   headerLink: React.ReactElement | React.ReactElement[];
-  pageTitle: string;
   leftDarkSide?: boolean;
   rightDarkSide?: boolean;
   mirroredHeader?: boolean;
@@ -26,24 +25,20 @@ const CredentialsLayout = ({
   leftSide,
   rightSide,
   headerLink,
-  pageTitle,
   leftDarkSide = false,
   rightDarkSide = false,
   mirroredHeader = false,
   loading = false
 }: CredentialsLayoutProps): React.ReactElement => {
-  const router = useRouter()
+  const router = useRouter();
   const [theme] = useDarkMode();
 
   const handleRedirect = async (path: string) => {
     await router.push(path);
-  }
+  };
 
   return (
     <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
-      <Head>
-        <title>Cryptodistrict | {pageTitle}</title>
-      </Head>
       <Loader loading={loading} />
       <Container>
 
@@ -78,7 +73,7 @@ const CredentialsLayout = ({
 
       </Container>
     </ThemeProvider>
-  )
-}
+  );
+};
 
 export default CredentialsLayout;

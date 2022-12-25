@@ -1,6 +1,7 @@
-import { BasicInput, Container, Placeholder } from "@styles/Input.style";
-import { InputProps } from "@components/Input/Input.interface";
-import classNames from "classnames";
+import classNames from 'classnames';
+
+import { InputProps } from '@components/Input/Input.interface';
+import { BasicInput, Container, Placeholder } from '@styles/Input.style';
 
 export const Input = ({ value, placeholder, type, onChange, onError, high }: InputProps) => {
   return (
@@ -13,5 +14,5 @@ export const Input = ({ value, placeholder, type, onChange, onError, high }: Inp
         onChange={onChange}
       />
     </Container>
-  )
-}
+  );
+};

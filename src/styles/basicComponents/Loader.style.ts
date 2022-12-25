@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LoadingBackground = styled.div`
   width: 100%;
@@ -6,7 +6,7 @@ export const LoadingBackground = styled.div`
   position: absolute;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.15);
-`
+`;
 
 export const LoadingSpinner = styled.span`
   z-index: 1;
@@ -34,4 +34,4 @@ export const LoadingSpinner = styled.span`
     0% { transform: rotate(0) }
     100% { transform: rotate(360deg) }
   }
-`
+`;

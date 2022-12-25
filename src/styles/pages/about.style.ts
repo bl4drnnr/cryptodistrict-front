@@ -1,26 +1,26 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   padding-top: 160px;
   width: 100%;
   background: rgb(${(props) => props.theme.colors.darkBackground});
   padding-bottom: 160px;
-`
+`;
 
 export const Box = styled.div`
   width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-`
+`;
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.div``;
 
 export const Headers = styled.h1`
   font-size: 72px;
   font-weight: 100;
   font-family: "Lato", sans-serif;
-`
+`;
 
 export const Header = styled.span`
   font-size: 144px;
@@ -44,13 +44,13 @@ export const Header = styled.span`
       filter: blur(0);
     }
   }
-`
+`;
 
 export const Test = styled.h1`
   font-size: 144px;
   font-weight: 700;
   font-family: "Lato", sans-serif;
-`
+`;
 
 export const ContentContainer = styled.div`
   width: 100%;
@@ -68,7 +68,7 @@ export const ContentContainer = styled.div`
       transform: scale(1.1);
     }
   }
-`
+`;
 
 export const TextContainer = styled.div`
   padding-top: 50px;
@@ -83,18 +83,18 @@ export const TextContainer = styled.div`
     width: 100%;
     text-align: center;
   }
-`
+`;
 
 export const TextContainerTitle = styled.h1`
   font-size: 58px;
-`
+`;
 
 export const TextContainerSubtitle = styled.h3`
   font-size: 42px;
   opacity: .75;
   font-weight: 100;
   font-family: "Lato", sans-serif;
-`
+`;
 
 export const TextContainerContent = styled.p`
   padding: 30px 100px 0 0;
@@ -104,4 +104,4 @@ export const TextContainerContent = styled.p`
   &.end {
     padding: 30px 0 0 100px;
   }
-`
+`;

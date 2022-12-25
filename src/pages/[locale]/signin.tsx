@@ -1,3 +1,10 @@
+import React from 'react';
+
+import { useRouter } from 'next/router';
+
+import { Button } from '@components/Button/Button.component';
+import { Input } from '@components/Input/Input.component';
+import CredentialsLayout from '@layouts/Credentials.layout';
 import {
   Box,
   Link,
@@ -7,12 +14,7 @@ import {
   VerticalLine,
   LoginOption,
   MarginWrapper
-} from "@styles/login.style";
-import { useRouter } from "next/router";
-import { Input } from "@components/Input/Input.component";
-import { Button } from "@components/Button/Button.component";
-import React from "react";
-import CredentialsLayout from "@layouts/Credentials.layout";
+} from '@styles/login.style';
 
 const Signin = () => {
   const router = useRouter();
@@ -26,7 +28,7 @@ const Signin = () => {
   };
 
   return (
-    <CredentialsLayout pageTitle={'Sign In'} leftSide={
+    <CredentialsLayout leftSide={
       <Box>
         <h1>Sign In</h1>
 
@@ -86,7 +88,7 @@ const Signin = () => {
       >Sign up now!</Link>
       </p>
     } leftDarkSide={true} mirroredHeader={true}/>
-  )
-}
+  );
+};
 
-export default Signin
+export default Signin;

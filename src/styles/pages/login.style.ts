@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Box = styled.div`
   width: 500px;
@@ -12,33 +12,33 @@ export const Box = styled.div`
     display: none;
    }
   }
-`
+`;
 
 export const Link = styled.span`
   text-decoration: underline;
   display: inline;
   cursor: pointer;
   color: rgb(${(props) => props.theme.colors.primary});
-`
+`;
 
 export const Tea = styled.span`
   font-size: 14px;
   opacity: .75;
-`
+`;
 
 export const MarginWrapper = styled.div`
   margin: 15px 0;
-`
+`;
 
 export const MarginVerticalWrapper = styled.span`
   width: 100%;
   margin: 0 10px;
-`
+`;
 
 export const PasswordCheckBox = styled.div`
   width: 100%;
   padding: 15px;
-`
+`;
 
 export const PasswordCheckLine = styled.div`
   display: inline-grid;
@@ -47,7 +47,7 @@ export const PasswordCheckLine = styled.div`
   padding: 5px;
   margin: 5px 0;
   font-weight: 100;
-`
+`;
 
 export const Dot = styled.div`
   height: 16px;
@@ -61,21 +61,21 @@ export const Dot = styled.div`
   &.error {
     background-color: rgb(${(props) => props.theme.colors.error});
   }
-`
+`;
 
 export const WelcomeTitle = styled.h1`
   text-align: center;
-`
+`;
 
 export const WelcomeText = styled.p`
   font-size: 20px;
   margin-top: 20px;
-`
+`;
 
 export const LoginOptions = styled.div`
   display: flex;
   margin: 20px 0;
-`
+`;
 
 export const LoginOption = styled.p`
   cursor: pointer;
@@ -84,7 +84,7 @@ export const LoginOption = styled.p`
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary})
   }
-`
+`;
 
 export const VerticalLine = styled.div`
   margin: 0 20px;
@@ -93,9 +93,9 @@ export const VerticalLine = styled.div`
   height: 50px;
   float: left;
   opacity: .5;
-`
+`;
 
 export const Buttons = styled.div`
   display: flex;
   //justify-content: space-between;
-`
+`;

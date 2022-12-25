@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from 'styled-components';
 
-import { DarkTheme } from "@styles/Dark.theme";
-import { LightTheme } from "@styles/Light.theme";
-import { Loader } from "@components/Loader/Loader.component";
-import useDarkMode from "@hooks/useDarkMode";
+import { Loader } from '@components/Loader/Loader.component';
+import useDarkMode from '@hooks/useDarkMode.hook';
+import { DarkTheme } from '@styles/Dark.theme';
+import { LightTheme } from '@styles/Light.theme';
 
 interface EmptyLayoutProps {
   children: React.ReactElement | React.ReactElement[];
@@ -20,7 +20,7 @@ const EmptyLayout = ({ children, loading = false }: EmptyLayoutProps): React.Rea
       <Loader loading={loading} />
       {children}
     </ThemeProvider>
-)
-}
+  );
+};
 
 export default EmptyLayout;

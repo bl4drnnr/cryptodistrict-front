@@ -2,8 +2,8 @@ import React from 'react';
 
 import { useRouter } from 'next/router';
 
-import { ChangeLanguageProps } from "@components/ChangeLanguage/ChangeLanguage.interface";
-import { ChangeLanguageContainer, LanguageItem, LanguagesList, PickedLanguage } from "@styles/ChangeLanguage.style";
+import { ChangeLanguageProps } from '@components/ChangeLanguage/ChangeLanguage.interface';
+import { ChangeLanguageContainer, LanguageItem, LanguagesList, PickedLanguage } from '@styles/ChangeLanguage.style';
 
 export const ChangeLanguage = ({ defaultLanguage, path }: ChangeLanguageProps) => {
   const router = useRouter();

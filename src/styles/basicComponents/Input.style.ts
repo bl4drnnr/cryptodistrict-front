@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-`
+`;
 
 export const Placeholder = styled.p`
   opacity: .9;
   font-size: 14px;
   margin: 14px 0;
   font-weight: 200;
-`
+`;
 
 export const BasicInput = styled.input`
   background-color: rgba(35, 36, 40, 0.85);

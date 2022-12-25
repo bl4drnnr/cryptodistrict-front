@@ -1,5 +1,5 @@
-import { LoadingBackground, LoadingSpinner } from "@styles/Loader.style";
-import { LoaderProps } from "@components/Loader/Loader.interface";
+import { LoaderProps } from '@components/Loader/Loader.interface';
+import { LoadingBackground, LoadingSpinner } from '@styles/Loader.style';
 
 export const Loader = ({ loading }: LoaderProps) => {
   return (
@@ -10,5 +10,5 @@ export const Loader = ({ loading }: LoaderProps) => {
         </LoadingBackground>
       ): (<></>)}
     </>
-  )
-}
+  );
+};

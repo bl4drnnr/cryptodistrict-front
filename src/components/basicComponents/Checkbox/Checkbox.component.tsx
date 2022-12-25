@@ -1,5 +1,5 @@
-import { Container, LabelBox, Checkmark, Label } from "@styles/Checkbox.style";
-import { CheckboxProps } from "@components/Checkbox/Checkbox.interface";
+import { CheckboxProps } from '@components/Checkbox/Checkbox.interface';
+import { Container, LabelBox, Checkmark, Label } from '@styles/Checkbox.style';
 
 export const Checkbox = ({ label, onChange }: CheckboxProps) => {
   return (
@@ -10,5 +10,5 @@ export const Checkbox = ({ label, onChange }: CheckboxProps) => {
       </LabelBox>
       <Label>{label}</Label>
     </Container>
-  )
-}
+  );
+};

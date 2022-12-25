@@ -1,4 +1,9 @@
-import DefaultLayout from "@layouts/Default.layout";
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import Typewriter from 'typewriter-effect';
+
+import DefaultLayout from '@layouts/Default.layout';
+import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import {
   Box,
   Container,
@@ -11,21 +16,19 @@ import {
   TextContainerSubtitle,
   TextContainerTitle,
   Wrapper
-} from "@styles/about.style";
-import { ButtonText, InputWrapper, StartButton } from "@styles/home.style";
-import { useRouter } from "next/router";
-import Typewriter from 'typewriter-effect';
-import Image from "next/image";
+} from '@styles/about.style';
+import { ButtonText, InputWrapper, StartButton } from '@styles/home.style';
 
-const About = () => {
-  const router = useRouter()
+
+const About = ({ locale }: any) => {
+  const router = useRouter();
 
   const handleRedirect = async (path: string) => {
-    await router.push(path)
-  }
+    await router.push(path);
+  };
 
   return (
-    <DefaultLayout pageTitle={'About'}>
+    <DefaultLayout locale={locale}>
       <Container>
         <Box>
           <Wrapper>
@@ -64,11 +67,11 @@ const About = () => {
           <TextContainerContent><strong>Cryptodiscrict</strong> is the place where we truly believe in WEB3 ideas and try to make it easier and more available to everyone to touch future of digital currencies and the Internet.</TextContainerContent>
           <TextContainerContent>This marketplace is just another tool that wants to give users new experience of cryptomarketplace usage.</TextContainerContent>
         </TextContainer>
-        <Image className={'asset'} src={'/blockchain.svg'} alt={'blockchain'} width={400} height={400}/>
+        <Image className={'asset'} src={'/img/blockchain.svg'} alt={'blockchain'} width={400} height={400}/>
       </ContentContainer>
 
       <ContentContainer>
-        <Image className={'asset'} src={'/cloud-computing.svg'} alt={'cloud-computing'} width={400} height={400}/>
+        <Image className={'asset'} src={'/img/cloud-computing.svg'} alt={'cloud-computing'} width={400} height={400}/>
         <TextContainer className={'end'}>
           <TextContainerTitle>Why is WEB3 important?</TextContainerTitle>
           <TextContainerSubtitle>Future of money, money of future</TextContainerSubtitle>
@@ -84,13 +87,13 @@ const About = () => {
           <TextContainerContent>As well as owning your data in Web3, you can own the platform as a collective, using tokens that act like shares in a company. DAOs let you coordinate decentralized ownership of a platform and make decisions about its future.</TextContainerContent>
           <TextContainerContent>DAOs are defined technically as agreed-upon smart contracts that automate decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.</TextContainerContent>
         </TextContainer>
-        <Image className={'asset'} src={'/currency-chain.svg'} alt={'currency-chain'} width={400} height={400}/>
+        <Image className={'asset'} src={'/img/currency-chain.svg'} alt={'currency-chain'} width={400} height={400}/>
       </ContentContainer>
 
       <ContentContainer>
         <TextContainer className={'center'}>
           <TextContainerTitle>Interested? Huh...</TextContainerTitle>
-          <TextContainerSubtitle>Let&apos;dive into right now</TextContainerSubtitle>
+          <TextContainerSubtitle>Let&apos; dive into right now</TextContainerSubtitle>
           <InputWrapper>
             <StartButton className={'aboutPage'} onClick={() => handleRedirect('/signup')}>
               <ButtonText>
@@ -102,7 +105,10 @@ const About = () => {
       </ContentContainer>
 
     </DefaultLayout>
-  )
-}
+  );
+};
 
-export default About
+const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+export { getStaticPaths, getStaticProps };
+
+export default About;

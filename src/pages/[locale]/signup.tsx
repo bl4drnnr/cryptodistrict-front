@@ -1,3 +1,15 @@
+import React from 'react';
+
+import classNames from 'classnames';
+import { useRouter } from 'next/router';
+
+import { Button } from '@components/Button/Button.component';
+import { Checkbox } from '@components/Checkbox/Checkbox.component';
+import { Input } from '@components/Input/Input.component';
+import { Textarea } from '@components/Textarea/Textarea.component';
+import { validateEmail, validatePasswordRules, validatePassword } from '@hooks/useValidators.hook';
+import CredentialsLayout from '@layouts/Credentials.layout';
+import { useSignUpService } from '@services/signup/signup.service';
 import {
   Box,
   Link,
@@ -10,17 +22,7 @@ import {
   WelcomeText,
   Buttons,
   MarginVerticalWrapper
-} from "@styles/login.style";
-import { Input } from "@components/Input/Input.component";
-import { Button } from "@components/Button/Button.component";
-import { useRouter } from "next/router";
-import { Checkbox } from "@components/Checkbox/Checkbox.component";
-import { useSignUpService } from "@services/signup/signup.service";
-import { Textarea } from "@components/Textarea/Textarea.component";
-import { validateEmail, validatePasswordRules, validatePassword } from "@hooks/useValidators";
-import React from "react";
-import CredentialsLayout from "@layouts/Credentials.layout";
-import classNames from "classnames";
+} from '@styles/login.style';
 
 const Signup = () => {
   const router = useRouter();
@@ -28,63 +30,63 @@ const Signup = () => {
   const { loading, signUp } = useSignUpService();
 
   const [step, setStep] = React.useState(1);
-  const [tac, setTac] = React.useState(false)
-  const [email, setEmail] = React.useState({email: '', emailError: false})
-  const [firstName, setFirstName] = React.useState('')
-  const [lastName, setLastName] = React.useState('')
-  const [twitter, setTwitter] = React.useState('')
-  const [linkedIn, setLinkedIn] = React.useState('')
-  const [personalWebsite, setPersonalWebsite] = React.useState('')
-  const [title, setTitle] = React.useState('')
-  const [bio, setBio] = React.useState('')
-  const [publicEmail, setPublicEmail] = React.useState(false)
-  const [password, setPassword] = React.useState({password: '', repeatPassword: ''})
+  const [tac, setTac] = React.useState(false);
+  const [email, setEmail] = React.useState({ email: '', emailError: false });
+  const [firstName, setFirstName] = React.useState('');
+  const [lastName, setLastName] = React.useState('');
+  const [twitter, setTwitter] = React.useState('');
+  const [linkedIn, setLinkedIn] = React.useState('');
+  const [personalWebsite, setPersonalWebsite] = React.useState('');
+  const [title, setTitle] = React.useState('');
+  const [bio, setBio] = React.useState('');
+  const [publicEmail, setPublicEmail] = React.useState(false);
+  const [password, setPassword] = React.useState({ password: '', repeatPassword: '' });
   const [passwordError, setPasswordError] = React.useState({
     passwordMismatch: false,
     passwordRequirement: false,
     passwordRules: false
-  })
+  });
   const [passwordRulesList, setPasswordRulesList] = React.useState([
-    {error: false, text: 'Password length should be more than 8 characters'},
-    {error: false, text: 'Password should contain at least one uppercase character'},
-    {error: false, text: 'Password should contain at least one lowercase character'},
-    {error: false, text: 'Password should contain at least one special character'},
-    {error: false, text: 'Password should contain at least one digit character'}
-  ])
+    { error: false, text: 'Password length should be more than 8 characters' },
+    { error: false, text: 'Password should contain at least one uppercase character' },
+    { error: false, text: 'Password should contain at least one lowercase character' },
+    { error: false, text: 'Password should contain at least one special character' },
+    { error: false, text: 'Password should contain at least one digit character' }
+  ]);
 
   React.useEffect(() => {
     if (router.isReady) {
-      setEmail({...email, email: router.query.email as string})
+      setEmail({ ...email, email: router.query.email as string });
     }
   }, [router.query, router.isReady]);
 
   React.useEffect(() => {
-    if (!validateEmail(email.email)) setEmail({ ...email, emailError: true })
-    else if (validateEmail(email.email) === 1) setEmail({ ...email, emailError: false })
-    else setEmail({ ...email, emailError: false })
-  }, [email.email])
+    if (!validateEmail(email.email)) setEmail({ ...email, emailError: true });
+    else if (validateEmail(email.email) === 1) setEmail({ ...email, emailError: false });
+    else setEmail({ ...email, emailError: false });
+  }, [email.email]);
 
   React.useEffect(() => {
     if (password.password === password.repeatPassword)
-      setPasswordError({...passwordError, passwordMismatch: false})
+      setPasswordError({ ...passwordError, passwordMismatch: false });
 
-    const passwordRuleCheck = validatePasswordRules(password.password)
-    setPasswordRulesList(passwordRuleCheck)
+    const passwordRuleCheck = validatePasswordRules(password.password);
+    setPasswordRulesList(passwordRuleCheck);
 
     setPasswordError({
       passwordMismatch: !!((password.password && password.repeatPassword) && (password.password !== password.repeatPassword)),
       passwordRequirement: !password.password || !password.repeatPassword,
       passwordRules: (!validatePassword(password.password) || !validatePassword(password.repeatPassword))
-    })
+    });
 
     if (!password.password && !password.repeatPassword) {
       setPasswordError({
         passwordMismatch: false,
         passwordRequirement: false,
         passwordRules: false
-      })
+      });
     }
-  }, [password.password, password.repeatPassword])
+  }, [password.password, password.repeatPassword]);
 
   const handleRedirect = async (path: string) => {
     await router.push(path);
@@ -98,11 +100,11 @@ const Signup = () => {
       password.repeatPassword &&
       !passwordError.passwordMismatch &&
       !passwordError.passwordRequirement &&
-      !passwordError.passwordRules
+      !passwordError.passwordRules;
   };
 
   return (
-    <CredentialsLayout pageTitle={'Sign Up'} leftSide={
+    <CredentialsLayout leftSide={
       <Box>
         <WelcomeTitle>
           Hello there, cryptogeek!
@@ -170,7 +172,7 @@ const Signup = () => {
                     <PasswordCheckLine key={rule.text}>
                       <Dot className={classNames({ error: !rule.error })}/>
                       <p>{rule.text}</p>
-                    </PasswordCheckLine>)
+                    </PasswordCheckLine>);
                 })}
               </PasswordCheckBox>
             ) : (<></>)}
@@ -275,7 +277,7 @@ const Signup = () => {
       </p>
     } rightDarkSide={true}
     />
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;

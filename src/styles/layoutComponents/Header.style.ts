@@ -7,7 +7,7 @@ export const Container = styled.div`
   background-color: rgb(${(props) => props.theme.colors.lightBackground});
   position: fixed;
   z-index: 999;
-`
+`;
 
 export const Box = styled.div`
   width: 90%;
@@ -15,22 +15,22 @@ export const Box = styled.div`
   margin: 15px auto;
   display: flex;
   justify-content: space-between;
-`
+`;
 
 export const NavigationButtons = styled.div`
   display: flex;
-`
+`;
 
 export const Buttons = styled.div`
   display: flex;
   width: 300px;
   justify-content: space-between;
-`
+`;
 
 export const Links = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 export const Link = styled.p`
   margin: 0 15px;
@@ -40,7 +40,7 @@ export const Link = styled.p`
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
   }
-`
+`;
 
 export const Button = styled.div`
   width: 90px;
@@ -65,7 +65,7 @@ export const Button = styled.div`
     background: rgb(${(props) => props.theme.colors.primary});
     color: black;
   }
-`
+`;
 
 export const Logo = styled.h2`
   cursor: pointer;
@@ -74,4 +74,4 @@ export const Logo = styled.h2`
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
   }
-`
+`;
