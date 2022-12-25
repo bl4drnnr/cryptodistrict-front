@@ -14,22 +14,21 @@ export const PickedLanguage = styled.div`
 
 export const LanguagesList = styled.div`
   width: 100px;
-  top: 20px;
-  left: -100px;
+  top: 45px;
+  left: -75px;
   position: absolute;
-  
-  background: ${(props) => props.theme.colors.secondary};
-  border: 1px solid ${(props) => props.theme.colors.text};
+
+  background-color: rgb(${(props) => props.theme.colors.darkBackground});
+  border: 1px solid white;
   border-radius: 8px;
 `;
 
 export const LanguageItem = styled.div`
   padding: 15px 5px;
   cursor: pointer;
-  color: ${(props) => props.theme.colors.text};
   
   &:hover {
-    background: ${(props) => props.theme.colors.hover};
+    background: rgba(255, 255, 255, 0.3);
   }
   &:hover:first-child {
     border-radius: 8px 8px 0 0 ;
