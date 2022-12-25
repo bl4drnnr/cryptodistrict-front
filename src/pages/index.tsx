@@ -5,7 +5,9 @@ import {
   ButtonText,
   HomeWelcomeBox,
   HomeWelcomeContainer,
-  HomeWelcomeTitle, Line, Lines,
+  HomeWelcomeTitle,
+  Line,
+  Lines,
   StartButton
 } from "@styles/home.style";
 import { useRouter } from "next/router";

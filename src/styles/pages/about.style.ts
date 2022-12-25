@@ -52,10 +52,6 @@ export const Test = styled.h1`
   font-family: "Lato", sans-serif;
 `
 
-export const TextBox = styled.div`
-  margin: 100px 100px 0 100px;
-`
-
 export const ContentContainer = styled.div`
   width: 100%;
   display: flex;
@@ -81,6 +77,11 @@ export const TextContainer = styled.div`
     padding-left: 0;
     padding-right: 50px;
     text-align: end;
+  }
+  &.center {
+    padding-top: 0;
+    width: 100%;
+    text-align: center;
   }
 `
 

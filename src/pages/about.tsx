@@ -6,13 +6,24 @@ import {
   Header,
   Headers,
   Test,
-  TextBox, TextContainer, TextContainerContent, TextContainerSubtitle, TextContainerTitle,
+  TextContainer,
+  TextContainerContent,
+  TextContainerSubtitle,
+  TextContainerTitle,
   Wrapper
 } from "@styles/about.style";
+import { ButtonText, StartButton } from "@styles/home.style";
+import { useRouter } from "next/router";
 import Typewriter from 'typewriter-effect';
 import Image from "next/image";
 
 const About = () => {
+  const router = useRouter()
+
+  const handleRedirect = async (path: string) => {
+    await router.push(path)
+  }
+
   return (
     <DefaultLayout pageTitle={'About'}>
       <Container>
@@ -74,6 +85,18 @@ const About = () => {
           <TextContainerContent>DAOs are defined technically as agreed-upon smart contracts that automate decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.</TextContainerContent>
         </TextContainer>
         <Image className={'asset'} src={'/currency-chain.svg'} alt={''} width={400} height={400}/>
+      </ContentContainer>
+
+      <ContentContainer>
+        <TextContainer className={'center'}>
+          <TextContainerTitle>Interested? Huh...</TextContainerTitle>
+          <TextContainerSubtitle>Let&apos;dive into right now</TextContainerSubtitle>
+          <StartButton className={'aboutPage'} onClick={() => handleRedirect('/signup')}>
+            <ButtonText>
+              SURE, LET ME IN
+            </ButtonText>
+          </StartButton>
+        </TextContainer>
       </ContentContainer>
 
     </DefaultLayout>

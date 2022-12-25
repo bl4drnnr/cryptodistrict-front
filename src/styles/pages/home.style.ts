@@ -68,6 +68,7 @@ export const Bold = styled.span`
 `
 
 export const StartButton = styled.div`
+  margin: 0 auto;
   height: 48px;
   width: 100%;
   max-width: 500px;
@@ -83,6 +84,9 @@ export const StartButton = styled.div`
     -webkit-box-shadow:0 0 149px 9px rgba(${(props) => props.theme.colors.primary},0.37);
     -moz-box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary},0.37);
     box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary},0.37);
+  }
+  &.aboutPage {
+    margin-top: 50px
   }
 `
 
