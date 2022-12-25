@@ -5,6 +5,3 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 `;
 
-export const Container = styled.div`
-  padding-bottom: 50px;
-`;

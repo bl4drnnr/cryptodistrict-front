@@ -1,25 +1,55 @@
-import { Container, Box, Buttons, Links, Link, Button, Logo } from '@styles/Header.style'
+import {
+  Container,
+  Box,
+  Buttons,
+  Links,
+  Link,
+  Button,
+  Logo,
+  NavigationButtons
+} from '@styles/Header.style'
 import { useRouter } from "next/router";
 import { HeaderProps } from "@components/Header/Header.interace";
+import { ThemeToggler } from "@components/ThemeToggler/ThemeToggler.component";
+import { theme } from "@store/global/global.state";
+import { useRecoilState } from "recoil";
+import React from "react";
 import classNames from "classnames";
+import { ChangeLanguage } from "@components/ChangeLanguage/ChangeLanguage.component";
 
-export const Header = ({}: HeaderProps) => {
+export const Header = ({ defaultLanguage }: HeaderProps) => {
+  const [currentTheme, setCurrentTheme] = useRecoilState(theme);
   const router = useRouter();
 
   const handleRedirect = async (path: string) => {
     await router.push(path);
   };
 
+  const setTheme = (theme: 'dark' | 'light') => {
+    setCurrentTheme(theme);
+    localStorage.setItem('theme', theme);
+  };
+
+  const toggleTheme = () => {
+    if (currentTheme === 'dark') setTheme('light');
+    else setTheme('dark');
+  };
+
+  React.useEffect(() => {
+    const theme = localStorage.getItem('theme') as 'dark' | 'light';
+    if (['dark', 'light'].includes(theme)) setTheme(theme);
+  }, []);
+
   return (
     <>
       <Container>
         <Box>
-          <div style={{display: 'flex'}}>
+          <NavigationButtons>
             <Logo onClick={() => handleRedirect('/')}>Cryptodistrict</Logo>
             <Links>
               <Link onClick={() => handleRedirect('/about')}>About</Link>
             </Links>
-          </div>
+          </NavigationButtons>
           <Buttons>
             <Button
               className={classNames({ logIn: true })}
@@ -33,6 +63,14 @@ export const Header = ({}: HeaderProps) => {
             >
               Sign Up
             </Button>
+            <ThemeToggler
+              theme={currentTheme}
+              onClick={() => toggleTheme()}
+            />
+            <ChangeLanguage
+              path={router.asPath}
+              defaultLanguage={'en'}
+            />
           </Buttons>
         </Box>
       </Container>

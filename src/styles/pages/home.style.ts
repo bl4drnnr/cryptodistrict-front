@@ -2,6 +2,14 @@ import styled from "styled-components";
 
 export const HomeWelcomeContainer = styled.div`
   height: 100vh;
+  &.light {
+    height: 100%;
+    background-color: rgb(${(props) => props.theme.colors.lightBackground});
+  }
+  &.dark {
+    height: 100%;
+    background-color: rgb(${(props) => props.theme.colors.darkBackground});
+  }
 `
 
 export const HomeWelcomeBox = styled.div`
@@ -13,6 +21,20 @@ export const HomeWelcomeBox = styled.div`
   &.name {
     align-items: end;
   }
+  &.block {
+    display: block;
+    animation: text-appearing 2s;
+    @keyframes text-appearing {
+      from {opacity: 0}
+      to {opacity: 1}
+    }
+  }
+`
+
+export const InputWrapper = styled.div`
+  text-align: start;
+  max-width: 500px;
+  margin: 0 auto 30px auto;
 `
 
 export const HomeWelcomeTitle = styled.span`
@@ -68,9 +90,9 @@ export const Bold = styled.span`
 `
 
 export const StartButton = styled.div`
+  margin: 0 auto;
   height: 48px;
   width: 100%;
-  max-width: 500px;
   background-color: rgb(${(props) => props.theme.colors.primary});
   color: black;
   border-radius: 8px;
@@ -78,16 +100,21 @@ export const StartButton = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
+  text-align: center;
   &:hover {
     transform: scale(1.1);
     -webkit-box-shadow:0 0 149px 9px rgba(${(props) => props.theme.colors.primary},0.37);
     -moz-box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary},0.37);
     box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary},0.37);
   }
+  &.aboutPage {
+    margin-top: 50px
+  }
 `
 
 export const ButtonText = styled.h3`
   width: 100%;
+  font-weight: 100;
 `
 
 export const Lines = styled.div`
@@ -182,5 +209,53 @@ export const Line = styled.div`
       animation-delay: 2.2s;
     }
   }
-  
+`
+
+export const ImageBlock = styled.div`
+  display: flex;
+  width: 100%;
+  height: 400px;
+  .image {
+    position: absolute;
+    transition: .2s;
+    &:hover {
+      transform: scale(1.1);
+      z-index: 2;
+    }
+    &.btc {
+      right: 10%;
+    }
+    &.ltc {
+      right: 0;
+    }
+    &.usdt {
+      right: 15%;
+    }
+  }
+`
+
+export const CryptoDescriptionContainer = styled.div`
+  height: 80%;
+  width: 50%;
+  position: relative;
+  margin-top: 40px;
+`
+
+export const CryptoDescriptionBox = styled.div`
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
+export const CryptoDescriptionHeader = styled.h1`
+  font-size: 58px;
+  font-weight: 900;
+  font-family: "Lato", sans-serif;
+  &.subHeader {
+    font-size: 28px;
+    font-weight: 100;
+    margin: 30px 0;
+  }
 `
