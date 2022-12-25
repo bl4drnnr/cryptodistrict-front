@@ -17,6 +17,10 @@ export const Box = styled.div`
   justify-content: space-between;
 `
 
+export const NavigationButtons = styled.div`
+  display: flex;
+`
+
 export const Buttons = styled.div`
   display: flex;
   width: 190px;

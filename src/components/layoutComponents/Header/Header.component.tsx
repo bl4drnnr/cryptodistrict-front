@@ -1,4 +1,4 @@
-import { Container, Box, Buttons, Links, Link, Button, Logo } from '@styles/Header.style'
+import { Container, Box, Buttons, Links, Link, Button, Logo, NavigationButtons } from '@styles/Header.style'
 import { useRouter } from "next/router";
 import { HeaderProps } from "@components/Header/Header.interace";
 import classNames from "classnames";
@@ -14,12 +14,12 @@ export const Header = ({}: HeaderProps) => {
     <>
       <Container>
         <Box>
-          <div style={{display: 'flex'}}>
+          <NavigationButtons>
             <Logo onClick={() => handleRedirect('/')}>Cryptodistrict</Logo>
             <Links>
               <Link onClick={() => handleRedirect('/about')}>About</Link>
             </Links>
-          </div>
+          </NavigationButtons>
           <Buttons>
             <Button
               className={classNames({ logIn: true })}

@@ -53,11 +53,11 @@ const About = () => {
           <TextContainerContent><strong>Cryptodiscrict</strong> is the place where we truly believe in WEB3 ideas and try to make it easier and more available to everyone to touch future of digital currencies and the Internet.</TextContainerContent>
           <TextContainerContent>This marketplace is just another tool that wants to give users new experience of cryptomarketplace usage.</TextContainerContent>
         </TextContainer>
-        <Image className={'asset'} src={'/blockchain.svg'} alt={''} width={512} height={512}/>
+        <Image className={'asset'} src={'/blockchain.svg'} alt={''} width={400} height={400}/>
       </ContentContainer>
 
       <ContentContainer>
-        <Image className={'asset'} src={'/cloud-computing.svg'} alt={''} width={512} height={512}/>
+        <Image className={'asset'} src={'/cloud-computing.svg'} alt={''} width={400} height={400}/>
         <TextContainer className={'end'}>
           <TextContainerTitle>Why is WEB3 important?</TextContainerTitle>
           <TextContainerSubtitle>Future of money, money of future</TextContainerSubtitle>
@@ -73,7 +73,7 @@ const About = () => {
           <TextContainerContent>As well as owning your data in Web3, you can own the platform as a collective, using tokens that act like shares in a company. DAOs let you coordinate decentralized ownership of a platform and make decisions about its future.</TextContainerContent>
           <TextContainerContent>DAOs are defined technically as agreed-upon smart contracts that automate decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.</TextContainerContent>
         </TextContainer>
-        <Image className={'asset'} src={'/currency-chain.svg'} alt={''} width={512} height={512}/>
+        <Image className={'asset'} src={'/currency-chain.svg'} alt={''} width={400} height={400}/>
       </ContentContainer>
 
     </DefaultLayout>

@@ -4,7 +4,7 @@ import { Header } from "@components/Header/Header.component";
 import { Footer } from "@components/Footer/Footer.component";
 import { Loader } from "@components/Loader/Loader.component";
 
-import { Container, Wrapper } from "@styles/Default.style";
+import { Wrapper } from "@styles/Default.style";
 import { ThemeProvider } from "styled-components";
 
 import { DarkTheme } from "@styles/Dark.theme";
@@ -28,13 +28,9 @@ const DefaultLayout = ({ children, pageTitle, loading = false }: DefaultLayoutPr
       </Head>
       <Loader loading={loading} />
       <Wrapper>
-        <Container>
-
-          <Header/>
-          {children}
-          <Footer/>
-
-        </Container>
+        <Header/>
+        {children}
+        <Footer/>
       </Wrapper>
     </ThemeProvider>
   )

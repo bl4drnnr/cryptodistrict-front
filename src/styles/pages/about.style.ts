@@ -58,7 +58,6 @@ export const TextBox = styled.div`
 
 export const ContentContainer = styled.div`
   width: 100%;
-  min-height: 712px;
   display: flex;
   justify-content: space-between;
   padding: 100px;
@@ -76,8 +75,11 @@ export const ContentContainer = styled.div`
 `
 
 export const TextContainer = styled.div`
-  padding: 75px;
+  padding-top: 50px;
+  padding-left: 50px;
   &.end {
+    padding-left: 0;
+    padding-right: 50px;
     text-align: end;
   }
 `
@@ -97,7 +99,7 @@ export const TextContainerContent = styled.p`
   padding: 30px 100px 0 0;
   font-family: "Lato", sans-serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 22px;
   &.end {
     padding: 30px 0 0 100px;
   }
