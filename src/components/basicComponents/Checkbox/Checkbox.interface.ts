@@ -1,6 +1,7 @@
 import React from 'react';
 
 export interface CheckboxProps {
-  label: JSX.Element | string
+  value: any;
+  label: JSX.Element | string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

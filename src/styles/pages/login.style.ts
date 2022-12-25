@@ -97,5 +97,5 @@ export const VerticalLine = styled.div`
 
 export const Buttons = styled.div`
   display: flex;
-  //justify-content: space-between;
+  font-weight: 100;
 `;
