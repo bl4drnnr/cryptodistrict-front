@@ -1,3 +1,11 @@
+import React from 'react';
+
+import { useRouter } from 'next/router';
+
+import { Button } from '@components/Button/Button.component';
+import { Input } from '@components/Input/Input.component';
+import { InputButton } from '@components/InputButton/InputButton.component';
+import CredentialsLayout from '@layouts/Credentials.layout';
 import {
   Box,
   Link,
@@ -7,28 +15,22 @@ import {
   LoginOption,
   VerticalLine,
   MarginWrapper
-} from "@styles/login.style";
-import { InputButton } from "@components/InputButton/InputButton.component";
-import { useRouter } from "next/router";
-import { Input } from "@components/Input/Input.component";
-import { Button } from "@components/Button/Button.component";
-import React from "react";
-import CredentialsLayout from "@layouts/Credentials.layout";
+} from '@styles/login.style';
 
 const ForgotPassword = () => {
   const router = useRouter();
 
-  const [passwordRecoveryMethod, setPasswordRecoveryMethod] = React.useState('email')
-  const [email, setEmail] = React.useState('')
-  const [phone, setPhone] = React.useState('')
-  const [verificationCode, setVerificationCode] = React.useState('')
+  const [passwordRecoveryMethod, setPasswordRecoveryMethod] = React.useState('email');
+  const [email, setEmail] = React.useState('');
+  const [phone, setPhone] = React.useState('');
+  const [verificationCode, setVerificationCode] = React.useState('');
 
   const handleRedirect = async (path: string) => {
     await router.push(path);
   };
 
   return (
-    <CredentialsLayout pageTitle={'Password recovery'} leftSide={
+    <CredentialsLayout leftSide={
       <Box>
         <WelcomeTitle>
           Forgot password?
@@ -86,7 +88,8 @@ const ForgotPassword = () => {
       </p>
     } rightDarkSide={true}
     />
-  )
-}
+  );
+};
 
-export default ForgotPassword
+
+export default ForgotPassword;

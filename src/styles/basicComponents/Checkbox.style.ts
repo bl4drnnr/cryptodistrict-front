@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LabelBox = styled.label`
   display: block;
@@ -11,7 +11,7 @@ export const LabelBox = styled.label`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-`
+`;
 
 export const Checkmark = styled.span`
   position: absolute;
@@ -21,14 +21,14 @@ export const Checkmark = styled.span`
   width: 25px;
   background-color: #eee;
   border-radius: 5px;
-`
+`;
 
 export const Label = styled.div`
   padding-top: 4px;
   margin: 0;
   font-size: 12px;
   color: white;
-`
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -72,4 +72,4 @@ export const Container = styled.div`
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
-`
+`;

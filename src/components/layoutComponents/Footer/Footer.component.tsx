@@ -1,13 +1,14 @@
-import { FooterProps } from "@components/Footer/Footer.interface";
-import { Box, Container, NavigationButtons, NavigationLink } from "@styles/Footer.style";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
+
+import { FooterProps } from '@components/Footer/Footer.interface';
+import { Box, Container, NavigationButtons, NavigationLink } from '@styles/Footer.style';
 
 export const Footer = ({}: FooterProps) => {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleRedirect = async (path: string) => {
-    await router.push(path)
-  }
+    await router.push(path);
+  };
 
   return (
     <Container>
@@ -22,5 +23,5 @@ export const Footer = ({}: FooterProps) => {
         </NavigationLink>
       </Box>
     </Container>
-  )
-}
+  );
+};

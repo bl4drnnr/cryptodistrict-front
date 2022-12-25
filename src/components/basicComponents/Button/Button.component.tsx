@@ -1,6 +1,7 @@
-import { ButtonProps } from "@components/Button/Button.interface";
-import { ButtonContent, Container, BasicButton } from "@styles/Button.style";
-import classNames from "classnames";
+import classNames from 'classnames';
+
+import { ButtonProps } from '@components/Button/Button.interface';
+import { ButtonContent, Container, BasicButton } from '@styles/Button.style';
 
 export const Button = ({ text, onClick, disabled, highHeight, fillButton }: ButtonProps): JSX.Element => {
   return (
@@ -17,5 +18,5 @@ export const Button = ({ text, onClick, disabled, highHeight, fillButton }: Butt
         <ButtonContent>{text}</ButtonContent>
       </BasicButton>
     </Container>
-  )
-}
+  );
+};

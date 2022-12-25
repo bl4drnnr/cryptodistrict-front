@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HomeWelcomeContainer = styled.div`
   height: 100vh;
@@ -10,7 +10,7 @@ export const HomeWelcomeContainer = styled.div`
     height: 100%;
     background-color: rgb(${(props) => props.theme.colors.darkBackground});
   }
-`
+`;
 
 export const HomeWelcomeBox = styled.div`
   text-align: center; 
@@ -29,13 +29,13 @@ export const HomeWelcomeBox = styled.div`
       to {opacity: 1}
     }
   }
-`
+`;
 
 export const InputWrapper = styled.div`
   text-align: start;
   max-width: 500px;
   margin: 0 auto 30px auto;
-`
+`;
 
 export const HomeWelcomeTitle = styled.span`
   font-size: 72px;
@@ -77,17 +77,17 @@ export const HomeWelcomeTitle = styled.span`
     transform: translateX(-50%);
     z-index: -2;
   }
-`
+`;
 
 export const BoldWeb3 = styled.span`
   cursor: pointer;
   font-weight: 600;
   color: rgb(${(props) => props.theme.colors.primary});
-`
+`;
 
 export const Bold = styled.span`
   font-weight: 600;
-`
+`;
 
 export const StartButton = styled.div`
   margin: 0 auto;
@@ -110,12 +110,12 @@ export const StartButton = styled.div`
   &.aboutPage {
     margin-top: 50px
   }
-`
+`;
 
 export const ButtonText = styled.h3`
   width: 100%;
   font-weight: 100;
-`
+`;
 
 export const Lines = styled.div`
   position: absolute;
@@ -126,7 +126,7 @@ export const Lines = styled.div`
   margin: auto;
   width: 90vw;
   z-index: -1;
-`
+`;
 
 export const Line = styled.div`
   position: absolute;
@@ -209,14 +209,16 @@ export const Line = styled.div`
       animation-delay: 2.2s;
     }
   }
-`
+`;
 
 export const ImageBlock = styled.div`
   display: flex;
   width: 100%;
-  height: 400px;
+  height: 500px;
+  position: relative;
   .image {
     position: absolute;
+    top: 10%;
     transition: .2s;
     &:hover {
       transform: scale(1.1);
@@ -232,14 +234,14 @@ export const ImageBlock = styled.div`
       right: 15%;
     }
   }
-`
+`;
 
 export const CryptoDescriptionContainer = styled.div`
   height: 80%;
   width: 50%;
   position: relative;
   margin-top: 40px;
-`
+`;
 
 export const CryptoDescriptionBox = styled.div`
   width: 70%;
@@ -247,7 +249,7 @@ export const CryptoDescriptionBox = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-`
+`;
 
 export const CryptoDescriptionHeader = styled.h1`
   font-size: 58px;
@@ -258,4 +260,4 @@ export const CryptoDescriptionHeader = styled.h1`
     font-weight: 100;
     margin: 30px 0;
   }
-`
+`;

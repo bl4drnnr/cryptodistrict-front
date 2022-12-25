@@ -31,7 +31,7 @@ export const BasicButton = styled.button`
   &:hover {
     border: 1px solid rgb(${(props) => props.theme.colors.primary}, 1);
   }
-`
+`;
 
 export const ButtonContent = styled.p`
   margin: 0;

@@ -1,8 +1,10 @@
-import '@styles/globals.scss'
-import type { AppProps } from 'next/app'
-import { RecoilRoot } from "recoil";
-import Head from "next/head";
-import React from "react";
+import '@styles/globals.scss';
+import React from 'react';
+
+import { appWithTranslation } from 'next-i18next';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import { RecoilRoot } from 'recoil';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -14,7 +16,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <Component {...pageProps} />
       </RecoilRoot>
     </>
-  )
-}
+  );
+};
 
-export default App;
+export default appWithTranslation(App);

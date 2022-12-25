@@ -1,3 +1,13 @@
+import React from 'react';
+
+import classNames from 'classnames';
+import { useRouter } from 'next/router';
+import { useRecoilState } from 'recoil';
+
+import { ChangeLanguage } from '@components/ChangeLanguage/ChangeLanguage.component';
+import { HeaderProps } from '@components/Header/Header.interace';
+import { ThemeToggler } from '@components/ThemeToggler/ThemeToggler.component';
+import { theme } from '@store/global/global.state';
 import {
   Container,
   Box,
@@ -7,15 +17,7 @@ import {
   Button,
   Logo,
   NavigationButtons
-} from '@styles/Header.style'
-import { useRouter } from "next/router";
-import { HeaderProps } from "@components/Header/Header.interace";
-import { ThemeToggler } from "@components/ThemeToggler/ThemeToggler.component";
-import { theme } from "@store/global/global.state";
-import { useRecoilState } from "recoil";
-import React from "react";
-import classNames from "classnames";
-import { ChangeLanguage } from "@components/ChangeLanguage/ChangeLanguage.component";
+} from '@styles/Header.style';
 
 export const Header = ({ defaultLanguage }: HeaderProps) => {
   const [currentTheme, setCurrentTheme] = useRecoilState(theme);
@@ -69,11 +71,11 @@ export const Header = ({ defaultLanguage }: HeaderProps) => {
             />
             <ChangeLanguage
               path={router.asPath}
-              defaultLanguage={'en'}
+              defaultLanguage={defaultLanguage}
             />
           </Buttons>
         </Box>
       </Container>
     </>
-  )
-}
+  );
+};

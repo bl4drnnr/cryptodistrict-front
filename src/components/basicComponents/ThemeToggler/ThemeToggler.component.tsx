@@ -1,7 +1,9 @@
 import React from 'react';
+
 import Image from 'next/image';
-import { ThemeTogglerProps } from "@components/ThemeToggler/ThemeToggler.interface";
-import { Toggler } from "@styles/ThemeToggler.style";
+
+import { ThemeTogglerProps } from '@components/ThemeToggler/ThemeToggler.interface';
+import { Toggler } from '@styles/ThemeToggler.style';
 
 export const ThemeToggler = ({ theme, onClick }: ThemeTogglerProps) => {
   return (

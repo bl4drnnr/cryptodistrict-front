@@ -1,7 +1,2 @@
-const Market = () => {
-  return (
-    <></>
-  )
-}
-
-export default Market
+import { Redirect } from '@lib/redirect';
+export default Redirect;

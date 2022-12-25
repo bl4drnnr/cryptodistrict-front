@@ -1,7 +1,2 @@
-const RefLink = () => {
-  return (
-    <></>
-  )
-}
-
-export default RefLink
+import { Redirect } from '@lib/redirect';
+export default Redirect;

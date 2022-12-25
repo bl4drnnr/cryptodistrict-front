@@ -1,4 +1,16 @@
+import React from 'react';
+
+
+import type { NextPage } from 'next';
+import { useTranslation } from 'next-i18next';
+import Head from 'next/head';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+
+import { Input } from '@components/Input/Input.component';
+import { Widget } from '@components/Widget/Widget.component';
 import DefaultLayout from '@layouts/Default.layout';
+import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import {
   Bold,
   BoldWeb3,
@@ -14,25 +26,30 @@ import {
   Line,
   Lines,
   StartButton
-} from "@styles/home.style";
-import { useRouter } from "next/router";
-import { Input } from "@components/Input/Input.component";
-import { Widget } from "@components/Widget/Widget.component";
-import type { NextPage } from 'next';
-import React from "react";
-import Image from "next/image";
+} from '@styles/home.style';
 
-const Home: NextPage = () => {
-  const router = useRouter()
 
-  const [email, setEmail] = React.useState('')
+
+
+interface HomeProps {
+  locale: string;
+}
+
+const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
+  const { t } = useTranslation();
+  const router = useRouter();
+
+  const [email, setEmail] = React.useState('');
 
   const handleRedirect = async (path: string) => {
-    await router.push(path)
-  }
+    await router.push(`${locale}${path}`);
+  };
 
   return (
-    <DefaultLayout pageTitle={'Home'}>
+    <DefaultLayout locale={locale}>
+      <Head>
+        <title>Cryptodistrict | {t('pages:home.title')}</title>
+      </Head>
       <HomeWelcomeContainer>
         <HomeWelcomeBox className={'name'}>
           <HomeWelcomeTitle><Bold>CRYPTODISTRICT</Bold></HomeWelcomeTitle>
@@ -74,7 +91,7 @@ const Home: NextPage = () => {
         <ImageBlock>
           <CryptoDescriptionContainer>
             <CryptoDescriptionBox>
-              <CryptoDescriptionHeader>Familiar icons, huh?</CryptoDescriptionHeader>
+              <CryptoDescriptionHeader>{t('pages:home.familiarIcons')}</CryptoDescriptionHeader>
               <CryptoDescriptionHeader className={'subHeader'}>
                 Those are the most popular and well-known cryptocurrencies and you are in the place where you can buy, sell, swap, hold or send these (and not only) cryptocurrencies
               </CryptoDescriptionHeader>
@@ -99,7 +116,10 @@ const Home: NextPage = () => {
 
       <Widget />
     </DefaultLayout>
-  )
-}
+  );
+};
 
-export default Home
+const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+export { getStaticPaths, getStaticProps };
+
+export default Home;

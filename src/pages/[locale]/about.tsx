@@ -1,4 +1,9 @@
-import DefaultLayout from "@layouts/Default.layout";
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import Typewriter from 'typewriter-effect';
+
+import DefaultLayout from '@layouts/Default.layout';
+import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import {
   Box,
   Container,
@@ -11,21 +16,19 @@ import {
   TextContainerSubtitle,
   TextContainerTitle,
   Wrapper
-} from "@styles/about.style";
-import { ButtonText, InputWrapper, StartButton } from "@styles/home.style";
-import { useRouter } from "next/router";
-import Typewriter from 'typewriter-effect';
-import Image from "next/image";
+} from '@styles/about.style';
+import { ButtonText, InputWrapper, StartButton } from '@styles/home.style';
 
-const About = () => {
-  const router = useRouter()
+
+const About = ({ locale }: any) => {
+  const router = useRouter();
 
   const handleRedirect = async (path: string) => {
-    await router.push(path)
-  }
+    await router.push(path);
+  };
 
   return (
-    <DefaultLayout pageTitle={'About'}>
+    <DefaultLayout locale={locale}>
       <Container>
         <Box>
           <Wrapper>
@@ -90,7 +93,7 @@ const About = () => {
       <ContentContainer>
         <TextContainer className={'center'}>
           <TextContainerTitle>Interested? Huh...</TextContainerTitle>
-          <TextContainerSubtitle>Let&apos;dive into right now</TextContainerSubtitle>
+          <TextContainerSubtitle>Let&apos; dive into right now</TextContainerSubtitle>
           <InputWrapper>
             <StartButton className={'aboutPage'} onClick={() => handleRedirect('/signup')}>
               <ButtonText>
@@ -102,7 +105,10 @@ const About = () => {
       </ContentContainer>
 
     </DefaultLayout>
-  )
-}
+  );
+};
 
-export default About
+const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+export { getStaticPaths, getStaticProps };
+
+export default About;

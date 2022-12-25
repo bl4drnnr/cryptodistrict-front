@@ -1,8 +1,9 @@
-import { InputButtonProps } from "@components/InputButton/InputButton.interface";
-import { BasicInput, Container, Placeholder } from "@styles/Input.style";
-import { Container as ButtonContainer, BasicButton, ButtonContent} from "@styles/Button.style";
-import { InputButtonContainer, InputWrapper, ButtonWrapper } from "@styles/InputButton.style";
-import classNames from "classnames";
+import classNames from 'classnames';
+
+import { InputButtonProps } from '@components/InputButton/InputButton.interface';
+import { Container as ButtonContainer, BasicButton, ButtonContent } from '@styles/Button.style';
+import { BasicInput, Container, Placeholder } from '@styles/Input.style';
+import { InputButtonContainer, InputWrapper, ButtonWrapper } from '@styles/InputButton.style';
 
 export const InputButton = ({
   value,
@@ -44,5 +45,5 @@ export const InputButton = ({
         </ButtonWrapper>
       </InputButtonContainer>
     </Container>
-  )
-}
+  );
+};
