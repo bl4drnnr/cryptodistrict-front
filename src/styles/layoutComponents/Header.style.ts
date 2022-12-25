@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 60px;
+  height: 65px;
   border-bottom: 1px solid rgba(255, 255, 255, .25);
   background-color: rgb(${(props) => props.theme.colors.lightBackground});
   position: fixed;
@@ -32,10 +32,12 @@ export const Links = styled.div`
   align-items: center;
 `;
 
-export const Link = styled.p`
-  margin: 0 15px;
+export const Link = styled.h3`
+  margin: 5px 15px 0 15px;
   cursor: pointer;
   transition: .2s;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
   
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
@@ -71,7 +73,12 @@ export const Logo = styled.h2`
   cursor: pointer;
   transition: .2s;
   margin-right: 35px;
+  margin-top: 5px;
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
   }
+`;
+
+export const SearchBarWrapper = styled.div`
+  width: 200px;
 `;
