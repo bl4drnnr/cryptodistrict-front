@@ -53,6 +53,12 @@ const Signup = () => {
   ])
 
   React.useEffect(() => {
+    if (router.isReady) {
+      setEmail({...email, email: router.query.email as string})
+    }
+  }, [router.query, router.isReady]);
+
+  React.useEffect(() => {
     if (!validateEmail(email.email)) setEmail({ ...email, emailError: true })
     else if (validateEmail(email.email) === 1) setEmail({ ...email, emailError: false })
     else setEmail({ ...email, emailError: false })
@@ -109,9 +115,6 @@ const Signup = () => {
           We are quite sure you have been doing this hundreds times before,
           so, no need to explain what you need to do, fields on the right side.
           See ya!
-        </WelcomeText>
-        <WelcomeText>
-          In case on any issues see <Link onClick={() => handleRedirect('/about')}>Helpdesk</Link>
         </WelcomeText>
       </Box>
     } rightSide={
