@@ -19,12 +19,14 @@ interface CredentialsLayoutProps {
   rightDarkSide?: boolean;
   mirroredHeader?: boolean;
   loading?: boolean;
+  locale: string;
 }
 
 const CredentialsLayout = ({
   leftSide,
   rightSide,
   headerLink,
+  locale,
   leftDarkSide = false,
   rightDarkSide = false,
   mirroredHeader = false,
@@ -34,7 +36,7 @@ const CredentialsLayout = ({
   const [theme] = useDarkMode();
 
   const handleRedirect = async (path: string) => {
-    await router.push(path);
+    await router.push(`/${locale}${path}`);
   };
 
   return (

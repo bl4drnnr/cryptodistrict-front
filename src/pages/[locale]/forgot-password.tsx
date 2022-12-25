@@ -91,7 +91,7 @@ const ForgotPassword = ({ locale }: ForgotPasswordProps) => {
         onClick={() => handleRedirect('/signup')}
       >Sign up now!</Link>
       </p>
-    } rightDarkSide={true}
+    } rightDarkSide={true} locale={locale}
     />
   );
 };

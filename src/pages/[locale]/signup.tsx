@@ -94,7 +94,7 @@ const Signup = ({ locale }: SignUpProps) => {
   }, [password.password, password.repeatPassword]);
 
   const handleRedirect = async (path: string) => {
-    await router.push(`${locale}${path}`);
+    await router.push(`/${locale}${path}`);
   };
 
   const validateFields = () => {
@@ -280,7 +280,7 @@ const Signup = ({ locale }: SignUpProps) => {
         onClick={() => handleRedirect('/signin')}
       >Sign In now!</Link>
       </p>
-    } rightDarkSide={true}
+    } rightDarkSide={true} locale={locale}
     />
   );
 };
