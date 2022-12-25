@@ -19,12 +19,15 @@ import {
 } from '@styles/about.style';
 import { ButtonText, InputWrapper, StartButton } from '@styles/home.style';
 
+interface AboutProps {
+  locale: string
+}
 
-const About = ({ locale }: any) => {
+const About = ({ locale }: AboutProps) => {
   const router = useRouter();
 
   const handleRedirect = async (path: string) => {
-    await router.push(path);
+    await router.push(`${locale}${path}`);
   };
 
   return (

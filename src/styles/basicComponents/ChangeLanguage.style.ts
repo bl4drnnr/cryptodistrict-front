@@ -26,14 +26,19 @@ export const LanguagesList = styled.div`
 export const LanguageItem = styled.div`
   padding: 15px 5px;
   cursor: pointer;
+  color: black;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background-color: rgb(0, 0, 0, .1);
+    border-radius: 8px;
   }
-  &:hover:first-child {
-    border-radius: 8px 8px 0 0 ;
-  }
-  &:hover:last-child {
-    border-radius: 0 0 8px 8px;
-  }
+`;
+
+export const Flag = styled.span`
+  font-size: 32px;
+`;
+
+export const LanguageName = styled.span`
+  font-size: 24px;
+  margin-left: 15px;
 `;

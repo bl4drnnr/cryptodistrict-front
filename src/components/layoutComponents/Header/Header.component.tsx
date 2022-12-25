@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
@@ -6,6 +6,7 @@ import { useRecoilState } from 'recoil';
 
 import { ChangeLanguage } from '@components/ChangeLanguage/ChangeLanguage.component';
 import { HeaderProps } from '@components/Header/Header.interace';
+import { Input } from '@components/Input/Input.component';
 import { ThemeToggler } from '@components/ThemeToggler/ThemeToggler.component';
 import { theme } from '@store/global/global.state';
 import {
@@ -16,15 +17,16 @@ import {
   Link,
   Button,
   Logo,
-  NavigationButtons
+  NavigationButtons, SearchBarWrapper
 } from '@styles/Header.style';
 
-export const Header = ({ defaultLanguage }: HeaderProps) => {
-  const [currentTheme, setCurrentTheme] = useRecoilState(theme);
+export const Header = ({ locale }: HeaderProps) => {
   const router = useRouter();
+  const [currentTheme, setCurrentTheme] = useRecoilState(theme);
+  const [searchModal, setSearchModal] = useState(false);
 
   const handleRedirect = async (path: string) => {
-    await router.push(path);
+    await router.push(`/${locale}${path}`);
   };
 
   const setTheme = (theme: 'dark' | 'light') => {
@@ -50,8 +52,12 @@ export const Header = ({ defaultLanguage }: HeaderProps) => {
             <Logo onClick={() => handleRedirect('/')}>Cryptodistrict</Logo>
             <Links>
               <Link onClick={() => handleRedirect('/about')}>About</Link>
+              <Link onClick={() => handleRedirect('/market')}>Markets</Link>
             </Links>
           </NavigationButtons>
+          <SearchBarWrapper onClick={() => setSearchModal(true)}>
+            <Input value={''} placeholder={''} innerPlaceholder={'Search items'} onChange={() => {}}/>
+          </SearchBarWrapper>
           <Buttons>
             <Button
               className={classNames({ logIn: true })}
@@ -71,7 +77,7 @@ export const Header = ({ defaultLanguage }: HeaderProps) => {
             />
             <ChangeLanguage
               path={router.asPath}
-              defaultLanguage={defaultLanguage}
+              defaultLanguage={locale}
             />
           </Buttons>
         </Box>

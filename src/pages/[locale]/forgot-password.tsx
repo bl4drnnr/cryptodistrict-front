@@ -6,6 +6,7 @@ import { Button } from '@components/Button/Button.component';
 import { Input } from '@components/Input/Input.component';
 import { InputButton } from '@components/InputButton/InputButton.component';
 import CredentialsLayout from '@layouts/Credentials.layout';
+import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import {
   Box,
   Link,
@@ -17,7 +18,11 @@ import {
   MarginWrapper
 } from '@styles/login.style';
 
-const ForgotPassword = () => {
+interface ForgotPasswordProps {
+  locale: string;
+}
+
+const ForgotPassword = ({ locale }: ForgotPasswordProps) => {
   const router = useRouter();
 
   const [passwordRecoveryMethod, setPasswordRecoveryMethod] = React.useState('email');
@@ -26,7 +31,7 @@ const ForgotPassword = () => {
   const [verificationCode, setVerificationCode] = React.useState('');
 
   const handleRedirect = async (path: string) => {
-    await router.push(path);
+    await router.push(`${locale}${path}`);
   };
 
   return (
@@ -86,10 +91,12 @@ const ForgotPassword = () => {
         onClick={() => handleRedirect('/signup')}
       >Sign up now!</Link>
       </p>
-    } rightDarkSide={true}
+    } rightDarkSide={true} locale={locale}
     />
   );
 };
 
+const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+export { getStaticPaths, getStaticProps };
 
 export default ForgotPassword;

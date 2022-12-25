@@ -7,4 +7,5 @@ export interface InputProps {
   type?: string;
   onError?: boolean;
   high?: boolean;
+  innerPlaceholder?: string;
 }

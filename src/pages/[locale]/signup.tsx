@@ -9,6 +9,7 @@ import { Input } from '@components/Input/Input.component';
 import { Textarea } from '@components/Textarea/Textarea.component';
 import { validateEmail, validatePasswordRules, validatePassword } from '@hooks/useValidators.hook';
 import CredentialsLayout from '@layouts/Credentials.layout';
+import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useSignUpService } from '@services/signup/signup.service';
 import {
   Box,
@@ -24,7 +25,11 @@ import {
   MarginVerticalWrapper
 } from '@styles/login.style';
 
-const Signup = () => {
+interface SignUpProps {
+  locale: string
+}
+
+const Signup = ({ locale }: SignUpProps) => {
   const router = useRouter();
 
   const { loading, signUp } = useSignUpService();
@@ -89,7 +94,7 @@ const Signup = () => {
   }, [password.password, password.repeatPassword]);
 
   const handleRedirect = async (path: string) => {
-    await router.push(path);
+    await router.push(`/${locale}${path}`);
   };
 
   const validateFields = () => {
@@ -275,9 +280,12 @@ const Signup = () => {
         onClick={() => handleRedirect('/signin')}
       >Sign In now!</Link>
       </p>
-    } rightDarkSide={true}
+    } rightDarkSide={true} locale={locale}
     />
   );
 };
+
+const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+export { getStaticPaths, getStaticProps };
 
 export default Signup;

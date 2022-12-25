@@ -24,7 +24,7 @@ const DefaultLayout = ({ children, locale, loading = false }: DefaultLayoutProps
     <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
       <Loader loading={loading} />
       <Wrapper>
-        <Header defaultLanguage={locale} />
+        <Header locale={locale} />
         {children}
         <Footer/>
       </Wrapper>
