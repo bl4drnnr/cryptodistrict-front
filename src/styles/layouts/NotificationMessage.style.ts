@@ -13,22 +13,22 @@ export const Container = styled.div`
   border-radius: 8px;
   border: 1px solid rgb(${(props) => props.theme.colors.primary});
   background-color: rgb(${(props) => props.theme.colors.darkBackground});
-  
+
   @keyframes fadeIn {
-     0% {
-       opacity:0;
-     }
-     20% {
-       opacity:1;
-     }
-     80% {
-       opacity:1;
-     }
-     100% {
-       opacity:0;
-     }
+    0% {
+      opacity:0;
+    }
+    20% {
+      opacity:1;
+    }
+    80% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
   }
-  
+
   &.fadeInClass {
     animation: fadeIn ease 7.5s;
     opacity: 0;
@@ -40,7 +40,7 @@ export const Content = styled.p`
   font-weight: 300;
   font-family: "Lato", sans-serif;
   margin: 10px 0;
-  
+
   &.onError {
     color: rgb(${(props) => props.theme.colors.error});
   }

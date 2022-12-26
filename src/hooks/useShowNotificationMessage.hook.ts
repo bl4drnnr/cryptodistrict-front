@@ -1,7 +1,7 @@
 import { useNotificationMessageActions } from '@store/global/global.actions';
 import { NotificationType } from '@store/global/global.state';
 
-const DEFAULT_NOTIFICATION_DURATION = 5000;
+const DEFAULT_NOTIFICATION_DURATION = 7500;
 
 export const useNotificationMessage = () => {
   const {
