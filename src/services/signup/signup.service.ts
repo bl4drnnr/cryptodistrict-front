@@ -1,7 +1,9 @@
 import React from 'react';
 
 import { ApiClient } from '@api-client';
+import { ExceptionHandler } from '@exception-handler';
 import { SignUpPayload, SignUpResponse } from '@services/signup/signup.interface';
+
 
 export const useSignUpService = () => {
   const [loading, setLoading] = React.useState(false);
@@ -13,8 +15,8 @@ export const useSignUpService = () => {
       const { data } = await ApiClient.post<SignUpResponse>('/user/sign-up', payload);
 
       return data;
-    } catch (error) {
-      throw error;
+    } catch (error: any) {
+      return ExceptionHandler(error);
     } finally {
       setLoading(false);
     }

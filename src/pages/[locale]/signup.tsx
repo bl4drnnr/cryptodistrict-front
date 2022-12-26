@@ -9,6 +9,7 @@ import { Button } from '@components/Button/Button.component';
 import { Checkbox } from '@components/Checkbox/Checkbox.component';
 import { Input } from '@components/Input/Input.component';
 import { Textarea } from '@components/Textarea/Textarea.component';
+import { useHandleException } from '@hooks/useHandleException.hook';
 import { validateEmail, validatePasswordRules, validatePassword } from '@hooks/useValidators.hook';
 import CredentialsLayout from '@layouts/Credentials.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
@@ -37,6 +38,7 @@ const Signup = ({ locale }: SignUpProps) => {
   const router = useRouter();
 
   const { loading, signUp } = useSignUpService();
+  const { handleException } = useHandleException();
 
   const [step, setStep] = React.useState(1);
   const [tac, setTac] = React.useState(false);
@@ -64,11 +66,15 @@ const Signup = ({ locale }: SignUpProps) => {
   ]);
 
   const signUpUser = async () => {
-    const response = await signUp({
-      email: email.email,
-      password: password.password,
-      bio, linkedIn, firstName, lastName, title, twitter, personalWebsite
-    });
+    try {
+      const response = await signUp({
+        email: email.email,
+        password: password.password,
+        bio, linkedIn, firstName, lastName, title, twitter, personalWebsite
+      });
+    } catch (e) {
+      handleException(e);
+    }
   };
 
   React.useEffect(() => {
