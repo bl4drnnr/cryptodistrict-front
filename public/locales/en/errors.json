@@ -1,0 +1,11 @@
+{
+  "apiGeneralError": {
+    "userAlreadyExists": "User already exists"
+  },
+  "generalError": {
+
+  },
+  "unknownError": {
+    "unknownError": "Unknown error"
+  }
+}

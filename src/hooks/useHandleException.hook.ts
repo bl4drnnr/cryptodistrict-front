@@ -14,17 +14,17 @@ export const useHandleException = () => {
     if (error instanceof ApiException) {
       showNotificationMessage({
         type: NotificationType.ERROR,
-        content: t('errors:apiGeneralError'),
+        content: t(`errors:apiGeneralError.${error.message}`),
       });
     } else if (error instanceof GeneralException) {
       showNotificationMessage({
         type: NotificationType.ERROR,
-        content: t('errors:generalError'),
+        content: t(`errors:generalError.${error.message}`),
       });
     } else {
       showNotificationMessage({
         type: NotificationType.ERROR,
-        content: t('errors:unknownError'),
+        content: t('errors:unknownError.unknownError'),
       });
     }
   };

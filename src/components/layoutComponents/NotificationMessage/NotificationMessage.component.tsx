@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 import { NotificationMessageProps } from '@components/NotificationMessage/NotificationMessage.interface';
 import { useNotificationMessageActions } from '@store/global/global.actions';
 import { Container, Content } from '@styles/NotificationMessage.style';
@@ -7,7 +9,7 @@ export const NotificationMessage = ({}: NotificationMessageProps) => {
   return (
     <>
       {show &&
-        <Container className={'fadeInClass'}>
+        <Container className={classNames({ onError: type === 'error', fadeInClass: true })}>
           <Content>{ content }</Content>
         </Container>
       }

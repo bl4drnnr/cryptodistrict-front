@@ -16,7 +16,7 @@ export const useSignUpService = () => {
 
       return data;
     } catch (error: any) {
-      return ExceptionHandler(error);
+      throw ExceptionHandler(error);
     } finally {
       setLoading(false);
     }

@@ -317,7 +317,7 @@ const Signup = ({ locale }: SignUpProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
 export { getStaticPaths, getStaticProps };
 
 export default Signup;

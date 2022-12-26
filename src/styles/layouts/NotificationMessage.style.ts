@@ -33,15 +33,15 @@ export const Container = styled.div`
     animation: fadeIn ease 7.5s;
     opacity: 0;
   }
+
+  &.onError {
+    border: 1px solid rgb(${(props) => props.theme.colors.error});
+  }
 `;
 
 export const Content = styled.p`
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
   font-family: "Lato", sans-serif;
   margin: 10px 0;
-
-  &.onError {
-    color: rgb(${(props) => props.theme.colors.error});
-  }
 `;
