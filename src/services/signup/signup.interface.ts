@@ -12,4 +12,5 @@ export interface SignUpPayload {
   personalWebsite?: string;
   title?: string;
   bio?: string;
+  tac: boolean;
 }

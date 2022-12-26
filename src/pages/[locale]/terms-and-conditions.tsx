@@ -25,7 +25,7 @@ const TermsAndConditions = ({ locale }: TermsAndConditionsProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
 export { getStaticPaths, getStaticProps };
 
 export default TermsAndConditions;

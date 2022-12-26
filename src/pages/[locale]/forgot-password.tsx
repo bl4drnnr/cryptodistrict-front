@@ -13,7 +13,6 @@ import {
   Box,
   Link,
   WelcomeTitle,
-  WelcomeText,
   LoginOptions,
   LoginOption,
   VerticalLine,
@@ -105,7 +104,7 @@ const ForgotPassword = ({ locale }: ForgotPasswordProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
 export { getStaticPaths, getStaticProps };
 
 export default ForgotPassword;

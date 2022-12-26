@@ -1,0 +1,12 @@
+{
+  "apiGeneralError": {
+    "userAlreadyExists": "Пользователь существует",
+    "Internal server error": "Internal server error"
+  },
+  "generalError": {
+
+  },
+  "unknownError": {
+    "unknownError": "Неизвестная ошибка"
+  }
+}

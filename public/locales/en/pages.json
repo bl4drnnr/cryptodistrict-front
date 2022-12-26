@@ -18,5 +18,13 @@
   },
   "tac": {
     "title": "Terms & Conditions"
+  },
+  "contact": {
+    "title": "Contact",
+    "pageTitle": "Wanna talk? Sure, glad to hear you!",
+    "content": "We'd be glad to hear any feedback, propositions, found bugs or news about your day.",
+    "nameRequest": "How can we call you?",
+    "emailRequest": "What do you want to tell us?",
+    "sendMessage": "Send message"
   }
 }

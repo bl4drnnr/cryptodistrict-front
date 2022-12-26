@@ -70,7 +70,7 @@ const Signup = ({ locale }: SignUpProps) => {
       const response = await signUp({
         email: email.email,
         password: password.password,
-        bio, linkedIn, firstName, lastName, title, twitter, personalWebsite
+        bio, linkedIn, firstName, lastName, title, twitter, personalWebsite, tac
       });
     } catch (e) {
       handleException(e);
@@ -306,18 +306,20 @@ const Signup = ({ locale }: SignUpProps) => {
           )}
         </>
       } headerLink={
-        <p>
-          Already have an account? <Link
-          onClick={() => handleRedirect('/signin')}
-        >Sign In now!</Link>
-        </p>
+        <>
+          {step === 1 &&
+            <p>Already have an account? <Link
+              onClick={() => handleRedirect('/signin')}
+            >Sign In now!</Link></p>
+          }
+        </>
       } rightDarkSide={true} locale={locale} loading={loading}
       />
     </>
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
 export { getStaticPaths, getStaticProps };
 
 export default Signup;
