@@ -9,7 +9,6 @@ export const Container = styled.div`
   justify-content: center;
   overflow: hidden;
   position: fixed;
-  //z-index: 999;
   display: flex;
   background: rgba(0, 0, 0, .5) 0 0 no-repeat padding-box;
 `;

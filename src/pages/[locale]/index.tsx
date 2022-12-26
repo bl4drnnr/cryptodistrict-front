@@ -136,7 +136,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components']);
+const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
 export { getStaticPaths, getStaticProps };
 
 export default Home;

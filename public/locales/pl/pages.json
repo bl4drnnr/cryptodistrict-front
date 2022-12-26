@@ -18,5 +18,13 @@
   },
   "tac": {
     "title": "Reguły oraz warunki"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "pageTitle": "Chcę pogadać? Jasne, miło cię słyszeć!",
+    "content": "Z przyjemnością wysłuchamy wszelkich opinii, propozycji, znalezionych błędów lub wiadomości dotyczących Twojego dnia.",
+    "nameRequest": "Jak masz na imię?",
+    "emailRequest": "Co chcesz nam powiedzieć?",
+    "sendMessage": "Wyślij wiadomość"
   }
 }

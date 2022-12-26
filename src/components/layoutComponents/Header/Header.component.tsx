@@ -17,7 +17,9 @@ import {
   Link,
   Button,
   Logo,
-  NavigationButtons, SearchBarWrapper
+  NavigationButtons,
+  SearchBarWrapper,
+  SearchBarBox
 } from '@styles/Header.style';
 
 export const Header = ({ locale }: HeaderProps) => {
@@ -53,10 +55,13 @@ export const Header = ({ locale }: HeaderProps) => {
             <Links>
               <Link onClick={() => handleRedirect('/about')}>About</Link>
               <Link onClick={() => handleRedirect('/market')}>Markets</Link>
+              <Link onClick={() => handleRedirect('/contact')}>Contact</Link>
             </Links>
           </NavigationButtons>
           <SearchBarWrapper onClick={() => setSearchModal(true)}>
-            <Input value={''} placeholder={''} innerPlaceholder={'Search items'} onChange={() => {}}/>
+            <SearchBarBox>
+              <Input value={''} placeholder={''} innerPlaceholder={'Search items'} onChange={() => {}}/>
+            </SearchBarBox>
           </SearchBarWrapper>
           <Buttons>
             <Button
