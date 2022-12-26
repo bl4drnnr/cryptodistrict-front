@@ -26,5 +26,11 @@
     "nameRequest": "Jak masz na imię?",
     "emailRequest": "Co chcesz nam powiedzieć?",
     "sendMessage": "Wyślij wiadomość"
+  },
+  "error": {
+    "title": "Nie znaleziono",
+    "pageTitle": "Tu jest całkiem pusto, prawda?",
+    "content": "Nie jestem pewien, co próbujesz znaleźć, ale nie ma tego w defensywie",
+    "link": "Spróbuj znaleźć to gdzieś indziej"
   }
 }

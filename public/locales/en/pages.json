@@ -26,5 +26,11 @@
     "nameRequest": "How can we call you?",
     "emailRequest": "What do you want to tell us?",
     "sendMessage": "Send message"
+  },
+  "error": {
+    "title": "Not found",
+    "pageTitle": "It's quite empty here, isn't it?",
+    "content": "Not sure what you were trying to found, but it's defensively not here",
+    "link": "Try to find it somewhere else"
   }
 }

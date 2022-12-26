@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 import { Button } from '@components/Button/Button.component';
 import { Input } from '@components/Input/Input.component';
+import { TwoFa } from '@components/TwoFa/TwoFa.component';
 import CredentialsLayout from '@layouts/Credentials.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import {
@@ -28,6 +29,7 @@ const Signin = ({ locale }: SignInProps) => {
 
   const router = useRouter();
 
+  const [step, setStep] = React.useState(2);
   const [loginOption, setLoginOption] = React.useState('email');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -42,45 +44,53 @@ const Signin = ({ locale }: SignInProps) => {
         <title>Cryptodistrict | {t('pages:signin.title')}</title>
       </Head>
       <CredentialsLayout leftSide={
-        <Box>
-          <h1>Sign In</h1>
+        <>
+          {step === 1 ? (
+            <Box>
+              <h1>Sign In</h1>
 
-          <LoginOptions>
-            <LoginOption onClick={() => setLoginOption('email')}>With Email</LoginOption>
-            <VerticalLine />
-            <LoginOption onClick={() => setLoginOption('phone')}>With Phone Number</LoginOption>
-          </LoginOptions>
+              <LoginOptions>
+                <LoginOption onClick={() => setLoginOption('email')}>With Email</LoginOption>
+                <VerticalLine />
+                <LoginOption onClick={() => setLoginOption('phone')}>With Phone Number</LoginOption>
+              </LoginOptions>
 
-          <MarginWrapper>
-            <Input
-              high={true}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={'Email'}
-            />
-          </MarginWrapper>
+              <MarginWrapper>
+                <Input
+                  high={true}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={'Email'}
+                />
+              </MarginWrapper>
 
-          <MarginWrapper>
-            <Input
-              high={true}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              type={'password'}
-              placeholder={'Password'}
-            />
-          </MarginWrapper>
+              <MarginWrapper>
+                <Input
+                  high={true}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  type={'password'}
+                  placeholder={'Password'}
+                />
+              </MarginWrapper>
 
-          <MarginWrapper>
-            <Link
-              onClick={() => handleRedirect('/forgot-password')}
-            >Forgot password?</Link>
-          </MarginWrapper>
+              <MarginWrapper>
+                <Link
+                  onClick={() => handleRedirect('/forgot-password')}
+                >Forgot password?</Link>
+              </MarginWrapper>
 
-          <MarginWrapper>
-            <Button highHeight={true} text={'Sign Up'} />
-          </MarginWrapper>
+              <MarginWrapper>
+                <Button highHeight={true} text={'Sign Up'} />
+              </MarginWrapper>
 
-        </Box>
+            </Box>
+          ) : (
+            <Box>
+              <TwoFa title={'Two factor authentication code'} />
+            </Box>
+          )}
+        </>
       } rightSide={
         <Box>
           <WelcomeTitle>
