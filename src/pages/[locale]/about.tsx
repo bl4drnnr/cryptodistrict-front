@@ -104,7 +104,7 @@ const About = ({ locale }: AboutProps) => {
         <ContentContainer>
           <TextContainer className={'center'}>
             <TextContainerTitle>Interested? Huh...</TextContainerTitle>
-            <TextContainerSubtitle>Let&apos; dive into right now</TextContainerSubtitle>
+            <TextContainerSubtitle>Let&apos;s dive into right now</TextContainerSubtitle>
             <InputWrapper>
               <StartButton className={'aboutPage'} onClick={() => handleRedirect('/signup')}>
                 <ButtonText>

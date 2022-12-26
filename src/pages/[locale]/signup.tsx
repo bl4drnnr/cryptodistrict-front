@@ -63,6 +63,14 @@ const Signup = ({ locale }: SignUpProps) => {
     { error: false, text: 'Password should contain at least one digit character' }
   ]);
 
+  const signUpUser = async () => {
+    const response = await signUp({
+      email: email.email,
+      password: password.password,
+      bio, linkedIn, firstName, lastName, title, twitter, personalWebsite
+    });
+  };
+
   React.useEffect(() => {
     if (router.isReady) {
       setEmail({ ...email, email: router.query.email as string });
@@ -283,9 +291,9 @@ const Signup = ({ locale }: SignUpProps) => {
                 <Buttons>
                   <Button text={'Go Back'} onClick={() => setStep(step - 1)} />
                   <MarginVerticalWrapper>
-                    <Button text={'Skip'} />
+                    <Button text={'Skip'} onClick={() => signUpUser()}/>
                   </MarginVerticalWrapper>
-                  <Button fillButton={true} text={'Next'} />
+                  <Button fillButton={true} text={'Next'} onClick={() => signUpUser()} />
                 </Buttons>
               </Box>
             ) : (<></>)
@@ -297,7 +305,7 @@ const Signup = ({ locale }: SignUpProps) => {
           onClick={() => handleRedirect('/signin')}
         >Sign In now!</Link>
         </p>
-      } rightDarkSide={true} locale={locale}
+      } rightDarkSide={true} locale={locale} loading={loading}
       />
     </>
   );
