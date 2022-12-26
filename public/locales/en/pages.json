@@ -3,5 +3,20 @@
     "title": "Home",
     "familiarIcons": "Familiar icons, huh?",
     "nft": "Heard 'bout NTF?"
+  },
+  "forgotPassword": {
+    "title": "Password recovery"
+  },
+  "about": {
+    "title": "About"
+  },
+  "signin": {
+    "title": "Sign In"
+  },
+  "signup": {
+    "title": "Sign Up"
+  },
+  "tac": {
+    "title": "Terms & Conditions"
   }
 }

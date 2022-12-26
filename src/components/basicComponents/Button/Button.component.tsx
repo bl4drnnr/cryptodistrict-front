@@ -6,9 +6,10 @@ import { ButtonContent, Container, BasicButton } from '@styles/Button.style';
 export const Button = ({ text, onClick, disabled, highHeight, fillButton }: ButtonProps): JSX.Element => {
   return (
     <Container
-      onClick={onClick}
     >
       <BasicButton
+        onClick={onClick}
+        disabled={disabled}
         className={classNames({
           disabled,
           highHeight,

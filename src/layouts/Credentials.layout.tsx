@@ -2,13 +2,9 @@ import React from 'react';
 
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
-import { ThemeProvider } from 'styled-components';
 
-import { Loader } from '@components/Loader/Loader.component';
-import useDarkMode from '@hooks/useDarkMode.hook';
+import GlobalLayout from '@layouts/Global.layout';
 import { Container, Side, LoginHeader, LoginHeaderButton, LoginHeaderTitle } from '@styles/Credentials.style';
-import { DarkTheme } from '@styles/Dark.theme';
-import { LightTheme } from '@styles/Light.theme';
 
 
 interface CredentialsLayoutProps {
@@ -33,15 +29,13 @@ const CredentialsLayout = ({
   loading = false
 }: CredentialsLayoutProps): React.ReactElement => {
   const router = useRouter();
-  const [theme] = useDarkMode();
 
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
   };
 
   return (
-    <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
-      <Loader loading={loading} />
+    <GlobalLayout loading={loading}>
       <Container>
 
         <LoginHeader>
@@ -74,7 +68,7 @@ const CredentialsLayout = ({
         </Side>
 
       </Container>
-    </ThemeProvider>
+    </GlobalLayout>
   );
 };
 

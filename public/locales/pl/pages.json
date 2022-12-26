@@ -3,5 +3,20 @@
     "title": "Domowa",
     "familiarIcons": "Widziałeś te ikone, co nie?",
     "nft": "Słyszałeś o NTF?"
+  },
+  "forgotPassword": {
+    "title": "Przypomnienie hasła"
+  },
+  "about": {
+    "title": "O projekcie"
+  },
+  "signin": {
+    "title": "Logowanie"
+  },
+  "signup": {
+    "title": "Rejestracja"
+  },
+  "tac": {
+    "title": "Reguły oraz warunki"
   }
 }
