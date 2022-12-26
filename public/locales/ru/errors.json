@@ -1,6 +1,7 @@
 {
   "apiGeneralError": {
-    "userAlreadyExists": "Пользователь существует"
+    "userAlreadyExists": "Пользователь существует",
+    "Internal server error": "Internal server error"
   },
   "generalError": {
 
