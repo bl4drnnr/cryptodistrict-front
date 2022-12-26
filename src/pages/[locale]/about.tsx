@@ -31,7 +31,7 @@ const About = ({ locale }: AboutProps) => {
   const router = useRouter();
 
   const handleRedirect = async (path: string) => {
-    await router.push(`${locale}${path}`);
+    await router.push(`/${locale}${path}`);
   };
 
   return (

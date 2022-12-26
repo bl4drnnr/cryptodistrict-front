@@ -42,7 +42,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
   const [email, setEmail] = React.useState('');
 
   const handleRedirect = async (path: string) => {
-    await router.push(`${locale}${path}`);
+    await router.push(`/${locale}${path}`);
   };
 
   return (

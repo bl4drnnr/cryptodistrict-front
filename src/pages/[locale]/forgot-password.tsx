@@ -34,7 +34,7 @@ const ForgotPassword = ({ locale }: ForgotPasswordProps) => {
   const [verificationCode, setVerificationCode] = React.useState('');
 
   const handleRedirect = async (path: string) => {
-    await router.push(`${locale}${path}`);
+    await router.push(`/${locale}${path}`);
   };
 
   return (
