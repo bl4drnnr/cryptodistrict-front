@@ -17,7 +17,8 @@ import {
   LoginOptions,
   VerticalLine,
   LoginOption,
-  MarginWrapper
+  MarginWrapper,
+  Title
 } from '@styles/login.style';
 
 interface SignInProps {
@@ -33,6 +34,7 @@ const Signin = ({ locale }: SignInProps) => {
   const [loginOption, setLoginOption] = React.useState('email');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [twoFa, setTwoFa] = React.useState('');
 
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
@@ -47,7 +49,7 @@ const Signin = ({ locale }: SignInProps) => {
         <>
           {step === 1 ? (
             <Box>
-              <h1>Sign In</h1>
+              <Title>Sign In</Title>
 
               <LoginOptions>
                 <LoginOption onClick={() => setLoginOption('email')}>With Email</LoginOption>
@@ -87,7 +89,16 @@ const Signin = ({ locale }: SignInProps) => {
             </Box>
           ) : (
             <Box>
-              <TwoFa title={'Two factor authentication code'} />
+              <Title>Two Factor Authentication</Title>
+              <MarginWrapper className={'big'}>
+                <TwoFa
+                  title={'Two factor authentication code'}
+                  setTwoFaCode={setTwoFa}
+                />
+              </MarginWrapper>
+              <MarginWrapper>
+                <Button highHeight={true} text={'Sign Up'} fillButton={true} />
+              </MarginWrapper>
             </Box>
           )}
         </>
