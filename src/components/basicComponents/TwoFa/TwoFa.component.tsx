@@ -4,12 +4,7 @@ import { TwoFaProps } from '@components/TwoFa/TwoFa.interface';
 import { validate2fa } from '@hooks/useValidators.hook';
 import { Container, InputTwoFa, Placeholder } from '@styles/TwoFa.style';
 
-export const TwoFa = ({ title, twoFaCode }: TwoFaProps) => {
-  // const [twoFaCode, setTwoFaCode] = React.useState(['', '', '', '', '', '']);
-  // const [code, setCode] = React.useState([
-  //   { n1: '' }, { n2: '' }, { n3: '' }, { n4: '' }, { n5: '' }, { n6: '' }
-  // ]);
-
+export const TwoFa = ({ title, setTwoFaCode }: TwoFaProps) => {
   const [n1, setN1] = React.useState('');
   const [n2, setN2] = React.useState('');
   const [n3, setN3] = React.useState('');
@@ -44,37 +39,9 @@ export const TwoFa = ({ title, twoFaCode }: TwoFaProps) => {
   }, [n6]);
 
   React.useEffect(() => {
-
+    const code = [n1, n2, n3, n4, n5, n6].join('');
+    setTwoFaCode(code);
   }, [n1, n2, n3, n4, n5, n6]);
-
-  // n1() {
-  //   this.twoFaCode[0] = this.n1;
-  //   this.returnTwoFa()
-  // },
-  // n2() {
-  //   this.twoFaCode[1] = this.n2;
-  //   this.returnTwoFa()
-  // },
-  // n3() {
-  //   this.twoFaCode[2] = this.n3;
-  //   this.returnTwoFa()
-  // },
-  // n4() {
-  //   this.twoFaCode[3] = this.n4;
-  //   this.returnTwoFa()
-  // },
-  // n5() {
-  //   this.twoFaCode[4] = this.n5;
-  //   this.returnTwoFa()
-  // },
-  // n6() {
-  //   this.twoFaCode[5] = this.n6;
-  //   this.returnTwoFa()
-  // }
-  // returnTwoFa() {
-  //   const normalCode = this.twoFaCode.join('')
-  //   this.$emit('update:returnTwoFa', normalCode)
-  // },
 
   const clearTwoFa = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Backspace') {

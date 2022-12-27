@@ -28,6 +28,9 @@ export const Tea = styled.span`
 
 export const MarginWrapper = styled.div`
   margin: 15px 0;
+  &.big {
+    margin: 45px 0;
+  }
 `;
 
 export const MarginVerticalWrapper = styled.span`
@@ -99,3 +102,5 @@ export const Buttons = styled.div`
   display: flex;
   font-weight: 100;
 `;
+
+export const Title = styled.h1``;
