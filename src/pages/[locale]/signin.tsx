@@ -33,6 +33,7 @@ const Signin = ({ locale }: SignInProps) => {
   const [loginOption, setLoginOption] = React.useState('email');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [twoFa, setTwoFa] = React.useState('');
 
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
@@ -87,7 +88,10 @@ const Signin = ({ locale }: SignInProps) => {
             </Box>
           ) : (
             <Box>
-              <TwoFa title={'Two factor authentication code'} />
+              <TwoFa
+                title={'Two factor authentication code'}
+                twoFaCode={twoFa}
+              />
             </Box>
           )}
         </>
