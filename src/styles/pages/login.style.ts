@@ -104,3 +104,9 @@ export const Buttons = styled.div`
 `;
 
 export const Title = styled.h1``;
+
+export const SubTitle = styled.h3`
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 100;
+`;

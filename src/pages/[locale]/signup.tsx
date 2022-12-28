@@ -25,7 +25,9 @@ import {
   WelcomeTitle,
   WelcomeText,
   Buttons,
-  MarginVerticalWrapper
+  MarginVerticalWrapper,
+  Title,
+  SubTitle
 } from '@styles/login.style';
 
 interface SignUpProps {
@@ -40,7 +42,7 @@ const Signup = ({ locale }: SignUpProps) => {
   const { loading, signUp } = useSignUpService();
   const { handleException } = useHandleException();
 
-  const [step, setStep] = React.useState(1);
+  const [step, setStep] = React.useState(3);
   const [tac, setTac] = React.useState(false);
   const [email, setEmail] = React.useState({ email: '', emailError: false });
   const [firstName, setFirstName] = React.useState('');
@@ -150,7 +152,7 @@ const Signup = ({ locale }: SignUpProps) => {
         <>
           {step === 1 ? (
             <Box>
-              <h1>Sign Up</h1>
+              <Title>Sign Up</Title>
 
               <MarginWrapper>
                 <Input
@@ -302,7 +304,18 @@ const Signup = ({ locale }: SignUpProps) => {
                   <Button fillButton={true} text={'Next'} onClick={() => signUpUser()} />
                 </Buttons>
               </Box>
-            ) : (<></>)
+            ) : (
+              <Box>
+                <Title>Welcome!</Title>
+                <MarginWrapper>
+                  <SubTitle>Your account has been successfully created!</SubTitle>
+                </MarginWrapper>
+                <MarginWrapper>
+                  <SubTitle>Please, check you email inbox in order to confirm registration by clicking the ling you will find inside the message.</SubTitle>
+                </MarginWrapper>
+                <Button fillButton={true} text={'Sign in'} onClick={() => handleRedirect('/signin')} />
+              </Box>
+            )
           )}
         </>
       } headerLink={

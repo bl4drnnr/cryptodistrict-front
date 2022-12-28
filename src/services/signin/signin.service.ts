@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ApiClient } from '@api-client';
+import { ExceptionHandler } from '@exception-handler';
 import { SignInPayload, SignInResponse } from '@services/signin/signin.interface';
 
 export const useSignInService = () => {
@@ -14,7 +15,7 @@ export const useSignInService = () => {
 
       return data;
     } catch (error) {
-      throw error;
+      throw ExceptionHandler(error);
     } finally {
       setLoading(false);
     }

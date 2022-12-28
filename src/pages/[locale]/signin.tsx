@@ -7,8 +7,11 @@ import { useRouter } from 'next/router';
 import { Button } from '@components/Button/Button.component';
 import { Input } from '@components/Input/Input.component';
 import { TwoFa } from '@components/TwoFa/TwoFa.component';
+import { useHandleException } from '@hooks/useHandleException.hook';
+import { validatePasswordLength } from '@hooks/useValidators.hook';
 import CredentialsLayout from '@layouts/Credentials.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
+import { useSignInService } from '@services/signin/signin.service';
 import {
   Box,
   Link,
@@ -29,16 +32,35 @@ const Signin = ({ locale }: SignInProps) => {
   const { t } = useTranslation();
 
   const router = useRouter();
+  const { signIn, loading } = useSignInService();
+  const { handleException } = useHandleException();
 
-  const [step, setStep] = React.useState(2);
+  const [step, setStep] = React.useState(1);
   const [loginOption, setLoginOption] = React.useState('email');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [passwordError, setPasswordError] = React.useState(false);
   const [twoFa, setTwoFa] = React.useState('');
 
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
   };
+
+  const signInUser = async () => {
+    try {
+      const { _at } = await signIn({
+        email, password
+      });
+      sessionStorage.setItem('_at', _at);
+    } catch (e) {
+      handleException(e);
+    }
+  };
+
+  React.useEffect(() => {
+    if (password.length > 0)
+      setPasswordError(!validatePasswordLength(password));
+  }, [password]);
 
   return (
     <>
@@ -58,16 +80,26 @@ const Signin = ({ locale }: SignInProps) => {
               </LoginOptions>
 
               <MarginWrapper>
-                <Input
-                  high={true}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder={'Email'}
-                />
+                {loginOption === 'email' ? (
+                  <Input
+                    high={true}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={'Email'}
+                  />
+                ): (
+                  <Input
+                    high={true}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={'Email'}
+                  />
+                )}
               </MarginWrapper>
 
               <MarginWrapper>
                 <Input
+                  onError={passwordError}
                   high={true}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -83,7 +115,12 @@ const Signin = ({ locale }: SignInProps) => {
               </MarginWrapper>
 
               <MarginWrapper>
-                <Button highHeight={true} text={'Sign Up'} />
+                <Button
+                  disabled={passwordError}
+                  highHeight={true}
+                  text={'Sign Up'}
+                  onClick={() => signInUser()}
+                />
               </MarginWrapper>
 
             </Box>
@@ -121,7 +158,7 @@ const Signin = ({ locale }: SignInProps) => {
           onClick={() => handleRedirect('/signup')}
         >Sign up now!</Link>
         </p>
-      } leftDarkSide={true} mirroredHeader={true} locale={locale}
+      } leftDarkSide={true} mirroredHeader={true} locale={locale} loading={loading}
       />
     </>
   );
