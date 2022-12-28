@@ -1,5 +1,5 @@
 export interface SignUpResponse {
-  email: string;
+  message: string;
 }
 
 export interface SignUpPayload {
