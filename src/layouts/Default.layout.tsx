@@ -10,13 +10,14 @@ interface DefaultLayoutProps {
   children: React.ReactElement | React.ReactElement[];
   locale: string;
   loading?: boolean;
+  translate: any;
 }
 
-const DefaultLayout = ({ children, locale, loading = false }: DefaultLayoutProps) => {
+const DefaultLayout = ({ children, locale, translate, loading = false }: DefaultLayoutProps) => {
   return (
     <GlobalLayout loading={loading}>
       <Wrapper>
-        <Header locale={locale} />
+        <Header locale={locale} translate={translate} />
         {children}
         <Footer/>
       </Wrapper>

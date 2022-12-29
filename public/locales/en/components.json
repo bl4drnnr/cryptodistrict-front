@@ -1,0 +1,17 @@
+{
+  "header": {
+    "about": "About",
+    "markets": "Markets",
+    "contact": "Contact",
+    "search": "Search items...",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "changeLanguage": {
+    "ru": "Russian",
+    "pl": "Polish",
+    "en": "English",
+    "lang": "Language",
+    "langList": "List of available languages"
+  }
+}

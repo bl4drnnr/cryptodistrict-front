@@ -1,0 +1,17 @@
+{
+  "header": {
+    "about": "O projekcie",
+    "markets": "Rynki",
+    "contact": "Kontakt",
+    "search": "Szukaj...",
+    "signIn": "Logowanie",
+    "signUp": "Rejestracja"
+  },
+  "changeLanguage": {
+    "ru": "Rosyjski",
+    "pl": "Polski",
+    "en": "Angielski",
+    "lang": "Język",
+    "langList": "Lista dostępnych języków"
+  }
+}

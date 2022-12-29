@@ -5,13 +5,25 @@
     "nft": "Heard 'bout NTF?"
   },
   "forgotPassword": {
-    "title": "Password recovery"
+    "title": "Password recovery",
+    "text1": "Forgot password?",
+    "text2": "Nah... Not a big deal"
   },
   "about": {
     "title": "About"
   },
   "signin": {
-    "title": "Sign In"
+    "title": "Sign In",
+    "withEmail": "With Email",
+    "withPhone": "With Phone",
+    "signUpButton": "Sign Up",
+    "forgotPassword": "Forgot password?",
+    "text1": "Welcome back!",
+    "text2": "We are glad to see again!",
+    "text3": "We are quite sure you have been doing this hundreds times before, so, no need to explain what you need to do, fields on the left side.",
+    "dontHaveAnAcc": "Don't have an account yet?",
+    "signUpNow": "Sign up now!",
+    "twoFa": "Two Factor Authentication"
   },
   "signup": {
     "title": "Sign Up"

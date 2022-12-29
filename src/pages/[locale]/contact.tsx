@@ -30,7 +30,7 @@ const Contact = ({ locale }: ContactProps) => {
       <Head>
         <title>Cryptodistrict | {t('pages:contact.title')}</title>
       </Head>
-      <DefaultLayout locale={locale}>
+      <DefaultLayout locale={locale} translate={t}>
         <Container>
           <Title>{t('pages:contact.pageTitle')}</Title>
           <Content>{t('pages:contact.content')}</Content>

@@ -1,0 +1,11 @@
+{
+  "inputs": {
+    "email": "Poczta",
+    "phone": "Telefon",
+    "password": "Hasło",
+    "twoFa": "Dwuskładnikowy kod uwierzytelniający",
+    "sendCode": "Wyślij kod",
+    "verificationCode": "Kod weryfikacyjny",
+    "submit": "Kontynuować"
+  }
+}

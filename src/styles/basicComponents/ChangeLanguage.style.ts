@@ -36,6 +36,7 @@ export const LanguageItem = styled.div`
 
 export const Flag = styled.span`
   font-size: 32px;
+  padding: 0 15px;
 `;
 
 export const LanguageName = styled.span`
