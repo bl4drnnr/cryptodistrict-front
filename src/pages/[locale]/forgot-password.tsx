@@ -45,36 +45,36 @@ const ForgotPassword = ({ locale }: ForgotPasswordProps) => {
       <CredentialsLayout leftSide={
         <Box>
           <WelcomeTitle>
-            Forgot password?
+            {t('pages:forgotPassword.text1')}
           </WelcomeTitle>
           <WelcomeTitle>
-            Nah... Not a big deal
+            {t('pages:forgotPassword.text2')}
           </WelcomeTitle>
 
         </Box>
       } rightSide={
         <Box>
-          <h1>Forgot password?</h1>
+          <h1>{t('pages:forgotPassword.text1')}</h1>
           <LoginOptions>
-            <LoginOption onClick={() => setPasswordRecoveryMethod('email')}>With Email</LoginOption>
+            <LoginOption onClick={() => setPasswordRecoveryMethod('email')}>{t('pages:signin.withEmail')}</LoginOption>
             <VerticalLine />
-            <LoginOption onClick={() => setPasswordRecoveryMethod('phone')}>With Phone Number</LoginOption>
+            <LoginOption onClick={() => setPasswordRecoveryMethod('phone')}>{t('pages:signin.withPhone')}</LoginOption>
           </LoginOptions>
 
           {passwordRecoveryMethod === 'email' ? (
             <InputButton
-              buttonTitle={'Send code'}
+              buttonTitle={t('placeholders:inputs.sendCode')}
               onChange={() => {}}
               onClick={() => {}}
-              placeholder={'Email'}
+              placeholder={t('placeholders:inputs.email')}
               value={email}
             />
           ): (
             <InputButton
-              buttonTitle={'Send code'}
+              buttonTitle={t('placeholders:inputs.sendCode')}
               onChange={() => {}}
               onClick={() => {}}
-              placeholder={'Phone'}
+              placeholder={t('placeholders:inputs.phone')}
               value={phone}
             />
           )}
@@ -84,19 +84,19 @@ const ForgotPassword = ({ locale }: ForgotPasswordProps) => {
               high={true}
               value={verificationCode}
               onChange={(e) => setVerificationCode(e.target.value)}
-              placeholder={'Verification code'}
+              placeholder={t('placeholders:inputs.verificationCode')}
             />
           </MarginWrapper>
 
           <MarginWrapper>
-            <Button highHeight={true} text={'Submit'} />
+            <Button highHeight={true} text={t('placeholders:inputs.submit')} />
           </MarginWrapper>
         </Box>
       } headerLink={
         <p>
-          Don&apos;t have an account yet? <Link
+          {t('pages:signin.dontHaveAnAcc')} <Link
           onClick={() => handleRedirect('/signup')}
-        >Sign up now!</Link>
+        >{t('pages:signin.signUpNow')}</Link>
         </p>
       } rightDarkSide={true} locale={locale}
       />
@@ -104,7 +104,7 @@ const ForgotPassword = ({ locale }: ForgotPasswordProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
+const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors', 'placeholders']);
 export { getStaticPaths, getStaticProps };
 
 export default ForgotPassword;

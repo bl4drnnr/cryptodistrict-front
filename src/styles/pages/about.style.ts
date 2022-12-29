@@ -60,14 +60,6 @@ export const ContentContainer = styled.div`
   &.light {
     background: rgb(${(props) => props.theme.colors.lightBackground});
   }
-  .asset {
-    transition: .2s;
-  }
-  &:hover {
-    .asset {
-      transform: scale(1.1);
-    }
-  }
 `;
 
 export const TextContainer = styled.div`

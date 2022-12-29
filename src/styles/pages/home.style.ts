@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 export const HomeWelcomeContainer = styled.div`
   height: 100vh;
+
   &.light {
     height: 100%;
     background-color: rgb(${(props) => props.theme.colors.lightBackground});
   }
+
   &.dark {
     height: 100%;
     background-color: rgb(${(props) => props.theme.colors.darkBackground});
@@ -13,20 +15,26 @@ export const HomeWelcomeContainer = styled.div`
 `;
 
 export const HomeWelcomeBox = styled.div`
-  text-align: center; 
+  text-align: center;
   align-items: center;
   justify-content: center;
   display: flex;
   height: calc(300px - 50px);
+
   &.name {
     align-items: end;
   }
+
   &.block {
     display: block;
     animation: text-appearing 2s;
     @keyframes text-appearing {
-      from {opacity: 0}
-      to {opacity: 1}
+      from {
+        opacity: 0
+      }
+      to {
+        opacity: 1
+      }
     }
   }
 `;
@@ -39,27 +47,36 @@ export const InputWrapper = styled.div`
 
 export const HomeWelcomeTitle = styled.span`
   font-size: 72px;
-  font-weight: 100; 
+  font-weight: 100;
   font-family: "Lato", sans-serif;
   position: relative;
   display: block;
   animation: text-appearing 2s;
-  
+
   @keyframes lines {
-    from {width: 0}
-    to {width: 100vw}
+    from {
+      width: 0
+    }
+    to {
+      width: 100vw
+    }
   }
 
   @keyframes text-appearing {
-    from {opacity: 0}
-    to {opacity: 1}
+    from {
+      opacity: 0
+    }
+    to {
+      opacity: 1
+    }
   }
-  
+
   &::before, &::after {
     content: '';
     position: absolute;
     display: block;
   }
+
   &::before {
     height: 100%;
     left: -20px;
@@ -67,6 +84,7 @@ export const HomeWelcomeTitle = styled.span`
     background: rgb(13, 17, 23);
     z-index: -1;
   }
+
   &::after {
     animation: lines 2s;
     width: 100vw;
@@ -101,12 +119,14 @@ export const StartButton = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
+
   &:hover {
     transform: scale(1.1);
-    -webkit-box-shadow:0 0 149px 9px rgba(${(props) => props.theme.colors.primary},0.37);
-    -moz-box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary},0.37);
-    box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary},0.37);
+    -webkit-box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary}, 0.37);
+    -moz-box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary}, 0.37);
+    box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary}, 0.37);
   }
+
   &.aboutPage {
     margin-top: 50px
   }
@@ -146,11 +166,11 @@ export const Line = styled.div`
       top: 0;
     }
   }
-  
+
   @keyframes drop {
     0% {
       top: -50%;
-    } 
+    }
     100% {
       top: 110%;
     }
@@ -169,42 +189,54 @@ export const Line = styled.div`
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
   }
-  
+
   &:nth-child(1) {
     margin-left: -20%;
+
     &::after {
       animation-delay: 1.6s;
     }
   }
+
   &:nth-child(2) {
     display: none;
   }
+
   &:nth-child(3) {
     margin-left: 20%;
+
     &::after {
       animation-delay: 2.4s;
     }
   }
+
   &:nth-child(4) {
     margin-left: 40%;
+
     &::after {
       animation-delay: 4s;
     }
   }
+
   &:nth-child(5) {
     margin-left: -40%;
+
     &::after {
       animation-delay: 0.2s;
     }
   }
+
   &:nth-child(6) {
     margin-left: -30%;
+
     &::after {
       animation-delay: 0.9s;
     }
   }
+
   &:nth-child(7) {
     margin-left: 30%;
+
     &::after {
       animation-delay: 2.2s;
     }
@@ -230,6 +262,7 @@ export const CryptoDescriptionHeader = styled.h1`
   font-size: 58px;
   font-weight: 900;
   font-family: "Lato", sans-serif;
+
   &.subHeader {
     font-size: 28px;
     font-weight: 100;
@@ -242,31 +275,52 @@ export const ImageBlock = styled.div`
   width: 100%;
   height: 500px;
   position: relative;
+
   &.mirrored {
     justify-content: space-between;
+
     ${CryptoDescriptionContainer} {
       text-align: end;
     }
   }
+
   .image-nft {
-    margin-left: 10%;
+    position: absolute;
+    &.crypto-creation {
+      left: 12%;
+    }
+    &.metamask {
+      left: 0;
+    }
+    &.contract {
+      left: 20%;
+    }
   }
+
   .image {
     position: absolute;
     top: 10%;
     transition: .2s;
+
     &:hover {
       transform: scale(1.1);
       z-index: 2;
     }
+
     &.btc {
       right: 10%;
     }
+
     &.ltc {
       right: 0;
     }
+
     &.usdt {
-      right: 15%;
+      right: 20%;
+    }
+
+    &.eth {
+      right: 30%;
     }
   }
 `;

@@ -22,7 +22,7 @@ import {
   SearchBarBox
 } from '@styles/Header.style';
 
-export const Header = ({ locale }: HeaderProps) => {
+export const Header = ({ locale, translate }: HeaderProps) => {
   const router = useRouter();
   const [currentTheme, setCurrentTheme] = useRecoilState(theme);
   const [searchModal, setSearchModal] = useState(false);
@@ -53,14 +53,19 @@ export const Header = ({ locale }: HeaderProps) => {
           <NavigationButtons>
             <Logo onClick={() => handleRedirect('/')}>Cryptodistrict</Logo>
             <Links>
-              <Link onClick={() => handleRedirect('/about')}>About</Link>
-              <Link onClick={() => handleRedirect('/market')}>Markets</Link>
-              <Link onClick={() => handleRedirect('/contact')}>Contact</Link>
+              <Link onClick={() => handleRedirect('/about')}>{translate('components:header.about')}</Link>
+              <Link onClick={() => handleRedirect('/market')}>{translate('components:header.markets')}</Link>
+              <Link onClick={() => handleRedirect('/contact')}>{translate('components:header.contact')}</Link>
             </Links>
           </NavigationButtons>
           <SearchBarWrapper onClick={() => setSearchModal(true)}>
             <SearchBarBox>
-              <Input value={''} placeholder={''} innerPlaceholder={'Search items'} onChange={() => {}}/>
+              <Input
+                value={''}
+                placeholder={''}
+                innerPlaceholder={translate('components:header.search')}
+                onChange={() => {}}
+              />
             </SearchBarBox>
           </SearchBarWrapper>
           <Buttons>
@@ -68,13 +73,13 @@ export const Header = ({ locale }: HeaderProps) => {
               className={classNames({ logIn: true })}
               onClick={() => handleRedirect('/signin')}
             >
-              Sign In
+              {translate('components:header.signIn')}
             </Button>
             <Button
               className={classNames({ signup: true })}
               onClick={() => handleRedirect('/signup')}
             >
-              Sign Up
+              {translate('components:header.signUp')}
             </Button>
             <ThemeToggler
               theme={currentTheme}
@@ -83,6 +88,7 @@ export const Header = ({ locale }: HeaderProps) => {
             <ChangeLanguage
               path={router.asPath}
               defaultLanguage={locale}
+              translate={translate}
             />
           </Buttons>
         </Box>

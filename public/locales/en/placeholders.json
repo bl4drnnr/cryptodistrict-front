@@ -1,0 +1,11 @@
+{
+  "inputs": {
+    "email": "Email",
+    "phone": "Phone",
+    "password": "Password",
+    "twoFa": "Two factor authentication code",
+    "sendCode": "Send code",
+    "verificationCode": "Verification code",
+    "submit": "Submit"
+  }
+}

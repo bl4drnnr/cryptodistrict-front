@@ -42,7 +42,7 @@ const Signup = ({ locale }: SignUpProps) => {
   const { loading, signUp } = useSignUpService();
   const { handleException } = useHandleException();
 
-  const [step, setStep] = React.useState(3);
+  const [step, setStep] = React.useState(1);
   const [tac, setTac] = React.useState(false);
   const [email, setEmail] = React.useState({ email: '', emailError: false });
   const [firstName, setFirstName] = React.useState('');

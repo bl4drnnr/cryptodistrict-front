@@ -13,21 +13,21 @@ import {
   PickedLanguage
 } from '@styles/ChangeLanguage.style';
 
-export const ChangeLanguage = ({ defaultLanguage, path }: ChangeLanguageProps) => {
+export const ChangeLanguage = ({ defaultLanguage, path, translate }: ChangeLanguageProps) => {
   const router = useRouter();
 
   const [showLanguages, setShowLanguages] = React.useState(false);
   const [pickedLanguage, setPickedLanguage] = React.useState('');
   const [languages, ] = React.useState([{
-    language: 'Polish',
+    language: translate('components:changeLanguage.pl'),
     flag: '🇵🇱',
     prefix: 'pl'
   }, {
-    language: 'Russian',
+    language: translate('components:changeLanguage.ru'),
     flag: '🇷🇺',
     prefix: 'ru'
   }, {
-    language: 'English',
+    language: translate('components:changeLanguage.en'),
     flag: '🇬🇧',
     prefix: 'en'
   }]);
@@ -61,7 +61,7 @@ export const ChangeLanguage = ({ defaultLanguage, path }: ChangeLanguageProps) =
       >{pickedLanguage}</PickedLanguage>
       <ChangeLanguageContainer>
         {showLanguages ? (
-          <Modal description={'List of available languages'} header={'Language'} onClose={() => setShowLanguages(false)}>
+          <Modal description={translate('components:changeLanguage.langList')} header={translate('components:changeLanguage.lang')} onClose={() => setShowLanguages(false)}>
             {languages.map(item => (
               <LanguageItem
                 key={item.language}

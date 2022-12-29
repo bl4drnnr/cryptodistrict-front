@@ -39,7 +39,7 @@ const About = ({ locale }: AboutProps) => {
       <Head>
         <title>Cryptodistrict | {t('pages:about.title')}</title>
       </Head>
-      <DefaultLayout locale={locale}>
+      <DefaultLayout locale={locale} translate={t}>
         <Container>
           <Box>
             <Wrapper>
@@ -78,11 +78,11 @@ const About = ({ locale }: AboutProps) => {
             <TextContainerContent><strong>Cryptodiscrict</strong> is the place where we truly believe in WEB3 ideas and try to make it easier and more available to everyone to touch future of digital currencies and the Internet.</TextContainerContent>
             <TextContainerContent>This marketplace is just another tool that wants to give users new experience of cryptomarketplace usage.</TextContainerContent>
           </TextContainer>
-          <Image className={'asset'} src={'/img/blockchain.svg'} alt={'blockchain'} width={400} height={400}/>
+          <Image className={'asset'} src={'/img/user-interface.gif'} alt={'user-interface'} width={600} height={600}/>
         </ContentContainer>
 
         <ContentContainer>
-          <Image className={'asset'} src={'/img/cloud-computing.svg'} alt={'cloud-computing'} width={400} height={400}/>
+          <Image className={'asset'} src={'/img/web-address-registration.gif'} alt={'web-address-registration'} width={600} height={600}/>
           <TextContainer className={'end'}>
             <TextContainerTitle>Why is WEB3 important?</TextContainerTitle>
             <TextContainerSubtitle>Future of money, money of future</TextContainerSubtitle>
@@ -98,7 +98,7 @@ const About = ({ locale }: AboutProps) => {
             <TextContainerContent>As well as owning your data in Web3, you can own the platform as a collective, using tokens that act like shares in a company. DAOs let you coordinate decentralized ownership of a platform and make decisions about its future.</TextContainerContent>
             <TextContainerContent>DAOs are defined technically as agreed-upon smart contracts that automate decentralized decision-making over a pool of resources (tokens). Users with tokens vote on how resources get spent, and the code automatically performs the voting outcome.</TextContainerContent>
           </TextContainer>
-          <Image className={'asset'} src={'/img/currency-chain.svg'} alt={'currency-chain'} width={400} height={400}/>
+          <Image className={'asset'} src={'/img/web-designer-setting-up-web-layout.gif'} alt={'web-designer-setting-up-web-layout'} width={600} height={600}/>
         </ContentContainer>
 
         <ContentContainer>

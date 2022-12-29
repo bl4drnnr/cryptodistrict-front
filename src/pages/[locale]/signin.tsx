@@ -71,12 +71,12 @@ const Signin = ({ locale }: SignInProps) => {
         <>
           {step === 1 ? (
             <Box>
-              <Title>Sign In</Title>
+              <Title>{t('pages:signin.title')}</Title>
 
               <LoginOptions>
-                <LoginOption onClick={() => setLoginOption('email')}>With Email</LoginOption>
+                <LoginOption onClick={() => setLoginOption('email')}>{t('pages:signin.withEmail')}</LoginOption>
                 <VerticalLine />
-                <LoginOption onClick={() => setLoginOption('phone')}>With Phone Number</LoginOption>
+                <LoginOption onClick={() => setLoginOption('phone')}>{t('pages:signin.withPhone')}</LoginOption>
               </LoginOptions>
 
               <MarginWrapper>
@@ -85,14 +85,14 @@ const Signin = ({ locale }: SignInProps) => {
                     high={true}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder={'Email'}
+                    placeholder={t('placeholders:inputs.email')}
                   />
                 ): (
                   <Input
                     high={true}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder={'Email'}
+                    placeholder={t('placeholders:inputs.phone')}
                   />
                 )}
               </MarginWrapper>
@@ -104,21 +104,21 @@ const Signin = ({ locale }: SignInProps) => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type={'password'}
-                  placeholder={'Password'}
+                  placeholder={t('placeholders:inputs.password')}
                 />
               </MarginWrapper>
 
               <MarginWrapper>
                 <Link
                   onClick={() => handleRedirect('/forgot-password')}
-                >Forgot password?</Link>
+                >{t('pages:signin.forgotPassword')}</Link>
               </MarginWrapper>
 
               <MarginWrapper>
                 <Button
                   disabled={passwordError}
                   highHeight={true}
-                  text={'Sign Up'}
+                  text={t('pages:signin.signUpButton')}
                   onClick={() => signInUser()}
                 />
               </MarginWrapper>
@@ -126,15 +126,15 @@ const Signin = ({ locale }: SignInProps) => {
             </Box>
           ) : (
             <Box>
-              <Title>Two Factor Authentication</Title>
+              <Title>{t('pages:signin.twoFa')}</Title>
               <MarginWrapper className={'big'}>
                 <TwoFa
-                  title={'Two factor authentication code'}
+                  title={t('placeholders:inputs.twoFa')}
                   setTwoFaCode={setTwoFa}
                 />
               </MarginWrapper>
               <MarginWrapper>
-                <Button highHeight={true} text={'Sign Up'} fillButton={true} />
+                <Button highHeight={true} text={t('pages:signin.title')} fillButton={true} />
               </MarginWrapper>
             </Box>
           )}
@@ -142,21 +142,20 @@ const Signin = ({ locale }: SignInProps) => {
       } rightSide={
         <Box>
           <WelcomeTitle>
-            Welcome back!
+            {t('pages:signin.text1')}
           </WelcomeTitle>
           <WelcomeTitle>
-            We are glad to see again!
+            {t('pages:signin.text2')}
           </WelcomeTitle>
           <WelcomeText>
-            We are quite sure you have been doing this hundreds times before,
-            so, no need to explain what you need to do, fields on the left side.
+            {t('pages:signin.text3')}
           </WelcomeText>
         </Box>
       } headerLink={
         <p>
-          Don&apos;t have an account yet? <Link
+          {t('pages:signin.dontHaveAnAcc')} <Link
           onClick={() => handleRedirect('/signup')}
-        >Sign up now!</Link>
+        >{t('pages:signin.signUpNow')}</Link>
         </p>
       } leftDarkSide={true} mirroredHeader={true} locale={locale} loading={loading}
       />
@@ -164,7 +163,7 @@ const Signin = ({ locale }: SignInProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
+const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors', 'placeholders']);
 export { getStaticPaths, getStaticProps };
 
 export default Signin;

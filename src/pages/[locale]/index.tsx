@@ -46,7 +46,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
   };
 
   return (
-    <DefaultLayout locale={locale}>
+    <DefaultLayout locale={locale} translate={t}>
       <Head>
         <title>Cryptodistrict | {t('pages:home.title')}</title>
       </Head>
@@ -103,16 +103,21 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
             </CryptoDescriptionBox>
           </CryptoDescriptionContainer>
 
+          <Image className={'image eth'} src={'/img/ethereum.png'} alt={'eth'} width={400} height={400}/>
           <Image className={'image usdt'} src={'/img/tether.png'} alt={'tether'} width={400} height={400}/>
-          <Image className={'image ltc'} src={'/img/litecoin.png'} alt={'ltc'} width={400} height={400}/>
           <Image className={'image btc'} src={'/img/bitcoin.png'} alt={'btc'} width={400} height={400}/>
+          <Image className={'image ltc'} src={'/img/litecoin.png'} alt={'ltc'} width={400} height={400}/>
 
         </ImageBlock>
       </HomeWelcomeContainer>
 
       <HomeWelcomeContainer className={'dark'}>
         <ImageBlock className={'mirrored'}>
-          <Image className={'image-nft'} src={'/img/skeleton.gif'} alt={'skeleton'} width={500} height={500}/>
+          <div>
+            <Image  className={'image-nft contract'} src={'/img/contract.png'} alt={'contract'} width={500} height={500}/>
+            <Image className={'image-nft metamask'} src={'/img/metamask.png'} alt={'metamask'} width={500} height={500}/>
+            <Image className={'image-nft crypto-creation'} src={'/img/crypto-creation.png'} alt={'crypto-creation'} width={500} height={500}/>
+          </div>
 
           <CryptoDescriptionContainer>
             <CryptoDescriptionBox>

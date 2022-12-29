@@ -5,13 +5,25 @@
     "nft": "Słyszałeś o NTF?"
   },
   "forgotPassword": {
-    "title": "Przypomnienie hasła"
+    "title": "Przypomnienie hasła",
+    "text1": "Zapomniłeś hasło?",
+    "text2": "No... To nie duży problem"
   },
   "about": {
     "title": "O projekcie"
   },
   "signin": {
-    "title": "Logowanie"
+    "title": "Logowanie",
+    "withEmail": "Z poczty",
+    "withPhone": "Z telefonu",
+    "signUpButton": "Zarejestruj się",
+    "forgotPassword": "Zapomniłeś hasło?",
+    "text1": "Witamy spowrotem!",
+    "text2": "Cieszymy się, że znów się widzimy!",
+    "text3": "Jesteśmy pewni, że robiłeś to już setki razy, więc nie musisz wyjaśniać, co musisz zrobić, pola po lewej stronie.",
+    "dontHaveAnAcc": "Nie masz jeszcze konta?",
+    "signUpNow": "Zarejestruj się teraz!",
+    "twoFa": "Uwierzytelnianie dwuetapowe"
   },
   "signup": {
     "title": "Rejestracja"
