@@ -5,7 +5,7 @@ export interface InputButtonProps {
   placeholder: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   buttonTitle: string;
-  onClick: () => void|never;
+  onClick: () => void | never;
   type?: string;
   onError?: boolean;
   buttonDisabled?: boolean;

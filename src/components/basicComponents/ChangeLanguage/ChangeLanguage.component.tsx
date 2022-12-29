@@ -18,7 +18,7 @@ export const ChangeLanguage = ({ defaultLanguage, path, translate }: ChangeLangu
 
   const [showLanguages, setShowLanguages] = React.useState(false);
   const [pickedLanguage, setPickedLanguage] = React.useState('');
-  const [languages, ] = React.useState([{
+  const [languages,] = React.useState([{
     language: translate('components:changeLanguage.pl'),
     flag: '🇵🇱',
     prefix: 'pl'
@@ -61,7 +61,8 @@ export const ChangeLanguage = ({ defaultLanguage, path, translate }: ChangeLangu
       >{pickedLanguage}</PickedLanguage>
       <ChangeLanguageContainer>
         {showLanguages ? (
-          <Modal description={translate('components:changeLanguage.langList')} header={translate('components:changeLanguage.lang')} onClose={() => setShowLanguages(false)}>
+          <Modal description={translate('components:changeLanguage.langList')}
+                 header={translate('components:changeLanguage.lang')} onClose={() => setShowLanguages(false)}>
             {languages.map(item => (
               <LanguageItem
                 key={item.language}
@@ -72,7 +73,7 @@ export const ChangeLanguage = ({ defaultLanguage, path, translate }: ChangeLangu
               </LanguageItem>
             ))}
           </Modal>
-        ):  null}
+        ) : null}
       </ChangeLanguageContainer>
     </>
   );

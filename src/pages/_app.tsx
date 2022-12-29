@@ -11,7 +11,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     <>
       <RecoilRoot>
         <Head>
-          <link rel="icon" type="image/png" href="/favicon.ico" />
+          <link rel="icon" type="image/png" href="/favicon.ico"/>
         </Head>
         <Component {...pageProps} />
       </RecoilRoot>

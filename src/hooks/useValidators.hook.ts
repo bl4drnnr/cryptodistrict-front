@@ -55,6 +55,8 @@ export const validatePasswordRules = (password: string) => {
 };
 
 export const validate2fa = (i: string) => {
-  if (i.length > 1) { i = i.slice(0, 1); }
+  if (i.length > 1) {
+    i = i.slice(0, 1);
+  }
   return i;
 };

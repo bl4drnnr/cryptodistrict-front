@@ -14,7 +14,7 @@ interface INotificationMessage {
   devInfo?: string;
 }
 
-export const theme = atom<'dark'|'light'>({
+export const theme = atom<'dark' | 'light'>({
   key: 'theme',
   default: 'dark',
 });

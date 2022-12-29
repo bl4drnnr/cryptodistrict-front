@@ -29,8 +29,6 @@ import {
 } from '@styles/home.style';
 
 
-
-
 interface HomeProps {
   locale: string;
 }
@@ -82,7 +80,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
 
         <Lines>
           {[...Array(7)].map((x, i) =>
-            <Line key={i} />
+            <Line key={i}/>
           )}
         </Lines>
       </HomeWelcomeContainer>
@@ -93,7 +91,8 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
             <CryptoDescriptionBox>
               <CryptoDescriptionHeader>{t('pages:home.familiarIcons')}</CryptoDescriptionHeader>
               <CryptoDescriptionHeader className={'subHeader'}>
-                Those are the most popular and well-known cryptocurrencies and you are in the place where you can buy, sell, swap, hold or send these (and not only) cryptocurrencies
+                Those are the most popular and well-known cryptocurrencies and you are in the place where you can buy,
+                sell, swap, hold or send these (and not only) cryptocurrencies
               </CryptoDescriptionHeader>
               <StartButton onClick={() => handleRedirect(`/signup?email=${email}`)}>
                 <ButtonText>
@@ -114,16 +113,20 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
       <HomeWelcomeContainer className={'dark'}>
         <ImageBlock className={'mirrored'}>
           <div>
-            <Image  className={'image-nft contract'} src={'/img/contract.png'} alt={'contract'} width={500} height={500}/>
-            <Image className={'image-nft metamask'} src={'/img/metamask.png'} alt={'metamask'} width={500} height={500}/>
-            <Image className={'image-nft crypto-creation'} src={'/img/crypto-creation.png'} alt={'crypto-creation'} width={500} height={500}/>
+            <Image className={'image-nft contract'} src={'/img/contract.png'} alt={'contract'} width={500}
+                   height={500}/>
+            <Image className={'image-nft metamask'} src={'/img/metamask.png'} alt={'metamask'} width={500}
+                   height={500}/>
+            <Image className={'image-nft crypto-creation'} src={'/img/crypto-creation.png'} alt={'crypto-creation'}
+                   width={500} height={500}/>
           </div>
 
           <CryptoDescriptionContainer>
             <CryptoDescriptionBox>
               <CryptoDescriptionHeader>{t('pages:home.nft')}</CryptoDescriptionHeader>
               <CryptoDescriptionHeader className={'subHeader'}>
-                We bet you definitely have heard about this modern form of digital art? You ask if you have got a couple? You God damn right!
+                We bet you definitely have heard about this modern form of digital art? You ask if you have got a
+                couple? You God damn right!
               </CryptoDescriptionHeader>
               <StartButton onClick={() => handleRedirect(`/signup?email=${email}`)}>
                 <ButtonText>
@@ -136,7 +139,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
         </ImageBlock>
       </HomeWelcomeContainer>
 
-      <Widget />
+      <Widget/>
     </DefaultLayout>
   );
 };

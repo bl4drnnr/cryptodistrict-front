@@ -17,7 +17,7 @@ const DefaultLayout = ({ children, locale, translate, loading = false }: Default
   return (
     <GlobalLayout loading={loading}>
       <Wrapper>
-        <Header locale={locale} translate={translate} />
+        <Header locale={locale} translate={translate}/>
         {children}
         <Footer/>
       </Wrapper>

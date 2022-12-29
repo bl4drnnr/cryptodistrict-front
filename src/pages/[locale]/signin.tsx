@@ -75,7 +75,7 @@ const Signin = ({ locale }: SignInProps) => {
 
               <LoginOptions>
                 <LoginOption onClick={() => setLoginOption('email')}>{t('pages:signin.withEmail')}</LoginOption>
-                <VerticalLine />
+                <VerticalLine/>
                 <LoginOption onClick={() => setLoginOption('phone')}>{t('pages:signin.withPhone')}</LoginOption>
               </LoginOptions>
 
@@ -87,7 +87,7 @@ const Signin = ({ locale }: SignInProps) => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('placeholders:inputs.email')}
                   />
-                ): (
+                ) : (
                   <Input
                     high={true}
                     value={email}
@@ -134,7 +134,7 @@ const Signin = ({ locale }: SignInProps) => {
                 />
               </MarginWrapper>
               <MarginWrapper>
-                <Button highHeight={true} text={t('pages:signin.title')} fillButton={true} />
+                <Button highHeight={true} text={t('pages:signin.title')} fillButton={true}/>
               </MarginWrapper>
             </Box>
           )}

@@ -6,9 +6,9 @@ export const Loader = ({ loading }: LoaderProps) => {
     <>
       {loading ? (
         <LoadingBackground>
-          <LoadingSpinner />
+          <LoadingSpinner/>
         </LoadingBackground>
-      ): (<></>)}
+      ) : (<></>)}
     </>
   );
 };

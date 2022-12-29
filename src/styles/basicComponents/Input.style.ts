@@ -25,11 +25,11 @@ export const BasicInput = styled.input`
   transition: .3s;
   font-weight: 100;
   font-family: "Inter", sans-serif;
-  
+
   &.high {
     height: 48px;
   }
-  
+
   &.onError {
     border: 1px solid rgba(${(props) => props.theme.colors.error}) !important;
   }

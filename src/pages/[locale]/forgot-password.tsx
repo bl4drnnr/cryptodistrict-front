@@ -57,23 +57,27 @@ const ForgotPassword = ({ locale }: ForgotPasswordProps) => {
           <h1>{t('pages:forgotPassword.text1')}</h1>
           <LoginOptions>
             <LoginOption onClick={() => setPasswordRecoveryMethod('email')}>{t('pages:signin.withEmail')}</LoginOption>
-            <VerticalLine />
+            <VerticalLine/>
             <LoginOption onClick={() => setPasswordRecoveryMethod('phone')}>{t('pages:signin.withPhone')}</LoginOption>
           </LoginOptions>
 
           {passwordRecoveryMethod === 'email' ? (
             <InputButton
               buttonTitle={t('placeholders:inputs.sendCode')}
-              onChange={() => {}}
-              onClick={() => {}}
+              onChange={() => {
+              }}
+              onClick={() => {
+              }}
               placeholder={t('placeholders:inputs.email')}
               value={email}
             />
-          ): (
+          ) : (
             <InputButton
               buttonTitle={t('placeholders:inputs.sendCode')}
-              onChange={() => {}}
-              onClick={() => {}}
+              onChange={() => {
+              }}
+              onClick={() => {
+              }}
               placeholder={t('placeholders:inputs.phone')}
               value={phone}
             />
@@ -89,7 +93,7 @@ const ForgotPassword = ({ locale }: ForgotPasswordProps) => {
           </MarginWrapper>
 
           <MarginWrapper>
-            <Button highHeight={true} text={t('placeholders:inputs.submit')} />
+            <Button highHeight={true} text={t('placeholders:inputs.submit')}/>
           </MarginWrapper>
         </Box>
       } headerLink={
