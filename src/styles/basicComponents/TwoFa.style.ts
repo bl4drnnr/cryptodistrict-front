@@ -22,10 +22,12 @@ export const InputTwoFa = styled.input`
   text-align: center;
   color: white;
   background-color: rgba(35, 36, 40, 0.85);
+
   &:focus {
     outline: none !important;
     border: 1px solid rgba(${(props) => props.theme.colors.primary}, 1);
   }
+
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     display: none;

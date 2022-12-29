@@ -8,11 +8,11 @@ class AppDocument extends Document {
     return (
       <Html lang={currentLocale as string}>
         <Head>
-          <link rel="icon" type="image/png" href="/favicon.ico" />
+          <link rel="icon" type="image/png" href="/favicon.ico"/>
         </Head>
         <body>
-        <Main />
-        <NextScript />
+        <Main/>
+        <NextScript/>
         </body>
       </Html>
     );

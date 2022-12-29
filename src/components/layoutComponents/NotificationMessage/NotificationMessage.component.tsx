@@ -10,7 +10,7 @@ export const NotificationMessage = ({}: NotificationMessageProps) => {
     <>
       {show &&
         <Container className={classNames({ onError: type === 'error', fadeInClass: true })}>
-          <Content>{ content }</Content>
+          <Content>{content}</Content>
         </Container>
       }
     </>

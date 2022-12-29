@@ -64,7 +64,8 @@ export const Header = ({ locale, translate }: HeaderProps) => {
                 value={''}
                 placeholder={''}
                 innerPlaceholder={translate('components:header.search')}
-                onChange={() => {}}
+                onChange={() => {
+                }}
               />
             </SearchBarBox>
           </SearchBarWrapper>

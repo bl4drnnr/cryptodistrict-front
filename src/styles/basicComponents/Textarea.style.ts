@@ -30,7 +30,7 @@ export const BasicTextarea = styled.textarea`
   height: 120px;
   resize: vertical;
   white-space: pre-wrap;
-  
+
   &.onError {
     border: 1px solid rgba(${(props) => props.theme.colors.error}) !important;
   }

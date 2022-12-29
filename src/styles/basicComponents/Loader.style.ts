@@ -18,20 +18,26 @@ export const LoadingSpinner = styled.span`
   margin: auto;
   width: 200px;
   height: 200px;
-  
-  &:before , &:after {
+
+  &:before, &:after {
     content: '';
     border-radius: 50%;
     position: absolute;
     inset: 0;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
   }
+
   :after {
     box-shadow: 0 10px 0 rgb(${(props) => props.theme.colors.primary}) inset;
     animation: rotate 2s linear infinite;
   }
+
   @keyframes rotate {
-    0% { transform: rotate(0) }
-    100% { transform: rotate(360deg) }
+    0% {
+      transform: rotate(0)
+    }
+    100% {
+      transform: rotate(360deg)
+    }
   }
 `;

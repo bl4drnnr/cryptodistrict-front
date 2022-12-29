@@ -18,8 +18,8 @@ const GlobalLayout = ({ children, loading = false }: GlobalLayoutProps) => {
 
   return (
     <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
-      <Loader loading={loading} />
-      <NotificationMessage />
+      <Loader loading={loading}/>
+      <NotificationMessage/>
       {children}
     </ThemeProvider>
   );

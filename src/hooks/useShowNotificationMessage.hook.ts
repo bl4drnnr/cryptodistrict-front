@@ -11,10 +11,10 @@ export const useNotificationMessage = () => {
   } = useNotificationMessageActions();
 
   const showNotificationMessage = ({
-   content,
-   type,
-   duration = DEFAULT_NOTIFICATION_DURATION,
-  }: { content: string, type: NotificationType, duration?: number }) => {
+                                     content,
+                                     type,
+                                     duration = DEFAULT_NOTIFICATION_DURATION,
+                                   }: { content: string, type: NotificationType, duration?: number }) => {
     if (show) {
       return false;
     }

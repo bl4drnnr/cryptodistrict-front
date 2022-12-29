@@ -8,7 +8,7 @@ export const useSignInService = () => {
   const [loading, setLoading] = React.useState(false);
 
   const signIn = async (payload: SignInPayload)
-    :Promise<SignInResponse> => {
+    : Promise<SignInResponse> => {
     try {
       setLoading(true);
       const { data } = await ApiClient.post<SignInResponse>('/user/sign-in', payload);

@@ -297,11 +297,11 @@ const Signup = ({ locale }: SignUpProps) => {
                 />
 
                 <Buttons>
-                  <Button text={'Go Back'} onClick={() => setStep(step - 1)} />
+                  <Button text={'Go Back'} onClick={() => setStep(step - 1)}/>
                   <MarginVerticalWrapper>
                     <Button text={'Skip'} onClick={() => signUpUser()}/>
                   </MarginVerticalWrapper>
-                  <Button fillButton={true} text={'Next'} onClick={() => signUpUser()} />
+                  <Button fillButton={true} text={'Next'} onClick={() => signUpUser()}/>
                 </Buttons>
               </Box>
             ) : (
@@ -311,9 +311,10 @@ const Signup = ({ locale }: SignUpProps) => {
                   <SubTitle>Your account has been successfully created!</SubTitle>
                 </MarginWrapper>
                 <MarginWrapper>
-                  <SubTitle>Please, check you email inbox in order to confirm registration by clicking the ling you will find inside the message.</SubTitle>
+                  <SubTitle>Please, check you email inbox in order to confirm registration by clicking the ling you will
+                    find inside the message.</SubTitle>
                 </MarginWrapper>
-                <Button fillButton={true} text={'Sign in'} onClick={() => handleRedirect('/signin')} />
+                <Button fillButton={true} text={'Sign in'} onClick={() => handleRedirect('/signin')}/>
               </Box>
             )
           )}

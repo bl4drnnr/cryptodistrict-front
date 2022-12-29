@@ -1,1 +1,2 @@
-export interface NotificationMessageProps {}
+export interface NotificationMessageProps {
+}

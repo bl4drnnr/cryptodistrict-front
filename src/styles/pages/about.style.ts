@@ -31,7 +31,7 @@ export const Header = styled.span`
   animation-fill-mode: forwards;
   opacity: 0;
   color: rgb(${(props) => props.theme.colors.primary});
-  
+
   @keyframes text-appearing {
     from {
       transform: scale(0.5);
@@ -57,6 +57,7 @@ export const ContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 100px;
+
   &.light {
     background: rgb(${(props) => props.theme.colors.lightBackground});
   }
@@ -65,11 +66,13 @@ export const ContentContainer = styled.div`
 export const TextContainer = styled.div`
   padding-top: 50px;
   padding-left: 50px;
+
   &.end {
     padding-left: 0;
     padding-right: 50px;
     text-align: end;
   }
+
   &.center {
     padding-top: 0;
     width: 100%;
@@ -93,6 +96,7 @@ export const TextContainerContent = styled.p`
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 22px;
+
   &.end {
     padding: 30px 0 0 100px;
   }

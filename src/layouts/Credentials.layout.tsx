@@ -19,15 +19,15 @@ interface CredentialsLayoutProps {
 }
 
 const CredentialsLayout = ({
-  leftSide,
-  rightSide,
-  headerLink,
-  locale,
-  leftDarkSide = false,
-  rightDarkSide = false,
-  mirroredHeader = false,
-  loading = false
-}: CredentialsLayoutProps): React.ReactElement => {
+                             leftSide,
+                             rightSide,
+                             headerLink,
+                             locale,
+                             leftDarkSide = false,
+                             rightDarkSide = false,
+                             mirroredHeader = false,
+                             loading = false
+                           }: CredentialsLayoutProps): React.ReactElement => {
   const router = useRouter();
 
   const handleRedirect = async (path: string) => {
@@ -48,7 +48,7 @@ const CredentialsLayout = ({
                 onClick={() => handleRedirect('/')}
               >Cryptodistrict</LoginHeaderTitle>
             </>
-          ): (
+          ) : (
             <>
               <LoginHeaderTitle
                 onClick={() => handleRedirect('/')}
