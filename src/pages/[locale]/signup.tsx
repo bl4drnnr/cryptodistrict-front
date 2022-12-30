@@ -60,11 +60,11 @@ const Signup = ({ locale }: SignUpProps) => {
     passwordRules: false
   });
   const [passwordRulesList, setPasswordRulesList] = React.useState([
-    { error: false, text: 'Password length should be more than 8 characters' },
-    { error: false, text: 'Password should contain at least one uppercase character' },
-    { error: false, text: 'Password should contain at least one lowercase character' },
-    { error: false, text: 'Password should contain at least one special character' },
-    { error: false, text: 'Password should contain at least one digit character' }
+    { error: false, text: t('pages:signup.passwordLength') },
+    { error: false, text: t('pages:signup.passwordUpper') },
+    { error: false, text: t('pages:signup.passwordLower') },
+    { error: false, text: t('pages:signup.passwordSpecial') },
+    { error: false, text: t('pages:signup.passwordDigit') }
   ]);
 
   const signUpUser = async () => {
@@ -81,7 +81,6 @@ const Signup = ({ locale }: SignUpProps) => {
 
   React.useEffect(() => {
     if (router.query.email) {
-      console.log('router.query.email', router.query.email);
       setEmail({ emailError: false, email: router.query.email as string });
     }
   }, []);
@@ -136,24 +135,15 @@ const Signup = ({ locale }: SignUpProps) => {
       </Head>
       <CredentialsLayout leftSide={
         <Box>
-          <WelcomeTitle>
-            Hello there, cryptogeek!
-          </WelcomeTitle>
-          <WelcomeText>
-            Welcome to Cryptodistrict - platform that will keep you in touch
-            with everything that happens in the world of cryptocurrencies.
-          </WelcomeText>
-          <WelcomeText>
-            We are quite sure you have been doing this hundreds times before,
-            so, no need to explain what you need to do, fields on the right side.
-            See ya!
-          </WelcomeText>
+          <WelcomeTitle>{t('pages:signup.hello')}</WelcomeTitle>
+          <WelcomeText>{t('pages:signup.welcome')}</WelcomeText>
+          <WelcomeText>{t('pages:signup.welcomeText')}</WelcomeText>
         </Box>
       } rightSide={
         <>
           {step === 1 ? (
             <Box>
-              <Title>Sign Up</Title>
+              <Title>{t('pages:signup.title')}</Title>
 
               <MarginWrapper>
                 <Input
@@ -161,7 +151,7 @@ const Signup = ({ locale }: SignUpProps) => {
                   onError={email.emailError}
                   value={email.email}
                   onChange={(e) => setEmail({ ...email, email: e.target.value })}
-                  placeholder={'Email'}
+                  placeholder={t('placeholders:inputs.email')}
                 />
               </MarginWrapper>
 
@@ -172,7 +162,7 @@ const Signup = ({ locale }: SignUpProps) => {
                   value={password.password}
                   onChange={(e) => setPassword({ ...password, password: e.target.value })}
                   type={'password'}
-                  placeholder={'Password'}
+                  placeholder={t('placeholders:inputs.password')}
                 />
               </MarginWrapper>
 
@@ -183,7 +173,7 @@ const Signup = ({ locale }: SignUpProps) => {
                   value={password.repeatPassword}
                   onChange={(e) => setPassword({ ...password, repeatPassword: e.target.value })}
                   type={'password'}
-                  placeholder={'Repeat password'}
+                  placeholder={t('placeholders:inputs.repeatPassword')}
                 />
               </MarginWrapper>
 
@@ -191,8 +181,8 @@ const Signup = ({ locale }: SignUpProps) => {
                 <Checkbox
                   value={tac}
                   label={
-                    <Tea>I confirm that I have read and accepted <Link
-                      onClick={() => handleRedirect('/terms-and-conditions')}>Terms and Conditions</Link>
+                    <Tea>{t('pages:signup.iHaveRead')} <Link
+                      onClick={() => handleRedirect('/terms-and-conditions')}>{t('pages:signup.tac')}</Link>
                     </Tea>
                   } onChange={() => setTac(!tac)}/>
               </MarginWrapper>
@@ -214,7 +204,7 @@ const Signup = ({ locale }: SignUpProps) => {
                   disabled={!validateFields()}
                   onClick={() => setStep(2)}
                   highHeight={true}
-                  text={'Sign Up'}
+                  text={t('pages:signup.title')}
                 />
               </MarginWrapper>
 
@@ -222,17 +212,17 @@ const Signup = ({ locale }: SignUpProps) => {
           ) : (step === 2 ? (
               <Box className={'scrollable'}>
                 <MarginWrapper>
-                  <h3>Tell us a little about yourself</h3>
+                  <h3>{t('pages:signup.tellAbout')}</h3>
                 </MarginWrapper>
                 <MarginWrapper>
-                  <p>Don&apos;t worry, you can skip this step and fill information you want later</p>
+                  <p>{t('pages:signup.skip')}</p>
                 </MarginWrapper>
 
                 <MarginWrapper>
                   <Input
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    placeholder={'First name'}
+                    placeholder={t('pages:signup.firstName')}
                   />
                 </MarginWrapper>
 
@@ -240,12 +230,12 @@ const Signup = ({ locale }: SignUpProps) => {
                   <Input
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    placeholder={'Last name'}
+                    placeholder={t('pages:signup.lastName')}
                   />
                 </MarginWrapper>
 
                 <MarginWrapper>
-                  <h3>Provide your nickname of link</h3>
+                  <h3>{t('pages:signup.nickOrLink')}</h3>
                 </MarginWrapper>
                 <hr/>
 
@@ -267,12 +257,12 @@ const Signup = ({ locale }: SignUpProps) => {
                   <Input
                     value={personalWebsite}
                     onChange={(e) => setPersonalWebsite(e.target.value)}
-                    placeholder={'Personal website'}
+                    placeholder={t('pages:signup.personalWebsite')}
                   />
                 </MarginWrapper>
 
                 <MarginWrapper>
-                  <h3>What do you want to tell this world?</h3>
+                  <h3>{t('pages:signup.tellTheWorld')}</h3>
                 </MarginWrapper>
                 <hr/>
 
@@ -280,42 +270,41 @@ const Signup = ({ locale }: SignUpProps) => {
                   <Input
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    placeholder={'Title'}
+                    placeholder={t('pages:signup.title')}
                   />
                 </MarginWrapper>
                 <MarginWrapper>
                   <Textarea
                     value={bio}
-                    placeholder={'Bio'}
                     onChange={(e) => setBio(e.target.value)}
+                    placeholder={t('pages:signup.bio')}
                   />
 
                 </MarginWrapper>
                 <Checkbox
                   value={publicEmail}
-                  label={'Show my email as public email for contact'}
+                  label={t('pages:signup.publicEmail')}
                   onChange={() => setPublicEmail(!publicEmail)}
                 />
 
                 <Buttons>
-                  <Button text={'Go Back'} onClick={() => setStep(step - 1)}/>
+                  <Button text={t('pages:signup.back')} onClick={() => setStep(step - 1)}/>
                   <MarginVerticalWrapper>
-                    <Button text={'Skip'} onClick={() => signUpUser()}/>
+                    <Button text={t('pages:signup.skipBtn')} onClick={() => signUpUser()}/>
                   </MarginVerticalWrapper>
-                  <Button fillButton={true} text={'Next'} onClick={() => signUpUser()}/>
+                  <Button fillButton={true} text={t('pages:signup.next')} onClick={() => signUpUser()}/>
                 </Buttons>
               </Box>
             ) : (
               <Box>
-                <Title>Welcome!</Title>
+                <Title>{t('pages:signup.endWelcome')}</Title>
                 <MarginWrapper>
-                  <SubTitle>Your account has been successfully created!</SubTitle>
+                  <SubTitle>{t('pages:signup.successCreation')}</SubTitle>
                 </MarginWrapper>
                 <MarginWrapper>
-                  <SubTitle>Please, check you email inbox in order to confirm registration by clicking the ling you will
-                    find inside the message.</SubTitle>
+                  <SubTitle>{t('pages:signup.checkEmail')}</SubTitle>
                 </MarginWrapper>
-                <Button fillButton={true} text={'Sign in'} onClick={() => handleRedirect('/signin')}/>
+                <Button fillButton={true} text={t('pages:signin.title')} onClick={() => handleRedirect('/signin')}/>
               </Box>
             )
           )}
@@ -323,9 +312,9 @@ const Signup = ({ locale }: SignUpProps) => {
       } headerLink={
         <>
           {step === 1 &&
-            <p>Already have an account? <Link
+            <p>{t('pages:signup.alreadyHave')} <Link
               onClick={() => handleRedirect('/signin')}
-            >Sign In now!</Link></p>
+            >{t('pages:signup.signIn')}</Link></p>
           }
         </>
       } rightDarkSide={true} locale={locale} loading={loading}
@@ -334,7 +323,7 @@ const Signup = ({ locale }: SignUpProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
+const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors', 'placeholders']);
 export { getStaticPaths, getStaticProps };
 
 export default Signup;

@@ -2,7 +2,15 @@
   "home": {
     "title": "Home",
     "familiarIcons": "Familiar icons, huh?",
-    "nft": "Heard 'bout NTF?"
+    "nft": "Heard 'bout NTF?",
+    "popularCoins": "Those are the most popular and well-known cryptocurrencies and you are in the place where you can buy, sell, swap, hold or send these (and not only) cryptocurrencies",
+    "showMore": "Really? Show me more then!",
+    "digitalArt": "We bet you definitely have heard about this modern form of digital art? You ask if you have got a couple? You God damn right! And we can guess that you'd like to get a couple of yours, wouldn't you?",
+    "gotThis": "Oh! You have got this also?",
+    "hereWeGo": "HERE WE GO",
+    "whereWeMake": "WHERE WE MAKE",
+    "real": "REAL",
+    "onlyEmail": "The only thing we need, is your email address"
   },
   "forgotPassword": {
     "title": "Password recovery",
@@ -46,7 +54,35 @@
     "twoFa": "Two Factor Authentication"
   },
   "signup": {
-    "title": "Sign Up"
+    "title": "Sign Up",
+    "hello": "Hello there, cryptogeek!",
+    "welcome": "Welcome to Cryptodistrict - platform that will keep you in touch with everything that happens in the world of cryptocurrencies.",
+    "welcomeText": "We are quite sure you have been doing this hundreds times before, so, no need to explain what you need to do, fields on the right side. See ya!",
+    "iHaveRead": "I confirm that I have read and accepted",
+    "tac": "Terms and Conditions",
+    "passwordLength": "Password length should be more than 8 characters",
+    "passwordUpper": "Password should contain at least one uppercase character",
+    "passwordLower": "Password should contain at least one lowercase character",
+    "passwordSpecial": "Password should contain at least one special character",
+    "passwordDigit": "Password should contain at least one digit character",
+    "tellAbout": "Tell us a little about yourself",
+    "skip": "Don't worry, you can skip this step and fill information you want later",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "nickOrLink": "Provide your nickname or link",
+    "personalWebsite": "Personal website",
+    "tellTheWorld": "What do you want to tell this world?",
+    "accTitle": "Title",
+    "bio": "Bio",
+    "publicEmail": "Show my email as public email for contact",
+    "alreadyHave": "Already have an account?",
+    "signIn": "Sign in now!",
+    "back": "Go Back",
+    "skipBtn": "Skip",
+    "next": "Next",
+    "endWelcome": "Welcome!",
+    "successCreation": "Your account has been successfully created!",
+    "checkEmail": "Please, check you email inbox in order to confirm registration by clicking the link you will find inside the message."
   },
   "tac": {
     "title": "Terms & Conditions"

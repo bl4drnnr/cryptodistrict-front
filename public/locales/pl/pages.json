@@ -2,7 +2,14 @@
   "home": {
     "title": "Domowa",
     "familiarIcons": "Widziałeś te ikone, co nie?",
-    "nft": "Słyszałeś o NTF?"
+    "nft": "Słyszałeś o NTF?",
+    "popularCoins": "To najpopularniejsze i najbardziej znane kryptowaluty, a Ty jesteś w miejscu, gdzie możesz kupować, sprzedawać, wymieniać, trzymać lub wysyłać te (i nie tylko) kryptowaluty",
+    "digitalArt": "Założymy się, że na pewno słyszałeś o tej nowoczesnej formie sztuki cyfrowej? Pytasz, czy masz parę? Masz cholerną rację! I możemy się domyślić, że chciałbyś dostać kilka swoich, prawda?",
+    "gotThis": "Oh! To też macie?",
+    "hereWeGo": "NO TO RUSZAMY",
+    "whereWeMake": "GDZIE ROBIMY",
+    "real": "PRAWDZIWYM",
+    "onlyEmail": "Jedyne, czego potrzebujemy, to Twój adres e-mail"
   },
   "forgotPassword": {
     "title": "Przypomnienie hasła",
@@ -46,7 +53,35 @@
     "twoFa": "Uwierzytelnianie dwuetapowe"
   },
   "signup": {
-    "title": "Rejestracja"
+    "title": "Rejestracja",
+    "hello": "Witaj kryptogeeku!",
+    "welcome": "Witamy w Cryptodistrict - platformie, dzięki której będziesz w kontakcie ze wszystkim, co dzieje się w świecie kryptowalut.",
+    "welcomeText": "Jesteśmy pewni, że robiłeś to już setki razy, więc nie musisz wyjaśniać, co musisz zrobić, pola po prawej stronie. Do zobaczenia!",
+    "iHaveRead": "Potwierdzam, że przeczytałem i akceptuję",
+    "tac": "Zasady i Warunki",
+    "passwordLength": "Długość hasła powinna być dłuższa niż 8 znaków",
+    "passwordUpper": "Hasło powinno zawierać co najmniej jedną wielką literę",
+    "passwordLower": "Hasło powinno zawierać co najmniej jedną małą literę",
+    "passwordSpecial": "Hasło powinno zawierać co najmniej jeden znak specjalny",
+    "passwordDigit": "Hasło powinno zawierać co najmniej jedną cyfrę",
+    "tellAbout": "Powiedz nam coś o sobie",
+    "skip": "Nie martw się, możesz pominąć ten krok i wprowadzić potrzebne informacje później",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "nickOrLink": "Podaj swój nick lub link",
+    "personalWebsite": "Osobista strona internetowa",
+    "tellTheWorld": "Co chcesz powiedzieć temu światu?",
+    "accTitle": "Tytuł",
+    "bio": "Bio",
+    "publicEmail": "Pokaż mój adres e-mail jako publiczny adres e-mail do kontaktu",
+    "alreadyHave": "Posiadasz już konto?",
+    "signIn": "Zaloguj się teraz!",
+    "back": "Wróć",
+    "skipBtn": "Pomij",
+    "next": "Dalej",
+    "endWelcome": "Witamy!",
+    "successCreation": "Twoje konto zostało pomyślnie utworzone!",
+    "checkEmail": "Sprawdź swoją skrzynkę e-mail w celu potwierdzenia rejestracji poprzez kliknięcie w link, który znajdziesz w wiadomości."
   },
   "tac": {
     "title": "Reguły oraz warunki"

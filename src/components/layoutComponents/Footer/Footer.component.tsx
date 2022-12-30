@@ -21,7 +21,7 @@ export const Footer = ({ translate, locale }: FooterProps) => {
             {translate('components:footer.about')}
           </NavigationLink>
           <NavigationLink onClick={() => handleRedirect('/terms-and-conditions')}>
-            {translate('components:footer.tae')}
+            {translate('components:footer.tac')}
           </NavigationLink>
         </NavigationButtons>
         <NavigationLink>
