@@ -10,7 +10,27 @@
     "text2": "Nah... Not a big deal"
   },
   "about": {
-    "title": "About"
+    "title": "About",
+    "theFutureIs": "THE FUTURE IS ",
+    "here": "HERE",
+    "now": "NOW",
+    "welcome": "Welcome to Cryptodistrict",
+    "realWeb3": "Place, where we want to make WEB3 real",
+    "crypto": "Cryptodiscrict",
+    "cryptoDistrictIntro": "is the place where we truly believe in WEB3 ideas and try to make it easier and more available to everyone to touch future of digital currencies and the Internet.",
+    "marketPlace": "This marketplace is just another tool that wants to give users new experience of cryptomarketplace usage.",
+    "web3important": "Why is WEB3 important?",
+    "futureOfMoney": "Future of money, money of future",
+    "centrlization": "Centralization has helped onboard billions of people to the World Wide Web and created the stable, robust infrastructure on which it lives.",
+    "centrlization2": "At the same time, a handful of centralized entities have a stronghold on large swathes of the World Wide Web, unilaterally deciding what should and should not be allowed.",
+    "centrlization3": "Web3 is the answer to this dilemma. Instead of a Web monopolized by large technology companies, Web3 embraces decentralization and is being built, operated, and owned by its users. Web3 puts power in the hands of individuals rather than corporations.",
+    "chains": "Get rid off chains",
+    "blockOnly": "We want only blocks one",
+    "blockchain": "If the past tells us anything, it is that once blockchains become a necessary part of everyday life, we will stop talking about them. That’s what happens to the essential technical underpinnings of killer apps.",
+    "blockchain2": "When the revolution comes, it will be because blockchain technology is a mature, stable foundation for the apps and services we want. We’ll focus on those, and we’ll stop talking so much about blockchain. We will know that blockchain technology has achieved its success when we stop talking about it.",
+    "interested": "Interested, Huh?...",
+    "dive": "Let's dive into right now",
+    "letIn": "SURE, LET ME IN"
   },
   "signin": {
     "title": "Sign In",
@@ -44,5 +64,11 @@
     "pageTitle": "It's quite empty here, isn't it?",
     "content": "Not sure what you were trying to found, but it's defensively not here",
     "link": "Try to find it somewhere else"
+  },
+  "comingSoon": {
+    "title": "Coming soon",
+    "pageTitle": "Oh... Don't be so impatient, cool things are coming soon",
+    "content": "We are creating cool staff here, so, just wait for a moment and you will get what you want",
+    "link": "Find other cool things"
   }
 }

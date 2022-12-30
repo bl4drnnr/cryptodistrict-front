@@ -80,10 +80,11 @@ const Signup = ({ locale }: SignUpProps) => {
   };
 
   React.useEffect(() => {
-    if (router.isReady) {
-      setEmail({ ...email, email: router.query.email as string });
+    if (router.query.email) {
+      console.log('router.query.email', router.query.email);
+      setEmail({ emailError: false, email: router.query.email as string });
     }
-  }, [router.query, router.isReady]);
+  }, []);
 
   React.useEffect(() => {
     if (!validateEmail(email.email)) setEmail({ ...email, emailError: true });

@@ -128,7 +128,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
                 We bet you definitely have heard about this modern form of digital art? You ask if you have got a
                 couple? You God damn right!
               </CryptoDescriptionHeader>
-              <StartButton onClick={() => handleRedirect(`/signup?email=${email}`)}>
+              <StartButton onClick={() => handleRedirect('/coming-soon')}>
                 <ButtonText>
                   Oh! You have got this also?
                 </ButtonText>
