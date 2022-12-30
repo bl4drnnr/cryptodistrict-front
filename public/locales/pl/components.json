@@ -13,5 +13,12 @@
     "en": "Angielski",
     "lang": "Język",
     "langList": "Lista dostępnych języków"
+  },
+  "footer": {
+    "home": "Domowa",
+    "about": "O projekcie",
+    "tae": "T&A",
+    "copy": "Copyright",
+    "right": "2022. Wszystkie prawa zastrzeżone"
   }
 }

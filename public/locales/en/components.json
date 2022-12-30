@@ -13,5 +13,12 @@
     "en": "English",
     "lang": "Language",
     "langList": "List of available languages"
+  },
+  "footer": {
+    "home": "Home",
+    "about": "About",
+    "tae": "T&A",
+    "copy": "Copyright",
+    "right": "2022. All right reserved"
   }
 }
