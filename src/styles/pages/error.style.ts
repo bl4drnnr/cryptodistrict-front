@@ -4,6 +4,9 @@ export const Container = styled.div`
   width: 50%;
   height: 600px;
   margin: 150px auto 0 auto;
+  &.center {
+    text-align: center;
+  }
 `;
 
 export const Title = styled.div`

@@ -55,7 +55,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
 
         <HomeWelcomeBox>
           <HomeWelcomeTitle>
-            WHERE WE MAKE <BoldWeb3 onClick={() => handleRedirect('/about')}>WEB3</BoldWeb3> REAL
+            {t('pages:home.whereWeMake')} <BoldWeb3 onClick={() => handleRedirect('/about')}>WEB3</BoldWeb3> {t('pages:home.real')}
           </HomeWelcomeTitle>
         </HomeWelcomeBox>
 
@@ -64,7 +64,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
             <Input
               high={true}
               value={email}
-              placeholder={'The only thing we need, is your email address'}
+              placeholder={t('pages:home.onlyEmail')}
               onChange={(e) => setEmail(e.target.value)}
             />
           </InputWrapper>
@@ -72,7 +72,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
           <InputWrapper>
             <StartButton onClick={() => handleRedirect(`/signup?email=${email}`)}>
               <ButtonText>
-                HERE WE GO
+                {t('pages:home.hereWeGo')}
               </ButtonText>
             </StartButton>
           </InputWrapper>
@@ -91,12 +91,11 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
             <CryptoDescriptionBox>
               <CryptoDescriptionHeader>{t('pages:home.familiarIcons')}</CryptoDescriptionHeader>
               <CryptoDescriptionHeader className={'subHeader'}>
-                Those are the most popular and well-known cryptocurrencies and you are in the place where you can buy,
-                sell, swap, hold or send these (and not only) cryptocurrencies
+                {t('pages:home.popularCoins')}
               </CryptoDescriptionHeader>
               <StartButton onClick={() => handleRedirect(`/signup?email=${email}`)}>
                 <ButtonText>
-                  Really? Show me more then!
+                  {t('pages:home.showMore')}
                 </ButtonText>
               </StartButton>
             </CryptoDescriptionBox>
@@ -125,12 +124,11 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
             <CryptoDescriptionBox>
               <CryptoDescriptionHeader>{t('pages:home.nft')}</CryptoDescriptionHeader>
               <CryptoDescriptionHeader className={'subHeader'}>
-                We bet you definitely have heard about this modern form of digital art? You ask if you have got a
-                couple? You God damn right!
+                {t('pages:home.digitalArt')}
               </CryptoDescriptionHeader>
-              <StartButton onClick={() => handleRedirect(`/signup?email=${email}`)}>
+              <StartButton onClick={() => handleRedirect('/coming-soon')}>
                 <ButtonText>
-                  Oh! You have got this also?
+                  {t('pages:home.gotThis')}
                 </ButtonText>
               </StartButton>
             </CryptoDescriptionBox>

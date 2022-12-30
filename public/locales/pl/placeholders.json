@@ -3,6 +3,7 @@
     "email": "Poczta",
     "phone": "Telefon",
     "password": "Hasło",
+    "repeatPassword": "Powtórz hasło",
     "twoFa": "Dwuskładnikowy kod uwierzytelniający",
     "sendCode": "Wyślij kod",
     "verificationCode": "Kod weryfikacyjny",

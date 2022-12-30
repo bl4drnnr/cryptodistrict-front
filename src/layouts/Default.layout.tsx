@@ -19,7 +19,7 @@ const DefaultLayout = ({ children, locale, translate, loading = false }: Default
       <Wrapper>
         <Header locale={locale} translate={translate}/>
         {children}
-        <Footer/>
+        <Footer locale={locale} translate={translate}/>
       </Wrapper>
     </GlobalLayout>
   );

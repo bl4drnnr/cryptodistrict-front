@@ -2,7 +2,14 @@
   "home": {
     "title": "Domowa",
     "familiarIcons": "Widziałeś te ikone, co nie?",
-    "nft": "Słyszałeś o NTF?"
+    "nft": "Słyszałeś o NTF?",
+    "popularCoins": "To najpopularniejsze i najbardziej znane kryptowaluty, a Ty jesteś w miejscu, gdzie możesz kupować, sprzedawać, wymieniać, trzymać lub wysyłać te (i nie tylko) kryptowaluty",
+    "digitalArt": "Założymy się, że na pewno słyszałeś o tej nowoczesnej formie sztuki cyfrowej? Pytasz, czy masz parę? Masz cholerną rację! I możemy się domyślić, że chciałbyś dostać kilka swoich, prawda?",
+    "gotThis": "Oh! To też macie?",
+    "hereWeGo": "NO TO RUSZAMY",
+    "whereWeMake": "GDZIE ROBIMY",
+    "real": "PRAWDZIWYM",
+    "onlyEmail": "Jedyne, czego potrzebujemy, to Twój adres e-mail"
   },
   "forgotPassword": {
     "title": "Przypomnienie hasła",
@@ -10,7 +17,27 @@
     "text2": "No... To nie duży problem"
   },
   "about": {
-    "title": "O projekcie"
+    "title": "O projekcie",
+    "theFutureIs": "PRZYSZŁOŚĆ TO ",
+    "here": "TUTAJ",
+    "now": "TERAZ",
+    "welcome": "Witamy w Cryptodistrict",
+    "realWeb3": "Miejsce, w którym chcemy urzeczywistnić WEB3",
+    "crypto": "Cryptodiscrict",
+    "cryptoDistrictIntro": "to miejsce, w którym naprawdę wierzymy w idee WEB3 i staramy się ułatwić wszystkim dotykanie przyszłości cyfrowych walut i Internetu.",
+    "marketPlace": "Ten rynek jest po prostu kolejnym narzędziem, które chce zapewnić użytkownikom nowe wrażenia z korzystania z cryptomarketplace.",
+    "web3important": "Dlaczego WEB3 jest ważny?",
+    "futureOfMoney": "Przyszłość pieniędzy, pieniądze przyszłości",
+    "centrlization": "Centralizacja pomogła miliardom ludzi wejść do sieci World Wide Web i stworzyła stabilną, niezawodną infrastrukturę, na której się opiera.",
+    "centrlization2": "Jednocześnie garstka scentralizowanych podmiotów kontroluje duże obszary sieci World Wide Web, jednostronnie decydując, co powinno, a czego nie powinno być dozwolone.",
+    "centrlization3": "Web3 jest odpowiedzią na ten dylemat. Zamiast sieci zmonopolizowanej przez duże firmy technologiczne, Web3 jest zdecentralizowany i jest tworzony, obsługiwany i posiadany przez użytkowników. Web3 oddaje władzę w ręce jednostek, a nie korporacji.",
+    "chains": "Pozbądź się łańcuchów",
+    "blockOnly": "Chcemy tylko blokowe",
+    "blockchain": "Jeśli przeszłość mówi nam cokolwiek, to to, że gdy łańcuchy bloków staną się niezbędną częścią codziennego życia, przestaniemy o nich mówić. Tak dzieje się z podstawowymi technicznymi podstawami zabójczych aplikacji.",
+    "blockchain2": "Kiedy nadejdzie rewolucja, stanie się tak dlatego, że technologia blockchain jest dojrzałą, stabilną podstawą dla aplikacji i usług, których pragniemy. Skoncentrujemy się na nich i przestaniemy mówić tyle o blockchainie. Będziemy wiedzieć, że technologia blockchain osiągnęła swój sukces, gdy przestaniemy o niej mówić.",
+    "interested": "Zainteresowany, co?...",
+    "dive": "Zanurzmy się teraz",
+    "letIn": "JANSE, WPUŚĆ MNIE"
   },
   "signin": {
     "title": "Logowanie",
@@ -26,7 +53,35 @@
     "twoFa": "Uwierzytelnianie dwuetapowe"
   },
   "signup": {
-    "title": "Rejestracja"
+    "title": "Rejestracja",
+    "hello": "Witaj kryptogeeku!",
+    "welcome": "Witamy w Cryptodistrict - platformie, dzięki której będziesz w kontakcie ze wszystkim, co dzieje się w świecie kryptowalut.",
+    "welcomeText": "Jesteśmy pewni, że robiłeś to już setki razy, więc nie musisz wyjaśniać, co musisz zrobić, pola po prawej stronie. Do zobaczenia!",
+    "iHaveRead": "Potwierdzam, że przeczytałem i akceptuję",
+    "tac": "Zasady i Warunki",
+    "passwordLength": "Długość hasła powinna być dłuższa niż 8 znaków",
+    "passwordUpper": "Hasło powinno zawierać co najmniej jedną wielką literę",
+    "passwordLower": "Hasło powinno zawierać co najmniej jedną małą literę",
+    "passwordSpecial": "Hasło powinno zawierać co najmniej jeden znak specjalny",
+    "passwordDigit": "Hasło powinno zawierać co najmniej jedną cyfrę",
+    "tellAbout": "Powiedz nam coś o sobie",
+    "skip": "Nie martw się, możesz pominąć ten krok i wprowadzić potrzebne informacje później",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "nickOrLink": "Podaj swój nick lub link",
+    "personalWebsite": "Osobista strona internetowa",
+    "tellTheWorld": "Co chcesz powiedzieć temu światu?",
+    "accTitle": "Tytuł",
+    "bio": "Bio",
+    "publicEmail": "Pokaż mój adres e-mail jako publiczny adres e-mail do kontaktu",
+    "alreadyHave": "Posiadasz już konto?",
+    "signIn": "Zaloguj się teraz!",
+    "back": "Wróć",
+    "skipBtn": "Pomij",
+    "next": "Dalej",
+    "endWelcome": "Witamy!",
+    "successCreation": "Twoje konto zostało pomyślnie utworzone!",
+    "checkEmail": "Sprawdź swoją skrzynkę e-mail w celu potwierdzenia rejestracji poprzez kliknięcie w link, który znajdziesz w wiadomości."
   },
   "tac": {
     "title": "Reguły oraz warunki"
@@ -44,5 +99,11 @@
     "pageTitle": "Tu jest całkiem pusto, prawda?",
     "content": "Nie jestem pewien, co próbujesz znaleźć, ale nie ma tego w defensywie",
     "link": "Spróbuj znaleźć to gdzieś indziej"
+  },
+  "comingSoon": {
+    "title": "Wkrótce",
+    "pageTitle": "Och... Nie bądź taki niecierpliwy, fajne rzeczy nadejdą wkrótce",
+    "content": "Tworzymy tutaj fajnу rzeczy, więc poczekaj chwilę, a dostaniesz to, czego chcesz",
+    "link": "Znajdź inne fajne rzeczy"
   }
 }

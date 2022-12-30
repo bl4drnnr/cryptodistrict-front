@@ -2,7 +2,15 @@
   "home": {
     "title": "Home",
     "familiarIcons": "Familiar icons, huh?",
-    "nft": "Heard 'bout NTF?"
+    "nft": "Heard 'bout NTF?",
+    "popularCoins": "Those are the most popular and well-known cryptocurrencies and you are in the place where you can buy, sell, swap, hold or send these (and not only) cryptocurrencies",
+    "showMore": "Really? Show me more then!",
+    "digitalArt": "We bet you definitely have heard about this modern form of digital art? You ask if you have got a couple? You God damn right! And we can guess that you'd like to get a couple of yours, wouldn't you?",
+    "gotThis": "Oh! You have got this also?",
+    "hereWeGo": "HERE WE GO",
+    "whereWeMake": "WHERE WE MAKE",
+    "real": "REAL",
+    "onlyEmail": "The only thing we need, is your email address"
   },
   "forgotPassword": {
     "title": "Password recovery",
@@ -10,7 +18,27 @@
     "text2": "Nah... Not a big deal"
   },
   "about": {
-    "title": "About"
+    "title": "About",
+    "theFutureIs": "THE FUTURE IS ",
+    "here": "HERE",
+    "now": "NOW",
+    "welcome": "Welcome to Cryptodistrict",
+    "realWeb3": "Place, where we want to make WEB3 real",
+    "crypto": "Cryptodiscrict",
+    "cryptoDistrictIntro": "is the place where we truly believe in WEB3 ideas and try to make it easier and more available to everyone to touch future of digital currencies and the Internet.",
+    "marketPlace": "This marketplace is just another tool that wants to give users new experience of cryptomarketplace usage.",
+    "web3important": "Why is WEB3 important?",
+    "futureOfMoney": "Future of money, money of future",
+    "centrlization": "Centralization has helped onboard billions of people to the World Wide Web and created the stable, robust infrastructure on which it lives.",
+    "centrlization2": "At the same time, a handful of centralized entities have a stronghold on large swathes of the World Wide Web, unilaterally deciding what should and should not be allowed.",
+    "centrlization3": "Web3 is the answer to this dilemma. Instead of a Web monopolized by large technology companies, Web3 embraces decentralization and is being built, operated, and owned by its users. Web3 puts power in the hands of individuals rather than corporations.",
+    "chains": "Get rid off chains",
+    "blockOnly": "We want only blocks one",
+    "blockchain": "If the past tells us anything, it is that once blockchains become a necessary part of everyday life, we will stop talking about them. That’s what happens to the essential technical underpinnings of killer apps.",
+    "blockchain2": "When the revolution comes, it will be because blockchain technology is a mature, stable foundation for the apps and services we want. We’ll focus on those, and we’ll stop talking so much about blockchain. We will know that blockchain technology has achieved its success when we stop talking about it.",
+    "interested": "Interested, Huh?...",
+    "dive": "Let's dive into right now",
+    "letIn": "SURE, LET ME IN"
   },
   "signin": {
     "title": "Sign In",
@@ -26,7 +54,35 @@
     "twoFa": "Two Factor Authentication"
   },
   "signup": {
-    "title": "Sign Up"
+    "title": "Sign Up",
+    "hello": "Hello there, cryptogeek!",
+    "welcome": "Welcome to Cryptodistrict - platform that will keep you in touch with everything that happens in the world of cryptocurrencies.",
+    "welcomeText": "We are quite sure you have been doing this hundreds times before, so, no need to explain what you need to do, fields on the right side. See ya!",
+    "iHaveRead": "I confirm that I have read and accepted",
+    "tac": "Terms and Conditions",
+    "passwordLength": "Password length should be more than 8 characters",
+    "passwordUpper": "Password should contain at least one uppercase character",
+    "passwordLower": "Password should contain at least one lowercase character",
+    "passwordSpecial": "Password should contain at least one special character",
+    "passwordDigit": "Password should contain at least one digit character",
+    "tellAbout": "Tell us a little about yourself",
+    "skip": "Don't worry, you can skip this step and fill information you want later",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "nickOrLink": "Provide your nickname or link",
+    "personalWebsite": "Personal website",
+    "tellTheWorld": "What do you want to tell this world?",
+    "accTitle": "Title",
+    "bio": "Bio",
+    "publicEmail": "Show my email as public email for contact",
+    "alreadyHave": "Already have an account?",
+    "signIn": "Sign in now!",
+    "back": "Go Back",
+    "skipBtn": "Skip",
+    "next": "Next",
+    "endWelcome": "Welcome!",
+    "successCreation": "Your account has been successfully created!",
+    "checkEmail": "Please, check you email inbox in order to confirm registration by clicking the link you will find inside the message."
   },
   "tac": {
     "title": "Terms & Conditions"
@@ -44,5 +100,11 @@
     "pageTitle": "It's quite empty here, isn't it?",
     "content": "Not sure what you were trying to found, but it's defensively not here",
     "link": "Try to find it somewhere else"
+  },
+  "comingSoon": {
+    "title": "Coming soon",
+    "pageTitle": "Oh... Don't be so impatient, cool things are coming soon",
+    "content": "We are creating cool staff here, so, just wait for a moment and you will get what you want",
+    "link": "Find other cool things"
   }
 }

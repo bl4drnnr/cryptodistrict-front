@@ -56,7 +56,12 @@ export const ContentContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 100px;
+  padding-left: 120px;
+  padding-right: 120px;
+  
+  &.end {
+    padding: 100px;
+  }
 
   &.light {
     background: rgb(${(props) => props.theme.colors.lightBackground});
@@ -64,8 +69,8 @@ export const ContentContainer = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  padding-top: 50px;
-  padding-left: 50px;
+  padding-top: 100px;
+  padding-left: 100px;
 
   &.end {
     padding-left: 0;
@@ -93,7 +98,7 @@ export const TextContainerSubtitle = styled.h3`
 
 export const TextContainerContent = styled.p`
   padding: 30px 100px 0 0;
-  font-family: "Lato", sans-serif;
+  max-width: 850px;
   font-weight: 300;
   font-size: 22px;
 
