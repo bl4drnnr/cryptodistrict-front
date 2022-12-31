@@ -40,7 +40,8 @@ const About = ({ locale }: AboutProps) => {
   };
 
   React.useEffect(() => {
-    if (width) setPictureSize(300);
+    if (width && width <= 1300) setPictureSize(300);
+    else setPictureSize(600);
   }, [width]);
 
   return (

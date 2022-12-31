@@ -146,7 +146,7 @@ export const StartButton = styled.div`
 export const ButtonText = styled.h3`
   width: 100%;
   font-weight: 100;
-  
+
   @media only screen and (max-width: 780px) {
     font-size: 14px;
   }
@@ -259,11 +259,11 @@ export const Line = styled.div`
 `;
 
 export const CryptoDescriptionContainer = styled.div`
-  height: 80%;
-  width: 50%;
+  width: 100%;
   position: relative;
-  margin-top: 40px;
-  
+  display: flex;
+  height: 500px;
+
   @media only screen and (max-width: 1200px) {
     width: 100%;
   }
@@ -275,12 +275,16 @@ export const CryptoDescriptionBox = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  
+  &.mirrored {
+    text-align: end;
+  }
+  
   @media only screen and (max-width: 1200px) {
-    //width: 100%;
-    position: absolute; /* Important */
-    top: 50%; /* Position Y halfway in */
-    left: 50%; /* Position X halfway in */
-    transform: translate(-50%,-50%); /* Move it halfway back(x,y) */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
 `;
 
@@ -310,22 +314,15 @@ export const ImageBlock = styled.div`
   height: 500px;
   position: relative;
 
-  &.mirrored {
-    justify-content: space-between;
-
-    ${CryptoDescriptionContainer} {
-      text-align: end;
-    }
+  @media only screen and (max-width: 1200px) {
+    height: 200px;
   }
 
   .image-nft {
     position: absolute;
-    @media only screen and (max-width: 1200px) {
-      display: none;
-    }
 
     &.crypto-creation {
-      left: 12%;
+      left: 20%;
     }
 
     &.metamask {
@@ -333,7 +330,7 @@ export const ImageBlock = styled.div`
     }
 
     &.contract {
-      left: 20%;
+      left: 35%;
     }
   }
 
@@ -342,7 +339,7 @@ export const ImageBlock = styled.div`
     top: 10%;
     transition: .2s;
     @media only screen and (max-width: 1200px) {
-      display: none;
+      top: 0;
     }
 
     &:hover {
@@ -368,4 +365,19 @@ export const ImageBlock = styled.div`
   }
 `;
 
-export const ImageWrapper = styled.div``;
+export const ImageWrapper = styled.div`
+  @media only screen and (max-width: 1200px) {
+    display: flex;
+    margin: 0 auto;
+  }
+`;
+
+export const ItemsWrapper = styled.div`
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 1200px) {
+    display: block;
+  }
+`;

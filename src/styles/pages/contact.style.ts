@@ -10,6 +10,9 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-size: 58px;
   text-align: center;
+  @media only screen and (max-width: 1000px) {
+    font-size: 28px;
+  }
 `;
 
 export const Content = styled.h3`
@@ -17,11 +20,17 @@ export const Content = styled.h3`
   font-family: "Lato", sans-serif;
   font-weight: 200;
   text-align: center;
+  @media only screen and (max-width: 1000px) {
+    font-size: 24px;
+  }
 `;
 
 export const InputFieldsWrapper = styled.div`
-  width: 50%;
+  width: 65%;
   margin: 0 auto;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const SendButtonWrapper = styled.div`

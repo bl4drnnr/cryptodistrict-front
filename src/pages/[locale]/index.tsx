@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 
 import { Input } from '@components/Input/Input.component';
 import { Widget } from '@components/Widget/Widget.component';
+import { useWindowDimensions } from '@hooks/useGetWindowDimensions.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import {
@@ -23,7 +24,7 @@ import {
   HomeWelcomeTitle,
   ImageBlock,
   ImageWrapper,
-  InputWrapper,
+  InputWrapper, ItemsWrapper,
   Line,
   Lines,
   StartButton
@@ -38,11 +39,21 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
   const { t } = useTranslation();
   const router = useRouter();
 
+  const { height, width } = useWindowDimensions();
+  const [pictureSize, setPictureSize] = React.useState({
+    crypto: 400, ntf: 500
+  });
+
   const [email, setEmail] = React.useState('');
 
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
   };
+
+  React.useEffect(() => {
+    if (width && width < 1200) setPictureSize({ crypto: 200, ntf: 200 });
+    else setPictureSize({ crypto: 400, ntf: 500 });
+  }, [width]);
 
   return (
     <DefaultLayout locale={locale} translate={t}>
@@ -87,7 +98,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
       </HomeWelcomeContainer>
 
       <HomeWelcomeContainer className={'light'}>
-        <ImageBlock>
+        <ItemsWrapper>
           <CryptoDescriptionContainer>
             <CryptoDescriptionBox>
               <CryptoDescriptionHeader>{t('pages:home.familiarIcons')}</CryptoDescriptionHeader>
@@ -102,27 +113,25 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
             </CryptoDescriptionBox>
           </CryptoDescriptionContainer>
 
-          <Image className={'image eth'} src={'/img/ethereum.png'} alt={'eth'} width={400} height={400}/>
-          <Image className={'image usdt'} src={'/img/tether.png'} alt={'tether'} width={400} height={400}/>
-          <Image className={'image btc'} src={'/img/bitcoin.png'} alt={'btc'} width={400} height={400}/>
-          <Image className={'image ltc'} src={'/img/litecoin.png'} alt={'ltc'} width={400} height={400}/>
-
-        </ImageBlock>
+          <ImageBlock>
+            <Image className={'image eth'} src={'/img/ethereum.png'} alt={'eth'} width={pictureSize.crypto} height={pictureSize.crypto}/>
+            <Image className={'image usdt'} src={'/img/tether.png'} alt={'tether'} width={pictureSize.crypto} height={pictureSize.crypto}/>
+            <Image className={'image btc'} src={'/img/bitcoin.png'} alt={'btc'} width={pictureSize.crypto} height={pictureSize.crypto}/>
+            <Image className={'image ltc'} src={'/img/litecoin.png'} alt={'ltc'} width={pictureSize.crypto} height={pictureSize.crypto}/>
+          </ImageBlock>
+        </ItemsWrapper>
       </HomeWelcomeContainer>
 
       <HomeWelcomeContainer className={'dark'}>
-        <ImageBlock className={'mirrored'}>
-          <ImageWrapper>
-            <Image className={'image-nft contract'} src={'/img/contract.png'} alt={'contract'} width={500}
-                   height={500}/>
-            <Image className={'image-nft metamask'} src={'/img/metamask.png'} alt={'metamask'} width={500}
-                   height={500}/>
-            <Image className={'image-nft crypto-creation'} src={'/img/crypto-creation.png'} alt={'crypto-creation'}
-                   width={500} height={500}/>
-          </ImageWrapper>
+        <ItemsWrapper>
+          <ImageBlock>
+            <Image className={'image-nft contract'} src={'/img/contract.png'} alt={'contract'} width={pictureSize.ntf} height={pictureSize.ntf}/>
+            <Image className={'image-nft metamask'} src={'/img/metamask.png'} alt={'metamask'} width={pictureSize.ntf} height={pictureSize.ntf}/>
+            <Image className={'image-nft crypto-creation'} src={'/img/crypto-creation.png'} alt={'crypto-creation'}  width={pictureSize.ntf} height={pictureSize.ntf}/>
+          </ImageBlock>
 
           <CryptoDescriptionContainer>
-            <CryptoDescriptionBox>
+            <CryptoDescriptionBox className={'mirrored'}>
               <CryptoDescriptionHeader>{t('pages:home.nft')}</CryptoDescriptionHeader>
               <CryptoDescriptionHeader className={'subHeader'}>
                 {t('pages:home.digitalArt')}
@@ -134,8 +143,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
               </StartButton>
             </CryptoDescriptionBox>
           </CryptoDescriptionContainer>
-
-        </ImageBlock>
+        </ItemsWrapper>
       </HomeWelcomeContainer>
 
       <Widget/>
