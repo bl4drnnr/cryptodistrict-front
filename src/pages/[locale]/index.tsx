@@ -23,8 +23,8 @@ import {
   HomeWelcomeContainer,
   HomeWelcomeTitle,
   ImageBlock,
-  ImageWrapper,
-  InputWrapper, ItemsWrapper,
+  InputWrapper,
+  ItemsWrapper,
   Line,
   Lines,
   StartButton

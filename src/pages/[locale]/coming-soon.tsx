@@ -5,8 +5,9 @@ import { useRouter } from 'next/router';
 
 import GlobalLayout from '@layouts/Global.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
-import { ImageWrapper, LinkWrapper } from '@styles/coming-soon';
-import { Container, Content, Link, Title } from '@styles/error.style';
+import { Container, Content, ImageWrapper, Link, LinkWrapper, Title } from '@styles/coming-soon.style';
+import {useWindowDimensions} from "@hooks/useGetWindowDimensions.hook";
+import React from "react";
 
 interface ComingSoonProps {
   locale: string;
@@ -14,6 +15,8 @@ interface ComingSoonProps {
 
 const ComingSoon = ({ locale }: ComingSoonProps) => {
   const { t } = useTranslation();
+  const { height, width } = useWindowDimensions();
+  const [pictureSize, setPictureSize] = React.useState(500);
 
   const router = useRouter();
 
@@ -21,13 +24,18 @@ const ComingSoon = ({ locale }: ComingSoonProps) => {
     await router.push(`/${locale}${path}`);
   };
 
+  React.useEffect(() => {
+    if (width && width < 600) setPictureSize(300);
+    else setPictureSize(500);
+  }, [width]);
+
   return (
     <>
       <Head>
         <title>Cryptodistrict | {t('pages:comingSoon.title')}</title>
       </Head>
       <GlobalLayout>
-        <Container className={'center'}>
+        <Container>
           <Title>{t('pages:comingSoon.pageTitle')}</Title>
           <Content>{t('pages:comingSoon.content')}</Content>
           <LinkWrapper>
@@ -36,7 +44,7 @@ const ComingSoon = ({ locale }: ComingSoonProps) => {
             >{t('pages:comingSoon.link')}</Link>
           </LinkWrapper>
           <ImageWrapper>
-            <Image src={'/img/women-web-developer-with-laptop.svg'} alt={'women-web-developer-with-laptop'} width={500} height={500} />
+            <Image src={'/img/women-web-developer-with-laptop.svg'} alt={'women-web-developer-with-laptop'} width={pictureSize} height={pictureSize} />
           </ImageWrapper>
         </Container>
       </GlobalLayout>

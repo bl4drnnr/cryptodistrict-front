@@ -365,13 +365,6 @@ export const ImageBlock = styled.div`
   }
 `;
 
-export const ImageWrapper = styled.div`
-  @media only screen and (max-width: 1200px) {
-    display: flex;
-    margin: 0 auto;
-  }
-`;
-
 export const ItemsWrapper = styled.div`
   width: 80%;
   display: flex;
