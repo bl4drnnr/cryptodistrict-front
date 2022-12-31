@@ -48,7 +48,7 @@ const Signup = ({ locale }: SignUpProps) => {
   const [hideLeftSide, setHideLeftSide] = React.useState(false);
   const { height, width } = useWindowDimensions();
 
-  const [step, setStep] = React.useState(3);
+  const [step, setStep] = React.useState(1);
   const [tac, setTac] = React.useState(false);
   const [email, setEmail] = React.useState({ email: '', emailError: false });
   const [firstName, setFirstName] = React.useState('');
