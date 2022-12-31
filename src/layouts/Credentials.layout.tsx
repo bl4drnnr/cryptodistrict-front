@@ -13,21 +13,25 @@ interface CredentialsLayoutProps {
   headerLink: React.ReactElement | React.ReactElement[];
   leftDarkSide?: boolean;
   rightDarkSide?: boolean;
+  leftSideHide?: boolean;
+  rightSideHide?: boolean;
   mirroredHeader?: boolean;
   loading?: boolean;
   locale: string;
 }
 
 const CredentialsLayout = ({
-                             leftSide,
-                             rightSide,
-                             headerLink,
-                             locale,
-                             leftDarkSide = false,
-                             rightDarkSide = false,
-                             mirroredHeader = false,
-                             loading = false
-                           }: CredentialsLayoutProps): React.ReactElement => {
+  leftSide,
+  rightSide,
+  headerLink,
+  locale,
+  leftDarkSide = false,
+  rightDarkSide = false,
+  leftSideHide = false,
+  rightSideHide = false,
+  mirroredHeader = false,
+  loading = false
+}: CredentialsLayoutProps): React.ReactElement => {
   const router = useRouter();
 
   const handleRedirect = async (path: string) => {
@@ -60,10 +64,10 @@ const CredentialsLayout = ({
           )}
         </LoginHeader>
 
-        <Side className={classNames({ lightSide: leftDarkSide })}>
+        <Side className={classNames({ lightSide: leftDarkSide, leftSideHide })}>
           {leftSide}
         </Side>
-        <Side className={classNames({ lightSide: rightDarkSide })}>
+        <Side className={classNames({ lightSide: rightDarkSide, rightSideHide })}>
           {rightSide}
         </Side>
 

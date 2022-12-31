@@ -12,6 +12,10 @@ export const Box = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: 1300px) {
+    display: block;
+    text-align: center;
+  }
 `;
 
 export const Wrapper = styled.div``;
@@ -20,6 +24,9 @@ export const Headers = styled.h1`
   font-size: 72px;
   font-weight: 100;
   font-family: "Lato", sans-serif;
+  @media only screen and (max-width: 1300px) {
+    font-size: 40px;
+  }
 `;
 
 export const Header = styled.span`
@@ -31,6 +38,10 @@ export const Header = styled.span`
   animation-fill-mode: forwards;
   opacity: 0;
   color: rgb(${(props) => props.theme.colors.primary});
+
+  @media only screen and (max-width: 1300px) {
+    font-size: 64px;
+  }
 
   @keyframes text-appearing {
     from {
@@ -46,10 +57,13 @@ export const Header = styled.span`
   }
 `;
 
-export const Test = styled.h1`
+export const Web3 = styled.h1`
   font-size: 144px;
   font-weight: 700;
   font-family: "Lato", sans-serif;
+  @media only screen and (max-width: 1300px) {
+    font-size: 64px;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -66,6 +80,12 @@ export const ContentContainer = styled.div`
   &.light {
     background: rgb(${(props) => props.theme.colors.lightBackground});
   }
+
+  @media only screen and (max-width: 1300px) {
+    display: block;
+    padding: 20px;
+    text-align: center;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -76,6 +96,11 @@ export const TextContainer = styled.div`
     padding-left: 0;
     padding-right: 50px;
     text-align: end;
+
+    @media only screen and (max-width: 1300px) {
+      text-align: center;
+      padding: 0;
+    }
   }
 
   &.center {
@@ -83,10 +108,17 @@ export const TextContainer = styled.div`
     width: 100%;
     text-align: center;
   }
+
+  @media only screen and (max-width: 1300px) {
+    padding: 0;
+  }
 `;
 
 export const TextContainerTitle = styled.h1`
   font-size: 58px;
+  @media only screen and (max-width: 1300px) {
+    font-size: 32px;
+  }
 `;
 
 export const TextContainerSubtitle = styled.h3`
@@ -94,6 +126,10 @@ export const TextContainerSubtitle = styled.h3`
   opacity: .75;
   font-weight: 100;
   font-family: "Lato", sans-serif;
+  @media only screen and (max-width: 1300px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const TextContainerContent = styled.p`
@@ -102,7 +138,19 @@ export const TextContainerContent = styled.p`
   font-weight: 300;
   font-size: 22px;
 
+  @media only screen and (max-width: 1300px) {
+    padding: 0;
+    font-size: 20px;
+    margin: 0 auto;
+  }
+
   &.end {
     padding: 30px 0 0 100px;
+
+    @media only screen and (max-width: 1300px) {
+      padding: 0;
+      font-size: 20px;
+      margin: 0 auto;
+    }
   }
 `;

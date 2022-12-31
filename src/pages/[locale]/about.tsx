@@ -1,9 +1,12 @@
+import React from 'react';
+
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Typewriter from 'typewriter-effect';
 
+import { useWindowDimensions } from '@hooks/useGetWindowDimensions.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import {
@@ -12,11 +15,10 @@ import {
   ContentContainer,
   Header,
   Headers,
-  Test,
   TextContainer,
   TextContainerContent,
   TextContainerSubtitle,
-  TextContainerTitle,
+  TextContainerTitle, Web3,
   Wrapper
 } from '@styles/about.style';
 import { ButtonText, InputWrapper, StartButton } from '@styles/home.style';
@@ -27,12 +29,20 @@ interface AboutProps {
 
 const About = ({ locale }: AboutProps) => {
   const { t } = useTranslation();
+  const { height, width } = useWindowDimensions();
+
+  const [pictureSide, setPictureSize] = React.useState(600);
 
   const router = useRouter();
 
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
   };
+
+  React.useEffect(() => {
+    if (width && width <= 1300) setPictureSize(300);
+    else setPictureSize(600);
+  }, [width]);
 
   return (
     <>
@@ -66,7 +76,7 @@ const About = ({ locale }: AboutProps) => {
               </Headers>
             </Wrapper>
             <Wrapper>
-              <Test>WEB<Header>3</Header></Test>
+              <Web3>WEB<Header>3</Header></Web3>
             </Wrapper>
           </Box>
         </Container>
@@ -78,12 +88,11 @@ const About = ({ locale }: AboutProps) => {
             <TextContainerContent><strong>{t('pages:about.crypto')}</strong> {t('pages:about.cryptoDistrictIntro')}</TextContainerContent>
             <TextContainerContent>{t('pages:about.marketPlace')}</TextContainerContent>
           </TextContainer>
-          <Image className={'asset'} src={'/img/user-interface.gif'} alt={'user-interface'} width={600} height={600}/>
+          <Image className={'asset'} src={'/img/user-interface.gif'} alt={'user-interface'} width={pictureSide} height={pictureSide}/>
         </ContentContainer>
 
         <ContentContainer>
-          <Image className={'asset'} src={'/img/web-address-registration.gif'} alt={'web-address-registration'}
-                 width={600} height={600}/>
+          <Image className={'asset'} src={'/img/web-address-registration.gif'} alt={'web-address-registration'} width={pictureSide} height={pictureSide}/>
           <TextContainer className={'end'}>
             <TextContainerTitle>{t('pages:about.web3important')}</TextContainerTitle>
             <TextContainerSubtitle>{t('pages:about.futureOfMoney')}</TextContainerSubtitle>
@@ -101,7 +110,7 @@ const About = ({ locale }: AboutProps) => {
             <TextContainerContent>{t('pages:about.blockchain2')}</TextContainerContent>
           </TextContainer>
           <Image className={'asset'} src={'/img/web-designer-setting-up-web-layout.gif'}
-                 alt={'web-designer-setting-up-web-layout'} width={600} height={600}/>
+                 alt={'web-designer-setting-up-web-layout'} width={pictureSide} height={pictureSide}/>
         </ContentContainer>
 
         <ContentContainer className={'end'}>

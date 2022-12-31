@@ -6,15 +6,15 @@ import { BasicInput, Container, Placeholder } from '@styles/Input.style';
 import { InputButtonContainer, InputWrapper, ButtonWrapper } from '@styles/InputButton.style';
 
 export const InputButton = ({
-                              value,
-                              placeholder,
-                              type,
-                              onChange,
-                              onClick,
-                              buttonDisabled,
-                              buttonTitle,
-                              onError
-                            }: InputButtonProps) => {
+  value,
+  placeholder,
+  type,
+  onChange,
+  onClick,
+  buttonDisabled,
+  buttonTitle,
+  onError
+}: InputButtonProps) => {
   return (
     <Container>
       <Placeholder>{placeholder}</Placeholder>

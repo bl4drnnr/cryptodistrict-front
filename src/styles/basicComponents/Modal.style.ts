@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
   padding-bottom: 15px;
 
   @media screen and (max-width: 520px) {
-    width: auto;
+    width: 90%;
     margin: 15px;
   }
 `;
@@ -60,3 +60,5 @@ export const Description = styled.div`
 export const ChildrenWrapper = styled.div`
   width: 90%;
 `;
+
+export const ModalTile = styled.h3``;

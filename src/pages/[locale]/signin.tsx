@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { Button } from '@components/Button/Button.component';
 import { Input } from '@components/Input/Input.component';
 import { TwoFa } from '@components/TwoFa/TwoFa.component';
+import { useWindowDimensions } from '@hooks/useGetWindowDimensions.hook';
 import { useHandleException } from '@hooks/useHandleException.hook';
 import { validatePasswordLength } from '@hooks/useValidators.hook';
 import CredentialsLayout from '@layouts/Credentials.layout';
@@ -21,7 +22,7 @@ import {
   VerticalLine,
   LoginOption,
   MarginWrapper,
-  Title
+  Title, HeaderLink
 } from '@styles/login.style';
 
 interface SignInProps {
@@ -34,6 +35,8 @@ const Signin = ({ locale }: SignInProps) => {
   const router = useRouter();
   const { signIn, loading } = useSignInService();
   const { handleException } = useHandleException();
+  const [rightSideHide, setRightSideHide] = React.useState(false);
+  const { height, width } = useWindowDimensions();
 
   const [step, setStep] = React.useState(1);
   const [loginOption, setLoginOption] = React.useState('email');
@@ -61,6 +64,10 @@ const Signin = ({ locale }: SignInProps) => {
     if (password.length > 0)
       setPasswordError(!validatePasswordLength(password));
   }, [password]);
+
+  React.useEffect(() => {
+    if (width) setRightSideHide(width <= 1050);
+  }, [width]);
 
   return (
     <>
@@ -152,12 +159,16 @@ const Signin = ({ locale }: SignInProps) => {
           </WelcomeText>
         </Box>
       } headerLink={
-        <p>
+        <HeaderLink>
           {t('pages:signin.dontHaveAnAcc')} <Link
           onClick={() => handleRedirect('/signup')}
         >{t('pages:signin.signUpNow')}</Link>
-        </p>
-      } leftDarkSide={true} mirroredHeader={true} locale={locale} loading={loading}
+        </HeaderLink>
+      } leftDarkSide={true}
+        mirroredHeader={true}
+        locale={locale}
+        loading={loading}
+        rightSideHide={rightSideHide}
       />
     </>
   );

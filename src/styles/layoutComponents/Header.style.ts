@@ -14,17 +14,25 @@ export const Box = styled.div`
   height: 50%;
   margin: 15px auto;
   display: flex;
+  position: relative;
   justify-content: space-between;
 `;
 
 export const NavigationButtons = styled.div`
   width: 33%;
   display: flex;
+  @media only screen and (max-width: 780px) {
+    display: none;
+  }
 `;
 
 export const Buttons = styled.div`
   display: flex;
   width: 33%;
+  @media only screen and (max-width: 780px) {
+    float: right;
+    width: 100%;
+  } 
 `;
 
 export const Links = styled.div`
@@ -84,6 +92,9 @@ export const Logo = styled.h2`
 
 export const SearchBarWrapper = styled.div`
   width: 33%;
+  @media only screen and (max-width: 1260px) {
+    display: none;
+  }
 `;
 
 export const SearchBarBox = styled.div`

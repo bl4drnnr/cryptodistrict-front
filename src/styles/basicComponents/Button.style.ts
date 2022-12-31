@@ -11,7 +11,6 @@ export const BasicButton = styled.button`
   background-color: rgba(35, 36, 40, 0.85);
   border-radius: 5px;
   cursor: pointer;
-  min-width: 100px;
   border: 1px solid rgb(${(props) => props.theme.colors.primary}, .3);
   transition: .3s;
   
