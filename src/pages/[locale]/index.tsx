@@ -22,6 +22,7 @@ import {
   HomeWelcomeContainer,
   HomeWelcomeTitle,
   ImageBlock,
+  ImageWrapper,
   InputWrapper,
   Line,
   Lines,
@@ -111,14 +112,14 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
 
       <HomeWelcomeContainer className={'dark'}>
         <ImageBlock className={'mirrored'}>
-          <div>
+          <ImageWrapper>
             <Image className={'image-nft contract'} src={'/img/contract.png'} alt={'contract'} width={500}
                    height={500}/>
             <Image className={'image-nft metamask'} src={'/img/metamask.png'} alt={'metamask'} width={500}
                    height={500}/>
             <Image className={'image-nft crypto-creation'} src={'/img/crypto-creation.png'} alt={'crypto-creation'}
                    width={500} height={500}/>
-          </div>
+          </ImageWrapper>
 
           <CryptoDescriptionContainer>
             <CryptoDescriptionBox>

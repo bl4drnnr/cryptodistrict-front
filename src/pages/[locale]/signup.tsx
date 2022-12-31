@@ -9,6 +9,7 @@ import { Button } from '@components/Button/Button.component';
 import { Checkbox } from '@components/Checkbox/Checkbox.component';
 import { Input } from '@components/Input/Input.component';
 import { Textarea } from '@components/Textarea/Textarea.component';
+import { useWindowDimensions } from '@hooks/useGetWindowDimensions.hook';
 import { useHandleException } from '@hooks/useHandleException.hook';
 import { validateEmail, validatePasswordRules, validatePassword } from '@hooks/useValidators.hook';
 import CredentialsLayout from '@layouts/Credentials.layout';
@@ -27,7 +28,10 @@ import {
   Buttons,
   MarginVerticalWrapper,
   Title,
-  SubTitle
+  SubTitle,
+  HeaderLink,
+  HeaderSmall,
+  Paragraph
 } from '@styles/login.style';
 
 interface SignUpProps {
@@ -41,8 +45,10 @@ const Signup = ({ locale }: SignUpProps) => {
 
   const { loading, signUp } = useSignUpService();
   const { handleException } = useHandleException();
+  const [hideLeftSide, setHideLeftSide] = React.useState(false);
+  const { height, width } = useWindowDimensions();
 
-  const [step, setStep] = React.useState(1);
+  const [step, setStep] = React.useState(3);
   const [tac, setTac] = React.useState(false);
   const [email, setEmail] = React.useState({ email: '', emailError: false });
   const [firstName, setFirstName] = React.useState('');
@@ -84,6 +90,10 @@ const Signup = ({ locale }: SignUpProps) => {
       setEmail({ emailError: false, email: router.query.email as string });
     }
   }, []);
+
+  React.useEffect(() => {
+    if (width) setHideLeftSide(width <= 1050);
+  }, [width]);
 
   React.useEffect(() => {
     if (!validateEmail(email.email)) setEmail({ ...email, emailError: true });
@@ -212,10 +222,10 @@ const Signup = ({ locale }: SignUpProps) => {
           ) : (step === 2 ? (
               <Box className={'scrollable'}>
                 <MarginWrapper>
-                  <h3>{t('pages:signup.tellAbout')}</h3>
+                  <HeaderSmall>{t('pages:signup.tellAbout')}</HeaderSmall>
                 </MarginWrapper>
                 <MarginWrapper>
-                  <p>{t('pages:signup.skip')}</p>
+                  <Paragraph>{t('pages:signup.skip')}</Paragraph>
                 </MarginWrapper>
 
                 <MarginWrapper>
@@ -235,7 +245,7 @@ const Signup = ({ locale }: SignUpProps) => {
                 </MarginWrapper>
 
                 <MarginWrapper>
-                  <h3>{t('pages:signup.nickOrLink')}</h3>
+                  <HeaderSmall>{t('pages:signup.nickOrLink')}</HeaderSmall>
                 </MarginWrapper>
                 <hr/>
 
@@ -262,7 +272,7 @@ const Signup = ({ locale }: SignUpProps) => {
                 </MarginWrapper>
 
                 <MarginWrapper>
-                  <h3>{t('pages:signup.tellTheWorld')}</h3>
+                  <HeaderSmall>{t('pages:signup.tellTheWorld')}</HeaderSmall>
                 </MarginWrapper>
                 <hr/>
 
@@ -304,7 +314,9 @@ const Signup = ({ locale }: SignUpProps) => {
                 <MarginWrapper>
                   <SubTitle>{t('pages:signup.checkEmail')}</SubTitle>
                 </MarginWrapper>
-                <Button fillButton={true} text={t('pages:signin.title')} onClick={() => handleRedirect('/signin')}/>
+                <MarginWrapper>
+                  <Button fillButton={true} text={t('pages:signin.title')} onClick={() => handleRedirect('/signin')}/>
+                </MarginWrapper>
               </Box>
             )
           )}
@@ -312,12 +324,15 @@ const Signup = ({ locale }: SignUpProps) => {
       } headerLink={
         <>
           {step === 1 &&
-            <p>{t('pages:signup.alreadyHave')} <Link
+            <HeaderLink>{t('pages:signup.alreadyHave')} <Link
               onClick={() => handleRedirect('/signin')}
-            >{t('pages:signup.signIn')}</Link></p>
+            >{t('pages:signup.signIn')}</Link></HeaderLink>
           }
         </>
-      } rightDarkSide={true} locale={locale} loading={loading}
+      } rightDarkSide={true}
+        locale={locale}
+        loading={loading}
+        leftSideHide={hideLeftSide}
       />
     </>
   );

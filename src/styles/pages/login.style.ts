@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Box = styled.div`
   width: 500px;
   &.scrollable {
+    @media only screen and (max-width: 780px) {
+      padding-top: 100px;
+      margin-bottom: 50px;
+    }
    height: 100vh;
    overflow-y: auto;
    padding: 20px;
@@ -28,8 +32,13 @@ export const Tea = styled.span`
 
 export const MarginWrapper = styled.div`
   margin: 15px 0;
+  
   &.big {
     margin: 45px 0;
+  }
+
+  @media only screen and (max-width: 780px) {
+    margin: 15px;
   }
 `;
 
@@ -78,6 +87,10 @@ export const WelcomeText = styled.p`
 export const LoginOptions = styled.div`
   display: flex;
   margin: 20px 0;
+
+  @media only screen and (max-width: 780px) {
+    margin: 15px;
+  }
 `;
 
 export const LoginOption = styled.p`
@@ -103,10 +116,24 @@ export const Buttons = styled.div`
   font-weight: 100;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  @media only screen and (max-width: 780px) {
+    margin: 15px;
+  }
+`;
 
 export const SubTitle = styled.h3`
   font-family: "Lato", sans-serif;
   font-size: 24px;
   font-weight: 100;
 `;
+
+export const HeaderLink = styled.p`
+  @media only screen and (max-width: 780px) {
+    font-size: 12px;
+  }
+`;
+
+export const HeaderSmall = styled.h3``;
+
+export const Paragraph = styled.p``;

@@ -44,4 +44,19 @@ export const Side = styled.div`
   &.lightSide {
     background: rgba(${(props) => props.theme.colors.lightBackground});
   }
+  
+  &.leftSideHide {
+    @media only screen and (max-width: 1050px) {
+      display: none;
+    }
+  }
+  &.rightSideHide {
+    @media only screen and (max-width: 1050px) {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 100%;
+  }
 `;

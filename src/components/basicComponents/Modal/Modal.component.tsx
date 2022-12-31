@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { ModalProps } from '@components/Modal/Modal.interface';
-import { ChildrenWrapper, Container, Description, WindowHeader, Wrapper } from '@styles/Modal.style';
+import { ChildrenWrapper, Container, Description, ModalTile, WindowHeader, Wrapper } from '@styles/Modal.style';
 import Back from 'public/img/backarrowmodal.svg';
 
 export const Modal = ({ onClose, header, description, children }: ModalProps) => {
@@ -10,7 +10,7 @@ export const Modal = ({ onClose, header, description, children }: ModalProps) =>
       <Wrapper onClick={(e) => e.stopPropagation()}>
         <WindowHeader>
           <Image src={Back} alt={'close'} width={72} height={72} onClick={onClose}/>
-          <h3>{header}</h3>
+          <ModalTile>{header}</ModalTile>
         </WindowHeader>
         <Description>{description}</Description>
         <ChildrenWrapper>

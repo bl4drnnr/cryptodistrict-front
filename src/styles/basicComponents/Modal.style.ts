@@ -60,3 +60,5 @@ export const Description = styled.div`
 export const ChildrenWrapper = styled.div`
   width: 90%;
 `;
+
+export const ModalTile = styled.h3``;

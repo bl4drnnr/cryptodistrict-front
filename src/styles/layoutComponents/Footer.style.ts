@@ -5,6 +5,10 @@ export const Container = styled.div`
   height: 60px;
   border-top: 1px solid rgba(255, 255, 255, .25);
   background-color: rgb(${(props) => props.theme.colors.lightBackground});
+
+  @media only screen and (max-width: 780px) {
+    display: none;
+  }
 `;
 
 export const Box = styled.div`

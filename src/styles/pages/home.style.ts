@@ -19,7 +19,10 @@ export const HomeWelcomeBox = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
-  height: calc(300px - 50px);
+  height: 250px;
+  @media only screen and (max-width: 780px) {
+    height: 200px;
+  }
 
   &.name {
     align-items: end;
@@ -43,6 +46,10 @@ export const InputWrapper = styled.div`
   text-align: start;
   max-width: 500px;
   margin: 0 auto 30px auto;
+  @media only screen and (max-width: 780px) {
+    width: 70%;
+    text-align: center;
+  }
 `;
 
 export const HomeWelcomeTitle = styled.span`
@@ -95,6 +102,10 @@ export const HomeWelcomeTitle = styled.span`
     transform: translateX(-50%);
     z-index: -2;
   }
+
+  @media only screen and (max-width: 780px) {
+    font-size: 40px;
+  }
 `;
 
 export const BoldWeb3 = styled.span`
@@ -135,6 +146,10 @@ export const StartButton = styled.div`
 export const ButtonText = styled.h3`
   width: 100%;
   font-weight: 100;
+  
+  @media only screen and (max-width: 780px) {
+    font-size: 14px;
+  }
 `;
 
 export const Lines = styled.div`
@@ -248,6 +263,10 @@ export const CryptoDescriptionContainer = styled.div`
   width: 50%;
   position: relative;
   margin-top: 40px;
+  
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 export const CryptoDescriptionBox = styled.div`
@@ -256,6 +275,13 @@ export const CryptoDescriptionBox = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media only screen and (max-width: 1200px) {
+    //width: 100%;
+    position: absolute; /* Important */
+    top: 50%; /* Position Y halfway in */
+    left: 50%; /* Position X halfway in */
+    transform: translate(-50%,-50%); /* Move it halfway back(x,y) */
+  }
 `;
 
 export const CryptoDescriptionHeader = styled.h1`
@@ -263,10 +289,18 @@ export const CryptoDescriptionHeader = styled.h1`
   font-weight: 900;
   font-family: "Lato", sans-serif;
 
+  @media only screen and (max-width: 1200px) {
+    font-size: 32px;
+  }
+
   &.subHeader {
     font-size: 28px;
     font-weight: 100;
     margin: 30px 0;
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -286,12 +320,18 @@ export const ImageBlock = styled.div`
 
   .image-nft {
     position: absolute;
+    @media only screen and (max-width: 1200px) {
+      display: none;
+    }
+
     &.crypto-creation {
       left: 12%;
     }
+
     &.metamask {
       left: 0;
     }
+
     &.contract {
       left: 20%;
     }
@@ -301,6 +341,9 @@ export const ImageBlock = styled.div`
     position: absolute;
     top: 10%;
     transition: .2s;
+    @media only screen and (max-width: 1200px) {
+      display: none;
+    }
 
     &:hover {
       transform: scale(1.1);
@@ -324,3 +367,5 @@ export const ImageBlock = styled.div`
     }
   }
 `;
+
+export const ImageWrapper = styled.div``;
