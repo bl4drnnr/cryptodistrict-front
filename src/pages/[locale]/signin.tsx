@@ -174,7 +174,7 @@ const Signin = ({ locale }: SignInProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors', 'placeholders']);
+const getStaticProps = makeStaticProps(['pages', 'components', 'errors', 'placeholders']);
 export { getStaticPaths, getStaticProps };
 
 export default Signin;
