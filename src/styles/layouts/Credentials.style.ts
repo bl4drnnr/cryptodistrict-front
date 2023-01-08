@@ -22,12 +22,15 @@ export const LoginHeaderTitle = styled.h3`
   margin-left: 30px;
   transition: .2s;
   cursor: pointer;
+  color: rgb(${(props) => props.theme.colors.textColor});
+  
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary})
   }
 `;
 
 export const LoginHeaderButton = styled.div`
+  color: rgb(${(props) => props.theme.colors.textColor});
   display: flex;
   align-items: baseline;
   padding: 30px;

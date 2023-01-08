@@ -59,6 +59,7 @@ export const PasswordCheckLine = styled.div`
   padding: 5px;
   margin: 5px 0;
   font-weight: 100;
+  color: rgb(${(props) => props.theme.colors.textColor});
 `;
 
 export const Dot = styled.div`
@@ -77,11 +78,13 @@ export const Dot = styled.div`
 
 export const WelcomeTitle = styled.h1`
   text-align: center;
+  color: rgb(${(props) => props.theme.colors.textColor});
 `;
 
 export const WelcomeText = styled.p`
   font-size: 20px;
   margin-top: 20px;
+  color: rgb(${(props) => props.theme.colors.textColor});
 `;
 
 export const LoginOptions = styled.div`
@@ -97,6 +100,8 @@ export const LoginOption = styled.p`
   cursor: pointer;
   transition: .2s;
   margin: 16px 0;
+  color: rgb(${(props) => props.theme.colors.textColor});
+  
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary})
   }
@@ -105,7 +110,7 @@ export const LoginOption = styled.p`
 export const VerticalLine = styled.div`
   margin: 0 20px;
   width: 1px;
-  background-color: white;
+  background-color: rgb(${(props) => props.theme.colors.textColor});
   height: 50px;
   float: left;
   opacity: .5;
@@ -117,6 +122,8 @@ export const Buttons = styled.div`
 `;
 
 export const Title = styled.h1`
+  color: rgb(${(props) => props.theme.colors.textColor});
+  
   @media only screen and (max-width: 780px) {
     margin: 15px;
   }
@@ -134,6 +141,10 @@ export const HeaderLink = styled.p`
   }
 `;
 
-export const HeaderSmall = styled.h3``;
+export const HeaderSmall = styled.h3`
+  color: rgb(${(props) => props.theme.colors.textColor});
+`;
 
-export const Paragraph = styled.p``;
+export const Paragraph = styled.p`
+  color: rgb(${(props) => props.theme.colors.textColor});
+`;

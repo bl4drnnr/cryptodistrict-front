@@ -10,6 +10,10 @@ export const TacBox = styled.div`
   padding: 20px 0;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  color: rgb(${(props) => props.theme.colors.textColor});
+`;
 
-export const Content = styled.p``;
+export const Content = styled.p`
+  color: rgb(${(props) => props.theme.colors.textColor});
+`;

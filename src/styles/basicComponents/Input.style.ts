@@ -8,11 +8,12 @@ export const Placeholder = styled.p`
   opacity: .9;
   font-size: 14px;
   margin: 14px 0;
+  color: rgb(${(props) => props.theme.colors.textColor});
   font-weight: 200;
 `;
 
 export const BasicInput = styled.input`
-  background-color: rgba(35, 36, 40, 0.85);
+  background-color: rgba(${(props) => props.theme.colors.inputBackground}, 0.85);
   border: 1px solid rgba(${(props) => props.theme.colors.primary}, .3);
   border-radius: 5px;
   outline: none;
@@ -23,6 +24,7 @@ export const BasicInput = styled.input`
   font-size: 16px;
   line-height: 24px;
   transition: .3s;
+  color: rgb(${(props) => props.theme.colors.textColor});
   font-weight: 100;
   font-family: "Inter", sans-serif;
 

@@ -45,7 +45,7 @@ export const WindowHeader = styled.div`
 
   h3 {
     position: absolute;
-    color: var(--color-on-white);
+    color: black;
   }
 `;
 

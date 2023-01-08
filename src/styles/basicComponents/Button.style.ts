@@ -8,10 +8,9 @@ export const Container = styled.div`
 export const BasicButton = styled.button`
   height: 36px;
   width: 100%;
-  background-color: rgba(35, 36, 40, 0.85);
   border-radius: 5px;
   cursor: pointer;
-  border: 1px solid rgb(${(props) => props.theme.colors.primary}, .3);
+  border: 1px solid rgb(${(props) => props.theme.colors.primary}, .5);
   transition: .3s;
   
   &.fillButton {
@@ -24,7 +23,7 @@ export const BasicButton = styled.button`
   }
   
   &.disabled {
-    background-color: rgba(255, 255, 255, 0.20);
+    background-color: rgba(${(props) => props.theme.colors.disableColor}, 0.20);
   }
   
   &:hover {
@@ -37,4 +36,5 @@ export const ButtonContent = styled.p`
   font-size: 14px;
   font-weight: 500;
   font-family: "Inter", sans-serif;
+  color: rgb(${(props) => props.theme.colors.textColor});
 `;
