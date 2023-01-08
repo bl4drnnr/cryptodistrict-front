@@ -46,6 +46,7 @@ export const Link = styled.h3`
   transition: .2s;
   font-weight: 300;
   font-family: "Lato", sans-serif;
+  color: rgb(${(props) => props.theme.colors.textColor});
   
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
@@ -66,6 +67,7 @@ export const Button = styled.div`
   transition: .2s;
   font-weight: 200;
   font-size: 14px;
+  color: rgb(${(props) => props.theme.colors.textColor});
   
   &.logIn {
     &:hover {
@@ -85,6 +87,8 @@ export const Logo = styled.h2`
   transition: .2s;
   margin-right: 35px;
   margin-top: 5px;
+  color: rgb(${(props) => props.theme.colors.textColor});
+  
   &:hover {
     color: rgb(${(props) => props.theme.colors.primary});
   }

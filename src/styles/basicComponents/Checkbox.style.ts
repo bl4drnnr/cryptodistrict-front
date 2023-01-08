@@ -19,7 +19,7 @@ export const Checkmark = styled.span`
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  background-color: rgba(${(props) => props.theme.colors.disableColor}, .15);
   border-radius: 5px;
 `;
 
@@ -27,7 +27,7 @@ export const Label = styled.div`
   padding-top: 4px;
   margin: 0;
   font-size: 12px;
-  color: white;
+  color: rgb(${(props) => props.theme.colors.textColor});
 `;
 
 export const Container = styled.div`

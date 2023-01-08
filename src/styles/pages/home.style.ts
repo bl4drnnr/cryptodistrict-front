@@ -59,6 +59,7 @@ export const HomeWelcomeTitle = styled.span`
   position: relative;
   display: block;
   animation: text-appearing 2s;
+  color: rgb(${(props) => props.theme.colors.textColor});
 
   @keyframes lines {
     from {
@@ -292,6 +293,7 @@ export const CryptoDescriptionHeader = styled.h1`
   font-size: 58px;
   font-weight: 900;
   font-family: "Lato", sans-serif;
+  color: rgb(${(props) => props.theme.colors.textColor});
 
   @media only screen and (max-width: 1200px) {
     font-size: 32px;

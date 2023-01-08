@@ -44,4 +44,5 @@ export const Content = styled.p`
   font-weight: 300;
   font-family: "Lato", sans-serif;
   margin: 10px 0;
+  color: rgb(${(props) => props.theme.colors.textColor});
 `;

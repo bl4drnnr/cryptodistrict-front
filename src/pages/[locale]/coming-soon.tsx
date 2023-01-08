@@ -1,13 +1,14 @@
+import React from 'react';
+
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
+import { useWindowDimensions } from '@hooks/useGetWindowDimensions.hook';
 import GlobalLayout from '@layouts/Global.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { Container, Content, ImageWrapper, Link, LinkWrapper, Title } from '@styles/coming-soon.style';
-import {useWindowDimensions} from "@hooks/useGetWindowDimensions.hook";
-import React from "react";
 
 interface ComingSoonProps {
   locale: string;
@@ -52,7 +53,7 @@ const ComingSoon = ({ locale }: ComingSoonProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
+const getStaticProps = makeStaticProps(['pages', 'components', 'errors']);
 export { getStaticPaths, getStaticProps };
 
 export default ComingSoon;

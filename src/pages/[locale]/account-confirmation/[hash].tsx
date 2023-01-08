@@ -47,7 +47,7 @@ const AccountConfirmation = ({ locale }: AccountConfirmationProps) => {
   );
 };
 
-const getStaticProps = makeStaticProps(['pages', 'common', 'components', 'errors']);
-export { getStaticProps };
+// const getStaticProps = makeStaticProps(['pages', 'components', 'errors']);
+// export { getStaticProps };
 
 export default AccountConfirmation;
