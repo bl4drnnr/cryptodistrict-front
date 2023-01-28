@@ -32,9 +32,9 @@ const AccountConfirmation = ({ locale }: AccountConfirmationProps) => {
       const routePath = window.location.search;
       const hash = routePath.split('=');
       if (hash.length == 2 && hash[0] == '?confirmationHash') {
-        // confirmAccountRegistration(hash[1]).then((res) => {
-        //   if (res?.message === 'success') setConfirmationStatus(2);
-        // });
+        confirmAccountRegistration(hash[1]).then((res) => {
+          if (res?.message === 'success') setConfirmationStatus(2);
+        });
       }
     }
   }, []);
