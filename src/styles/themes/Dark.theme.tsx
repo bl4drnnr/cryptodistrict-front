@@ -9,7 +9,8 @@ export const DarkTheme: ThemeProps = {
     success: '59, 232, 59',
     textColor: '255, 255, 255',
     inputBackground: '35, 36, 40',
-    disableColor: '255, 255, 255'
+    disableColor: '255, 255, 255',
+    opposite: '255, 255, 255'
   }
 };
 

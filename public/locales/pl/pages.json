@@ -105,5 +105,14 @@
     "pageTitle": "Och... Nie bądź taki niecierpliwy, fajne rzeczy nadejdą wkrótce",
     "content": "Tworzymy tutaj fajnу rzeczy, więc poczekaj chwilę, a dostaniesz to, czego chcesz",
     "link": "Znajdź inne fajne rzeczy"
+  },
+  "confirmacc": {
+    "title": "Potwierdzenie konta",
+    "almostDone": "Już prawie jesteś!",
+    "lastStep": "Weryfikacja Twojego adresu e-mail to ostatnia rzecz, która dzieli Cię od wspaniałego świata WEB3!",
+    "inProgress": "Proszę, bądź cierpliwy, podczas weryfikowania Twojego konta jesteśmy trochę magiczni za kulisami.",
+    "success": "Sukces! Witaj tutaj, nowicjuszu! Miło cię widzieć, pokręcić się tutaj i spróbować znaleźć trochę zabawy.",
+    "error": "Um... Wiesz, coś tam poszło nie tak... Cóż... Chcesz się z nami skontaktować?!",
+    "support": "Pomóc techniczna"
   }
 }

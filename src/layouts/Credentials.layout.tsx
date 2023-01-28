@@ -2,8 +2,10 @@ import React from 'react';
 
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
+import { useRecoilState } from 'recoil';
 
 import GlobalLayout from '@layouts/Global.layout';
+import { theme } from '@store/global/global.state';
 import { Container, Side, LoginHeader, LoginHeaderButton, LoginHeaderTitle } from '@styles/Credentials.style';
 
 
@@ -33,10 +35,21 @@ const CredentialsLayout = ({
   loading = false
 }: CredentialsLayoutProps): React.ReactElement => {
   const router = useRouter();
+  const [currentTheme, setCurrentTheme] = useRecoilState(theme);
 
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
   };
+
+  const setTheme = (theme: 'dark' | 'light') => {
+    setCurrentTheme(theme);
+    localStorage.setItem('theme', theme);
+  };
+
+  React.useEffect(() => {
+    const theme = localStorage.getItem('theme') as 'dark' | 'light';
+    if (['dark', 'light'].includes(theme)) setTheme(theme);
+  }, []);
 
   return (
     <GlobalLayout loading={loading}>

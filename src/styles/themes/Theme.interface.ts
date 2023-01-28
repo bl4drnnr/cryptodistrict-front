@@ -8,5 +8,6 @@ export interface ThemeProps {
     textColor: string;
     inputBackground: string;
     disableColor: string;
+    opposite: string;
   }
 }

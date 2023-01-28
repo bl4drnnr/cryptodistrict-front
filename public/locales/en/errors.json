@@ -2,7 +2,8 @@
   "apiGeneralError": {
     "user-already-exists": "User already exists",
     "Internal server error": "Internal server error",
-    "wrong-credentials": "Wrong credentials"
+    "wrong-credentials": "Wrong credentials",
+    "account-not-confirmed": "Account has not been confirmed"
   },
   "generalError": {
 

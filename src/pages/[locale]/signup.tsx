@@ -81,6 +81,10 @@ const Signup = ({ locale }: SignUpProps) => {
         password: password.password,
         bio, linkedIn, firstName, lastName, title, twitter, personalWebsite, tac, email
       });
+
+      if (response.message == 'success') {
+        setStep(3);
+      }
     } catch (e) {
       handleException(e);
     }

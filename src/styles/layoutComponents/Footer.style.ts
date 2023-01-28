@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 60px;
   border-top: 1px solid rgba(255, 255, 255, .25);
-  background-color: rgb(${(props) => props.theme.colors.lightBackground});
+  background-color: rgb(${(props) => props.theme.colors.darkBackground});
   color: rgb(${(props) => props.theme.colors.textColor});
 
   @media only screen and (max-width: 780px) {

@@ -2,7 +2,8 @@
   "apiGeneralError": {
     "user-already-exists": "Użytkownik już istnieje",
     "Internal server error": "Internal server error",
-    "wrong-credentials": "Niepoprawne dane wejściowe"
+    "wrong-credentials": "Niepoprawne dane wejściowe",
+    "account-not-confirmed": "Konto nie zostało potwierdzone"
   },
   "generalError": {
 
