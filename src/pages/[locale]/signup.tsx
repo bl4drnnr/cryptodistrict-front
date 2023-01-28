@@ -50,7 +50,9 @@ const Signup = ({ locale }: SignUpProps) => {
 
   const [step, setStep] = React.useState(1);
   const [tac, setTac] = React.useState(false);
-  const [email, setEmail] = React.useState({ email: '', emailError: false });
+  const [email, setEmail] = React.useState('');
+  const [emailError, setEmailError] = React.useState(false);
+
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
   const [twitter, setTwitter] = React.useState('');
@@ -76,9 +78,8 @@ const Signup = ({ locale }: SignUpProps) => {
   const signUpUser = async () => {
     try {
       const response = await signUp({
-        email: email.email,
         password: password.password,
-        bio, linkedIn, firstName, lastName, title, twitter, personalWebsite, tac
+        bio, linkedIn, firstName, lastName, title, twitter, personalWebsite, tac, email
       });
     } catch (e) {
       handleException(e);
@@ -86,20 +87,21 @@ const Signup = ({ locale }: SignUpProps) => {
   };
 
   React.useEffect(() => {
-    if (router.query.email) {
-      setEmail({ emailError: false, email: router.query.email as string });
+    const routeEmail = window.location.search;
+    if (routeEmail.split('=').length >= 2) {
+      setEmail(routeEmail.split('=')[1]);
     }
-  }, []);
+  }, [email]);
 
   React.useEffect(() => {
     if (width) setHideLeftSide(width <= 1050);
   }, [width]);
 
   React.useEffect(() => {
-    if (!validateEmail(email.email)) setEmail({ ...email, emailError: true });
-    else if (validateEmail(email.email) === 1) setEmail({ ...email, emailError: false });
-    else setEmail({ ...email, emailError: false });
-  }, [email.email]);
+    if (!validateEmail(email)) setEmailError(true);
+    else if (validateEmail(email) === 1) setEmailError(false);
+    else setEmailError(false);
+  }, [email]);
 
   React.useEffect(() => {
     if (password.password === password.repeatPassword)
@@ -129,8 +131,8 @@ const Signup = ({ locale }: SignUpProps) => {
 
   const validateFields = () => {
     return tac &&
-      !email.emailError &&
-      email.email &&
+      !emailError &&
+      email &&
       password.password &&
       password.repeatPassword &&
       !passwordError.passwordMismatch &&
@@ -158,9 +160,9 @@ const Signup = ({ locale }: SignUpProps) => {
               <MarginWrapper>
                 <Input
                   high={true}
-                  onError={email.emailError}
-                  value={email.email}
-                  onChange={(e) => setEmail({ ...email, email: e.target.value })}
+                  onError={emailError}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder={t('placeholders:inputs.email')}
                 />
               </MarginWrapper>
