@@ -51,6 +51,10 @@ that web application has been created 2 color schemes - dark and light.
 
 ![0 {caption=ksamdla}](media/1.png)
 
+| ![space-1.jpg](http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg) |
+|:--:|
+| *Space* |
+
 ### Contact
 
 - Developer contact - [contact@mikhailbahdashych.me](mailto:contact@mikhailbahdashych.me)
