@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const MainHomeWelcomeContainer = styled.div`
+  height: 100vh;
+  background-color: rgb(${(props) => props.theme.colors.darkBackground});
+  z-index: -6;
+`;
+
 export const HomeWelcomeContainer = styled.div`
   height: 100vh;
 
@@ -15,6 +21,8 @@ export const HomeWelcomeContainer = styled.div`
 `;
 
 export const HomeWelcomeBox = styled.div`
+  z-index: 1;
+  position: relative;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -99,7 +107,7 @@ export const HomeWelcomeTitle = styled.span`
     height: 100%;
     top: 0;
     left: 50%;
-    background: #eee;
+    background: rgb(${(props) => props.theme.colors.textColor});
     transform: translateX(-50%);
     z-index: -2;
   }
@@ -161,7 +169,7 @@ export const Lines = styled.div`
   height: 100%;
   margin: auto;
   width: 90vw;
-  z-index: -1;
+  z-index: 0;
 `;
 
 export const Line = styled.div`
@@ -170,7 +178,7 @@ export const Line = styled.div`
   height: 100vh;
   top: 0;
   left: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(${(props) => props.theme.colors.opposite}, 0.1);
   overflow: hidden;
   animation: appearing 2s;
 
@@ -200,7 +208,7 @@ export const Line = styled.div`
     width: 100%;
     top: -50%;
     left: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+    background: linear-gradient(to bottom, rgba(${(props) => props.theme.colors.opposite}, 0) 0%, rgb(${(props) => props.theme.colors.opposite}) 75%, rgb(${(props) => props.theme.colors.opposite}) 100%);
     animation: drop 4s 0s infinite;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);

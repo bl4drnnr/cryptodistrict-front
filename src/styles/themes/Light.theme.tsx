@@ -9,7 +9,8 @@ export const LightTheme: ThemeProps = {
     success: '59, 232, 59',
     textColor: '0, 0, 0',
     inputBackground: '255, 255, 255',
-    disableColor: '30, 30, 30'
+    disableColor: '30, 30, 30',
+    opposite: '0, 0, 0'
   }
 };
 

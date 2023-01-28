@@ -27,6 +27,7 @@ import {
   ItemsWrapper,
   Line,
   Lines,
+  MainHomeWelcomeContainer,
   StartButton
 } from '@styles/home.style';
 
@@ -60,7 +61,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
       <Head>
         <title>Cryptodistrict | {t('pages:home.title')}</title>
       </Head>
-      <HomeWelcomeContainer>
+      <MainHomeWelcomeContainer>
         <HomeWelcomeBox className={'name'}>
           <HomeWelcomeTitle><Bold>CRYPTODISTRICT</Bold></HomeWelcomeTitle>
         </HomeWelcomeBox>
@@ -95,7 +96,7 @@ const Home: NextPage<HomeProps> = ({ locale }: HomeProps) => {
             <Line key={i}/>
           )}
         </Lines>
-      </HomeWelcomeContainer>
+      </MainHomeWelcomeContainer>
 
       <HomeWelcomeContainer className={'light'}>
         <ItemsWrapper>
