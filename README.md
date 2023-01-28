@@ -62,9 +62,17 @@ that web application has been created 2 color schemes - dark and light.
 |:--:|
 | *The main page (light theme)* |
 
-| ![1](media/4.png) |
+| ![1](media/4.jpeg) |
 |:--:|
 | *The main page (light theme)* |
+
+| ![1](media/5.png) |
+|:--:|
+| *Sign up (desktop version)* |
+
+| ![1](media/6.jpeg) |
+|:--:|
+| *Sign up (mobile version)* |
 
 ### Contact
 
