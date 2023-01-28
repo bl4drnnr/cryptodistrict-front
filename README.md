@@ -49,11 +49,22 @@ In conclusion, Next.js TypeScript offers a number of advantages for web developm
 Below will be presented a couple of view of the project. First of all, it's important to mention
 that web application has been created 2 color schemes - dark and light.
 
-![0 {caption=ksamdla}](media/1.png)
 
-| ![space-1.jpg](http://www.storywarren.com/wp-content/uploads/2016/09/space-1.jpg) |
+| ![1](media/1.png) |
 |:--:|
-| *Space* |
+| *The main page (dark theme)* |
+
+| ![1](media/2.png) |
+|:--:|
+| *The main page (dark theme)* |
+
+| ![1](media/3.png) |
+|:--:|
+| *The main page (light theme)* |
+
+| ![1](media/4.png) |
+|:--:|
+| *The main page (light theme)* |
 
 ### Contact
 
