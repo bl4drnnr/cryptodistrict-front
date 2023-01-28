@@ -10,8 +10,12 @@
 1. [Short intro into WEB3](#short-intro-into-web3)
 2. [About project implementation](#about-project-implementation)
 3. [Project preview](#project-preview)
-4. [Contact](#contact)
-5. [License](#license)
+4. [Themes implementation](#themes-implementation)
+5. [Language implementation](#language-implementation)
+6. [Styles implementation](#styles-implementation)
+7. [Layouts](#layouts)
+8. [Contact](#contact)
+9. [License](#license)
 
 ### Short intro into WEB3
 Cryptocurrencies are digital or virtual currencies that use cryptography for security. They operate independently of a central bank or government. Bitcoin, the first and most widely used cryptocurrency, was created in 2009. Since then, thousands of other cryptocurrencies have been developed.
@@ -46,9 +50,9 @@ In conclusion, Next.js TypeScript offers a number of advantages for web developm
 
 ### Project preview
 
-Below will be presented a couple of view of the project. First of all, it's important to mention
-that web application has been created 2 color schemes - dark and light.
+Below will be presented a couple of view of the project.
 
+Details about themes and languages implementation will be described in next topics.
 
 | ![1](media/1.png) |
 |:--:|
@@ -74,9 +78,62 @@ that web application has been created 2 color schemes - dark and light.
 |:--:|
 | *Sign up (mobile version)* |
 
+### Themes implementation
+
+First of all, it's important to mention that web application has been created 2 color schemes - dark and light. Themes have been implemented using `recoil` state library.
+This library allows to use and control state of the whole application, in addition, in order to save a users' choice
+`localStorage` has been used to keep the value of selected theme and then, if value persists within storage,
+change the theme using this variable.
+
+### Language implementation
+
+The whole web application has been translated on 3 languages - russian, english, polish - using `i18n` library.
+Once the language is changed (using modal within header), the selected languages is applied to every part of application.
+
+It's done by the URL prefix in front of every path. For example - `/en/forgot-password` or `/pl/forgot-password`.
+
+### Styles implementation
+
+In order to make work with styles much more comfortable and easy `styled-components` library has been used.
+This library allows to style components by creating new tags, instead of usage of inline styles and/or `SCSS`.
+
+This is how it looks like in project:
+
+```typescript
+import styled from 'styled-components';
+
+export const Container = styled.div`
+  padding-top: 160px;
+  width: 70%;
+  margin: 0 auto;
+  height: calc(100vh - 60px);
+`;
+```
+
+And then this `Container` is imported and used as normal `HTML` tag:
+
+```typescript jsx
+return (
+  <Container>
+    ...
+  </Container>
+);
+```
+
+### Layouts
+
+In order to reduce the quantity of code reuse, layouts have been implemented. They allow not to import
+the same components, but create one wrapper and put the code inside of it.
+
+There are 3 layouts in this project: `Credentials`, `Default`, `NotificationMessage`.
+
+- `Credentials` - layout is used for next pages: `sign in`, `sign up`, `forgot password`, `account confirmation`.
+- `Default` - layout is normal layout with `Header` and `Footer` components.
+- `NotificationMessage` - special layout used as a wrapper for other layouts in order to allow pop up notification (implemented using `NotificationMessage`).
+
 ### Contact
 
-- Developer contact - [contact@mikhailbahdashych.me](mailto:contact@mikhailbahdashych.me)
+Developer contact - [contact@mikhailbahdashych.me](mailto:contact@mikhailbahdashych.me)
 
 ### License
 
