@@ -97,7 +97,7 @@ export const HomeWelcomeTitle = styled.span`
     height: 100%;
     left: -20px;
     right: -20px;
-    background: rgb(13, 17, 23);
+    background: rgb(${(props) => props.theme.colors.darkBackground});
     z-index: -1;
   }
 
