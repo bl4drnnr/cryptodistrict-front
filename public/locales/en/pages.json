@@ -104,10 +104,16 @@
   "comingSoon": {
     "title": "Coming soon",
     "pageTitle": "Oh... Don't be so impatient, cool things are coming soon",
-    "content": "We are creating cool staff here, so, just wait for a moment and you will get what you want",
+    "content": "We are creating cool stuff here, so, just wait for a moment and you will get what you want",
     "link": "Find other cool things"
   },
   "confirmacc": {
-    "title": "Account confirmation"
+    "title": "Account confirmation",
+    "almostDone": "You are almost there!",
+    "lastStep": "Verification of your email is the last things separates you and the wonderful world of WEB3!",
+    "inProgress": "Please, be patient, we are some magic stuff behind the scene while verifying your account.",
+    "success": "Success! Welcome here, newbie! It's nice to see you, hang around here and try to find some fun.",
+    "error": "Um... You know, something went wrong there... Well... Wanna contact us?!",
+    "support": "Support"
   }
 }

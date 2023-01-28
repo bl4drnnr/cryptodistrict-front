@@ -4,11 +4,12 @@ import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import { Button } from '@components/Button/Button.component';
 import { useHandleException } from '@hooks/useHandleException.hook';
 import CredentialsLayout from '@layouts/Credentials.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useAccountConfirmationService } from '@services/account-confirmation/account-confirmation.service';
-import { HeaderLink, Link } from '@styles/login.style';
+import { Box, HeaderLink, Link, MarginWrapper, SubTitle, Title, WelcomeText, WelcomeTitle } from '@styles/login.style';
 
 
 interface AccountConfirmationProps {
@@ -20,19 +21,21 @@ const AccountConfirmation = ({ locale }: AccountConfirmationProps) => {
   const { t } = useTranslation();
   const { handleException } = useHandleException();
   const { loading, confirmAccount } = useAccountConfirmationService();
+  const fetchAccountConfirmation = React.useRef(true);
 
   const [confirmationStatus, setConfirmationStatus] = React.useState(1);
 
   React.useEffect(() => {
-    const routePath = window.location.search;
-    const hash = routePath.split('=');
-    if (
-      hash.length == 2 &&
-      hash[0] == '?confirmationHash'
-    ) {
-      confirmAccountRegistration(hash[1]).then((res) => {
-        console.log('res', res);
-      });
+    if (fetchAccountConfirmation.current) {
+      fetchAccountConfirmation.current = false;
+
+      const routePath = window.location.search;
+      const hash = routePath.split('=');
+      if (hash.length == 2 && hash[0] == '?confirmationHash') {
+        // confirmAccountRegistration(hash[1]).then((res) => {
+        //   if (res?.message === 'success') setConfirmationStatus(2);
+        // });
+      }
     }
   }, []);
 
@@ -42,8 +45,9 @@ const AccountConfirmation = ({ locale }: AccountConfirmationProps) => {
 
   const confirmAccountRegistration = async (hash: string) => {
     try {
-      // return await confirmAccount({ hash });
+      return await confirmAccount({ hash });
     } catch (e) {
+      setConfirmationStatus(3);
       handleException(e);
     }
   };
@@ -54,8 +58,42 @@ const AccountConfirmation = ({ locale }: AccountConfirmationProps) => {
         <title>Cryptodistrict | {t('pages:confirmacc.title')}</title>
       </Head>
       <CredentialsLayout
-        leftSide={<></>}
-        rightSide={<></>}
+        leftSide={
+          <Box>
+            <Title>{t('pages:confirmacc.title')}</Title>
+            <>
+              {confirmationStatus === 1 ? (
+                <MarginWrapper>
+                  <SubTitle>{t('pages:confirmacc.inProgress')}</SubTitle>
+                </MarginWrapper>
+              ) : (confirmationStatus === 2 ? (
+                <>
+                  <MarginWrapper>
+                    <SubTitle>{t('pages:confirmacc.success')}</SubTitle>
+                  </MarginWrapper>
+                  <MarginWrapper>
+                    <Button fillButton={true} text={t('pages:signin.title')} onClick={() => handleRedirect('/signin')}/>
+                  </MarginWrapper>
+                </>
+              ) : (
+                <>
+                  <MarginWrapper>
+                    <SubTitle>{t('pages:confirmacc.error')}</SubTitle>
+                  </MarginWrapper>
+                  <MarginWrapper>
+                    <Button fillButton={true} text={t('pages:confirmacc.support')} onClick={() => handleRedirect('/contact')}/>
+                  </MarginWrapper>
+                </>
+              ))}
+            </>
+          </Box>
+        }
+        rightSide={
+          <Box>
+            <WelcomeTitle>{t('pages:confirmacc.almostDone')}</WelcomeTitle>
+            <WelcomeText>{t('pages:confirmacc.lastStep')}</WelcomeText>
+          </Box>
+        }
         headerLink={
           <>
             <HeaderLink><Link onClick={() => handleRedirect('/signin')}
