@@ -38,7 +38,7 @@ const Account = ({ locale }: AccountProps) => {
   };
 
   return (
-    <DefaultLayout locale={locale} translate={t}>
+    <DefaultLayout locale={locale} translate={t} loading={l1 || l2}>
       <></>
     </DefaultLayout>
   );
