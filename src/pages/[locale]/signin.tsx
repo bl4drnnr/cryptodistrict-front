@@ -9,7 +9,7 @@ import { Input } from '@components/Input/Input.component';
 import { TwoFa } from '@components/TwoFa/TwoFa.component';
 import { useWindowDimensions } from '@hooks/useGetWindowDimensions.hook';
 import { useHandleException } from '@hooks/useHandleException.hook';
-import { validatePasswordLength } from '@hooks/useValidators.hook';
+import { validateEmail, validatePasswordLength } from '@hooks/useValidators.hook';
 import CredentialsLayout from '@layouts/Credentials.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useSignInService } from '@services/signin/signin.service';
@@ -41,6 +41,7 @@ const Signin = ({ locale }: SignInProps) => {
   const [step, setStep] = React.useState(1);
   const [loginOption, setLoginOption] = React.useState('email');
   const [email, setEmail] = React.useState('');
+  const [emailError, setEmailError] = React.useState(false);
   const [password, setPassword] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
   const [twoFa, setTwoFa] = React.useState('');
@@ -69,6 +70,12 @@ const Signin = ({ locale }: SignInProps) => {
     if (width) setRightSideHide(width <= 1050);
   }, [width]);
 
+  React.useEffect(() => {
+    if (!validateEmail(email)) setEmailError(true);
+    else if (validateEmail(email) === 1) setEmailError(false);
+    else setEmailError(false);
+  }, [email]);
+
   return (
     <>
       <Head>
@@ -90,6 +97,7 @@ const Signin = ({ locale }: SignInProps) => {
                 {loginOption === 'email' ? (
                   <Input
                     high={true}
+                    onError={emailError}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={t('placeholders:inputs.email')}
@@ -123,7 +131,7 @@ const Signin = ({ locale }: SignInProps) => {
 
               <MarginWrapper>
                 <Button
-                  disabled={passwordError}
+                  disabled={passwordError || emailError || !password || !email}
                   highHeight={true}
                   text={t('pages:signin.signUpButton')}
                   onClick={() => signInUser()}

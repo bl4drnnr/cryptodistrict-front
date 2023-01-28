@@ -106,5 +106,8 @@
     "pageTitle": "Oh... Don't be so impatient, cool things are coming soon",
     "content": "We are creating cool staff here, so, just wait for a moment and you will get what you want",
     "link": "Find other cool things"
+  },
+  "confirmacc": {
+    "title": "Account confirmation"
   }
 }

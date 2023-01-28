@@ -48,7 +48,7 @@ const Signup = ({ locale }: SignUpProps) => {
   const [hideLeftSide, setHideLeftSide] = React.useState(false);
   const { height, width } = useWindowDimensions();
 
-  const [step, setStep] = React.useState(1);
+  const [step, setStep] = React.useState(3);
   const [tac, setTac] = React.useState(false);
   const [email, setEmail] = React.useState('');
   const [emailError, setEmailError] = React.useState(false);
@@ -81,6 +81,10 @@ const Signup = ({ locale }: SignUpProps) => {
         password: password.password,
         bio, linkedIn, firstName, lastName, title, twitter, personalWebsite, tac, email
       });
+
+      if (response.message == 'success') {
+        setStep(3);
+      }
     } catch (e) {
       handleException(e);
     }
