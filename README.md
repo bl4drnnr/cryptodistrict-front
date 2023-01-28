@@ -14,7 +14,7 @@
 5. [Language implementation](#language-implementation)
 6. [Styles implementation](#styles-implementation)
 7. [Layouts](#layouts)
-8. [Contact](#contact)
+8. [Contact](#contact-and-references)
 9. [License](#license)
 
 ### Short intro into WEB3
