@@ -131,9 +131,11 @@ There are 3 layouts in this project: `Credentials`, `Default`, `NotificationMess
 - `Default` - layout is normal layout with `Header` and `Footer` components.
 - `NotificationMessage` - special layout used as a wrapper for other layouts in order to allow pop up notification (implemented using `NotificationMessage`).
 
-### Contact
+### Contact and references
 
-Developer contact - [contact@mikhailbahdashych.me](mailto:contact@mikhailbahdashych.me)
+- Developer contact - [contact@mikhailbahdashych.me](mailto:contact@mikhailbahdashych.me)
+- Project's API - [repository link](https://github.com/bl4drnnr/cryptodistrict-api)
+- Project's infrastructure - [repository link](https://github.com/bl4drnnr/cryptodistrict-infrastructure)
 
 ### License
 
