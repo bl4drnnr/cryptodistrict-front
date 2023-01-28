@@ -18,6 +18,7 @@ export default async (
         '_rt', refreshToken, {
           path: '/',
           httpOnly: true,
+          sameSite: true,
           maxAge: 7 * 24 * 60 * 60 * 1000
         })
       );
