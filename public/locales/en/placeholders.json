@@ -8,6 +8,9 @@
     "sendCode": "Send code",
     "verificationCode": "Verification code",
     "submit": "Submit",
-    "editProfile": "Edit profile"
+    "editProfile": "Edit profile",
+    "personalInformation": "Personal information",
+    "notificationSettings": "Notification settings",
+    "securitySettings": "Security settings"
   }
 }

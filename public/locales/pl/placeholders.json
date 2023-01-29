@@ -8,6 +8,9 @@
     "sendCode": "Wyślij kod",
     "verificationCode": "Kod weryfikacyjny",
     "submit": "Kontynuować",
-    "editProfile": "Edytuj konto"
+    "editProfile": "Edytuj konto",
+    "personalInformation": "Informacje osobiste",
+    "notificationSettings": "Ustawienia powiadomień",
+    "securitySettings": "Ustawienia bezpieczeństwa"
   }
 }

@@ -8,6 +8,9 @@
     "sendCode": "Отправить код",
     "verificationCode": "Код верификации",
     "submit": "Продолжить",
-    "editProfile": "Редактировать профиль"
+    "editProfile": "Редактировать профиль",
+    "personalInformation": "Личные данные",
+    "notificationSettings": "Настройки уведомлений",
+    "securitySettings": "Настройки безопасности"
   }
 }

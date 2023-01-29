@@ -37,9 +37,9 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
 
   const [section, setSection] = React.useState('personalInformation');
   const [sections, ] = React.useState([
-    { value: 'personalInformation', text: 'Personal information' },
-    { value: 'notificationSettings', text: 'Notification settings' },
-    { value: 'securitySettings', text: 'Security settings' }
+    { value: 'personalInformation', text: t('placeholders:inputs.personalInformation') },
+    { value: 'notificationSettings', text: t('placeholders:inputs.notificationSettings') },
+    { value: 'securitySettings', text: t('placeholders:inputs.securitySettings') }
   ]);
   const { loading, getUserSettings } = useGetUserSettingsService();
   const { handleException } = useHandleException();
@@ -54,7 +54,6 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const fetchUserSettings = async (token: string) => {
     try {
       const response = await getUserSettings({ token });
-      console.log('response', response);
     } catch (e) {
       handleException(e);
     }
@@ -67,7 +66,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   return (
     <>
       <Head>
-        <title>Cryptodistrict | {t('pages:account.settingsTitle')}</title>
+        <title>Cryptodistrict | {t('pages:settings.title')}</title>
       </Head>
       <DefaultLayout locale={locale} translate={t} loading={loading}>
         <Container>
@@ -82,7 +81,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                 <SettingsHeaderItemsWrapper>
                   <SettingsHeaderTextWrapper>
                     <Nickname>bl4drnnr</Nickname>
-                    <PersonalAccount>Your personal account</PersonalAccount>
+                    <PersonalAccount>{t('pages:settings.yourPersonalAcc')}</PersonalAccount>
                   </SettingsHeaderTextWrapper>
                 </SettingsHeaderItemsWrapper>
               </SettingsPageHeaderSide>
