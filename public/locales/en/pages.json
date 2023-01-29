@@ -115,5 +115,8 @@
     "success": "Success! Welcome here, newbie! It's nice to see you, hang around here and try to find some fun.",
     "error": "Um... You know, something went wrong there... Well... Wanna contact us?!",
     "support": "Support"
+  },
+  "account": {
+    "title": "Account"
   }
 }

@@ -56,6 +56,7 @@ const Signin = ({ locale }: SignInProps) => {
         email, password
       });
       sessionStorage.setItem('_at', _at);
+      await handleRedirect('/account');
     } catch (e) {
       handleException(e);
     }

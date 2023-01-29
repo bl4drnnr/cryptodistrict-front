@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   height: 60px;
-  border-top: 1px solid rgba(255, 255, 255, .25);
+  border-top: 1px solid rgba(${(props) => props.theme.colors.opposite}, .25);
   background-color: rgb(${(props) => props.theme.colors.darkBackground});
   color: rgb(${(props) => props.theme.colors.textColor});
 

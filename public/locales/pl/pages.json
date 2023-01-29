@@ -114,5 +114,8 @@
     "success": "Sukces! Witaj tutaj, nowicjuszu! Miło cię widzieć, pokręcić się tutaj i spróbować znaleźć trochę zabawy.",
     "error": "Um... Wiesz, coś tam poszło nie tak... Cóż... Chcesz się z nami skontaktować?!",
     "support": "Pomóc techniczna"
+  },
+  "account": {
+    "title": "Konto"
   }
 }
