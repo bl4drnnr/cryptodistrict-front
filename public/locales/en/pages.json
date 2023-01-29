@@ -117,7 +117,10 @@
     "support": "Support"
   },
   "account": {
-    "title": "Account",
-    "settingsTitle": "Settings"
+    "title": "Account"
+  },
+  "settings": {
+    "title": "Settings",
+    "yourPersonalAcc": "Your personal account"
   }
 }

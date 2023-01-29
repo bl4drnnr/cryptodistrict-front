@@ -2,15 +2,17 @@ import React from 'react';
 
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
+import { Button } from '@components/Button/Button.component';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useCheckTokenService } from '@services/check-token/check-token.service';
 import { useRefreshTokenService } from '@services/refresh-token/refresh-token.service';
 import {
-  AccountContainer,
-  Container, UserAssetsBox,
+  AccountContainer, AccountTitle,
+  Container, Nickname, UserAssetsBox,
   UserAssetsContainer, UserBioBox,
   UserInfoContainer,
   UserProfilePicture,
@@ -57,13 +59,23 @@ const Account = ({ locale }: AccountProps) => {
           <Wrapper>
             <AccountContainer>
               <UserInfoContainer>
-                <UserProfilePicture></UserProfilePicture>
+                <UserProfilePicture>
+                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={325} height={325}/>
+                </UserProfilePicture>
+                <Nickname>bl4drnnr</Nickname>
+                <AccountTitle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eius ipsum odio quos velit. Deleniti dicta doloremque est modi non obcaecati, quas quasi quisquam reiciendis rerum saepe, tenetur totam voluptatem?</AccountTitle>
+                <Button
+                  text={'Edit profile'}
+                  onClick={() => handleRedirect('/account/settings')}
+                />
               </UserInfoContainer>
 
               <UserAssetsContainer>
-                <UserBioBox></UserBioBox>
-                <UserAssetsBox>
-                </UserAssetsBox>
+                <UserBioBox>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem cupiditate doloribus explicabo laudantium magni obcaecati quisquam rem saepe, vel! Ab, aperiam architecto at consectetur cum cumque dolor dolorem eveniet exercitationem expedita hic id in ipsa labore maiores modi mollitia natus nihil nisi nobis praesentium quae quas quisquam saepe, sed sunt tempore temporibus tenetur, ut vero! Dicta doloremque enim eum id ipsam iure minus odio! Aliquam facilis ipsa minus nobis quasi vero? A alias consectetur fuga impedit ipsa obcaecati vero voluptatem. Aspernatur delectus dolor impedit ipsa magnam nobis nulla sapiente.
+                </UserBioBox>
+                {/*<UserAssetsBox>*/}
+                {/*</UserAssetsBox>*/}
               </UserAssetsContainer>
             </AccountContainer>
           </Wrapper>

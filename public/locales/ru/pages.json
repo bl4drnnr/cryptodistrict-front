@@ -117,7 +117,10 @@
     "support": "Техподдержка"
   },
   "account": {
-    "title": "Аккаунт",
-    "settingsTitle": "Настройки"
+    "title": "Аккаунт"
+  },
+  "settings": {
+    "title": "Настройки",
+    "yourPersonalAcc": "Твой аккаунт"
   }
 }

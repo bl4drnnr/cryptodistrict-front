@@ -7,6 +7,11 @@
     "twoFa": "Код двухфакторной аутентификации",
     "sendCode": "Отправить код",
     "verificationCode": "Код верификации",
-    "submit": "Продолжить"
+    "submit": "Продолжить",
+    "editProfile": "Редактировать профиль",
+    "personalInformation": "Личные данные",
+    "notificationSettings": "Настройки уведомлений",
+    "securitySettings": "Настройки безопасности",
+    "goBackProfile": "Go back to profile"
   }
 }

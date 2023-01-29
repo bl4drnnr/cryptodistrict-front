@@ -2,12 +2,32 @@ import React from 'react';
 
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
+import NotificationSettings from '@components/account-settings/NotificationSettings/NotificationSettings.component';
+import PersonalInformation from '@components/account-settings/PersonalInformation/PersonalInformation.component';
+import SecuritySettings from '@components/account-settings/SecuritySettings/SecuritySettings.component';
+import { Button } from '@components/Button/Button.component';
 import { useHandleException } from '@hooks/useHandleException.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useGetUserSettingsService } from '@services/get-user-settings/get-user-settings.service';
+import {
+  ButtonWrapper,
+  Container,
+  Nickname,
+  PersonalAccount,
+  SettingsContainer,
+  SettingsContent,
+  SettingsHeaderItemsWrapper,
+  SettingsHeaderTextWrapper,
+  SettingsPageHeader,
+  SettingsPageHeaderSide,
+  SidebarContainer,
+  UserProfilePicture,
+  Wrapper
+} from '@styles/settings.style';
 
 
 interface AccountSettingsProps {
@@ -18,6 +38,12 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const { t } = useTranslation();
   const router = useRouter();
 
+  const [section, setSection] = React.useState('personalInformation');
+  const [sections, ] = React.useState([
+    { value: 'personalInformation', text: t('placeholders:inputs.personalInformation') },
+    { value: 'notificationSettings', text: t('placeholders:inputs.notificationSettings') },
+    { value: 'securitySettings', text: t('placeholders:inputs.securitySettings') }
+  ]);
   const { loading, getUserSettings } = useGetUserSettingsService();
   const { handleException } = useHandleException();
 
@@ -31,7 +57,6 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const fetchUserSettings = async (token: string) => {
     try {
       const response = await getUserSettings({ token });
-      console.log('response', response);
     } catch (e) {
       handleException(e);
     }
@@ -44,10 +69,60 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   return (
     <>
       <Head>
-        <title>Cryptodistrict | {t('pages:account.settingsTitle')}</title>
+        <title>Cryptodistrict | {t('pages:settings.title')}</title>
       </Head>
       <DefaultLayout locale={locale} translate={t} loading={loading}>
-        <></>
+        <Container>
+          <Wrapper>
+
+            <SettingsPageHeader>
+              <SettingsPageHeaderSide>
+                <UserProfilePicture>
+                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={140} height={140}/>
+                </UserProfilePicture>
+
+                <SettingsHeaderItemsWrapper>
+                  <SettingsHeaderTextWrapper>
+                    <Nickname>bl4drnnr</Nickname>
+                    <PersonalAccount>{t('pages:settings.yourPersonalAcc')}</PersonalAccount>
+                  </SettingsHeaderTextWrapper>
+                </SettingsHeaderItemsWrapper>
+              </SettingsPageHeaderSide>
+
+              <SettingsHeaderItemsWrapper>
+                <Button
+                  text={t('placeholders:inputs.goBackProfile')}
+                  fillButton={true}
+                  onClick={() => handleRedirect('/account')}
+                />
+              </SettingsHeaderItemsWrapper>
+            </SettingsPageHeader>
+
+            <SettingsContainer>
+              <SidebarContainer>
+                {sections.map(item => (
+                  <ButtonWrapper key={item.value}>
+                    <Button
+                      text={item.text}
+                      fillButton={section === item.value}
+                      onClick={() => setSection(item.value)}
+                    />
+                  </ButtonWrapper>
+                ))}
+              </SidebarContainer>
+              <SettingsContent>
+                {section === 'personalInformation' ? (
+                  <PersonalInformation locale={locale} translate={t} />
+                ) : (section === 'notificationSettings' ? (
+                  <NotificationSettings locale={locale} translate={t} />
+                ) : (
+                  <SecuritySettings locale={locale} translate={t} />
+                ))}
+              </SettingsContent>
+            </SettingsContainer>
+
+          </Wrapper>
+        </Container>
       </DefaultLayout>
     </>
   );
