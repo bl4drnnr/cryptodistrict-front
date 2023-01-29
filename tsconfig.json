@@ -16,10 +16,15 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/basic-components/*", "src/components/layout-components/*"],
+      "@components/*": [
+        "src/components/basic-components/*",
+        "src/components/layout-components/*",
+        "src/components/page-components/*"
+      ],
       "@styles/*": [
         "src/styles/basic-components/*",
         "src/styles/layout-components/*",
+        "src/styles/page-components/*",
         "src/styles/themes/*",
         "src/styles/layouts/*",
         "src/styles/pages/*",

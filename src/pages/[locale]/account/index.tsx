@@ -60,7 +60,7 @@ const Account = ({ locale }: AccountProps) => {
             <AccountContainer>
               <UserInfoContainer>
                 <UserProfilePicture>
-                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'eth'} width={325} height={325}/>
+                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={325} height={325}/>
                 </UserProfilePicture>
                 <Nickname>bl4drnnr</Nickname>
                 <AccountTitle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eius ipsum odio quos velit. Deleniti dicta doloremque est modi non obcaecati, quas quasi quisquam reiciendis rerum saepe, tenetur totam voluptatem?</AccountTitle>

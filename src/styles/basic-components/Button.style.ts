@@ -11,6 +11,7 @@ export const ButtonContent = styled.p`
   font-weight: 500;
   font-family: "Inter", sans-serif;
   color: rgb(${(props) => props.theme.colors.textColor});
+  padding: 0 5px;  
 `;
 
 
