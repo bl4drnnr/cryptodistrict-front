@@ -11,6 +11,7 @@
     "editProfile": "Редактировать профиль",
     "personalInformation": "Личные данные",
     "notificationSettings": "Настройки уведомлений",
-    "securitySettings": "Настройки безопасности"
+    "securitySettings": "Настройки безопасности",
+    "goBackProfile": "Go back to profile"
   }
 }

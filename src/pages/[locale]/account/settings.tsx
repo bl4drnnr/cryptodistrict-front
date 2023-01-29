@@ -5,6 +5,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
+import NotificationSettings from '@components/account-settings/NotificationSettings/NotificationSettings.component';
+import PersonalInformation from '@components/account-settings/PersonalInformation/PersonalInformation.component';
+import SecuritySettings from '@components/account-settings/SecuritySettings/SecuritySettings.component';
 import { Button } from '@components/Button/Button.component';
 import { useHandleException } from '@hooks/useHandleException.hook';
 import DefaultLayout from '@layouts/Default.layout';
@@ -88,7 +91,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
 
               <SettingsHeaderItemsWrapper>
                 <Button
-                  text={'Go back to profile'}
+                  text={t('placeholders:inputs.goBackProfile')}
                   fillButton={true}
                   onClick={() => handleRedirect('/account')}
                 />
@@ -107,7 +110,15 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                   </ButtonWrapper>
                 ))}
               </SidebarContainer>
-              <SettingsContent></SettingsContent>
+              <SettingsContent>
+                {section === 'personalInformation' ? (
+                  <PersonalInformation locale={locale} translate={t} />
+                ) : (section === 'notificationSettings' ? (
+                  <NotificationSettings locale={locale} translate={t} />
+                ) : (
+                  <SecuritySettings locale={locale} translate={t} />
+                ))}
+              </SettingsContent>
             </SettingsContainer>
 
           </Wrapper>
