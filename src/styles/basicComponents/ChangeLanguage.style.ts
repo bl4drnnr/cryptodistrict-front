@@ -42,7 +42,7 @@ export const Flag = styled.span`
 export const LanguageName = styled.span`
   font-size: 24px;
   margin-left: 15px;
-  @media screen and (max-width: 520px) {
+  @media  screen and (max-width: 520px) {
     font-size: 18px;
   }
 `;

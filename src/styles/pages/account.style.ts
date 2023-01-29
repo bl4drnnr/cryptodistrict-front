@@ -16,7 +16,6 @@ export const AccountContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: ghostwhite;
   
   @media screen and (max-width: 520px) {
     display: block;
@@ -26,35 +25,37 @@ export const AccountContainer = styled.div`
 export const UserInfoContainer = styled.div`
   height: 100%;
   width: 350px;
-  background-color: bisque;
   padding: 15px;
   
   @media screen and (max-width: 520px) {
     margin: 0 auto;
+    height: auto;
   }
 `;
 
 export const UserAssetsContainer = styled.div`
   width: 100%;
   height: 100%;
-  background-color: aquamarine;
   position: relative;
   padding: 15px;
 `;
 
 export const UserProfilePicture = styled.div`
-  border-radius: 50%;
-  width: 100%;
-  height: auto;
-  padding-top: 100%;
-  background: cornflowerblue;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  
+  .ava {
+    border-radius: 50%;
+  }
 `;
 
 export const UserBioBox = styled.div`
   width: 100%;
-  height: 250px;
   border-radius: 8px;
   border: 1px solid rgb(${(props) => props.theme.colors.opposite});
+  color: rgb(${(props) => props.theme.colors.textColor});
+  padding: 15px;
 `;
 
 export const UserAssetsBox = styled.div`
@@ -65,3 +66,12 @@ export const UserAssetsBox = styled.div`
   border: 1px solid rgb(${(props) => props.theme.colors.opposite});
 `;
 
+export const Nickname = styled.h1`
+  padding-top: 15px;
+  color: rgb(${(props) => props.theme.colors.textColor});
+`;
+
+export const AccountTitle = styled.p`
+  padding: 15px 0;
+  color: rgb(${(props) => props.theme.colors.textColor});
+`;

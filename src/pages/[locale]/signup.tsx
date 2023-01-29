@@ -286,7 +286,7 @@ const Signup = ({ locale }: SignUpProps) => {
                   <Input
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    placeholder={t('pages:signup.title')}
+                    placeholder={t('pages:signup.accTitle')}
                   />
                 </MarginWrapper>
                 <MarginWrapper>
