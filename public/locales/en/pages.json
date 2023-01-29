@@ -117,6 +117,7 @@
     "support": "Support"
   },
   "account": {
-    "title": "Account"
+    "title": "Account",
+    "settingsTitle": "Settings"
   }
 }

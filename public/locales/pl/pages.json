@@ -116,6 +116,7 @@
     "support": "Pomóc techniczna"
   },
   "account": {
-    "title": "Konto"
+    "title": "Konto",
+    "settingsTitle": "Ustawienia"
   }
 }
