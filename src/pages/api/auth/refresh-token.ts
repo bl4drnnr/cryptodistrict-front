@@ -10,7 +10,9 @@ export default async (
   res: NextApiResponse
 ) => {
   try {
-    const { data, headers } = await Api.post('/auth/refresh', req.body);
+    const { data, headers } = await Api.get('/auth/refresh', {
+      headers: { 'Cookie': req.headers.cookie || '' }
+    });
 
     if (headers['set-cookie']) {
       const refreshToken = headers['set-cookie'][0].split('=')[1];

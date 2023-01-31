@@ -33,12 +33,12 @@ const Account = ({ locale }: AccountProps) => {
   React.useEffect(() => {
     const token = sessionStorage.getItem('_at');
 
-    // if (!token) handleRedirect('/').then();
-    // else {
-    //   checkUser(token).then((res) => {
-    //     //
-    //   });
-    // }
+    if (!token) handleRedirect('/').then();
+    else {
+      checkUser(token).then((res) => {
+        console.log('res', res);
+      });
+    }
   }, []);
 
   const handleRedirect = async (path: string) => {
@@ -46,7 +46,7 @@ const Account = ({ locale }: AccountProps) => {
   };
 
   const checkUser = async (token: string) => {
-    //
+    return await refreshToken({ token });
   };
 
   return (

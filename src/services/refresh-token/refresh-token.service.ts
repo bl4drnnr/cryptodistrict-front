@@ -10,7 +10,7 @@ export const useRefreshTokenService = () => {
   const refreshToken = async (payload: RefreshTokenPayload)
     :Promise<RefreshTokenResponse> => {
     try {
-      const { data } = await ApiClient.post('/auth/refresh-token', payload);
+      const { data } = await ApiClient.get('/auth/refresh-token');
 
       return data;
     } catch (error: any) {
