@@ -41,7 +41,7 @@ const Account = ({ locale }: AccountProps) => {
       if (!token) handleRedirect('/').then();
       else {
         checkUser(token).then((res) => {
-          console.log('res', res);
+          //
         });
       }
     }
@@ -56,6 +56,8 @@ const Account = ({ locale }: AccountProps) => {
       return await refreshToken();
     } catch (e) {
       handleException(e);
+      sessionStorage.removeItem('_at');
+      await handleRedirect('/');
     }
   };
 

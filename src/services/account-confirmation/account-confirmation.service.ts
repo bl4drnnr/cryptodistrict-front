@@ -10,11 +10,11 @@ import {
 export const useAccountConfirmationService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const confirmAccount = async (payload: AccountConfirmationPayload):
-    Promise<AccountConfirmationResponse> => {
+  const confirmAccount = async (payload: AccountConfirmationPayload)
+    : Promise<AccountConfirmationResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.get(`/user/account-confirmation/${payload.hash}`);
+      const { data } = await ApiClient.get<AccountConfirmationResponse>(`/user/account-confirmation/${payload.hash}`);
 
       return data;
     } catch (error) {

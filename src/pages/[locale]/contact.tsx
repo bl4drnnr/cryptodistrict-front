@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
@@ -18,8 +18,8 @@ interface ContactProps {
 const Contact = ({ locale }: ContactProps) => {
   const { t } = useTranslation();
 
-  const [senderName, setSenderName] = useState('');
-  const [emailBody, setEmailBody] = useState('');
+  const [senderName, setSenderName] = React.useState('');
+  const [emailBody, setEmailBody] = React.useState('');
 
   const sendEmail = async () => {
     //

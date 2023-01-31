@@ -65,6 +65,8 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       setUserSettings(settings);
     } catch (e) {
       handleException(e);
+      sessionStorage.removeItem('_at');
+      await handleRedirect('/');
     }
   };
 

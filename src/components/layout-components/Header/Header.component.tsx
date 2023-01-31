@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import classNames from 'classnames';
 import { useRouter } from 'next/router';
@@ -8,6 +8,8 @@ import { ChangeLanguage } from '@components/ChangeLanguage/ChangeLanguage.compon
 import { HeaderProps } from '@components/Header/Header.interace';
 import { Input } from '@components/Input/Input.component';
 import { ThemeToggler } from '@components/ThemeToggler/ThemeToggler.component';
+import { useHandleException } from '@hooks/useHandleException.hook';
+import { useLogoutService } from '@services/logout/logout.service';
 import { theme } from '@store/global/global.state';
 import {
   Container,
@@ -25,7 +27,11 @@ import {
 export const Header = ({ locale, translate }: HeaderProps) => {
   const router = useRouter();
   const [currentTheme, setCurrentTheme] = useRecoilState(theme);
-  const [searchModal, setSearchModal] = useState(false);
+  const [searchModal, setSearchModal] = React.useState(false);
+  const [tokenPersists, setTokenPersistence] = React.useState(false);
+
+  const { loading, logout } = useLogoutService();
+  const { handleException } = useHandleException();
 
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
@@ -41,9 +47,27 @@ export const Header = ({ locale, translate }: HeaderProps) => {
     else setTheme('dark');
   };
 
+  const fetchLogout = async () => {
+    try {
+      const token = sessionStorage.getItem('_at');
+      const response = await logout({ token });
+
+      if (response.message === 'success') {
+        setTokenPersistence(false);
+        sessionStorage.removeItem('_at');
+        await handleRedirect('/');
+      }
+    } catch (e) {
+      handleException(e);
+    }
+  };
+
   React.useEffect(() => {
     const theme = localStorage.getItem('theme') as 'dark' | 'light';
     if (['dark', 'light'].includes(theme)) setTheme(theme);
+
+    const token = sessionStorage.getItem('_at');
+    if (token) setTokenPersistence(true);
   }, []);
 
   return (
@@ -70,18 +94,37 @@ export const Header = ({ locale, translate }: HeaderProps) => {
             </SearchBarBox>
           </SearchBarWrapper>
           <Buttons>
-            <Button
-              className={classNames({ logIn: true })}
-              onClick={() => handleRedirect('/signin')}
-            >
-              {translate('components:header.signIn')}
-            </Button>
-            <Button
-              className={classNames({ signup: true })}
-              onClick={() => handleRedirect('/signup')}
-            >
-              {translate('components:header.signUp')}
-            </Button>
+            {tokenPersists ? (
+              <>
+                <Button
+                  className={classNames({ logIn: true })}
+                  onClick={() => handleRedirect('/account')}
+                >
+                  My profile
+                </Button>
+                <Button
+                  className={classNames({ signup: true })}
+                  onClick={() => fetchLogout()}
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  className={classNames({ logIn: true })}
+                  onClick={() => handleRedirect('/signin')}
+                >
+                  {translate('components:header.signIn')}
+                </Button>
+                <Button
+                  className={classNames({ signup: true })}
+                  onClick={() => handleRedirect('/signup')}
+                >
+                  {translate('components:header.signUp')}
+                </Button>
+              </>
+            )}
             <ThemeToggler
               theme={currentTheme}
               onClick={() => toggleTheme()}
