@@ -9,7 +9,7 @@ export default async (
 ) => {
   try {
     const { data } = await Api.get('/user/get-settings', {
-      headers: { 'Authorization': req.headers.authorization }
+      headers: { 'Application-Authorization': req.headers['application-authorization'] }
     });
 
     return res.json(data);

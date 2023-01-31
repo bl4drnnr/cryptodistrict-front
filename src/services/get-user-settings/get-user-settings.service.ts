@@ -8,10 +8,10 @@ export const useGetUserSettingsService = () => {
   const [loading, setLoading] = React.useState(false);
 
   const getUserSettings = async (payload: GetUserSettingsPayload)
-    :Promise<GetUserSettingsResponse> => {
+    : Promise<GetUserSettingsResponse> => {
     try {
       const { data } = await ApiClient.get('/user/get-settings', {
-        headers: { 'Authorization': payload.token }
+        headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });
 
       return data;

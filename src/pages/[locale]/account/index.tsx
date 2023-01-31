@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { Button } from '@components/Button/Button.component';
+import { useHandleException } from '@hooks/useHandleException.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useCheckTokenService } from '@services/check-token/check-token.service';
@@ -27,18 +28,23 @@ const Account = ({ locale }: AccountProps) => {
   const { t } = useTranslation();
   const router = useRouter();
 
+  const fetchTokenChecking = React.useRef(true);
   const { loading: l1, checkToken } = useCheckTokenService();
   const { loading: l2, refreshToken } = useRefreshTokenService();
+  const { handleException } = useHandleException();
 
   React.useEffect(() => {
-    const token = sessionStorage.getItem('_at');
+    if (fetchTokenChecking.current) {
+      fetchTokenChecking.current = false;
+      const token = sessionStorage.getItem('_at');
 
-    // if (!token) handleRedirect('/').then();
-    // else {
-    //   checkUser(token).then((res) => {
-    //     //
-    //   });
-    // }
+      if (!token) handleRedirect('/').then();
+      else {
+        checkUser(token).then((res) => {
+          console.log('res', res);
+        });
+      }
+    }
   }, []);
 
   const handleRedirect = async (path: string) => {
@@ -46,7 +52,11 @@ const Account = ({ locale }: AccountProps) => {
   };
 
   const checkUser = async (token: string) => {
-    //
+    try {
+      return await refreshToken();
+    } catch (e) {
+      handleException(e);
+    }
   };
 
   return (
