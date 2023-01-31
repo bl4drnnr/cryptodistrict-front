@@ -9,7 +9,7 @@ export default async (
 ) => {
   try {
     const { data } = await Api.get('/user/get-settings', {
-      headers: { 'Application-Authorization': `Bearer ${req.cookies['_rt']}` }
+      headers: { 'Application-Authorization': req.headers['application-authorization'] }
     });
 
     return res.json(data);

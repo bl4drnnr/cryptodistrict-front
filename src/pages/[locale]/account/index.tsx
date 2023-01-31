@@ -18,6 +18,7 @@ import {
   UserProfilePicture,
   Wrapper
 } from '@styles/account.style';
+import {useHandleException} from "@hooks/useHandleException.hook";
 
 interface AccountProps {
   locale: string;
@@ -29,6 +30,7 @@ const Account = ({ locale }: AccountProps) => {
 
   const { loading: l1, checkToken } = useCheckTokenService();
   const { loading: l2, refreshToken } = useRefreshTokenService();
+  const { handleException } = useHandleException();
 
   React.useEffect(() => {
     const token = sessionStorage.getItem('_at');
@@ -46,7 +48,11 @@ const Account = ({ locale }: AccountProps) => {
   };
 
   const checkUser = async (token: string) => {
-    return await refreshToken({ token });
+    try {
+      return await refreshToken();
+    } catch (e) {
+      handleException(e);
+    }
   };
 
   return (
