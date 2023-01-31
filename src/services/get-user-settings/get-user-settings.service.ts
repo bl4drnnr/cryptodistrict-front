@@ -11,7 +11,7 @@ export const useGetUserSettingsService = () => {
     :Promise<GetUserSettingsResponse> => {
     try {
       const { data } = await ApiClient.get('/user/get-settings', {
-        headers: { 'Authorization': payload.token }
+        headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });
 
       return data;

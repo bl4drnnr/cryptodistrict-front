@@ -38,6 +38,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const { t } = useTranslation();
   const router = useRouter();
 
+  const fetchSettingsRef = React.useRef(true);
   const [section, setSection] = React.useState('personalInformation');
   const [sections, ] = React.useState([
     { value: 'personalInformation', text: t('placeholders:inputs.personalInformation') },
@@ -48,10 +49,13 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const { handleException } = useHandleException();
 
   React.useEffect(() => {
-    const token = sessionStorage.getItem('_at');
+    if (fetchSettingsRef.current) {
+      fetchSettingsRef.current = false;
+      const token = sessionStorage.getItem('_at');
 
-    if (!token) handleRedirect('/').then();
-    else fetchUserSettings(token).then();
+      if (!token) handleRedirect('/').then();
+      else fetchUserSettings(token).then();
+    }
   }, []);
 
   const fetchUserSettings = async (token: string) => {

@@ -21,13 +21,13 @@ const AccountConfirmation = ({ locale }: AccountConfirmationProps) => {
   const { t } = useTranslation();
   const { handleException } = useHandleException();
   const { loading, confirmAccount } = useAccountConfirmationService();
-  const fetchAccountConfirmation = React.useRef(true);
+  const fetchAccountRef = React.useRef(true);
 
   const [confirmationStatus, setConfirmationStatus] = React.useState(1);
 
   React.useEffect(() => {
-    if (fetchAccountConfirmation.current) {
-      fetchAccountConfirmation.current = false;
+    if (fetchAccountRef.current) {
+      fetchAccountRef.current = false;
 
       const routePath = window.location.search;
       const hash = routePath.split('=');
