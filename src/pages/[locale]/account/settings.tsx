@@ -29,6 +29,18 @@ import {
   Wrapper
 } from '@styles/settings.style';
 
+interface ISettings {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  email: string;
+  twitter: string;
+  linkedIn: string;
+  personalWebsite: string;
+  title: string;
+  bio: string;
+}
+
 
 interface AccountSettingsProps {
   locale: string;
@@ -39,6 +51,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const router = useRouter();
 
   const fetchSettingsRef = React.useRef(true);
+  const [userSettings, setUserSettings] = React.useState<ISettings>();
   const [section, setSection] = React.useState('personalInformation');
   const [sections, ] = React.useState([
     { value: 'personalInformation', text: t('placeholders:inputs.personalInformation') },
@@ -60,7 +73,8 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
 
   const fetchUserSettings = async (token: string) => {
     try {
-      const response = await getUserSettings({ token });
+      const { settings } = await getUserSettings({ token });
+      setUserSettings(settings);
     } catch (e) {
       handleException(e);
     }
