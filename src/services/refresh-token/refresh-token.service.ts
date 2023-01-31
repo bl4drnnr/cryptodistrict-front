@@ -7,9 +7,10 @@ import { RefreshTokenResponse } from '@services/refresh-token/refresh-token.inte
 export const useRefreshTokenService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const refreshToken = async (): Promise<RefreshTokenResponse> => {
+  const refreshToken = async ()
+    : Promise<RefreshTokenResponse> => {
     try {
-      const { data } = await ApiClient.get('/auth/refresh-token');
+      const { data } = await ApiClient.get<RefreshTokenResponse>('/auth/refresh-token');
 
       return data;
     } catch (error: any) {

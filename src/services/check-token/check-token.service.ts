@@ -7,10 +7,10 @@ import { CheckTokenPayload, CheckTokenResponse } from '@services/check-token/che
 export const useCheckTokenService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const checkToken = async (payload: CheckTokenPayload):
-    Promise<CheckTokenResponse> => {
+  const checkToken = async (payload: CheckTokenPayload)
+    : Promise<CheckTokenResponse> => {
     try {
-      const { data } = await ApiClient.post('/auth/check-token', payload);
+      const { data } = await ApiClient.post<CheckTokenResponse>('/auth/check-token', payload);
 
       return data;
     } catch (error: any) {
