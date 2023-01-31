@@ -12,6 +12,7 @@ import { Button } from '@components/Button/Button.component';
 import { useHandleException } from '@hooks/useHandleException.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
+import { ISettings } from '@services/get-user-settings/get-user-settings.interface';
 import { useGetUserSettingsService } from '@services/get-user-settings/get-user-settings.service';
 import {
   ButtonWrapper,
@@ -28,19 +29,6 @@ import {
   UserProfilePicture,
   Wrapper
 } from '@styles/settings.style';
-
-interface ISettings {
-  firstName: string;
-  lastName: string;
-  phoneNumber: string;
-  email: string;
-  twitter: string;
-  linkedIn: string;
-  personalWebsite: string;
-  title: string;
-  bio: string;
-}
-
 
 interface AccountSettingsProps {
   locale: string;
@@ -130,11 +118,23 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
               </SidebarContainer>
               <SettingsContent>
                 {section === 'personalInformation' ? (
-                  <PersonalInformation locale={locale} translate={t} />
+                  <PersonalInformation
+                    locale={locale}
+                    translate={t}
+                    personalInformation={userSettings?.personalInformation}
+                  />
                 ) : (section === 'notificationSettings' ? (
-                  <NotificationSettings locale={locale} translate={t} />
+                  <NotificationSettings
+                    locale={locale}
+                    translate={t}
+                    notificationSettings={userSettings?.notificationSettings}
+                  />
                 ) : (
-                  <SecuritySettings locale={locale} translate={t} />
+                  <SecuritySettings
+                    locale={locale}
+                    translate={t}
+                    securitySettings={userSettings?.securitySettings}
+                  />
                 ))}
               </SettingsContent>
             </SettingsContainer>
