@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   NotificationSettingsProps
 } from '@components/account-settings/NotificationSettings/NotificationSettings.interface';
@@ -9,10 +11,12 @@ import {
   NotificationItemBlock,
   NotificationItemWrapper,
   NotificationTitle,
-  NotificationTitleBox
+  NotificationTitleBox, ShowMoreContainer, ShowMoreLink
 } from '@styles/NotificationSettings.style';
 
 const NotificationSettings = ({ locale, translate, notificationSettings }: NotificationSettingsProps) => {
+  const [showMore, setShowMore] = React.useState(false);
+
   return (
     <>
       <NotificationTitleBox>
@@ -26,6 +30,9 @@ const NotificationSettings = ({ locale, translate, notificationSettings }: Notif
         <NotificationItemWrapper>
           <ItemTitle>{translate('pages:settings.receiveNotificationsTitle')}</ItemTitle>
           <ItemDescription>{translate('pages:settings.receiveNotificationsDescription')}</ItemDescription>
+          <ShowMoreLink
+            onClick={() => setShowMore(!showMore)}
+          >Show more</ShowMoreLink>
         </NotificationItemWrapper>
         <NotificationItemWrapper>
           <Checkbox
@@ -35,6 +42,12 @@ const NotificationSettings = ({ locale, translate, notificationSettings }: Notif
           />
         </NotificationItemWrapper>
       </NotificationItemBlock>
+
+      {showMore ? (
+        <ShowMoreContainer>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at cumque dignissimos et hic illo nam pariatur, quaerat unde velit!</p>
+        </ShowMoreContainer>
+      ) : null}
     </>
   );
 };

@@ -18,7 +18,7 @@ export const NotificationItemBlock = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 100px;
+  height: 150px;
   align-items: center;
   border-bottom: 1px solid rgba(${(props) => props.theme.colors.opposite}, .25);
 `;
@@ -38,3 +38,13 @@ export const ItemDescription = styled.p`
   opacity: .5;
 `;
 
+export const ShowMoreLink = styled.p`
+  margin-top: 20px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(${(props) => props.theme.colors.primary});
+`;
+
+export const ShowMoreContainer = styled.div`
+  padding: 20px;
+`;
