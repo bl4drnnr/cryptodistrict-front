@@ -22,41 +22,41 @@ const SecuritySettings = ({ locale, translate, securitySettings }: SecuritySetti
 
       <SecurityItemBlock>
         <SecurityItemWrapper>
-          <ItemTitle>Set 2FA</ItemTitle>
-          <ItemDescription>Secure your account with two-factor authentication (2FA).</ItemDescription>
+          <ItemTitle>{translate('pages:settings.s2faTitle')}</ItemTitle>
+          <ItemDescription>{translate('pages:settings.s2faDescription')}</ItemDescription>
         </SecurityItemWrapper>
         <SecurityItemWrapper className={'button'}>
-          <Button text={'Set 2FA'} />
+          <Button text={translate('pages:settings.s2faButton')} />
         </SecurityItemWrapper>
       </SecurityItemBlock>
 
       <SecurityItemBlock>
         <SecurityItemWrapper>
-          <ItemTitle>Set mobile phone</ItemTitle>
-          <ItemDescription>Secure your account with mobile MFA.</ItemDescription>
+          <ItemTitle>{translate('pages:settings.sPhoneTitle')}</ItemTitle>
+          <ItemDescription>{translate('pages:settings.sPhoneDescription')}</ItemDescription>
         </SecurityItemWrapper>
         <SecurityItemWrapper className={'button'}>
-          <Button text={'Set 2FA'} />
+          <Button text={translate('pages:settings.sPhoneButton')} />
         </SecurityItemWrapper>
       </SecurityItemBlock>
 
       <SecurityItemBlock>
         <SecurityItemWrapper>
-          <ItemTitle>Change password</ItemTitle>
-          <ItemDescription>Change your password.</ItemDescription>
+          <ItemTitle>{translate('pages:settings.changePassTitle')}</ItemTitle>
+          <ItemDescription>{translate('pages:settings.changePassDescription')}</ItemDescription>
         </SecurityItemWrapper>
         <SecurityItemWrapper className={'button'}>
-          <Button text={'Set 2FA'} />
+          <Button text={translate('pages:settings.changePassButton')} />
         </SecurityItemWrapper>
       </SecurityItemBlock>
 
       <SecurityItemBlock>
         <SecurityItemWrapper>
-          <ItemTitle>Change email</ItemTitle>
-          <ItemDescription>Be careful! You are able to change email only one time.</ItemDescription>
+          <ItemTitle>{translate('pages:settings.changeEmailTitle')}</ItemTitle>
+          <ItemDescription>{translate('pages:settings.changeEmailDescription')}</ItemDescription>
         </SecurityItemWrapper>
         <SecurityItemWrapper className={'button'}>
-          <Button text={'Set 2FA'} />
+          <Button text={translate('pages:settings.changeEmailButton')} />
         </SecurityItemWrapper>
       </SecurityItemBlock>
     </>

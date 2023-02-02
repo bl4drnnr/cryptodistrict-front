@@ -24,8 +24,8 @@ const NotificationSettings = ({ locale, translate, notificationSettings }: Notif
 
       <NotificationItemBlock>
         <NotificationItemWrapper>
-          <ItemTitle>Receive notifications</ItemTitle>
-          <ItemDescription>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, magni?</ItemDescription>
+          <ItemTitle>{translate('pages:settings.receiveNotificationsTitle')}</ItemTitle>
+          <ItemDescription>{translate('pages:settings.receiveNotificationsDescription')}</ItemDescription>
         </NotificationItemWrapper>
         <NotificationItemWrapper>
           <Checkbox
