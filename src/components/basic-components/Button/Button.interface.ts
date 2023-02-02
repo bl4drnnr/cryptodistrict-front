@@ -5,4 +5,6 @@ export interface ButtonProps {
   disabled?: boolean;
   highHeight?: boolean;
   fillButton?: boolean;
+  danger?: boolean;
+  fillDanger?: boolean;
 }

@@ -134,7 +134,7 @@ const Signin = ({ locale }: SignInProps) => {
                 <Button
                   disabled={passwordError || emailError || !password || !email}
                   highHeight={true}
-                  text={t('pages:signin.signUpButton')}
+                  text={t('pages:signin.signInButton')}
                   onClick={() => signInUser()}
                 />
               </MarginWrapper>

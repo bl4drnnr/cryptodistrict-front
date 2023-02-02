@@ -3,7 +3,15 @@ import classNames from 'classnames';
 import { ButtonProps } from '@components/Button/Button.interface';
 import { ButtonContent, Container, BasicButton } from '@styles/Button.style';
 
-export const Button = ({ text, onClick, disabled, highHeight, fillButton }: ButtonProps): JSX.Element => {
+export const Button = ({
+   text,
+   onClick,
+   disabled,
+   highHeight,
+   fillButton,
+   danger,
+   fillDanger
+}: ButtonProps): JSX.Element => {
   return (
     <Container
     >
@@ -13,7 +21,9 @@ export const Button = ({ text, onClick, disabled, highHeight, fillButton }: Butt
         className={classNames({
           disabled,
           highHeight,
-          fillButton
+          fillButton,
+          danger,
+          fillDanger
         })}
       >
         <ButtonContent>{text}</ButtonContent>

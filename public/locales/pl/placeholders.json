@@ -12,6 +12,9 @@
     "personalInformation": "Informacje osobiste",
     "notificationSettings": "Ustawienia powiadomień",
     "securitySettings": "Ustawienia bezpieczeństwa",
-    "goBackProfile": "Wróć do konta"
+    "goBackProfile": "Wróć do konta",
+    "saveChanges": "Zapisz zmiany",
+    "freeze": "Zablokuj konto",
+    "close": "Zamknij konto"
   }
 }

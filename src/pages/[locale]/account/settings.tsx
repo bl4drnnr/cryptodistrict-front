@@ -12,6 +12,8 @@ import { Button } from '@components/Button/Button.component';
 import { useHandleException } from '@hooks/useHandleException.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
+import { useCloseAccountService } from '@services/close-account/close-account.service';
+import { useFreezeAccountService } from '@services/freeze-account/freeze-account.service';
 import { ISettings } from '@services/get-user-settings/get-user-settings.interface';
 import { useGetUserSettingsService } from '@services/get-user-settings/get-user-settings.service';
 import {
@@ -38,13 +40,25 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const { t } = useTranslation();
   const router = useRouter();
 
+  const { loading: l1, closeAccount } = useCloseAccountService();
+  const { loading: l2, freezeAccount } = useFreezeAccountService();
+
   const fetchSettingsRef = React.useRef(true);
   const [userSettings, setUserSettings] = React.useState<ISettings>();
   const [section, setSection] = React.useState('personalInformation');
   const [sections, ] = React.useState([
-    { value: 'personalInformation', text: t('placeholders:inputs.personalInformation') },
-    { value: 'notificationSettings', text: t('placeholders:inputs.notificationSettings') },
-    { value: 'securitySettings', text: t('placeholders:inputs.securitySettings') }
+    { value: 'personalInformation',
+      text: t('placeholders:inputs.personalInformation'),
+      danger: false
+    }, {
+      value: 'notificationSettings',
+      text: t('placeholders:inputs.notificationSettings'),
+      danger: false
+    }, {
+      value: 'securitySettings',
+      text: t('placeholders:inputs.securitySettings'),
+      danger: false
+    }
   ]);
   const { loading, getUserSettings } = useGetUserSettingsService();
   const { handleException } = useHandleException();
@@ -70,6 +84,22 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
     }
   };
 
+  const fetchCloseUserAccount = async () => {
+    try {
+
+    } catch (e) {
+      handleException(e);
+    }
+  };
+
+  const fetchFreezeUserAccount = async () => {
+    try {
+
+    } catch (e) {
+      handleException(e);
+    }
+  };
+
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
   };
@@ -86,7 +116,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
             <SettingsPageHeader>
               <SettingsPageHeaderSide>
                 <UserProfilePicture>
-                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={140} height={140}/>
+                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={128} height={128}/>
                 </UserProfilePicture>
 
                 <SettingsHeaderItemsWrapper>
@@ -117,6 +147,20 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                     />
                   </ButtonWrapper>
                 ))}
+                <ButtonWrapper>
+                  <Button
+                    text={t('placeholders:inputs.freeze')}
+                    onClick={() => {}}
+                    danger={true}
+                  />
+                </ButtonWrapper>
+                <ButtonWrapper>
+                  <Button
+                    text={t('placeholders:inputs.close')}
+                    onClick={() => {}}
+                    fillDanger={true}
+                  />
+                </ButtonWrapper>
               </SidebarContainer>
               <SettingsContent>
                 {section === 'personalInformation' ? (

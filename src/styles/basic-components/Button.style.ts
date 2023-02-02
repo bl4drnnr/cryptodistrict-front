@@ -40,7 +40,20 @@ export const BasicButton = styled.button`
     background-color: rgba(${(props) => props.theme.colors.disableColor}, 0.20);
     cursor: auto;
   }
+    
+  &.danger {
+    border: 1px solid rgb(${(props) => props.theme.colors.error}, .5);
+    &:hover {
+      border: 1px solid rgb(${(props) => props.theme.colors.primary}, 1);
+      background-color: rgba(${(props) => props.theme.colors.error}, 0.20);
+    }
+  }
   
+  &.fillDanger {
+    border: 1px solid rgb(${(props) => props.theme.colors.error});
+    background-color: rgba(${(props) => props.theme.colors.error});
+  }
+
   &:hover {
     border: 1px solid rgb(${(props) => props.theme.colors.primary}, 1);
   }

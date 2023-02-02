@@ -77,7 +77,7 @@ const Account = ({ locale }: AccountProps) => {
                 <Nickname>bl4drnnr</Nickname>
                 <AccountTitle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eius ipsum odio quos velit. Deleniti dicta doloremque est modi non obcaecati, quas quasi quisquam reiciendis rerum saepe, tenetur totam voluptatem?</AccountTitle>
                 <Button
-                  text={'Edit profile'}
+                  text={t('placeholders:inputs.editProfile')}
                   onClick={() => handleRedirect('/account/settings')}
                 />
               </UserInfoContainer>
