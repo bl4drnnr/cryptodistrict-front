@@ -1,6 +1,14 @@
 import { SecuritySettingsProps } from '@components/account-settings/SecuritySettings/SecuritySettings.interface';
 import { Button } from '@components/Button/Button.component';
-import { Line, SecurityItemBlock, SecurityTitle, SecurityTitleBox } from '@styles/SecuritySettings.style';
+import {
+  ItemDescription,
+  ItemTitle,
+  Line,
+  SecurityItemBlock,
+  SecurityTitle,
+  SecurityTitleBox,
+  SecurityItemWrapper
+} from '@styles/SecuritySettings.style';
 
 const SecuritySettings = ({ locale, translate, securitySettings }: SecuritySettingsProps) => {
   return (
@@ -13,40 +21,43 @@ const SecuritySettings = ({ locale, translate, securitySettings }: SecuritySetti
       </SecurityTitleBox>
 
       <SecurityItemBlock>
-        <div>
-          <h1>Set 2FA</h1>
-          <p>Secure your account with two-factor authentication (2FA).</p>
-        </div>
-        <div style={{ width: '200px' }}>
+        <SecurityItemWrapper>
+          <ItemTitle>Set 2FA</ItemTitle>
+          <ItemDescription>Secure your account with two-factor authentication (2FA).</ItemDescription>
+        </SecurityItemWrapper>
+        <SecurityItemWrapper className={'button'}>
           <Button text={'Set 2FA'} />
-        </div>
+        </SecurityItemWrapper>
       </SecurityItemBlock>
+
       <SecurityItemBlock>
-        <div>
-          <h1>Set mobile phone</h1>
-          <p>Secure your account with mobile MFA.</p>
-        </div>
-        <div style={{ width: '200px' }}>
+        <SecurityItemWrapper>
+          <ItemTitle>Set mobile phone</ItemTitle>
+          <ItemDescription>Secure your account with mobile MFA.</ItemDescription>
+        </SecurityItemWrapper>
+        <SecurityItemWrapper className={'button'}>
           <Button text={'Set 2FA'} />
-        </div>
+        </SecurityItemWrapper>
       </SecurityItemBlock>
+
       <SecurityItemBlock>
-        <div>
-          <h1>Change password</h1>
-          <p>Change your password.</p>
-        </div>
-        <div style={{ width: '200px' }}>
+        <SecurityItemWrapper>
+          <ItemTitle>Change password</ItemTitle>
+          <ItemDescription>Change your password.</ItemDescription>
+        </SecurityItemWrapper>
+        <SecurityItemWrapper className={'button'}>
           <Button text={'Set 2FA'} />
-        </div>
+        </SecurityItemWrapper>
       </SecurityItemBlock>
+      
       <SecurityItemBlock>
-        <div>
-          <h1>Change email</h1>
-          <p>Be careful! You are able to change email only one time.</p>
-        </div>
-        <div style={{ width: '200px' }}>
+        <SecurityItemWrapper>
+          <ItemTitle>Change email</ItemTitle>
+          <ItemDescription>Be careful! You are able to change email only one time.</ItemDescription>
+        </SecurityItemWrapper>
+        <SecurityItemWrapper className={'button'}>
           <Button text={'Set 2FA'} />
-        </div>
+        </SecurityItemWrapper>
       </SecurityItemBlock>
     </>
   );

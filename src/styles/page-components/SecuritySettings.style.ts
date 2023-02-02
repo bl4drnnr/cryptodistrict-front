@@ -19,6 +19,21 @@ export const SecurityItemBlock = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100px;
-  border: 1px solid red;
-  border-bottom: 1px solid rgba(${(props) => props.theme.colors.opposite}, .5);
+  align-items: center;
+  border-bottom: 1px solid rgba(${(props) => props.theme.colors.opposite}, .25);
+`;
+
+export const ItemTitle = styled.h2`
+  color: rgb(${(props) => props.theme.colors.textColor});
+`;
+
+export const ItemDescription = styled.p`
+  color: rgb(${(props) => props.theme.colors.textColor});
+  opacity: .5;
+`;
+
+export const SecurityItemWrapper = styled.div`
+  &.button {
+    width: 200px;
+  }
 `;
