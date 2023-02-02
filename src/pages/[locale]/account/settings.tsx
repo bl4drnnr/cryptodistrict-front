@@ -128,14 +128,14 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                 ))}
                 <ButtonWrapper>
                   <Button
-                    text={'Freeze account'}
+                    text={t('placeholders:inputs.freeze')}
                     onClick={() => {}}
                     danger={true}
                   />
                 </ButtonWrapper>
                 <ButtonWrapper>
                   <Button
-                    text={'Close account'}
+                    text={t('placeholders:inputs.close')}
                     onClick={() => {}}
                     fillDanger={true}
                   />

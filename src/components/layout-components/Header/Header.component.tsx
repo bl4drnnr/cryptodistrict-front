@@ -100,13 +100,13 @@ export const Header = ({ locale, translate }: HeaderProps) => {
                   className={classNames({ logIn: true })}
                   onClick={() => handleRedirect('/account')}
                 >
-                  My profile
+                  {translate('components:header.myProfile')}
                 </Button>
                 <Button
                   className={classNames({ signup: true })}
                   onClick={() => fetchLogout()}
                 >
-                  Logout
+                  {translate('components:header.logout')}
                 </Button>
               </>
             ) : (

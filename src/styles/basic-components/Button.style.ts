@@ -42,8 +42,9 @@ export const BasicButton = styled.button`
   }
     
   &.danger {
-    border: 1px solid rgb(${(props) => props.theme.colors.error});
+    border: 1px solid rgb(${(props) => props.theme.colors.error}, .5);
     &:hover {
+      border: 1px solid rgb(${(props) => props.theme.colors.primary}, 1);
       background-color: rgba(${(props) => props.theme.colors.error}, 0.20);
     }
   }

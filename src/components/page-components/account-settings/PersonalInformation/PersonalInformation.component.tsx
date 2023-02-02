@@ -11,14 +11,14 @@ export const PersonalInformation = ({ locale, translate, personalInformation }: 
         <InputWrapper className={'right'}>
           <Input
             value={personalInformation?.firstName}
-            placeholder={'First name'}
+            placeholder={translate('pages:signup.firstName')}
             onChange={() => {}}
           />
         </InputWrapper>
         <InputWrapper className={'left'}>
           <Input
             value={personalInformation?.lastName}
-            placeholder={'Last name'}
+            placeholder={translate('pages:signup.lastName')}
             onChange={() => {}}
           />
         </InputWrapper>
@@ -27,7 +27,7 @@ export const PersonalInformation = ({ locale, translate, personalInformation }: 
         <InputWrapper className={'right'}>
           <Input
             value={personalInformation?.personalWebsite}
-            placeholder={'Personal website'}
+            placeholder={translate('pages:signup.personalWebsite')}
             onChange={() => {}}
           />
         </InputWrapper>
@@ -50,14 +50,14 @@ export const PersonalInformation = ({ locale, translate, personalInformation }: 
         <InputWrapper>
           <Textarea
             value={personalInformation?.bio}
-            placeholder={'Bio'}
+            placeholder={translate('pages:signup.bio')}
             onChange={() => {}}
           />
         </InputWrapper>
       </FieldsContainer>
       <FieldsContainer className={'no-line'}>
         <InputWrapper className={'button'}>
-          <Button text={'Save changes'} />
+          <Button text={translate('placeholders:inputs.saveChanges')} />
         </InputWrapper>
       </FieldsContainer>
     </>

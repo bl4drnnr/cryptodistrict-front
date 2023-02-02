@@ -51,7 +51,7 @@ export const ChangeLanguage = ({ defaultLanguage, path, translate }: ChangeLangu
 
   const handleRedirect = async (prefix: string) => {
     if (path.split('/').length === 2) await router.push(`/${prefix}`);
-    else await router.push(`/${prefix}/${path.split('/').slice(-1)}`);
+    else await router.push(`/${prefix}/${path.substring(4)}`);
   };
 
   return (

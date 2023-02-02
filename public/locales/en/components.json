@@ -5,7 +5,9 @@
     "contact": "Contact",
     "search": "Search items...",
     "signIn": "Sign In",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "myProfile": "My profile",
+    "logout": "Logout"
   },
   "changeLanguage": {
     "ru": "Russian",
