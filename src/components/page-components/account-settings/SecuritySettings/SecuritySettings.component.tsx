@@ -49,7 +49,7 @@ const SecuritySettings = ({ locale, translate, securitySettings }: SecuritySetti
           <Button text={'Set 2FA'} />
         </SecurityItemWrapper>
       </SecurityItemBlock>
-      
+
       <SecurityItemBlock>
         <SecurityItemWrapper>
           <ItemTitle>Change email</ItemTitle>
