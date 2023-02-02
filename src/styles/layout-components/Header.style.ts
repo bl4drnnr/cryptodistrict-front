@@ -6,7 +6,7 @@ export const Container = styled.div`
   border-bottom: 1px solid rgba(${(props) => props.theme.colors.opposite}, .25);
   background-color: rgb(${(props) => props.theme.colors.lightBackground});
   position: fixed;
-  z-index: 999;
+  z-index: 101;
 `;
 
 export const Box = styled.div`

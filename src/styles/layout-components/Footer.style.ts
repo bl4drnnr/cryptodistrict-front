@@ -6,6 +6,8 @@ export const Container = styled.div`
   border-top: 1px solid rgba(${(props) => props.theme.colors.opposite}, .25);
   background-color: rgb(${(props) => props.theme.colors.darkBackground});
   color: rgb(${(props) => props.theme.colors.textColor});
+  bottom: 0;
+  position: absolute;
 
   @media only screen and (max-width: 780px) {
     display: none;

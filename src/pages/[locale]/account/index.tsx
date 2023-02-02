@@ -12,11 +12,11 @@ import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useCheckTokenService } from '@services/check-token/check-token.service';
 import { useRefreshTokenService } from '@services/refresh-token/refresh-token.service';
 import {
-  AccountContainer, AccountTitle,
-  Container, Nickname, UserAssetsBox,
-  UserAssetsContainer, UserBioBox,
+  AccountContainer, AccountContentContainer, AccountInfo, AccountInfoContainer,
+  Container, FullName, Nickname,
+  UserAssetsContainer, UserBio,
   UserInfoContainer,
-  UserProfilePicture,
+  UserProfilePicture, UserSideBar,
   Wrapper
 } from '@styles/account.style';
 
@@ -72,23 +72,25 @@ const Account = ({ locale }: AccountProps) => {
             <AccountContainer>
               <UserInfoContainer>
                 <UserProfilePicture>
-                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={325} height={325}/>
+                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={225} height={225}/>
+                  <AccountInfoContainer>
+                    <AccountInfo>
+                      <Nickname>bl4drnnr</Nickname>
+                      <FullName>aka Mikhail Bahdashych</FullName>
+                    </AccountInfo>
+                    <UserBio>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda cumque dolor dolorum exercitationem laborum maiores quia repudiandae sint! Adipisci beatae cum doloribus eos est fugiat inventore minus pariatur voluptatibus. Ad cumque dolorum explicabo facere molestias repellat ut velit voluptate. Adipisci amet asperiores itaque labore praesentium sint veniam vitae voluptatibus?</UserBio>
+                  </AccountInfoContainer>
                 </UserProfilePicture>
-                <Nickname>bl4drnnr</Nickname>
-                <AccountTitle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eius ipsum odio quos velit. Deleniti dicta doloremque est modi non obcaecati, quas quasi quisquam reiciendis rerum saepe, tenetur totam voluptatem?</AccountTitle>
-                <Button
-                  text={t('placeholders:inputs.editProfile')}
-                  onClick={() => handleRedirect('/account/settings')}
-                />
               </UserInfoContainer>
 
-              <UserAssetsContainer>
-                <UserBioBox>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem cupiditate doloribus explicabo laudantium magni obcaecati quisquam rem saepe, vel! Ab, aperiam architecto at consectetur cum cumque dolor dolorem eveniet exercitationem expedita hic id in ipsa labore maiores modi mollitia natus nihil nisi nobis praesentium quae quas quisquam saepe, sed sunt tempore temporibus tenetur, ut vero! Dicta doloremque enim eum id ipsam iure minus odio! Aliquam facilis ipsa minus nobis quasi vero? A alias consectetur fuga impedit ipsa obcaecati vero voluptatem. Aspernatur delectus dolor impedit ipsa magnam nobis nulla sapiente.
-                </UserBioBox>
-                {/*<UserAssetsBox>*/}
-                {/*</UserAssetsBox>*/}
-              </UserAssetsContainer>
+              <AccountContentContainer>
+                <UserSideBar>
+                  <Button
+                    text={t('placeholders:inputs.editProfile')}
+                    onClick={() => handleRedirect('/account/settings')}
+                  />
+                </UserSideBar>
+              </AccountContentContainer>
             </AccountContainer>
           </Wrapper>
         </Container>
