@@ -4,12 +4,12 @@ export const LoadingBackground = styled.div`
   width: 100%;
   height: 100vh;
   position: absolute;
-  z-index: 1;
+  z-index: 999;
   background-color: rgba(${(props) => props.theme.colors.disableColor}, 0.35);
 `;
 
 export const LoadingSpinner = styled.span`
-  z-index: 1;
+  z-index: 999;
   position: absolute;
   right: 0;
   left: 0;
