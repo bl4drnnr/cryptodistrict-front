@@ -10,6 +10,7 @@ export const useFreezeAccountService = () => {
   const freezeAccount = async (payload: FreezeAccountPayload)
     : Promise<FreezeAccountResponse> => {
     try {
+      setLoading(true);
       const { data } = await ApiClient.patch<FreezeAccountResponse>('/user/freeze-account', {}, {
         headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });

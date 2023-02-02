@@ -10,6 +10,7 @@ export const useCloseAccountService = () => {
   const closeAccount = async (payload: CloseAccountPayload)
     : Promise<CloseAccountResponse> => {
     try {
+      setLoading(true);
       const { data } = await ApiClient.patch<CloseAccountResponse>('/user/close-account', {}, {
         headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });

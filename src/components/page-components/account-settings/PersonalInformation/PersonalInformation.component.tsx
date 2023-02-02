@@ -67,7 +67,10 @@ export const PersonalInformation = ({ locale, translate, personalInformation }: 
           <AvaWrapper>
             <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={225} height={225}/>
             <ChangeAvatar>
-              <Button text={'Change avatar'} />
+              <Button
+                text={translate('placeholders:inputs.changeAva')}
+                fillButton={true}
+              />
             </ChangeAvatar>
           </AvaWrapper>
         </PersonalInfoItemsWrapper>

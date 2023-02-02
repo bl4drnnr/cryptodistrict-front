@@ -2,16 +2,16 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { RefreshTokenResponse } from '@services/refresh-token/refresh-token.interface';
+import { Set2FaPayload, Set2FaResponse } from '@services/set-2fa/set-2fa.interface';
 
-export const useRefreshTokenService = () => {
+export const useSet2FaService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const refreshToken = async ()
-    : Promise<RefreshTokenResponse> => {
+  const set2Fa = async (payload: Set2FaPayload)
+    : Promise<Set2FaResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.get<RefreshTokenResponse>('/auth/refresh-token');
+      const { data } = await ApiClient.post<Set2FaResponse>('/twofactor/set', payload);
 
       return data;
     } catch (error: any) {
@@ -21,5 +21,5 @@ export const useRefreshTokenService = () => {
     }
   };
 
-  return { refreshToken, loading };
+  return { set2Fa, loading };
 };
