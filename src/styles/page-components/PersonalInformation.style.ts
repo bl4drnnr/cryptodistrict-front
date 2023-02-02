@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const FieldsContainer = styled.div`
   width: 100%;
   border-bottom: 1px solid rgba(${(props) => props.theme.colors.opposite}, .25);
-  margin: 0 0 15px 30px;
   padding-bottom: 10px;
+  margin: 5px 0;
   &.flex {
     display: flex;
   }
@@ -15,5 +15,13 @@ export const FieldsContainer = styled.div`
 
 export const InputWrapper = styled.div`
   width: 100%;
-  margin: 0 10px;
+  &.left {
+    padding-left: 5px;
+  }
+  &.right {
+    padding-right: 5px;
+  }
+  &.button {
+    padding-top: 30px;
+  }
 `;

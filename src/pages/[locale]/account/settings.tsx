@@ -42,11 +42,18 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const [userSettings, setUserSettings] = React.useState<ISettings>();
   const [section, setSection] = React.useState('personalInformation');
   const [sections, ] = React.useState([
-    { value: 'personalInformation', text: t('placeholders:inputs.personalInformation') },
-    { value: 'notificationSettings', text: t('placeholders:inputs.notificationSettings') },
-    { value: 'securitySettings', text: t('placeholders:inputs.securitySettings') },
-    { value: 'freezeAccount', text: 'Freeze account' },
-    { value: 'deleteAccount', text: 'Delete account' }
+    { value: 'personalInformation',
+      text: t('placeholders:inputs.personalInformation'),
+      danger: false
+    }, {
+      value: 'notificationSettings',
+      text: t('placeholders:inputs.notificationSettings'),
+      danger: false
+    }, {
+      value: 'securitySettings',
+      text: t('placeholders:inputs.securitySettings'),
+      danger: false
+    }
   ]);
   const { loading, getUserSettings } = useGetUserSettingsService();
   const { handleException } = useHandleException();
@@ -119,6 +126,20 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                     />
                   </ButtonWrapper>
                 ))}
+                <ButtonWrapper>
+                  <Button
+                    text={'Freeze account'}
+                    onClick={() => {}}
+                    danger={true}
+                  />
+                </ButtonWrapper>
+                <ButtonWrapper>
+                  <Button
+                    text={'Close account'}
+                    onClick={() => {}}
+                    fillDanger={true}
+                  />
+                </ButtonWrapper>
               </SidebarContainer>
               <SettingsContent>
                 {section === 'personalInformation' ? (

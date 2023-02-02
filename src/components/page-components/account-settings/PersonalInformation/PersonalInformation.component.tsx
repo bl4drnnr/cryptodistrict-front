@@ -8,14 +8,14 @@ export const PersonalInformation = ({ locale, translate, personalInformation }: 
   return (
     <>
       <FieldsContainer className={'flex'}>
-        <InputWrapper>
+        <InputWrapper className={'right'}>
           <Input
             value={personalInformation?.firstName}
             placeholder={'First name'}
             onChange={() => {}}
           />
         </InputWrapper>
-        <InputWrapper>
+        <InputWrapper className={'left'}>
           <Input
             value={personalInformation?.lastName}
             placeholder={'Last name'}
@@ -24,21 +24,21 @@ export const PersonalInformation = ({ locale, translate, personalInformation }: 
         </InputWrapper>
       </FieldsContainer>
       <FieldsContainer className={'flex'}>
-        <InputWrapper>
+        <InputWrapper className={'right'}>
           <Input
             value={personalInformation?.personalWebsite}
             placeholder={'Personal website'}
             onChange={() => {}}
           />
         </InputWrapper>
-        <InputWrapper>
+        <InputWrapper className={'left right'}>
           <Input
             value={personalInformation?.linkedIn}
             placeholder={'LinkedIn'}
             onChange={() => {}}
           />
         </InputWrapper>
-        <InputWrapper>
+        <InputWrapper  className={'left'}>
           <Input
             value={personalInformation?.twitter}
             placeholder={'Twitter'}
@@ -56,8 +56,8 @@ export const PersonalInformation = ({ locale, translate, personalInformation }: 
         </InputWrapper>
       </FieldsContainer>
       <FieldsContainer className={'no-line'}>
-        <InputWrapper>
-          <Button text={'Save changes'} fillButton={true} />
+        <InputWrapper className={'button'}>
+          <Button text={'Save changes'} />
         </InputWrapper>
       </FieldsContainer>
     </>

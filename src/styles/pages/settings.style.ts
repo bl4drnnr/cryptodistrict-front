@@ -33,7 +33,7 @@ export const Nickname = styled.h1`
 `;
 
 export const PersonalAccount = styled.p`
-  color: rgb(${(props) => props.theme.colors.textColor});
+  color: rgba(${(props) => props.theme.colors.textColor}, .5);
 `;
 
 export const SettingsHeaderItemsWrapper = styled.div`
@@ -58,7 +58,7 @@ export const SettingsContainer = styled.div`
   margin-top: 50px;
   width: 100%;
   display: flex;
-  // border: 1px solid rgb(${(props) => props.theme.colors.opposite}, .25);
+  padding: 10px;
 `;
 
 export const SidebarContainer = styled.div`
@@ -70,6 +70,6 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const SettingsContent = styled.div`
-  //height: 100px;
-  width: calc(100% - 250px);
+  width: 100%;
+  padding-left: 50px;
 `;
