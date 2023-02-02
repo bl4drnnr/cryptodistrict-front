@@ -11,7 +11,9 @@ export const useSet2FaService = () => {
     : Promise<Set2FaResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.post<Set2FaResponse>('/twofactor/set', payload);
+      const { data } = await ApiClient.post<Set2FaResponse>('/twofactor/set', payload, {
+        headers: { 'Application-Authorization': `Bearer ${payload.token}` }
+      });
 
       return data;
     } catch (error: any) {

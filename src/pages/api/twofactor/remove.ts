@@ -8,7 +8,9 @@ export default async (
   res: NextApiResponse
 ) => {
   try {
-    const { data } = await Api.post('/twofactor/remove', req.body);
+    const { data } = await Api.post('/twofactor/remove', req.body, {
+      headers: { 'Application-Authorization': req.headers['application-authorization'] }
+    });
 
     return res.json(data);
   } catch (error) {

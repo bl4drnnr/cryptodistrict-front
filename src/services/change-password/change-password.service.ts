@@ -2,17 +2,18 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { ChangeEmailResponse } from '@services/change-email/change-email.interface';
-import { ChangePasswordRequest } from '@services/change-password/change-password.interface';
+import {ChangePasswordRequest, ChangePasswordResponse} from '@services/change-password/change-password.interface';
 
 export const useChangePasswordService = () => {
   const [loading, setLoading] = React.useState(false);
 
   const changePassword = async (payload: ChangePasswordRequest)
-    : Promise<ChangeEmailResponse> => {
+    : Promise<ChangePasswordResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.patch<ChangeEmailResponse>('/user/change-passwowrd', payload);
+      const { data } = await ApiClient.patch<ChangePasswordResponse>('/user/change-password', payload, {
+        headers: { 'Application-Authorization': `Bearer ${payload.token}` }
+      });
 
       return data;
     } catch (error: any) {

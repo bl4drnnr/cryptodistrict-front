@@ -1,3 +1,5 @@
-export interface ChangePasswordRequest {}
+export interface ChangePasswordRequest {
+  token: string;
+}
 
 export interface ChangePasswordResponse {}

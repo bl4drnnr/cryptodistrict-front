@@ -11,7 +11,9 @@ export const useChangeEmailService = () => {
     : Promise<ChangeEmailResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.patch<ChangeEmailResponse>('/user/change-email', payload);
+      const { data } = await ApiClient.patch<ChangeEmailResponse>('/user/change-email', payload, {
+        headers: { 'Application-Authorization': `Bearer ${payload.token}` }
+      });
 
       return data;
     } catch (error: any) {
