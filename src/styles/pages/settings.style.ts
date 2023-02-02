@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   height: 100%;
   width: 70%;
   margin: 0 auto;
-  padding-top: 150px;
+  padding-top: 75px;
 `;
 
 export const SettingsPageHeader = styled.div`

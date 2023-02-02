@@ -16,8 +16,10 @@ export const PersonalInformation = ({ locale, translate, personalInformation }: 
   return (
     <>
       <PublicInfoTitleBox>
-        <PublicInfoTitle>Public information</PublicInfoTitle>
-        <Line/>
+        <PublicInfoTitle>
+          {translate('placeholders:inputs.personalInformation')}
+        </PublicInfoTitle>
+        <Line />
       </PublicInfoTitleBox>
       <PersonalInformationContainer>
         <PersonalInfoItemsWrapper className={'fields'}>
