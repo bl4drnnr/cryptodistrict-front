@@ -18,6 +18,8 @@ export const SettingsPageHeader = styled.div`
   padding: 10px;
   justify-content: space-between;
   display: flex;
+  border: 1px solid rgb(${(props) => props.theme.colors.opposite}, .25);
+  border-radius: 8px;
 `;
 
 export const SettingsPageHeaderSide = styled.div`
@@ -56,6 +58,7 @@ export const SettingsContainer = styled.div`
   margin-top: 50px;
   width: 100%;
   display: flex;
+  // border: 1px solid rgb(${(props) => props.theme.colors.opposite}, .25);
 `;
 
 export const SidebarContainer = styled.div`
@@ -67,6 +70,6 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const SettingsContent = styled.div`
-  background-color: cornflowerblue;
-  height: 100px;
+  //height: 100px;
+  width: calc(100% - 250px);
 `;

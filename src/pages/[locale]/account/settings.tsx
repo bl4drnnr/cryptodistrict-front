@@ -44,7 +44,9 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const [sections, ] = React.useState([
     { value: 'personalInformation', text: t('placeholders:inputs.personalInformation') },
     { value: 'notificationSettings', text: t('placeholders:inputs.notificationSettings') },
-    { value: 'securitySettings', text: t('placeholders:inputs.securitySettings') }
+    { value: 'securitySettings', text: t('placeholders:inputs.securitySettings') },
+    { value: 'freezeAccount', text: 'Freeze account' },
+    { value: 'deleteAccount', text: 'Delete account' }
   ]);
   const { loading, getUserSettings } = useGetUserSettingsService();
   const { handleException } = useHandleException();
@@ -86,7 +88,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
             <SettingsPageHeader>
               <SettingsPageHeaderSide>
                 <UserProfilePicture>
-                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={140} height={140}/>
+                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={128} height={128}/>
                 </UserProfilePicture>
 
                 <SettingsHeaderItemsWrapper>
