@@ -3,7 +3,7 @@ import React from 'react';
 import { Footer } from '@components/Footer/Footer.component';
 import { Header } from '@components/Header/Header.component';
 import GlobalLayout from '@layouts/Global.layout';
-import { Wrapper } from '@styles/Default.style';
+import {ContentWrapper, Wrapper} from '@styles/Default.style';
 
 
 interface DefaultLayoutProps {
@@ -17,9 +17,13 @@ const DefaultLayout = ({ children, locale, translate, loading = false }: Default
   return (
     <GlobalLayout loading={loading}>
       <Wrapper>
-        <Header locale={locale} translate={translate}/>
-        {children}
-        <Footer locale={locale} translate={translate}/>
+        <ContentWrapper>
+          <Header locale={locale} translate={translate} />
+          <main>
+            {children}
+          </main>
+          <Footer locale={locale} translate={translate} />
+        </ContentWrapper>
       </Wrapper>
     </GlobalLayout>
   );
