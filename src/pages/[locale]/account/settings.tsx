@@ -12,6 +12,8 @@ import { Button } from '@components/Button/Button.component';
 import { useHandleException } from '@hooks/useHandleException.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
+import { useCloseAccountService } from '@services/close-account/close-account.service';
+import { useFreezeAccountService } from '@services/freeze-account/freeze-account.service';
 import { ISettings } from '@services/get-user-settings/get-user-settings.interface';
 import { useGetUserSettingsService } from '@services/get-user-settings/get-user-settings.service';
 import {
@@ -37,6 +39,9 @@ interface AccountSettingsProps {
 const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const { t } = useTranslation();
   const router = useRouter();
+
+  const { loading: l1, closeAccount } = useCloseAccountService();
+  const { loading: l2, freezeAccount } = useFreezeAccountService();
 
   const fetchSettingsRef = React.useRef(true);
   const [userSettings, setUserSettings] = React.useState<ISettings>();
@@ -76,6 +81,22 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       handleException(e);
       sessionStorage.removeItem('_at');
       await handleRedirect('/');
+    }
+  };
+
+  const fetchCloseUserAccount = async () => {
+    try {
+
+    } catch (e) {
+      handleException(e);
+    }
+  };
+
+  const fetchFreezeUserAccount = async () => {
+    try {
+
+    } catch (e) {
+      handleException(e);
     }
   };
 
