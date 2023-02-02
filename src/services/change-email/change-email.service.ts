@@ -2,16 +2,16 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { LogoutRequest, LogoutResponse } from '@services/logout/logout.interface';
+import { ChangeEmailRequest, ChangeEmailResponse } from '@services/change-email/change-email.interface';
 
-export const useLogoutService = () => {
+export const useChangeEmailService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const logout = async (payload: LogoutRequest)
-    : Promise<LogoutResponse> => {
+  const changeEmail = async (payload: ChangeEmailRequest)
+    : Promise<ChangeEmailResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.post<LogoutResponse>('/user/logout', {}, {
+      const { data } = await ApiClient.patch<ChangeEmailResponse>('/user/change-email', payload, {
         headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });
 
@@ -23,5 +23,5 @@ export const useLogoutService = () => {
     }
   };
 
-  return { logout, loading };
+  return { changeEmail, loading };
 };

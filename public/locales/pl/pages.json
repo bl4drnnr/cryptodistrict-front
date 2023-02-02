@@ -121,6 +121,20 @@
   },
   "settings": {
     "title": "Ustawienia",
-    "yourPersonalAcc": "Twoje konto"
+    "yourPersonalAcc": "Twoje konto",
+    "s2faTitle": "Ustaw 2FA",
+    "s2faDescription": "Zabezpiecz swoje konto za pomocą uwierzytelniania dwuskładnikowego (2FA).",
+    "s2faButton": "Ustaw 2FA",
+    "sPhoneTitle": "Ustaw telefon komórkowy",
+    "sPhoneDescription": "Zabezpiecz swoje konto za pomocą mobilnego MFA.",
+    "sPhoneButton": "Ustaw telefon",
+    "changePassTitle": "Zmień hasło",
+    "changePassDescription": "Uważaj! Niektóre operacje nie będą dostępne przez 24 godziny po zmianie.",
+    "changePassButton": "Zmień hasło",
+    "changeEmailTitle": "Zmień e-mail",
+    "changeEmailDescription": "Uważaj! Możesz zmienić e-mail tylko raz.",
+    "changeEmailButton": "Zmień e-mail",
+    "receiveNotificationsTitle": "Odbieraj powiadomienia",
+    "receiveNotificationsDescription": "Otrzymuj powiadomienia o najważniejszych wydarzeniach na swój e-mail."
   }
 }

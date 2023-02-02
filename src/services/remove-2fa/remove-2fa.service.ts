@@ -2,16 +2,16 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { LogoutRequest, LogoutResponse } from '@services/logout/logout.interface';
+import { Remove2FaPayload, Remove2FaResponse } from '@services/remove-2fa/remove-2fa.interface';
 
-export const useLogoutService = () => {
+export const useRemove2FaService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const logout = async (payload: LogoutRequest)
-    : Promise<LogoutResponse> => {
+  const remove2Fa = async (payload: Remove2FaPayload)
+    : Promise<Remove2FaResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.post<LogoutResponse>('/user/logout', {}, {
+      const { data } = await ApiClient.post<Remove2FaResponse>('/twofactor/remove', payload, {
         headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });
 
@@ -23,5 +23,5 @@ export const useLogoutService = () => {
     }
   };
 
-  return { logout, loading };
+  return { remove2Fa, loading };
 };

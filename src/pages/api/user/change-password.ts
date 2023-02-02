@@ -8,8 +8,9 @@ export default async (
   res: NextApiResponse
 ) => {
   try {
-
-    const { data } = await Api.post('/auth/check', req.body);
+    const { data } = await Api.patch('/user/change-password', req.body, {
+      headers: { 'Application-Authorization': req.headers['application-authorization'] }
+    });
 
     return res.json(data);
   } catch (error) {

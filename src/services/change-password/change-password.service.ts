@@ -2,16 +2,16 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { LogoutRequest, LogoutResponse } from '@services/logout/logout.interface';
+import {ChangePasswordRequest, ChangePasswordResponse} from '@services/change-password/change-password.interface';
 
-export const useLogoutService = () => {
+export const useChangePasswordService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const logout = async (payload: LogoutRequest)
-    : Promise<LogoutResponse> => {
+  const changePassword = async (payload: ChangePasswordRequest)
+    : Promise<ChangePasswordResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.post<LogoutResponse>('/user/logout', {}, {
+      const { data } = await ApiClient.patch<ChangePasswordResponse>('/user/change-password', payload, {
         headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });
 
@@ -23,5 +23,5 @@ export const useLogoutService = () => {
     }
   };
 
-  return { logout, loading };
+  return { changePassword, loading };
 };

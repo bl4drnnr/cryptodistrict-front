@@ -2,16 +2,16 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { LogoutRequest, LogoutResponse } from '@services/logout/logout.interface';
+import { Set2FaPayload, Set2FaResponse } from '@services/set-2fa/set-2fa.interface';
 
-export const useLogoutService = () => {
+export const useSet2FaService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const logout = async (payload: LogoutRequest)
-    : Promise<LogoutResponse> => {
+  const set2Fa = async (payload: Set2FaPayload)
+    : Promise<Set2FaResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.post<LogoutResponse>('/user/logout', {}, {
+      const { data } = await ApiClient.post<Set2FaResponse>('/twofactor/set', payload, {
         headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });
 
@@ -23,5 +23,5 @@ export const useLogoutService = () => {
     }
   };
 
-  return { logout, loading };
+  return { set2Fa, loading };
 };

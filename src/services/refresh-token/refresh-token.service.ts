@@ -10,6 +10,7 @@ export const useRefreshTokenService = () => {
   const refreshToken = async ()
     : Promise<RefreshTokenResponse> => {
     try {
+      setLoading(true);
       const { data } = await ApiClient.get<RefreshTokenResponse>('/auth/refresh-token');
 
       return data;

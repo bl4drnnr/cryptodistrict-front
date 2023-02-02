@@ -3,7 +3,7 @@ import React from 'react';
 import { Footer } from '@components/Footer/Footer.component';
 import { Header } from '@components/Header/Header.component';
 import GlobalLayout from '@layouts/Global.layout';
-import {ContentWrapper, Wrapper} from '@styles/Default.style';
+import { ContentWrapper, Wrapper } from '@styles/Default.style';
 
 
 interface DefaultLayoutProps {

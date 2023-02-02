@@ -122,6 +122,20 @@
   },
   "settings": {
     "title": "Settings",
-    "yourPersonalAcc": "Your personal account"
+    "yourPersonalAcc": "Your personal account",
+    "s2faTitle": "Set 2FA",
+    "s2faDescription": "Secure your account with two-factor authentication (2FA).",
+    "s2faButton": "Set 2FA",
+    "sPhoneTitle": "Set mobile phone",
+    "sPhoneDescription": "Secure your account with mobile MFA.",
+    "sPhoneButton": "Set phone",
+    "changePassTitle": "Change password",
+    "changePassDescription": "Be careful! Some operations won't be available for 24h after change.",
+    "changePassButton": "Change password",
+    "changeEmailTitle": "Change email",
+    "changeEmailDescription": "Be careful! You are able to change email only one time.",
+    "changeEmailButton": "Change email",
+    "receiveNotificationsTitle": "Receive notifications",
+    "receiveNotificationsDescription": "Receive notifications on most important events on your email."
   }
 }

@@ -10,6 +10,7 @@ export const useCheckTokenService = () => {
   const checkToken = async (payload: CheckTokenPayload)
     : Promise<CheckTokenResponse> => {
     try {
+      setLoading(true);
       const { data } = await ApiClient.post<CheckTokenResponse>('/auth/check-token', payload);
 
       return data;

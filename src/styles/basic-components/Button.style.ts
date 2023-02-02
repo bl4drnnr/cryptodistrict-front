@@ -30,6 +30,9 @@ export const BasicButton = styled.button`
     ${ButtonContent} {
       color: black;
     }
+    &:hover {
+      background-color: rgb(${(props) => props.theme.colors.primary});
+    }
   }
   
   &.highHeight {
@@ -44,7 +47,7 @@ export const BasicButton = styled.button`
   &.danger {
     border: 1px solid rgb(${(props) => props.theme.colors.error}, .5);
     &:hover {
-      border: 1px solid rgb(${(props) => props.theme.colors.primary}, 1);
+      border: 1px solid rgb(${(props) => props.theme.colors.error}, 1);
       background-color: rgba(${(props) => props.theme.colors.error}, 0.20);
     }
   }
@@ -52,9 +55,14 @@ export const BasicButton = styled.button`
   &.fillDanger {
     border: 1px solid rgb(${(props) => props.theme.colors.error});
     background-color: rgba(${(props) => props.theme.colors.error});
+    &:hover {
+      background-color: rgba(${(props) => props.theme.colors.error});
+      border: 1px solid rgb(${(props) => props.theme.colors.error});
+    }
   }
 
   &:hover {
     border: 1px solid rgb(${(props) => props.theme.colors.primary}, 1);
+    background-color: rgba(${(props) => props.theme.colors.primary}, 0.20);
   }
 `;

@@ -10,6 +10,7 @@ export const useGetUserSettingsService = () => {
   const getUserSettings = async (payload: GetUserSettingsPayload)
     : Promise<GetUserSettingsResponse> => {
     try {
+      setLoading(true);
       const { data } = await ApiClient.get<GetUserSettingsResponse>('/user/get-settings', {
         headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });
