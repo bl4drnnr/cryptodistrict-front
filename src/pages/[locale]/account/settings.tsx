@@ -114,7 +114,9 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
           <Wrapper>
 
             <SettingsPageHeader>
-              <SettingsPageHeaderSide>
+              <SettingsPageHeaderSide
+                onClick={() => handleRedirect('/account')}
+              >
                 <UserProfilePicture>
                   <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={128} height={128}/>
                 </UserProfilePicture>
@@ -127,13 +129,6 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                 </SettingsHeaderItemsWrapper>
               </SettingsPageHeaderSide>
 
-              <SettingsHeaderItemsWrapper>
-                <Button
-                  text={t('placeholders:inputs.goBackProfile')}
-                  fillButton={true}
-                  onClick={() => handleRedirect('/account')}
-                />
-              </SettingsHeaderItemsWrapper>
             </SettingsPageHeader>
 
             <SettingsContainer>

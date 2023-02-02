@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
 export const AccountContainer = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
   
   @media screen and (max-width: 520px) {
     display: block;
@@ -23,9 +22,8 @@ export const AccountContainer = styled.div`
 `;
 
 export const UserInfoContainer = styled.div`
-  height: 100%;
-  width: 350px;
-  padding: 15px;
+  height: 255px;
+  width: 100%;
   
   @media screen and (max-width: 520px) {
     margin: 0 auto;
@@ -43,35 +41,42 @@ export const UserAssetsContainer = styled.div`
 export const UserProfilePicture = styled.div`
   display: flex;
   position: relative;
-  cursor: pointer;
   
   .ava {
     border-radius: 50%;
   }
 `;
 
-export const UserBioBox = styled.div`
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid rgb(${(props) => props.theme.colors.opposite});
-  color: rgb(${(props) => props.theme.colors.textColor});
-  padding: 15px;
+export const AccountInfoContainer = styled.div`
+  padding: 0 30px;
 `;
 
-export const UserAssetsBox = styled.div`
-  width: 100%;
-  max-height: 500px;
-  margin-top: 15px;
-  border-radius: 8px;
-  border: 1px solid rgb(${(props) => props.theme.colors.opposite});
+export const AccountInfo = styled.div`
+  display: flex;
+  align-items: baseline;
 `;
 
 export const Nickname = styled.h1`
-  padding-top: 15px;
+  margin-right: 15px;
   color: rgb(${(props) => props.theme.colors.textColor});
 `;
 
-export const AccountTitle = styled.p`
-  padding: 15px 0;
+export const FullName = styled.p`
+  opacity: .75;
   color: rgb(${(props) => props.theme.colors.textColor});
+`;
+
+export const UserBio = styled.p`
+  max-width: 50%;
+  opacity: .5;
+  color: rgb(${(props) => props.theme.colors.textColor});
+  padding-top: 15px;
+`;
+
+export const AccountContentContainer = styled.div`
+`;
+
+export const UserSideBar = styled.div`
+  width: 225px;
+  height: 100%;
 `;

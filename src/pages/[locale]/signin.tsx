@@ -50,13 +50,15 @@ const Signin = ({ locale }: SignInProps) => {
     await router.push(`/${locale}${path}`);
   };
 
-  const signInUser = async () => {
+  const signInUser = async (e?: any) => {
     try {
-      const { _at } = await signIn({
-        email, password
-      });
-      sessionStorage.setItem('_at', _at);
-      await handleRedirect('/account');
+      if ((e && e.key === 'Enter') || !e) {
+        const { _at } = await signIn({
+          email, password
+        });
+        sessionStorage.setItem('_at', _at);
+        await handleRedirect('/account');
+      }
     } catch (e) {
       handleException(e);
     }
@@ -113,7 +115,9 @@ const Signin = ({ locale }: SignInProps) => {
                 )}
               </MarginWrapper>
 
-              <MarginWrapper>
+              <MarginWrapper
+                onKeyDown={(e) => signInUser(e)}
+              >
                 <Input
                   onError={passwordError}
                   high={true}

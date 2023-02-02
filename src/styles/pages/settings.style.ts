@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100vh;
   background-color: rgb(${(props) => props.theme.colors.darkBackground});
 `;
 
@@ -15,15 +14,19 @@ export const Wrapper = styled.div`
 export const SettingsPageHeader = styled.div`
   width: 100%;
   height: 150px;
-  padding: 10px;
-  justify-content: space-between;
   display: flex;
-  border: 1px solid rgb(${(props) => props.theme.colors.opposite}, .25);
-  border-radius: 8px;
 `;
 
 export const SettingsPageHeaderSide = styled.div`
   display: flex;
+  border-radius: 12px;
+  padding: 12px;
+  transition: .2s;
+  cursor: pointer;
+  
+  &:hover {
+    background: rgba(${(props) => props.theme.colors.opposite}, .1);
+  }
 `;
 
 export const SettingsHeaderTextWrapper = styled.div``;
@@ -55,7 +58,7 @@ export const UserProfilePicture = styled.div`
 `;
 
 export const SettingsContainer = styled.div`
-  margin-top: 50px;
+  margin-top: 30px;
   width: 100%;
   display: flex;
   padding: 10px;
@@ -67,6 +70,9 @@ export const SidebarContainer = styled.div`
 
 export const ButtonWrapper = styled.div`
   margin: 10px 0;
+  &:first-child {
+    margin-top: 0;
+  }
 `;
 
 export const SettingsContent = styled.div`
