@@ -206,6 +206,8 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                   <NotificationSettings
                     translate={t}
                     notificationSettings={notificationSettings}
+                    setNotificationSettings={setNotificationSettings}
+                    applyNotificationSettings={applyNotificationSettings}
                   />
                 ) : (
                   <SecuritySettings
