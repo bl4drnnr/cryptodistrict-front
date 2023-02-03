@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const LoadingBackground = styled.div`
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   z-index: 999;
   background-color: rgba(${(props) => props.theme.colors.disableColor}, 0.35);
 `;
