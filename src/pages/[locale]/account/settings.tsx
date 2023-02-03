@@ -14,7 +14,11 @@ import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useCloseAccountService } from '@services/close-account/close-account.service';
 import { useFreezeAccountService } from '@services/freeze-account/freeze-account.service';
-import { ISettings } from '@services/get-user-settings/get-user-settings.interface';
+import {
+  INotificationSettings,
+  IPersonalInformation,
+  ISecuritySettings
+} from '@services/get-user-settings/get-user-settings.interface';
 import { useGetUserSettingsService } from '@services/get-user-settings/get-user-settings.service';
 import {
   ButtonWrapper,
@@ -44,7 +48,11 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const { loading: l2, freezeAccount } = useFreezeAccountService();
 
   const fetchSettingsRef = React.useRef(true);
-  const [userSettings, setUserSettings] = React.useState<ISettings>();
+
+  const [personalInformation, setPersonalInformation] = React.useState<IPersonalInformation>();
+  const [notificationSettings, setNotificationSettings] = React.useState<INotificationSettings>();
+  const [securitySettings, setSecuritySettings] = React.useState<ISecuritySettings>();
+
   const [section, setSection] = React.useState('personalInformation');
   const [sections, ] = React.useState([
     { value: 'personalInformation',
@@ -76,11 +84,22 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const fetchUserSettings = async (token: string) => {
     try {
       const { settings } = await getUserSettings({ token });
-      setUserSettings(settings);
+
+      setPersonalInformation(settings.personalInformation);
+      setNotificationSettings(settings.notificationSettings);
+      setSecuritySettings(settings.securitySettings);
     } catch (e) {
       handleException(e);
       sessionStorage.removeItem('_at');
       await handleRedirect('/');
+    }
+  };
+
+  const applyPersonalInformation = async () => {
+    try {
+
+    } catch (e) {
+      handleException(e);
     }
   };
 
@@ -160,21 +179,20 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
               <SettingsContent>
                 {section === 'personalInformation' ? (
                   <PersonalInformation
-                    locale={locale}
                     translate={t}
-                    personalInformation={userSettings?.personalInformation}
+                    personalInformation={personalInformation}
+                    setPersonalInformation={setPersonalInformation}
+                    applyPersonalInformation={applyPersonalInformation}
                   />
                 ) : (section === 'notificationSettings' ? (
                   <NotificationSettings
-                    locale={locale}
                     translate={t}
-                    notificationSettings={userSettings?.notificationSettings}
+                    notificationSettings={notificationSettings}
                   />
                 ) : (
                   <SecuritySettings
-                    locale={locale}
                     translate={t}
-                    securitySettings={userSettings?.securitySettings}
+                    securitySettings={securitySettings}
                   />
                 ))}
               </SettingsContent>

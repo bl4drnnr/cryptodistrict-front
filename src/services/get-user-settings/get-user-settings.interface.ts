@@ -1,4 +1,4 @@
-interface IPersonalInformation {
+export interface IPersonalInformation {
   firstName: string;
   lastName: string;
   phoneNumber: string;
@@ -10,17 +10,17 @@ interface IPersonalInformation {
   bio: string;
 }
 
-interface INotificationSettings {
+export interface INotificationSettings {
   receiveNotifications: boolean;
 }
 
-interface ISecuritySettings {
+export interface ISecuritySettings {
   emailChanged: boolean;
   lastPassChange: Date;
   twoFaType: string;
 }
 
-export interface ISettings {
+interface ISettings {
   personalInformation: IPersonalInformation;
   notificationSettings: INotificationSettings;
   securitySettings: ISecuritySettings;

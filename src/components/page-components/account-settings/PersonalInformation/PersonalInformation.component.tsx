@@ -12,7 +12,12 @@ import {
   PersonalInformationContainer, PublicInfoTitle, PublicInfoTitleBox
 } from '@styles/PersonalInformation.style';
 
-export const PersonalInformation = ({ locale, translate, personalInformation }: PersonalInformationProps) => {
+export const PersonalInformation = ({
+  translate,
+  personalInformation,
+  setPersonalInformation,
+  applyPersonalInformation
+}: PersonalInformationProps) => {
   return (
     <>
       <PublicInfoTitleBox>
@@ -27,38 +32,47 @@ export const PersonalInformation = ({ locale, translate, personalInformation }: 
             <Input
               value={personalInformation?.firstName}
               placeholder={translate('pages:signup.firstName')}
-              onChange={() => {}}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, firstName: e.target.value })}
             />
             <Input
               value={personalInformation?.lastName}
               placeholder={translate('pages:signup.lastName')}
-              onChange={() => {}}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, lastName: e.target.value })}
+            />
+            <Input
+              value={personalInformation?.title}
+              placeholder={translate('pages:signup.accTitle')}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, title: e.target.value })}
+              inputDescription={translate('pages:signup.tellTheWorld')}
             />
             <Input
               value={personalInformation?.personalWebsite}
               placeholder={translate('pages:signup.personalWebsite')}
-              onChange={() => {}}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, personalWebsite: e.target.value })}
             />
             <Input
               value={personalInformation?.linkedIn}
               placeholder={'LinkedIn'}
-              onChange={() => {}}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, linkedIn: e.target.value })}
             />
             <Input
               value={personalInformation?.twitter}
               placeholder={'Twitter'}
-              onChange={() => {}}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, twitter: e.target.value })}
             />
             <Textarea
               value={personalInformation?.bio}
               placeholder={translate('pages:signup.bio')}
-              onChange={() => {}}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, bio: e.target.value })}
             />
           </FieldsContainer>
 
           <FieldsContainer className={'no-line'}>
             <InputWrapper className={'button'}>
-              <Button text={translate('placeholders:inputs.saveChanges')} />
+              <Button
+                text={translate('placeholders:inputs.saveChanges')}
+                onClick={applyPersonalInformation}
+              />
             </InputWrapper>
           </FieldsContainer>
 

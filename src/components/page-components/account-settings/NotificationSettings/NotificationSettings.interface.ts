@@ -3,7 +3,6 @@ interface INotificationSettings {
 }
 
 export interface NotificationSettingsProps {
-  locale: string;
   translate: any;
   notificationSettings: INotificationSettings | undefined;
 }

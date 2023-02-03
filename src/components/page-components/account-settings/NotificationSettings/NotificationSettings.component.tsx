@@ -14,7 +14,7 @@ import {
   NotificationTitleBox, ShowMoreContainer, ShowMoreLink
 } from '@styles/NotificationSettings.style';
 
-const NotificationSettings = ({ locale, translate, notificationSettings }: NotificationSettingsProps) => {
+const NotificationSettings = ({ translate, notificationSettings }: NotificationSettingsProps) => {
   const [showMore, setShowMore] = React.useState(false);
 
   return (

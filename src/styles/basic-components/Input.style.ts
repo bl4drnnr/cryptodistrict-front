@@ -48,3 +48,11 @@ export const OnErrorMessage = styled.p`
   font-weight: 400;
   margin-top: 5px;
 `;
+
+export const InputDescription = styled.p`
+  color: rgb(${(props) => props.theme.colors.textColor});
+  font-size: small;
+  font-weight: 200;
+  opacity: .5;
+  margin-top: 5px;
+`;

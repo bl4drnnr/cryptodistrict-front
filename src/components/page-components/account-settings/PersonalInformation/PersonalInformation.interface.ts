@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface IPersonalInformation {
   firstName: string;
   lastName: string;
@@ -11,7 +13,8 @@ interface IPersonalInformation {
 }
 
 export interface PersonalInformationProps {
-  locale: string;
   translate: any;
   personalInformation: IPersonalInformation | undefined;
+  setPersonalInformation: React.Dispatch<React.SetStateAction<any>>;
+  applyPersonalInformation: any;
 }
