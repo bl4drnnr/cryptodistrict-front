@@ -20,6 +20,7 @@ import {
   ISecuritySettings
 } from '@services/get-user-settings/get-user-settings.interface';
 import { useGetUserSettingsService } from '@services/get-user-settings/get-user-settings.service';
+import { useSetUserSettings } from '@services/set-user-settings/set-user-settings.service';
 import {
   ButtonWrapper,
   Container,
@@ -44,8 +45,10 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const { t } = useTranslation();
   const router = useRouter();
 
+  const { loading: l0, getUserSettings } = useGetUserSettingsService();
   const { loading: l1, closeAccount } = useCloseAccountService();
   const { loading: l2, freezeAccount } = useFreezeAccountService();
+  const { loading: l3, setUserSettings } = useSetUserSettings();
 
   const fetchSettingsRef = React.useRef(true);
 
@@ -68,7 +71,6 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       danger: false
     }
   ]);
-  const { loading, getUserSettings } = useGetUserSettingsService();
   const { handleException } = useHandleException();
 
   React.useEffect(() => {
@@ -97,7 +99,8 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
 
   const applyPersonalInformation = async () => {
     try {
-
+      const token = sessionStorage.getItem('_at');
+      const response = await setUserSettings({ token });
     } catch (e) {
       handleException(e);
     }
@@ -105,7 +108,8 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
 
   const fetchCloseUserAccount = async () => {
     try {
-
+      const token = sessionStorage.getItem('_at');
+      const response = await closeAccount({ token });
     } catch (e) {
       handleException(e);
     }
@@ -113,7 +117,8 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
 
   const fetchFreezeUserAccount = async () => {
     try {
-
+      const token = sessionStorage.getItem('_at');
+      const response = await freezeAccount({ token });
     } catch (e) {
       handleException(e);
     }
@@ -128,7 +133,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       <Head>
         <title>Cryptodistrict | {t('pages:settings.title')}</title>
       </Head>
-      <DefaultLayout locale={locale} translate={t} loading={loading}>
+      <DefaultLayout locale={locale} translate={t} loading={l0 || l1 || l2 || l3}>
         <Container>
           <Wrapper>
 
