@@ -13,4 +13,6 @@ export interface SignUpPayload {
   title?: string;
   bio?: string;
   tac: boolean;
+  username: string;
+  publicEmail: boolean;
 }

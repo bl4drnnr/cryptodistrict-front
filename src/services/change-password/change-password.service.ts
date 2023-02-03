@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import {ChangePasswordRequest, ChangePasswordResponse} from '@services/change-password/change-password.interface';
+import { ChangePasswordRequest, ChangePasswordResponse } from '@services/change-password/change-password.interface';
 
 export const useChangePasswordService = () => {
   const [loading, setLoading] = React.useState(false);

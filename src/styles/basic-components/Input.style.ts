@@ -41,3 +41,10 @@ export const BasicInput = styled.input`
     border: 1px solid rgba(${(props) => props.theme.colors.primary}, 1);
   }
 `;
+
+export const OnErrorMessage = styled.p`
+  color: rgb(${(props) => props.theme.colors.error});
+  font-size: small;
+  font-weight: 400;
+  margin-top: 5px;
+`;
