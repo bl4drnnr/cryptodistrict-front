@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { PersonalInformationProps } from '@components/account-settings/PersonalInformation/PersonalInformation.interface';
 import { Button } from '@components/Button/Button.component';
+import { Checkbox } from '@components/Checkbox/Checkbox.component';
 import { Input } from '@components/Input/Input.component';
 import { Textarea } from '@components/Textarea/Textarea.component';
 import {
@@ -30,9 +31,15 @@ export const PersonalInformation = ({
         </PublicInfoTitle>
         <Line />
       </PublicInfoTitleBox>
+
       <PersonalInformationContainer>
         <PersonalInfoItemsWrapper className={'fields'}>
           <FieldsContainer>
+            <Input
+              value={personalInformation?.username}
+              placeholder={translate('placeholders:inputs.username')}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, username: e.target.value })}
+            />
             <Input
               value={personalInformation?.firstName}
               placeholder={translate('pages:signup.firstName')}
@@ -68,6 +75,11 @@ export const PersonalInformation = ({
               value={personalInformation?.bio}
               placeholder={translate('pages:signup.bio')}
               onChange={(e) => setPersonalInformation({ ...personalInformation, bio: e.target.value })}
+            />
+            <Checkbox
+              value={personalInformation?.publicEmail}
+              label={translate('pages:signup.publicEmail')}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, publicEmail: !personalInformation?.publicEmail })}
             />
           </FieldsContainer>
 

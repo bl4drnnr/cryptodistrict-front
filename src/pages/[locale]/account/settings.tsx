@@ -104,7 +104,9 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const applyPersonalInformation = async () => {
     try {
       const token = sessionStorage.getItem('_at');
-      const response = await setPersonalUserSettings({ token });
+      await setPersonalUserSettings({
+        token, ...personalInformation
+      });
     } catch (e) {
       handleException(e);
     }

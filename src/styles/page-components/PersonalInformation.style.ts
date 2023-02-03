@@ -32,12 +32,6 @@ export const FieldsContainer = styled.div`
 
 export const InputWrapper = styled.div`
   width: 100%;
-  &.left {
-    padding-left: 5px;
-  }
-  &.right {
-    padding-right: 5px;
-  }
   &.button {
     padding-top: 30px;
   }
