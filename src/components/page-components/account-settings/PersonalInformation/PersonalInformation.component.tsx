@@ -5,11 +5,15 @@ import { Button } from '@components/Button/Button.component';
 import { Input } from '@components/Input/Input.component';
 import { Textarea } from '@components/Textarea/Textarea.component';
 import {
-  AvaWrapper, ChangeAvatar,
+  AvaWrapper,
+  ChangeAvatar,
   FieldsContainer,
-  InputWrapper, Line,
+  InputWrapper,
+  Line,
   PersonalInfoItemsWrapper,
-  PersonalInformationContainer, PublicInfoTitle, PublicInfoTitleBox
+  PersonalInformationContainer,
+  PublicInfoTitle,
+  PublicInfoTitleBox
 } from '@styles/PersonalInformation.style';
 
 export const PersonalInformation = ({
