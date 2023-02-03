@@ -1,17 +1,20 @@
+import React from 'react';
+
 interface IPersonalInformation {
   firstName: string;
   lastName: string;
-  phoneNumber: string;
-  email: string;
   twitter: string;
   linkedIn: string;
   personalWebsite: string;
   title: string;
   bio: string;
+  username: string;
+  publicEmail: boolean;
 }
 
 export interface PersonalInformationProps {
-  locale: string;
   translate: any;
   personalInformation: IPersonalInformation | undefined;
+  setPersonalInformation: React.Dispatch<React.SetStateAction<any>>;
+  applyPersonalInformation: any;
 }

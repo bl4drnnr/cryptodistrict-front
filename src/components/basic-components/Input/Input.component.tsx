@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 
 import { InputProps } from '@components/Input/Input.interface';
-import { BasicInput, Container, Placeholder } from '@styles/Input.style';
+import { BasicInput, Container, InputDescription, OnErrorMessage, Placeholder } from '@styles/Input.style';
 
 export const Input = ({
   value,
@@ -10,7 +10,9 @@ export const Input = ({
   onChange,
   onError,
   high,
-  innerPlaceholder
+  innerPlaceholder,
+  onErrorMessage,
+  inputDescription
 }: InputProps) => {
   return (
     <Container>
@@ -22,6 +24,8 @@ export const Input = ({
         onChange={onChange}
         placeholder={innerPlaceholder?.length ? innerPlaceholder : ''}
       />
+      {onError && onErrorMessage?.length && (<OnErrorMessage>{onErrorMessage}</OnErrorMessage>)}
+      {inputDescription && (<InputDescription>{inputDescription}</InputDescription>)}
     </Container>
   );
 };

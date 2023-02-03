@@ -1,5 +1,5 @@
 export interface FreezeAccountPayload {
-  token: string;
+  token: string | null;
 }
 
 export interface FreezeAccountResponse {

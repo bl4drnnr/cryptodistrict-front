@@ -1,5 +1,5 @@
 export interface CloseAccountPayload {
-  token: string;
+  token: string | null;
 }
 
 export interface CloseAccountResponse {

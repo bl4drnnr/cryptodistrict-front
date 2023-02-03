@@ -14,8 +14,16 @@ import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useCloseAccountService } from '@services/close-account/close-account.service';
 import { useFreezeAccountService } from '@services/freeze-account/freeze-account.service';
-import { ISettings } from '@services/get-user-settings/get-user-settings.interface';
+import {
+  INotificationSettings,
+  IPersonalInformation,
+  ISecuritySettings
+} from '@services/get-user-settings/get-user-settings.interface';
 import { useGetUserSettingsService } from '@services/get-user-settings/get-user-settings.service';
+import {
+  useSetUserNotificationSettingsService
+} from '@services/set-user-notification-settings/set-user-notification-settings.service';
+import { useSetPersonalUserSettingsService } from '@services/user-settings/set-user-personal-settings/set-user-personal-settings.service';
 import {
   ButtonWrapper,
   Container,
@@ -40,11 +48,18 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const { t } = useTranslation();
   const router = useRouter();
 
+  const { loading: l0, getUserSettings } = useGetUserSettingsService();
   const { loading: l1, closeAccount } = useCloseAccountService();
   const { loading: l2, freezeAccount } = useFreezeAccountService();
+  const { loading: l3, setPersonalUserSettings } = useSetPersonalUserSettingsService();
+  const { loading: l4, setUserNotificationSettings } = useSetUserNotificationSettingsService();
 
   const fetchSettingsRef = React.useRef(true);
-  const [userSettings, setUserSettings] = React.useState<ISettings>();
+
+  const [personalInformation, setPersonalInformation] = React.useState<IPersonalInformation>();
+  const [notificationSettings, setNotificationSettings] = React.useState<INotificationSettings>();
+  const [securitySettings, setSecuritySettings] = React.useState<ISecuritySettings>();
+
   const [section, setSection] = React.useState('personalInformation');
   const [sections, ] = React.useState([
     { value: 'personalInformation',
@@ -60,7 +75,6 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       danger: false
     }
   ]);
-  const { loading, getUserSettings } = useGetUserSettingsService();
   const { handleException } = useHandleException();
 
   React.useEffect(() => {
@@ -76,7 +90,10 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const fetchUserSettings = async (token: string) => {
     try {
       const { settings } = await getUserSettings({ token });
-      setUserSettings(settings);
+
+      setPersonalInformation(settings.personalInformation);
+      setNotificationSettings(settings.notificationSettings);
+      setSecuritySettings(settings.securitySettings);
     } catch (e) {
       handleException(e);
       sessionStorage.removeItem('_at');
@@ -84,9 +101,28 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
     }
   };
 
+  const applyPersonalInformation = async () => {
+    try {
+      const token = sessionStorage.getItem('_at');
+      const response = await setPersonalUserSettings({ token });
+    } catch (e) {
+      handleException(e);
+    }
+  };
+
+  const applyNotificationSettings = async () => {
+    try {
+      const token = sessionStorage.getItem('_at');
+      const response = await setUserNotificationSettings({ token });
+    } catch (e) {
+      handleException(e);
+    }
+  };
+
   const fetchCloseUserAccount = async () => {
     try {
-
+      const token = sessionStorage.getItem('_at');
+      const response = await closeAccount({ token });
     } catch (e) {
       handleException(e);
     }
@@ -94,7 +130,8 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
 
   const fetchFreezeUserAccount = async () => {
     try {
-
+      const token = sessionStorage.getItem('_at');
+      const response = await freezeAccount({ token });
     } catch (e) {
       handleException(e);
     }
@@ -109,7 +146,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       <Head>
         <title>Cryptodistrict | {t('pages:settings.title')}</title>
       </Head>
-      <DefaultLayout locale={locale} translate={t} loading={loading}>
+      <DefaultLayout locale={locale} translate={t} loading={l0 || l1 || l2 || l3}>
         <Container>
           <Wrapper>
 
@@ -160,21 +197,22 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
               <SettingsContent>
                 {section === 'personalInformation' ? (
                   <PersonalInformation
-                    locale={locale}
                     translate={t}
-                    personalInformation={userSettings?.personalInformation}
+                    personalInformation={personalInformation}
+                    setPersonalInformation={setPersonalInformation}
+                    applyPersonalInformation={applyPersonalInformation}
                   />
                 ) : (section === 'notificationSettings' ? (
                   <NotificationSettings
-                    locale={locale}
                     translate={t}
-                    notificationSettings={userSettings?.notificationSettings}
+                    notificationSettings={notificationSettings}
+                    setNotificationSettings={setNotificationSettings}
+                    applyNotificationSettings={applyNotificationSettings}
                   />
                 ) : (
                   <SecuritySettings
-                    locale={locale}
                     translate={t}
-                    securitySettings={userSettings?.securitySettings}
+                    securitySettings={securitySettings}
                   />
                 ))}
               </SettingsContent>

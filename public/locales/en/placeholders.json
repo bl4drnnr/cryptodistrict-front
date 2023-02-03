@@ -16,6 +16,7 @@
     "saveChanges": "Save changes",
     "freeze": "Freeze account",
     "close": "Close account",
-    "changeAva": "Change avatar"
+    "changeAva": "Change avatar",
+    "username": "Username"
   }
 }

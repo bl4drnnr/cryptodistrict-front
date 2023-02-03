@@ -45,13 +45,17 @@ const Signup = ({ locale }: SignUpProps) => {
 
   const { loading, signUp } = useSignUpService();
   const { handleException } = useHandleException();
-  const [hideLeftSide, setHideLeftSide] = React.useState(false);
   const { height, width } = useWindowDimensions();
+  const [hideLeftSide, setHideLeftSide] = React.useState(false);
 
   const [step, setStep] = React.useState(1);
   const [tac, setTac] = React.useState(false);
+
   const [email, setEmail] = React.useState('');
   const [emailError, setEmailError] = React.useState(false);
+
+  const [username, setUsername] = React.useState('');
+  const [usernameError, setUsernameError] = React.useState(false);
 
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
@@ -61,6 +65,7 @@ const Signup = ({ locale }: SignUpProps) => {
   const [title, setTitle] = React.useState('');
   const [bio, setBio] = React.useState('');
   const [publicEmail, setPublicEmail] = React.useState(false);
+
   const [password, setPassword] = React.useState({ password: '', repeatPassword: '' });
   const [passwordError, setPasswordError] = React.useState({
     passwordMismatch: false,
@@ -79,7 +84,17 @@ const Signup = ({ locale }: SignUpProps) => {
     try {
       const response = await signUp({
         password: password.password,
-        bio, linkedIn, firstName, lastName, title, twitter, personalWebsite, tac, email
+        bio,
+        linkedIn,
+        firstName,
+        lastName,
+        title,
+        twitter,
+        personalWebsite,
+        tac,
+        email,
+        username,
+        publicEmail
       });
 
       if (response.message == 'success') {
@@ -106,6 +121,10 @@ const Signup = ({ locale }: SignUpProps) => {
     else if (validateEmail(email) === 1) setEmailError(false);
     else setEmailError(false);
   }, [email]);
+
+  React.useEffect(() => {
+    setUsernameError(username.length === 1);
+  }, [username]);
 
   React.useEffect(() => {
     if (password.password === password.repeatPassword)
@@ -168,6 +187,17 @@ const Signup = ({ locale }: SignUpProps) => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t('placeholders:inputs.email')}
+                />
+              </MarginWrapper>
+
+              <MarginWrapper>
+                <Input
+                  high={true}
+                  onError={usernameError}
+                  onErrorMessage={'Username should contain at least 1 symbol'}
+                  value={username}
+                  placeholder={t('placeholders:inputs.username')}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </MarginWrapper>
 

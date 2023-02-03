@@ -13,7 +13,7 @@ import {
   SecurityItemWrapper
 } from '@styles/SecuritySettings.style';
 
-const SecuritySettings = ({ locale, translate, securitySettings }: SecuritySettingsProps) => {
+const SecuritySettings = ({ translate, securitySettings }: SecuritySettingsProps) => {
   const [twoFaModal, setTwoFaModal] = React.useState(false);
   const [phoneModal, setPhoneModal] = React.useState(false);
   const [passwordChangeModal, setPasswordChangeModal] = React.useState(false);

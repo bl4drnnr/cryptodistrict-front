@@ -2,16 +2,16 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { GetUserSettingsPayload, GetUserSettingsResponse } from '@services/get-user-settings/get-user-settings.interface';
+import { ChangePasswordRequest, ChangePasswordResponse } from '@services/change-password/change-password.interface';
 
-export const useGetUserSettingsService = () => {
+export const useChangePasswordService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const getUserSettings = async (payload: GetUserSettingsPayload)
-    : Promise<GetUserSettingsResponse> => {
+  const changePassword = async (payload: ChangePasswordRequest)
+    : Promise<ChangePasswordResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.get<GetUserSettingsResponse>('/user/get-settings', {
+      const { data } = await ApiClient.patch<ChangePasswordResponse>('/user/change-password', payload, {
         headers: { 'Application-Authorization': `Bearer ${payload.token}` }
       });
 
@@ -23,5 +23,5 @@ export const useGetUserSettingsService = () => {
     }
   };
 
-  return { getUserSettings, loading };
+  return { changePassword, loading };
 };

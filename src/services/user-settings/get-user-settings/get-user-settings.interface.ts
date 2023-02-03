@@ -1,26 +1,28 @@
-interface IPersonalInformation {
+export interface IPersonalInformation {
   firstName: string;
   lastName: string;
-  phoneNumber: string;
-  email: string;
   twitter: string;
   linkedIn: string;
   personalWebsite: string;
   title: string;
   bio: string;
+  username: string;
+  publicEmail: boolean;
 }
 
-interface INotificationSettings {
+export interface INotificationSettings {
   receiveNotifications: boolean;
 }
 
-interface ISecuritySettings {
+export interface ISecuritySettings {
   emailChanged: boolean;
   lastPassChange: Date;
   twoFaType: string;
+  email: string;
+  phoneNumber: string;
 }
 
-export interface ISettings {
+interface ISettings {
   personalInformation: IPersonalInformation;
   notificationSettings: INotificationSettings;
   securitySettings: ISecuritySettings;
