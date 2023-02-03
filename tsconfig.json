@@ -31,7 +31,14 @@
         "src/styles/*"
       ],
       "@layouts/*": ["src/layouts/*"],
-      "@services/*": ["src/services/*"],
+      "@services/*": [
+        "src/services/*",
+        "src/services/auth/*",
+        "src/services/token/*",
+        "src/services/account/*",
+        "src/services/user-settings/*",
+        "src/services/two-fa/*"
+      ],
       "@store/*": ["src/store/*"],
       "@hooks/*": ["src/hooks/*"],
       "@api-client": ["src/services/api.client.ts"],

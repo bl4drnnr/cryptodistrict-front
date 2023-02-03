@@ -8,12 +8,12 @@ export default async (
   res: NextApiResponse
 ) => {
   try {
-    const { data } = await Api.patch('/user/set-settings', req.body,{
+    const { data } = await Api.patch('/user/set-personal-settings', req.body,{
       headers: { 'Application-Authorization': req.headers['application-authorization'] }
     });
 
     return res.json(data);
-  } catch (error) {
+  } catch (error: any) {
     return res
       .status((error as AxiosError).response?.status as number)
       .json((error as AxiosError).response?.data);

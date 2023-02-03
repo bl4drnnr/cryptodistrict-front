@@ -20,7 +20,10 @@ import {
   ISecuritySettings
 } from '@services/get-user-settings/get-user-settings.interface';
 import { useGetUserSettingsService } from '@services/get-user-settings/get-user-settings.service';
-import { useSetUserSettings } from '@services/set-user-settings/set-user-settings.service';
+import {
+  useSetUserNotificationSettingsService
+} from '@services/set-user-notification-settings/set-user-notification-settings.service';
+import { useSetPersonalUserSettingsService } from '@services/user-settings/set-user-personal-settings/set-user-personal-settings.service';
 import {
   ButtonWrapper,
   Container,
@@ -48,7 +51,8 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const { loading: l0, getUserSettings } = useGetUserSettingsService();
   const { loading: l1, closeAccount } = useCloseAccountService();
   const { loading: l2, freezeAccount } = useFreezeAccountService();
-  const { loading: l3, setUserSettings } = useSetUserSettings();
+  const { loading: l3, setPersonalUserSettings } = useSetPersonalUserSettingsService();
+  const { loading: l4, setUserNotificationSettings } = useSetUserNotificationSettingsService();
 
   const fetchSettingsRef = React.useRef(true);
 
@@ -100,7 +104,16 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const applyPersonalInformation = async () => {
     try {
       const token = sessionStorage.getItem('_at');
-      const response = await setUserSettings({ token });
+      const response = await setPersonalUserSettings({ token });
+    } catch (e) {
+      handleException(e);
+    }
+  };
+
+  const applyNotificationSettings = async () => {
+    try {
+      const token = sessionStorage.getItem('_at');
+      const response = await setUserNotificationSettings({ token });
     } catch (e) {
       handleException(e);
     }
