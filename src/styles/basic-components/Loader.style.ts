@@ -5,7 +5,7 @@ export const LoadingBackground = styled.div`
   height: 100vh;
   position: fixed;
   z-index: 999;
-  background-color: rgba(${(props) => props.theme.colors.disableColor}, 0.35);
+  background-color: rgba(${(props) => props.theme.colors.disableColor}, .35);
 `;
 
 export const LoadingSpinner = styled.span`

@@ -10,11 +10,10 @@ import {
   ChangeAvatar,
   FieldsContainer,
   InputWrapper,
-  Line,
   PersonalInfoItemsWrapper,
   PersonalInformationContainer,
   PublicInfoTitle,
-  PublicInfoTitleBox
+  PublicInfoTitleBox, SeparationLine
 } from '@styles/PersonalInformation.style';
 
 export const PersonalInformation = ({
@@ -29,7 +28,7 @@ export const PersonalInformation = ({
         <PublicInfoTitle>
           {translate('placeholders:inputs.personalInformation')}
         </PublicInfoTitle>
-        <Line />
+        <SeparationLine />
       </PublicInfoTitleBox>
 
       <PersonalInformationContainer>
@@ -39,6 +38,7 @@ export const PersonalInformation = ({
               value={personalInformation?.username}
               placeholder={translate('placeholders:inputs.username')}
               onChange={(e) => setPersonalInformation({ ...personalInformation, username: e.target.value })}
+              inputDescription={translate('placeholders:inputs.usernameDescription')}
             />
             <Input
               value={personalInformation?.firstName}
@@ -50,6 +50,7 @@ export const PersonalInformation = ({
               placeholder={translate('pages:signup.lastName')}
               onChange={(e) => setPersonalInformation({ ...personalInformation, lastName: e.target.value })}
             />
+            <SeparationLine />
             <Input
               value={personalInformation?.title}
               placeholder={translate('pages:signup.accTitle')}
@@ -76,6 +77,7 @@ export const PersonalInformation = ({
               placeholder={translate('pages:signup.bio')}
               onChange={(e) => setPersonalInformation({ ...personalInformation, bio: e.target.value })}
             />
+            <SeparationLine />
             <Checkbox
               value={personalInformation?.publicEmail}
               label={translate('pages:signup.publicEmail')}
@@ -91,7 +93,7 @@ export const PersonalInformation = ({
               />
             </InputWrapper>
           </FieldsContainer>
-
+          {/*{'pages:signup.tellAbout'}*/}
         </PersonalInfoItemsWrapper>
         <PersonalInfoItemsWrapper className={'end changeAva'}>
           <AvaWrapper>

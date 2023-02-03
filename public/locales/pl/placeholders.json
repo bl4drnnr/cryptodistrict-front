@@ -17,6 +17,8 @@
     "freeze": "Zablokuj konto",
     "close": "Zamknij konto",
     "changeAva": "Zmień avatar",
-    "username": "Imię użytkownika"
+    "username": "Nazwa użytkownika",
+    "usernameError": "Nazwa użytkownika powinna zawierać co najmniej 1 symbol",
+    "usernameDescription": "Nazwa użytkownika powinna być unikalna i będzie widoczna publicznie"
   }
 }

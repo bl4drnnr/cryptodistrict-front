@@ -6,7 +6,7 @@ import { Modal } from '@components/Modal/Modal.component';
 import {
   ItemDescription,
   ItemTitle,
-  Line,
+  SeparationLine,
   SecurityItemBlock,
   SecurityTitle,
   SecurityTitleBox,
@@ -25,7 +25,7 @@ const SecuritySettings = ({ translate, securitySettings }: SecuritySettingsProps
         <SecurityTitle>
           {translate('placeholders:inputs.securitySettings')}
         </SecurityTitle>
-        <Line />
+        <SeparationLine />
       </SecurityTitleBox>
 
       <SecurityItemBlock>

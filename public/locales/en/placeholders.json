@@ -17,6 +17,8 @@
     "freeze": "Freeze account",
     "close": "Close account",
     "changeAva": "Change avatar",
-    "username": "Username"
+    "username": "Username",
+    "usernameError": "Username should contain at least 1 symbol",
+    "usernameDescription": "Username should be unique and will be shown publicly"
   }
 }

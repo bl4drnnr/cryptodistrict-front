@@ -142,9 +142,9 @@ export const StartButton = styled.div`
 
   &:hover {
     transform: scale(1.1);
-    -webkit-box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary}, 0.37);
-    -moz-box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary}, 0.37);
-    box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary}, 0.37);
+    -webkit-box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary}, .37);
+    -moz-box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary}, .37);
+    box-shadow: 0 0 149px 9px rgba(${(props) => props.theme.colors.primary}, .37);
   }
 
   &.aboutPage {
@@ -178,7 +178,7 @@ export const Line = styled.div`
   height: 100vh;
   top: 0;
   left: 50%;
-  background: rgba(${(props) => props.theme.colors.opposite}, 0.1);
+  background: rgba(${(props) => props.theme.colors.opposite}, .1);
   overflow: hidden;
   animation: appearing 2s;
 

@@ -7,11 +7,13 @@ import { Checkbox } from '@components/Checkbox/Checkbox.component';
 import {
   ItemDescription,
   ItemTitle,
-  Line,
+  SeparationLine,
   NotificationItemBlock,
   NotificationItemWrapper,
   NotificationTitle,
-  NotificationTitleBox, ShowMoreContainer, ShowMoreLink
+  NotificationTitleBox,
+  ShowMoreContainer,
+  ShowMoreLink
 } from '@styles/NotificationSettings.style';
 
 const NotificationSettings = ({
@@ -28,7 +30,7 @@ const NotificationSettings = ({
         <NotificationTitle>
           {translate('placeholders:inputs.notificationSettings')}
         </NotificationTitle>
-        <Line />
+        <SeparationLine />
       </NotificationTitleBox>
 
       <NotificationItemBlock>
