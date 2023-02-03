@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { PersonalInformationProps } from '@components/account-settings/PersonalInformation/PersonalInformation.interface';
 import { Button } from '@components/Button/Button.component';
+import { Checkbox } from '@components/Checkbox/Checkbox.component';
 import { Input } from '@components/Input/Input.component';
 import { Textarea } from '@components/Textarea/Textarea.component';
 import {
@@ -9,11 +10,10 @@ import {
   ChangeAvatar,
   FieldsContainer,
   InputWrapper,
-  Line,
   PersonalInfoItemsWrapper,
   PersonalInformationContainer,
   PublicInfoTitle,
-  PublicInfoTitleBox
+  PublicInfoTitleBox, SeparationLine
 } from '@styles/PersonalInformation.style';
 
 export const PersonalInformation = ({
@@ -28,11 +28,18 @@ export const PersonalInformation = ({
         <PublicInfoTitle>
           {translate('placeholders:inputs.personalInformation')}
         </PublicInfoTitle>
-        <Line />
+        <SeparationLine />
       </PublicInfoTitleBox>
+
       <PersonalInformationContainer>
         <PersonalInfoItemsWrapper className={'fields'}>
           <FieldsContainer>
+            <Input
+              value={personalInformation?.username}
+              placeholder={translate('placeholders:inputs.username')}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, username: e.target.value })}
+              inputDescription={translate('placeholders:inputs.usernameDescription')}
+            />
             <Input
               value={personalInformation?.firstName}
               placeholder={translate('pages:signup.firstName')}
@@ -43,6 +50,7 @@ export const PersonalInformation = ({
               placeholder={translate('pages:signup.lastName')}
               onChange={(e) => setPersonalInformation({ ...personalInformation, lastName: e.target.value })}
             />
+            <SeparationLine />
             <Input
               value={personalInformation?.title}
               placeholder={translate('pages:signup.accTitle')}
@@ -69,6 +77,12 @@ export const PersonalInformation = ({
               placeholder={translate('pages:signup.bio')}
               onChange={(e) => setPersonalInformation({ ...personalInformation, bio: e.target.value })}
             />
+            <SeparationLine />
+            <Checkbox
+              value={personalInformation?.publicEmail}
+              label={translate('pages:signup.publicEmail')}
+              onChange={(e) => setPersonalInformation({ ...personalInformation, publicEmail: !personalInformation?.publicEmail })}
+            />
           </FieldsContainer>
 
           <FieldsContainer className={'no-line'}>
@@ -79,7 +93,7 @@ export const PersonalInformation = ({
               />
             </InputWrapper>
           </FieldsContainer>
-
+          {/*{'pages:signup.tellAbout'}*/}
         </PersonalInfoItemsWrapper>
         <PersonalInfoItemsWrapper className={'end changeAva'}>
           <AvaWrapper>

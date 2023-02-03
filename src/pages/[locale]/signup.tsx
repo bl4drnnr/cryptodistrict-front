@@ -194,7 +194,7 @@ const Signup = ({ locale }: SignUpProps) => {
                 <Input
                   high={true}
                   onError={usernameError}
-                  onErrorMessage={'Username should contain at least 1 symbol'}
+                  onErrorMessage={t('placeholders:inputs.usernameError')}
                   value={username}
                   placeholder={t('placeholders:inputs.username')}
                   onChange={(e) => setUsername(e.target.value)}

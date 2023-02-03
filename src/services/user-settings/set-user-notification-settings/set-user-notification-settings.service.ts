@@ -9,12 +9,12 @@ import {
 export const useSetUserNotificationSettingsService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const setUserNotificationSettings = async (payload: SetUserNotificationSettingsPayload)
+  const setUserNotificationSettings = async (token: string | null, payload: SetUserNotificationSettingsPayload)
     : Promise<SetUserNotificationSettingsResponse> => {
     try {
       setLoading(true);
       const { data } = await ApiClient.patch<SetUserNotificationSettingsResponse>('/user/settings/set-notification', payload, {
-        headers: { 'Application-Authorization': `Bearer ${payload.token}` }
+        headers: { 'Application-Authorization': `Bearer ${token}` }
       });
 
       return data;

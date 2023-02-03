@@ -1,5 +1,3 @@
-export interface SetUserNotificationSettingsPayload {
-  token: string | null;
-}
+export interface SetUserNotificationSettingsPayload {}
 
 export interface SetUserNotificationSettingsResponse {}

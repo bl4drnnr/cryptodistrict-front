@@ -29,9 +29,9 @@ interface ISettings {
 }
 
 export interface GetUserSettingsPayload {
-  token: string
+  token: string;
 }
 
 export interface GetUserSettingsResponse {
-  settings: ISettings
+  settings: ISettings;
 }

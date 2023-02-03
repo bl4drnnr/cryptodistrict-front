@@ -9,9 +9,12 @@ export const SecurityTitle = styled.h1`
   color: rgb(${(props) => props.theme.colors.textColor});
 `;
 
-export const Line = styled.hr`
+export const SeparationLine = styled.div`
+  width: 100%;
+  height: 1px;
   opacity: .5;
-  color: rgb(${(props) => props.theme.colors.opposite});
+  background-color: rgb(${(props) => props.theme.colors.opposite});
+  margin-top: 15px;
 `;
 
 export const SecurityItemBlock = styled.div`

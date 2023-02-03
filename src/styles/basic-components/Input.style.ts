@@ -13,7 +13,7 @@ export const Placeholder = styled.p`
 `;
 
 export const BasicInput = styled.input`
-  background-color: rgba(${(props) => props.theme.colors.inputBackground}, 0.85);
+  background-color: rgba(${(props) => props.theme.colors.inputBackground}, .85);
   border: 1px solid rgba(${(props) => props.theme.colors.primary}, .3);
   border-radius: 5px;
   outline: none;

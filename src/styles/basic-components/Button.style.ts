@@ -22,7 +22,7 @@ export const BasicButton = styled.button`
   cursor: pointer;
   border: 1px solid rgb(${(props) => props.theme.colors.primary}, .5);
   transition: .3s;
-  background-color: rgba(${(props) => props.theme.colors.inputBackground}, 0.85);
+  background-color: rgba(${(props) => props.theme.colors.inputBackground}, .85);
   
   &.fillButton {
     background-color: rgb(${(props) => props.theme.colors.primary});
@@ -40,7 +40,7 @@ export const BasicButton = styled.button`
   }
   
   &.disabled {
-    background-color: rgba(${(props) => props.theme.colors.disableColor}, 0.20);
+    background-color: rgba(${(props) => props.theme.colors.disableColor}, .20);
     cursor: auto;
   }
     
@@ -48,7 +48,7 @@ export const BasicButton = styled.button`
     border: 1px solid rgb(${(props) => props.theme.colors.error}, .5);
     &:hover {
       border: 1px solid rgb(${(props) => props.theme.colors.error}, 1);
-      background-color: rgba(${(props) => props.theme.colors.error}, 0.20);
+      background-color: rgba(${(props) => props.theme.colors.error}, .20);
     }
   }
   
@@ -63,6 +63,6 @@ export const BasicButton = styled.button`
 
   &:hover {
     border: 1px solid rgb(${(props) => props.theme.colors.primary}, 1);
-    background-color: rgba(${(props) => props.theme.colors.primary}, 0.20);
+    background-color: rgba(${(props) => props.theme.colors.primary}, .20);
   }
 `;

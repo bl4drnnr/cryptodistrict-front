@@ -1,5 +1,3 @@
-export interface SetPersonalUserSettingsPayload {
-  token: string | null;
-}
+export interface SetPersonalUserSettingsPayload {}
 
 export interface SetPersonalUserSettingsResponse {}

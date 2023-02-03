@@ -9,17 +9,11 @@ export const PublicInfoTitleBox = styled.div`
 `;
 
 export const PublicInfoTitle = styled.h1`
-  padding-bottom: 10px;
   color: rgb(${(props) => props.theme.colors.textColor});
 `;
 
-export const Line = styled.hr`
-  opacity: .5;
-  color: rgb(${(props) => props.theme.colors.opposite});
-`;
-
 export const FieldsContainer = styled.div`
-  width: 50%;
+  width: 65%;
   padding-bottom: 10px;
   margin: 0 auto;
   &.flex {
@@ -32,12 +26,6 @@ export const FieldsContainer = styled.div`
 
 export const InputWrapper = styled.div`
   width: 100%;
-  &.left {
-    padding-left: 5px;
-  }
-  &.right {
-    padding-right: 5px;
-  }
   &.button {
     padding-top: 30px;
   }
@@ -67,4 +55,12 @@ export const PersonalInfoItemsWrapper = styled.div`
       border-radius: 50%;
     }
   }
+`;
+
+export const SeparationLine = styled.div`
+  width: 100%;
+  height: 1px;
+  opacity: .5;
+  background-color: rgb(${(props) => props.theme.colors.opposite});
+  margin-top: 15px;
 `;
