@@ -10,24 +10,19 @@ export const Wrapper = styled.div`
   width: 75%;
   margin: 0 auto;
   padding-top: 150px;
+  
+  @media only screen and (max-width: 1000px) {
+    width: 90%;
+  }
 `;
 
 export const AccountContainer = styled.div`
   width: 100%;
   height: 100%;
-  
-  @media screen and (max-width: 520px) {
-    display: block;
-  }
 `;
 
 export const UserInfoContainer = styled.div`
   width: 100%;
-  
-  @media screen and (max-width: 520px) {
-    margin: 0 auto;
-    height: auto;
-  }
 `;
 
 export const UserAssetsContainer = styled.div`
@@ -46,6 +41,11 @@ export const UserProfilePicture = styled.div`
   .ava {
     border-radius: 50%;
   }
+
+  @media only screen and (max-width: 1000px) {
+    display: block;
+    border: none;
+  }
 `;
 
 export const AccountInfoContainer = styled.div`
@@ -56,6 +56,11 @@ export const AccountInfoContainer = styled.div`
 export const AccountInfo = styled.div`
   display: flex;
   align-items: baseline;
+
+  @media only screen and (max-width: 1000px) {
+    display: block;
+    text-align: center;
+  }
 `;
 
 export const Nickname = styled.h1`
@@ -85,10 +90,20 @@ export const UserSideBar = styled.div`
 export const UserProfilePictureWrapper = styled.div`
   border-right: 1px solid rgb(${(props) => props.theme.colors.opposite}, .5);
   padding: 15px;
+
+  @media only screen and (max-width: 1000px) {
+    border: none;
+    text-align: center;
+  }
 `;
 
 export const AccountCreatedAtContainer = styled.div`
-  min-width: 200px;
+  min-width: 250px;
+  padding: 15px 30px;
+
+  @media only screen and (max-width: 1000px) {
+    display: flex;
+  }
 `;
 
 export const CreatedAtParagraph = styled.p`

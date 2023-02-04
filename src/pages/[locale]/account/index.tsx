@@ -104,46 +104,53 @@ const Account = ({ locale }: AccountProps) => {
                       <UserTitle>
                         {userData.title}
                       </UserTitle>
-                      <ContactField
-                        onClick={() => copyToClipboard(userData.twitter)}
-                      >
-                        <ContactIcon>
-                          <Image src={'/img/twitter.svg'} width={32} height={32}  alt={'t'} />
-                        </ContactIcon>
-                        <Input
-                          disabled={true}
-                          value={userData.twitter}
-                          placeholder={''}
-                          onChange={() => {}}
-                        />
-                      </ContactField>
-                      <ContactField
-                        onClick={() => copyToClipboard(userData.linkedIn)}
-                      >
-                        <ContactIcon>
-                          <Image src={'/img/linkedin.svg'} width={32} height={32}  alt={'l'} />
-                        </ContactIcon>
-                        <Input
-                          disabled={true}
-                          value={userData.linkedIn}
-                          placeholder={''}
-                          onChange={() => {}}
-                        />
-                      </ContactField>
-                      <ContactField
-                        onClick={() => copyToClipboard(userData.personalWebsite)}
-                      >
-                        <ContactIcon>
-                          <Image src={'/img/tag.svg'} width={32} height={32}  alt={'w'} />
-                        </ContactIcon>
-                        <Input
-                          disabled={true}
-                          value={userData.personalWebsite}
-                          placeholder={''}
-                          onChange={() => {}}
-                        />
-                      </ContactField>
+                      {userData.twitter && (
+                        <ContactField
+                          onClick={() => copyToClipboard(userData.twitter)}
+                        >
+                          <ContactIcon>
+                            <Image src={'/img/twitter.svg'} width={32} height={32}  alt={'t'} />
+                          </ContactIcon>
+                          <Input
+                            disabled={true}
+                            value={userData.twitter}
+                            placeholder={''}
+                            onChange={() => {}}
+                          />
+                        </ContactField>
+                      )}
+                      {userData.linkedIn && (
+                        <ContactField
+                          onClick={() => copyToClipboard(userData.linkedIn)}
+                        >
+                          <ContactIcon>
+                            <Image src={'/img/linkedin.svg'} width={32} height={32}  alt={'l'} />
+                          </ContactIcon>
+                          <Input
+                            disabled={true}
+                            value={userData.linkedIn}
+                            placeholder={''}
+                            onChange={() => {}}
+                          />
+                        </ContactField>
+                      )}
+                      {userData.personalWebsite && (
+                        <ContactField
+                          onClick={() => copyToClipboard(userData.personalWebsite)}
+                        >
+                          <ContactIcon>
+                            <Image src={'/img/tag.svg'} width={32} height={32}  alt={'w'} />
+                          </ContactIcon>
+                          <Input
+                            disabled={true}
+                            value={userData.personalWebsite}
+                            placeholder={''}
+                            onChange={() => {}}
+                          />
+                        </ContactField>
+                      )}
                     </UserProfilePictureWrapper>
+
                     <AccountInfoContainer>
                       <AccountInfo>
                         <Nickname>{userData.username}</Nickname>
@@ -154,10 +161,12 @@ const Account = ({ locale }: AccountProps) => {
                       </AccountInfo>
                       <UserBio>{userData.bio}</UserBio>
                     </AccountInfoContainer>
+
                     <AccountCreatedAtContainer>
                       <CreatedAtParagraph>{t('placeholders:inputs.accCreateAt')}</CreatedAtParagraph>
                       <CreatedAtDate>{dayjs(userData.createdAt).format('YYYY-MM-DD')}</CreatedAtDate>
                     </AccountCreatedAtContainer>
+
                   </UserProfilePicture>
                 )}
               </UserInfoContainer>
