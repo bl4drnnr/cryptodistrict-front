@@ -6,7 +6,7 @@
     "account-not-confirmed": "Почта не подтверждена"
   },
   "generalError": {
-
+    "unauthorized": "Unauthorized"
   },
   "unknownError": {
     "unknownError": "Неизвестная ошибка"

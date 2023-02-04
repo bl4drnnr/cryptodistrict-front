@@ -47,48 +47,48 @@ export const PersonalInformation = ({
                   inputDescription={translate('placeholders:inputs.usernameDescription')}
                 />
                 <Input
-                  value={personalInformation?.firstName}
+                  value={personalInformation.firstName}
                   placeholder={translate('pages:signup.firstName')}
                   onChange={(e) => setPersonalInformation({ ...personalInformation, firstName: e.target.value })}
                 />
                 <Input
-                  value={personalInformation?.lastName}
+                  value={personalInformation.lastName}
                   placeholder={translate('pages:signup.lastName')}
                   onChange={(e) => setPersonalInformation({ ...personalInformation, lastName: e.target.value })}
                 />
                 <SeparationLine />
                 <Input
-                  value={personalInformation?.title}
+                  value={personalInformation.title}
                   placeholder={translate('pages:signup.accTitle')}
                   onChange={(e) => setPersonalInformation({ ...personalInformation, title: e.target.value })}
                   inputDescription={translate('pages:signup.tellTheWorld')}
                 />
                 <Input
-                  value={personalInformation?.personalWebsite}
+                  value={personalInformation.personalWebsite}
                   placeholder={translate('pages:signup.personalWebsite')}
                   onChange={(e) => setPersonalInformation({ ...personalInformation, personalWebsite: e.target.value })}
                 />
                 <Input
-                  value={personalInformation?.linkedIn}
+                  value={personalInformation.linkedIn}
                   placeholder={'LinkedIn'}
                   onChange={(e) => setPersonalInformation({ ...personalInformation, linkedIn: e.target.value })}
                 />
                 <Input
-                  value={personalInformation?.twitter}
+                  value={personalInformation.twitter}
                   placeholder={'Twitter'}
                   onChange={(e) => setPersonalInformation({ ...personalInformation, twitter: e.target.value })}
                 />
                 <Textarea
-                  value={personalInformation?.bio}
+                  value={personalInformation.bio}
                   placeholder={translate('pages:signup.bio')}
                   onChange={(e) => setPersonalInformation({ ...personalInformation, bio: e.target.value })}
                   inputDescription={translate('pages:signup.tellAbout')}
                 />
                 <SeparationLine />
                 <Checkbox
-                  value={personalInformation?.publicEmail}
+                  value={personalInformation.publicEmail}
                   label={translate('pages:signup.publicEmail')}
-                  onChange={(e) => setPersonalInformation({ ...personalInformation, publicEmail: !personalInformation?.publicEmail })}
+                  onChange={(e) => setPersonalInformation({ ...personalInformation, publicEmail: !personalInformation.publicEmail })}
                 />
               </>
             )}
