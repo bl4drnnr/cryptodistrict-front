@@ -1,9 +1,16 @@
 import classNames from 'classnames';
 
 import { TextareaProps } from '@components/Textarea/Textarea.interface';
-import { Container, Placeholder, BasicTextarea } from '@styles/Textarea.style';
+import { Container, Placeholder, BasicTextarea, OnErrorMessage, InputDescription } from '@styles/Textarea.style';
 
-export const Textarea = ({ value, placeholder, onError, onChange }: TextareaProps) => {
+export const Textarea = ({
+   value,
+   placeholder,
+   onError,
+   onChange,
+   onErrorMessage,
+   inputDescription
+}: TextareaProps) => {
   return (
     <Container>
       <Placeholder>{placeholder}</Placeholder>
@@ -12,6 +19,8 @@ export const Textarea = ({ value, placeholder, onError, onChange }: TextareaProp
         value={value}
         onChange={onChange}
       />
+      {onError && onErrorMessage?.length && (<OnErrorMessage>{onErrorMessage}</OnErrorMessage>)}
+      {inputDescription && (<InputDescription>{inputDescription}</InputDescription>)}
     </Container>
   );
 };

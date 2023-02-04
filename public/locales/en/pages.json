@@ -136,6 +136,9 @@
     "changeEmailDescription": "Be careful! You are able to change email only one time.",
     "changeEmailButton": "Change email",
     "receiveNotificationsTitle": "Receive notifications",
-    "receiveNotificationsDescription": "Receive notifications on most important events on your email."
+    "receiveNotificationsDescription": "Receive notifications on most important events on your email.",
+    "personalInfoDescription": "Manage your public visible personal information settings",
+    "securitySettingDescription": "Manage security of your account",
+    "notificationSettingsDescription": "Manage your notification settings"
   }
 }

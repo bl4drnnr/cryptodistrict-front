@@ -13,7 +13,8 @@ import {
   NotificationTitle,
   NotificationTitleBox,
   ShowMoreContainer,
-  ShowMoreLink
+  ShowMoreLink,
+  NotificationSectionDescription
 } from '@styles/NotificationSettings.style';
 
 const NotificationSettings = ({
@@ -30,8 +31,9 @@ const NotificationSettings = ({
         <NotificationTitle>
           {translate('placeholders:inputs.notificationSettings')}
         </NotificationTitle>
-        <SeparationLine />
+        <NotificationSectionDescription>{translate('pages:settings.notificationSettingsDescription')}</NotificationSectionDescription>
       </NotificationTitleBox>
+      <SeparationLine className={'margin-bottom'} />
 
       <NotificationItemBlock>
         <NotificationItemWrapper>
@@ -45,7 +47,10 @@ const NotificationSettings = ({
           <Checkbox
             value={notificationSettings?.receiveNotifications}
             label={''}
-            onChange={() => {}}
+            onChange={(e) => {
+              applyNotificationSettings({ ...notificationSettings, receiveNotifications: !notificationSettings?.receiveNotifications });
+              setNotificationSettings({ ...notificationSettings, receiveNotifications: !notificationSettings?.receiveNotifications });
+            }}
           />
         </NotificationItemWrapper>
       </NotificationItemBlock>

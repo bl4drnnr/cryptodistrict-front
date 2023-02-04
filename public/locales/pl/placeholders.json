@@ -19,6 +19,7 @@
     "changeAva": "Zmień avatar",
     "username": "Nazwa użytkownika",
     "usernameError": "Nazwa użytkownika powinna zawierać co najmniej 1 symbol",
-    "usernameDescription": "Nazwa użytkownika powinna być unikalna i będzie widoczna publicznie"
+    "usernameDescription": "Nazwa użytkownika powinna być unikalna i będzie widoczna publicznie",
+    "accCreateAt": "Konto utworzone:"
   }
 }

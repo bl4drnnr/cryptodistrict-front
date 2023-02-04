@@ -12,7 +12,7 @@ export default async (
     const { data } = await Api.get(`/user/account-confirmation/${hash}`);
 
     return res.json(data);
-  } catch (error) {
+  } catch (error: any) {
     return res
       .status((error as AxiosError).response?.status as number)
       .json((error as AxiosError).response?.data);

@@ -11,7 +11,7 @@ export default async (
     const { data } = await Api.post('/user/sign-up', req.body);
 
     return res.json(data);
-  } catch (error) {
+  } catch (error: any) {
     return res
       .status((error as AxiosError).response?.status as number)
       .json((error as AxiosError).response?.data);
