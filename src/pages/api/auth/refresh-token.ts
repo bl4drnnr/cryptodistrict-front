@@ -11,7 +11,10 @@ export default async (
 ) => {
   try {
     const { data, headers } = await Api.get('/auth/refresh', {
-      headers: { 'Cookie': req.headers.cookie || '' }
+      headers: {
+        'Cookie': req.headers.cookie || '',
+        'Application-Authorization': req.headers['application-authorization']
+      }
     });
 
     if (headers['set-cookie']) {
