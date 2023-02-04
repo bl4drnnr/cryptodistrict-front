@@ -8,9 +8,8 @@ export default async (
   res: NextApiResponse
 ) => {
   try {
-    const { data } = await Api.patch('/user/freeze-account', {}, {
-      headers: { 'Application-Authorization': req.headers['application-authorization'] }
-    });
+    const { userNumber } = req.query;
+    const { data } = await Api.get(`/user/get-user/${userNumber}`);
 
     return res.json(data);
   } catch (error: any) {

@@ -27,7 +27,7 @@ export default async (
     }
 
     return res.json(data);
-  } catch (error) {
+  } catch (error: any) {
     return res
       .status((error as AxiosError).response?.status as number)
       .json((error as AxiosError).response?.data);

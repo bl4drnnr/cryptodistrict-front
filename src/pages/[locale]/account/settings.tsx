@@ -1,5 +1,6 @@
 import React from 'react';
 
+import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -26,7 +27,7 @@ import {
 import { useSetPersonalUserSettingsService } from '@services/user-settings/set-user-personal-settings/set-user-personal-settings.service';
 import {
   ButtonWrapper,
-  Container,
+  Container, CreatedAtDate, CreatedAtParagraph,
   Nickname,
   PersonalAccount,
   SettingsContainer,
@@ -166,6 +167,12 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                 </SettingsHeaderItemsWrapper>
               </SettingsPageHeaderSide>
 
+              <SettingsHeaderItemsWrapper>
+                <SettingsHeaderTextWrapper>
+                  <CreatedAtParagraph>{t('placeholders:inputs.accCreateAt')}</CreatedAtParagraph>
+                  <CreatedAtDate>{dayjs(personalInformation?.createdAt).format('YYYY-MM-DD HH:mm:ss')}</CreatedAtDate>
+                </SettingsHeaderTextWrapper>
+              </SettingsHeaderItemsWrapper>
             </SettingsPageHeader>
 
             <SettingsContainer>

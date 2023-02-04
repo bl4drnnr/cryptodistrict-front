@@ -15,6 +15,7 @@ export const SettingsPageHeader = styled.div`
   width: 100%;
   height: 150px;
   display: flex;
+  justify-content: space-between;
 `;
 
 export const SettingsPageHeaderSide = styled.div`
@@ -78,4 +79,14 @@ export const ButtonWrapper = styled.div`
 export const SettingsContent = styled.div`
   width: 100%;
   padding-left: 50px;
+`;
+
+export const CreatedAtParagraph = styled.p`
+  color: rgba(${(props) => props.theme.colors.textColor});
+  text-align: end;
+`;
+
+export const CreatedAtDate = styled.p`
+  color: rgba(${(props) => props.theme.colors.textColor}, .5);
+  
 `;

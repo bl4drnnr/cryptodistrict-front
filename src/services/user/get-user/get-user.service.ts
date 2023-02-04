@@ -2,16 +2,16 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { SignInPayload, SignInResponse } from '@services/signin/signin.interface';
+import { GetUserPayload, GetUserResponse } from '@services/get-user/get-user.interface';
 
-export const useSignInService = () => {
+export const useGetUserService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const signIn = async (payload: SignInPayload)
-    : Promise<SignInResponse> => {
+  const getUser = async (payload: GetUserPayload)
+    : Promise<GetUserResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.post<SignInResponse>('/user/sign-in', payload);
+      const { data } = await ApiClient.get<GetUserResponse>(`/user/get-user/${payload.userNumber}`);
 
       return data;
     } catch (error: any) {
@@ -21,5 +21,5 @@ export const useSignInService = () => {
     }
   };
 
-  return { signIn, loading };
+  return { getUser, loading };
 };
