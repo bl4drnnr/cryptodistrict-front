@@ -10,7 +10,8 @@ export const DarkTheme: ThemeProps = {
     textColor: '255, 255, 255',
     inputBackground: '35, 36, 40',
     disableColor: '255, 255, 255',
-    opposite: '255, 255, 255'
+    opposite: '255, 255, 255',
+    svgIcon: 'invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg) brightness(103%) contrast(101%)'
   }
 };
 

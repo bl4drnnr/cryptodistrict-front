@@ -10,4 +10,5 @@ export interface InputProps {
   onErrorMessage?: string;
   high?: boolean;
   innerPlaceholder?: string;
+  disabled?: boolean;
 }

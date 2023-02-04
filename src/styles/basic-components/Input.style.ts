@@ -40,6 +40,10 @@ export const BasicInput = styled.input`
     outline: none !important;
     border: 1px solid rgba(${(props) => props.theme.colors.primary}, 1);
   }
+  
+  &:disabled {
+    cursor: pointer;
+  }
 `;
 
 export const OnErrorMessage = styled.p`

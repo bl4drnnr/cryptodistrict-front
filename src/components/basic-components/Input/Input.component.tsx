@@ -12,13 +12,15 @@ export const Input = ({
   high,
   innerPlaceholder,
   onErrorMessage,
-  inputDescription
+  inputDescription,
+  disabled
 }: InputProps) => {
   return (
     <Container>
       {(placeholder.length) > 0 && <Placeholder>{placeholder}</Placeholder>}
       <BasicInput
-        className={classNames({ onError, high })}
+        disabled={disabled}
+        className={classNames({ onError, high, disabled })}
         type={type}
         value={value}
         onChange={onChange}

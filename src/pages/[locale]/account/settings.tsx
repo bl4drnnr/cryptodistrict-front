@@ -5,7 +5,6 @@ import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { HydrationProvider, Client } from 'react-hydration-provider';
 
 import NotificationSettings from '@components/account-settings/NotificationSettings/NotificationSettings.component';
 import PersonalInformation from '@components/account-settings/PersonalInformation/PersonalInformation.component';
@@ -89,6 +88,12 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
     }
   }, []);
 
+  const exceptionHandler = async (e: any) => {
+    handleException(e);
+    sessionStorage.removeItem('_at');
+    await handleRedirect('/');
+  };
+
   const fetchUserSettings = async (token: string) => {
     try {
       const { settings } = await getUserSettings({ token });
@@ -97,9 +102,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       setNotificationSettings(settings.notificationSettings);
       setSecuritySettings(settings.securitySettings);
     } catch (e) {
-      handleException(e);
-      sessionStorage.removeItem('_at');
-      await handleRedirect('/');
+      return exceptionHandler(e);
     }
   };
 
@@ -108,7 +111,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       const token = sessionStorage.getItem('_at');
       return await setPersonalUserSettings(token, { ...personalInformation });
     } catch (e) {
-      handleException(e);
+      return exceptionHandler(e);
     }
   };
 
@@ -117,7 +120,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       const token = sessionStorage.getItem('_at');
       const response = await setUserNotificationSettings(token, { ...notificationSettings });
     } catch (e) {
-      handleException(e);
+      return exceptionHandler(e);
     }
   };
 
@@ -126,7 +129,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       const token = sessionStorage.getItem('_at');
       const response = await closeAccount({ token });
     } catch (e) {
-      handleException(e);
+      return exceptionHandler(e);
     }
   };
 
@@ -135,7 +138,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       const token = sessionStorage.getItem('_at');
       const response = await freezeAccount({ token });
     } catch (e) {
-      handleException(e);
+      return exceptionHandler(e);
     }
   };
 
@@ -168,7 +171,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                 </SettingsHeaderItemsWrapper>
               </SettingsPageHeaderSide>
 
-              <SettingsHeaderItemsWrapper>
+              <SettingsHeaderItemsWrapper className={'created-at'}>
                 <SettingsHeaderTextWrapper>
                   <CreatedAtParagraph>{t('placeholders:inputs.accCreateAt')}</CreatedAtParagraph>
                   <CreatedAtDate>{dayjs(personalInformation?.createdAt).format('YYYY-MM-DD')}</CreatedAtDate>
@@ -190,14 +193,14 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                 <ButtonWrapper>
                   <Button
                     text={t('placeholders:inputs.freeze')}
-                    onClick={() => {}}
+                    onClick={() => fetchCloseUserAccount()}
                     danger={true}
                   />
                 </ButtonWrapper>
                 <ButtonWrapper>
                   <Button
                     text={t('placeholders:inputs.close')}
-                    onClick={() => {}}
+                    onClick={() => fetchCloseUserAccount()}
                     fillDanger={true}
                   />
                 </ButtonWrapper>

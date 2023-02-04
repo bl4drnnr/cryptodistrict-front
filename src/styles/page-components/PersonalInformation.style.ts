@@ -2,12 +2,20 @@ import styled from 'styled-components';
 
 export const PersonalInformationContainer = styled.div`
   display: flex;
+  @media only screen and (max-width: 780px) {
+    display: block;
+  }
 `;
 
 export const PublicInfoTitleBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 780px) {
+    display: block;
+    text-align: center;
+  }
 `;
 
 export const PublicInfoTitle = styled.h1`
@@ -24,6 +32,10 @@ export const FieldsContainer = styled.div`
   }
   &.no-line {
     border: none;
+  }
+
+  @media only screen and (max-width: 780px) {
+    width: 100%;
   }
 `;
 
@@ -42,15 +54,25 @@ export const ChangeAvatar = styled.div`
   bottom: 0;
   right: 0;
   position: absolute;
+  @media only screen and (max-width: 780px) {
+    position: relative;
+  }
 `;
 
 export const PersonalInfoItemsWrapper = styled.div`
   &.fields {
     width: 75%;
+
+    @media only screen and (max-width: 780px) {
+      width: 100%;
+    }
   }
   
   &.end {
     text-align: end;
+    @media only screen and (max-width: 780px) {
+      text-align: center;
+    }
     .ava {
       border-radius: 50%;
     }

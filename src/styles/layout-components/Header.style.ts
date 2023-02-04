@@ -30,9 +30,11 @@ export const Buttons = styled.div`
   display: flex;
   width: 33%;
   @media only screen and (max-width: 780px) {
-    float: right;
+    align-items: center;
+    display: flex;
+    justify-content: center;
     width: 100%;
-  } 
+  }
 `;
 
 export const Links = styled.div`
@@ -55,7 +57,9 @@ export const Link = styled.h3`
 
 export const Button = styled.div`
   &:first-child {
-    margin-left: auto;
+    @media only screen and (min-width: 780px) {
+      margin-left: auto;
+    }
   }
   width: 90px;
   height: 100%;

@@ -9,6 +9,7 @@ export interface IPersonalInformation {
   username: string;
   publicEmail: boolean;
   createdAt: string;
+  email: string;
 }
 
 export interface INotificationSettings {
