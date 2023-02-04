@@ -88,5 +88,5 @@ export const CreatedAtParagraph = styled.p`
 
 export const CreatedAtDate = styled.p`
   color: rgba(${(props) => props.theme.colors.textColor}, .5);
-  
+  text-align: end;
 `;

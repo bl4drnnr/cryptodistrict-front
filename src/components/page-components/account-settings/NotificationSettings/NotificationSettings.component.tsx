@@ -44,14 +44,16 @@ const NotificationSettings = ({
           >Show more</ShowMoreLink>
         </NotificationItemWrapper>
         <NotificationItemWrapper>
-          <Checkbox
-            value={notificationSettings?.receiveNotifications}
-            label={''}
-            onChange={(e) => {
-              applyNotificationSettings({ ...notificationSettings, receiveNotifications: !notificationSettings?.receiveNotifications });
-              setNotificationSettings({ ...notificationSettings, receiveNotifications: !notificationSettings?.receiveNotifications });
-            }}
-          />
+          {notificationSettings && (
+            <Checkbox
+              value={notificationSettings.receiveNotifications}
+              label={''}
+              onChange={(e) => {
+                applyNotificationSettings({ ...notificationSettings, receiveNotifications: !notificationSettings.receiveNotifications });
+                setNotificationSettings({ ...notificationSettings, receiveNotifications: !notificationSettings.receiveNotifications });
+              }}
+            />
+          )}
         </NotificationItemWrapper>
       </NotificationItemBlock>
 

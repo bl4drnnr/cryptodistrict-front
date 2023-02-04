@@ -53,7 +53,7 @@ const Account = ({ locale }: AccountProps) => {
 
   const checkUser = async (token: string) => {
     try {
-      return await refreshToken();
+      return await refreshToken({ token });
     } catch (e) {
       handleException(e);
       sessionStorage.removeItem('_at');

@@ -6,7 +6,7 @@
     "account-not-confirmed": "Account has not been confirmed"
   },
   "generalError": {
-
+    "unauthorized": "Unauthorized"
   },
   "unknownError": {
     "unknownError": "Unknown error"
