@@ -5,6 +5,9 @@ const nextConfig = {
     styledComponents: true,
   },
   swcMinify: true,
+  images: {
+    domains: ['chart.googleapis.com']
+  }
 };
 
 module.exports = nextConfig;

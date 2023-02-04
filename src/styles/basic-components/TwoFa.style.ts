@@ -32,6 +32,11 @@ export const InputTwoFa = styled.input`
   &::-webkit-inner-spin-button {
     display: none;
   }
+  
+  @media only screen and (max-width: 780px) {
+    height: 3rem;
+    width: 3rem;
+  }
 `;
 
 export const Placeholder = styled.p`
