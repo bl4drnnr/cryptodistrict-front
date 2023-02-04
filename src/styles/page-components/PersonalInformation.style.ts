@@ -10,6 +10,7 @@ export const PublicInfoTitleBox = styled.div`
 
 export const PublicInfoTitle = styled.h1`
   color: rgb(${(props) => props.theme.colors.textColor});
+  padding-bottom: 10px;
 `;
 
 export const FieldsContainer = styled.div`

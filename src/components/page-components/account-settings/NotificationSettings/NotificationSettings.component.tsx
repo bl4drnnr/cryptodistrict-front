@@ -45,7 +45,10 @@ const NotificationSettings = ({
           <Checkbox
             value={notificationSettings?.receiveNotifications}
             label={''}
-            onChange={() => {}}
+            onChange={(e) => {
+              applyNotificationSettings({ ...notificationSettings, receiveNotifications: !notificationSettings?.receiveNotifications });
+              setNotificationSettings({ ...notificationSettings, receiveNotifications: !notificationSettings?.receiveNotifications });
+            }}
           />
         </NotificationItemWrapper>
       </NotificationItemBlock>

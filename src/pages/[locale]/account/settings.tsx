@@ -110,7 +110,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
     }
   };
 
-  const applyNotificationSettings = async () => {
+  const applyNotificationSettings = async (userNotificationSettings: INotificationSettings) => {
     try {
       const token = sessionStorage.getItem('_at');
       const response = await setUserNotificationSettings(token, { ...notificationSettings });

@@ -13,7 +13,8 @@ import {
   PersonalInfoItemsWrapper,
   PersonalInformationContainer,
   PublicInfoTitle,
-  PublicInfoTitleBox, SeparationLine
+  PublicInfoTitleBox,
+  SeparationLine
 } from '@styles/PersonalInformation.style';
 
 export const PersonalInformation = ({
@@ -76,6 +77,7 @@ export const PersonalInformation = ({
               value={personalInformation?.bio}
               placeholder={translate('pages:signup.bio')}
               onChange={(e) => setPersonalInformation({ ...personalInformation, bio: e.target.value })}
+              inputDescription={translate('pages:signup.tellAbout')}
             />
             <SeparationLine />
             <Checkbox
@@ -93,7 +95,6 @@ export const PersonalInformation = ({
               />
             </InputWrapper>
           </FieldsContainer>
-          {/*{'pages:signup.tellAbout'}*/}
         </PersonalInfoItemsWrapper>
         <PersonalInfoItemsWrapper className={'end changeAva'}>
           <AvaWrapper>
