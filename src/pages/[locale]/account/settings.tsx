@@ -5,7 +5,6 @@ import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { HydrationProvider, Client } from 'react-hydration-provider';
 
 import NotificationSettings from '@components/account-settings/NotificationSettings/NotificationSettings.component';
 import PersonalInformation from '@components/account-settings/PersonalInformation/PersonalInformation.component';
@@ -190,14 +189,14 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                 <ButtonWrapper>
                   <Button
                     text={t('placeholders:inputs.freeze')}
-                    onClick={() => {}}
+                    onClick={() => fetchCloseUserAccount()}
                     danger={true}
                   />
                 </ButtonWrapper>
                 <ButtonWrapper>
                   <Button
                     text={t('placeholders:inputs.close')}
-                    onClick={() => {}}
+                    onClick={() => fetchCloseUserAccount()}
                     fillDanger={true}
                   />
                 </ButtonWrapper>

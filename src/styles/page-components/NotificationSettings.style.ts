@@ -4,6 +4,11 @@ export const NotificationTitleBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 780px) {
+    display: block;
+    text-align: center;
+  }
 `;
 
 export const NotificationTitle = styled.h1`

@@ -4,6 +4,11 @@ export const SecurityTitleBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  @media only screen and (max-width: 780px) {
+    display: block;
+    text-align: center;
+  }
 `;
 
 export const SecurityTitle = styled.h1`
@@ -26,9 +31,13 @@ export const SecurityItemBlock = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 100px;
+  min-height: 100px;
   align-items: center;
   border-bottom: 1px solid rgba(${(props) => props.theme.colors.opposite}, .25);
+  
+  @media only screen and (max-width: 780px) {
+    display: block;
+  }
 `;
 
 export const ItemTitle = styled.h2`
@@ -43,6 +52,11 @@ export const ItemDescription = styled.p`
 export const SecurityItemWrapper = styled.div`
   &.button {
     width: 200px;
+    
+    @media only screen and (max-width: 780px) {
+      width: 100%;
+      margin: 15px 0;
+    }
   }
 `;
 

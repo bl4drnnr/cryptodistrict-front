@@ -1,5 +1,6 @@
 import React from 'react';
 
+import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -10,14 +11,22 @@ import { useHandleException } from '@hooks/useHandleException.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { useCheckTokenService } from '@services/check-token/check-token.service';
+import { IPersonalInformation } from '@services/get-user-settings/get-user-settings.interface';
 import { useRefreshTokenService } from '@services/refresh-token/refresh-token.service';
 import {
-  AccountContainer, AccountContentContainer, AccountInfo, AccountInfoContainer,
-  Container, FullName, Nickname,
-  UserAssetsContainer, UserBio,
+  AccountContainer,
+  AccountContentContainer,
+  AccountInfo,
+  AccountInfoContainer,
+  Container,
+  CreatedAtParagraph,
+  FullName, Nickname,
+  UserBio,
   UserInfoContainer,
-  UserProfilePicture, UserSideBar,
-  Wrapper
+  UserProfilePicture,
+  UserSideBar,
+  CreatedAtDate,
+  Wrapper, AccountCreatedAtContainer, UserTitle, UserProfilePictureWrapper
 } from '@styles/account.style';
 
 interface AccountProps {
@@ -33,15 +42,19 @@ const Account = ({ locale }: AccountProps) => {
   const { loading: l2, refreshToken } = useRefreshTokenService();
   const { handleException } = useHandleException();
 
+  const [userData, setUserData] = React.useState<IPersonalInformation>();
+
   React.useEffect(() => {
     if (fetchTokenChecking.current) {
       fetchTokenChecking.current = false;
       const token = sessionStorage.getItem('_at');
 
-      if (!token) handleRedirect('/').then();
-      else {
+      if (!token) {
+        handleRedirect('/').then();
+      } else {
         checkUser(token).then((res) => {
-          //
+          sessionStorage.setItem('_at', res!._at);
+          setUserData(res!.user);
         });
       }
     }
@@ -72,14 +85,23 @@ const Account = ({ locale }: AccountProps) => {
             <AccountContainer>
               <UserInfoContainer>
                 <UserProfilePicture>
-                  <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={225} height={225}/>
+                  <UserProfilePictureWrapper>
+                    <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={225} height={225}/>
+                    <UserTitle>
+                      {userData?.title}
+                    </UserTitle>
+                  </UserProfilePictureWrapper>
                   <AccountInfoContainer>
                     <AccountInfo>
-                      <Nickname>bl4drnnr</Nickname>
-                      <FullName>aka Mikhail Bahdashych</FullName>
+                      <Nickname>{userData?.username}</Nickname>
+                      <FullName>aka {userData?.firstName} {userData?.lastName}</FullName>
                     </AccountInfo>
-                    <UserBio>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda cumque dolor dolorum exercitationem laborum maiores quia repudiandae sint! Adipisci beatae cum doloribus eos est fugiat inventore minus pariatur voluptatibus. Ad cumque dolorum explicabo facere molestias repellat ut velit voluptate. Adipisci amet asperiores itaque labore praesentium sint veniam vitae voluptatibus?</UserBio>
+                    <UserBio>{userData?.bio}</UserBio>
                   </AccountInfoContainer>
+                  <AccountCreatedAtContainer>
+                    <CreatedAtParagraph>{t('placeholders:inputs.accCreateAt')}</CreatedAtParagraph>
+                    <CreatedAtDate>{dayjs(userData?.createdAt).format('YYYY-MM-DD')}</CreatedAtDate>
+                  </AccountCreatedAtContainer>
                 </UserProfilePicture>
               </UserInfoContainer>
 

@@ -22,7 +22,6 @@ export const AccountContainer = styled.div`
 `;
 
 export const UserInfoContainer = styled.div`
-  height: 255px;
   width: 100%;
   
   @media screen and (max-width: 520px) {
@@ -41,6 +40,8 @@ export const UserAssetsContainer = styled.div`
 export const UserProfilePicture = styled.div`
   display: flex;
   position: relative;
+  border-bottom: 1px solid rgb(${(props) => props.theme.colors.opposite}, .5);
+  margin-bottom: 30px;
   
   .ava {
     border-radius: 50%;
@@ -49,6 +50,7 @@ export const UserProfilePicture = styled.div`
 
 export const AccountInfoContainer = styled.div`
   padding: 0 30px;
+  width: auto;
 `;
 
 export const AccountInfo = styled.div`
@@ -67,7 +69,6 @@ export const FullName = styled.p`
 `;
 
 export const UserBio = styled.p`
-  max-width: 50%;
   opacity: .5;
   color: rgb(${(props) => props.theme.colors.textColor});
   padding-top: 15px;
@@ -79,4 +80,29 @@ export const AccountContentContainer = styled.div`
 export const UserSideBar = styled.div`
   width: 225px;
   height: 100%;
+`;
+
+export const UserProfilePictureWrapper = styled.div`
+  border-right: 1px solid rgb(${(props) => props.theme.colors.opposite}, .5);
+  padding: 15px;
+`;
+
+export const AccountCreatedAtContainer = styled.div`
+  min-width: 200px;
+`;
+
+export const CreatedAtParagraph = styled.p`
+  color: rgba(${(props) => props.theme.colors.textColor});
+  text-align: end;
+`;
+
+export const CreatedAtDate = styled.p`
+  color: rgba(${(props) => props.theme.colors.textColor}, .5);
+  text-align: end;
+`;
+
+export const UserTitle = styled.p`
+  color: rgba(${(props) => props.theme.colors.textColor}, .5);
+  text-align: center;
+  margin: 10px 0;
 `;
