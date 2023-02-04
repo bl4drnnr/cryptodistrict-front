@@ -12,6 +12,7 @@ import {
   InputWrapper,
   PersonalInfoItemsWrapper,
   PersonalInformationContainer,
+  PersonalInfoSectionDescription,
   PublicInfoTitle,
   PublicInfoTitleBox,
   SeparationLine
@@ -29,8 +30,9 @@ export const PersonalInformation = ({
         <PublicInfoTitle>
           {translate('placeholders:inputs.personalInformation')}
         </PublicInfoTitle>
-        <SeparationLine />
+        <PersonalInfoSectionDescription>{translate('pages:settings.personalInfoDescription')}</PersonalInfoSectionDescription>
       </PublicInfoTitleBox>
+      <SeparationLine className={'margin-bottom'} />
 
       <PersonalInformationContainer>
         <PersonalInfoItemsWrapper className={'fields'}>

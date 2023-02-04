@@ -10,7 +10,8 @@ import {
   SecurityItemBlock,
   SecurityTitle,
   SecurityTitleBox,
-  SecurityItemWrapper
+  SecurityItemWrapper,
+  SecuritySectionDescription
 } from '@styles/SecuritySettings.style';
 
 const SecuritySettings = ({ translate, securitySettings }: SecuritySettingsProps) => {
@@ -25,8 +26,9 @@ const SecuritySettings = ({ translate, securitySettings }: SecuritySettingsProps
         <SecurityTitle>
           {translate('placeholders:inputs.securitySettings')}
         </SecurityTitle>
-        <SeparationLine />
+        <SecuritySectionDescription>{translate('pages:settings.securitySettingDescription')}</SecuritySectionDescription>
       </SecurityTitleBox>
+      <SeparationLine className={'margin-bottom'} />
 
       <SecurityItemBlock>
         <SecurityItemWrapper>

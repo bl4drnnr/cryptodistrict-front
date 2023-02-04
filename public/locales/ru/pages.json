@@ -136,6 +136,9 @@
     "changeEmailDescription": "Будьте осторожны! Вы можете изменить адрес электронной почты только один раз.",
     "changeEmailButton": "Изменить почту",
     "receiveNotificationsTitle": "Получать уведомления",
-    "receiveNotificationsDescription": "Получать уведомления о наиболее важных событиях на вашу электронную почту."
+    "receiveNotificationsDescription": "Получать уведомления о наиболее важных событиях на вашу электронную почту.",
+    "personalInfoDescription": "Управляйте настройками общедоступной личной информации",
+    "securitySettingDescription": "Управляйте безопасностью своего аккаунта",
+    "notificationSettingsDescription": "Управляйте настройками уведомлений"
   }
 }

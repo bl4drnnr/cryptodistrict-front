@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const NotificationTitleBox = styled.div`
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const NotificationTitle = styled.h1`
@@ -15,6 +17,9 @@ export const SeparationLine = styled.div`
   opacity: .5;
   background-color: rgb(${(props) => props.theme.colors.opposite});
   margin-top: 15px;
+  &.margin-bottom {
+    margin-bottom: 50px;
+  }
 `;
 
 
@@ -51,4 +56,8 @@ export const ShowMoreLink = styled.p`
 
 export const ShowMoreContainer = styled.div`
   padding: 20px;
+`;
+
+export const NotificationSectionDescription = styled.p`
+  color: rgb(${(props) => props.theme.colors.textColor}, .75);
 `;

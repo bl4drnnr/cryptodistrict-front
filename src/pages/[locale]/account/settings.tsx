@@ -161,7 +161,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
 
                 <SettingsHeaderItemsWrapper>
                   <SettingsHeaderTextWrapper>
-                    <Nickname>bl4drnnr</Nickname>
+                    <Nickname>{personalInformation?.username} ({securitySettings?.email})</Nickname>
                     <PersonalAccount>{t('pages:settings.yourPersonalAcc')}</PersonalAccount>
                   </SettingsHeaderTextWrapper>
                 </SettingsHeaderItemsWrapper>

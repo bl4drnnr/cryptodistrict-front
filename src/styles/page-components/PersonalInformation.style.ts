@@ -5,7 +5,9 @@ export const PersonalInformationContainer = styled.div`
 `;
 
 export const PublicInfoTitleBox = styled.div`
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const PublicInfoTitle = styled.h1`
@@ -64,4 +66,11 @@ export const SeparationLine = styled.div`
   opacity: .5;
   background-color: rgb(${(props) => props.theme.colors.opposite});
   margin-top: 15px;
+  &.margin-bottom {
+    margin-bottom: 50px;
+  }
+`;
+
+export const PersonalInfoSectionDescription = styled.p`
+  color: rgb(${(props) => props.theme.colors.textColor}, .75);
 `;

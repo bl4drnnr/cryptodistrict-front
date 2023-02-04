@@ -135,6 +135,9 @@
     "changeEmailDescription": "Uważaj! Możesz zmienić e-mail tylko raz.",
     "changeEmailButton": "Zmień e-mail",
     "receiveNotificationsTitle": "Odbieraj powiadomienia",
-    "receiveNotificationsDescription": "Otrzymuj powiadomienia o najważniejszych wydarzeniach na swój e-mail."
+    "receiveNotificationsDescription": "Otrzymuj powiadomienia o najważniejszych wydarzeniach na swój e-mail.",
+    "personalInfoDescription": "Zarządzaj ustawieniami widocznych publicznie danych osobowych",
+    "securitySettingDescription": "Zarządzaj bezpieczeństwem swojego konta",
+    "notificationSettingsDescription": "Zarządzaj ustawieniami powiadomień"
   }
 }

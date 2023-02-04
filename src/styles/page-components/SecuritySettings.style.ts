@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const SecurityTitleBox = styled.div`
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const SecurityTitle = styled.h1`
@@ -15,6 +17,9 @@ export const SeparationLine = styled.div`
   opacity: .5;
   background-color: rgb(${(props) => props.theme.colors.opposite});
   margin-top: 15px;
+  &.margin-bottom {
+    margin-bottom: 50px;
+  }
 `;
 
 export const SecurityItemBlock = styled.div`
@@ -39,4 +44,8 @@ export const SecurityItemWrapper = styled.div`
   &.button {
     width: 200px;
   }
+`;
+
+export const SecuritySectionDescription = styled.p`
+  color: rgb(${(props) => props.theme.colors.textColor}, .75);
 `;
