@@ -22,7 +22,8 @@ import {
   AccountInfoContainer,
   Container,
   CreatedAtParagraph,
-  FullName, Nickname,
+  FullName,
+  Nickname,
   UserBio,
   UserInfoContainer,
   UserProfilePicture,
@@ -32,7 +33,8 @@ import {
   AccountCreatedAtContainer,
   UserTitle,
   UserProfilePictureWrapper,
-  ContactField, ContactIcon
+  ContactField,
+  ContactIcon
 } from '@styles/account.style';
 
 interface AccountProps {

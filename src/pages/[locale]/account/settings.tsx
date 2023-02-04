@@ -151,7 +151,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       <Head>
         <title>Cryptodistrict | {t('pages:settings.title')}</title>
       </Head>
-      <DefaultLayout locale={locale} translate={t} loading={l0 || l1 || l2 || l3}>
+      <DefaultLayout locale={locale} translate={t} loading={l0 || l1 || l2 || l3 || l4}>
         <Container>
           <Wrapper>
 
@@ -222,6 +222,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                   />
                 ) : (
                   <SecuritySettings
+                    locale={locale}
                     translate={t}
                     securitySettings={securitySettings}
                   />
