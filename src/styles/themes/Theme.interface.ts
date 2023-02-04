@@ -9,5 +9,6 @@ export interface ThemeProps {
     inputBackground: string;
     disableColor: string;
     opposite: string;
+    svgIcon: string;
   }
 }

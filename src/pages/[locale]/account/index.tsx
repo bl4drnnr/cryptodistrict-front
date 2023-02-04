@@ -7,11 +7,14 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { Button } from '@components/Button/Button.component';
+import { Input } from '@components/Input/Input.component';
 import { useHandleException } from '@hooks/useHandleException.hook';
+import { useNotificationMessage } from '@hooks/useShowNotificationMessage.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { IPersonalInformation } from '@services/get-user-settings/get-user-settings.interface';
 import { useRefreshTokenService } from '@services/refresh-token/refresh-token.service';
+import { NotificationType } from '@store/global/global.state';
 import {
   AccountContainer,
   AccountContentContainer,
@@ -25,7 +28,11 @@ import {
   UserProfilePicture,
   UserSideBar,
   CreatedAtDate,
-  Wrapper, AccountCreatedAtContainer, UserTitle, UserProfilePictureWrapper
+  Wrapper,
+  AccountCreatedAtContainer,
+  UserTitle,
+  UserProfilePictureWrapper,
+  ContactField, ContactIcon
 } from '@styles/account.style';
 
 interface AccountProps {
@@ -39,6 +46,7 @@ const Account = ({ locale }: AccountProps) => {
   const fetchTokenChecking = React.useRef(true);
   const { loading: l1, refreshToken } = useRefreshTokenService();
   const { handleException } = useHandleException();
+  const { showNotificationMessage } = useNotificationMessage();
 
   const [userData, setUserData] = React.useState<IPersonalInformation>();
 
@@ -56,6 +64,14 @@ const Account = ({ locale }: AccountProps) => {
       });
     }
   }, []);
+
+  const copyToClipboard = async (text: string) => {
+    await navigator.clipboard.writeText(text);
+    showNotificationMessage({
+      type: NotificationType.SUCCESS,
+      content: t('placeholders:inputs.copiedToClipboard'),
+    });
+  };
 
   const handleRedirect = async (path: string) => {
     await router.push(`/${locale}${path}`);
@@ -81,25 +97,69 @@ const Account = ({ locale }: AccountProps) => {
           <Wrapper>
             <AccountContainer>
               <UserInfoContainer>
-                <UserProfilePicture>
-                  <UserProfilePictureWrapper>
-                    <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={225} height={225}/>
-                    <UserTitle>
-                      {userData?.title}
-                    </UserTitle>
-                  </UserProfilePictureWrapper>
-                  <AccountInfoContainer>
-                    <AccountInfo>
-                      <Nickname>{userData?.username}</Nickname>
-                      <FullName>aka {userData?.firstName} {userData?.lastName}</FullName>
-                    </AccountInfo>
-                    <UserBio>{userData?.bio}</UserBio>
-                  </AccountInfoContainer>
-                  <AccountCreatedAtContainer>
-                    <CreatedAtParagraph>{t('placeholders:inputs.accCreateAt')}</CreatedAtParagraph>
-                    <CreatedAtDate>{dayjs(userData?.createdAt).format('YYYY-MM-DD')}</CreatedAtDate>
-                  </AccountCreatedAtContainer>
-                </UserProfilePicture>
+                {userData && (
+                  <UserProfilePicture>
+                    <UserProfilePictureWrapper>
+                      <Image className={'ava'} src={'/img/testava.jpg'} alt={'ava'} width={225} height={225}/>
+                      <UserTitle>
+                        {userData.title}
+                      </UserTitle>
+                      <ContactField
+                        onClick={() => copyToClipboard(userData.twitter)}
+                      >
+                        <ContactIcon>
+                          <Image src={'/img/twitter.svg'} width={32} height={32}  alt={'t'} />
+                        </ContactIcon>
+                        <Input
+                          disabled={true}
+                          value={userData.twitter}
+                          placeholder={''}
+                          onChange={() => {}}
+                        />
+                      </ContactField>
+                      <ContactField
+                        onClick={() => copyToClipboard(userData.linkedIn)}
+                      >
+                        <ContactIcon>
+                          <Image src={'/img/linkedin.svg'} width={32} height={32}  alt={'l'} />
+                        </ContactIcon>
+                        <Input
+                          disabled={true}
+                          value={userData.linkedIn}
+                          placeholder={''}
+                          onChange={() => {}}
+                        />
+                      </ContactField>
+                      <ContactField
+                        onClick={() => copyToClipboard(userData.personalWebsite)}
+                      >
+                        <ContactIcon>
+                          <Image src={'/img/tag.svg'} width={32} height={32}  alt={'w'} />
+                        </ContactIcon>
+                        <Input
+                          disabled={true}
+                          value={userData.personalWebsite}
+                          placeholder={''}
+                          onChange={() => {}}
+                        />
+                      </ContactField>
+                    </UserProfilePictureWrapper>
+                    <AccountInfoContainer>
+                      <AccountInfo>
+                        <Nickname>{userData.username}</Nickname>
+                        <FullName>aka {userData.firstName} {userData.lastName}</FullName>
+                        {userData?.email && (
+                          <FullName>({userData?.email})</FullName>
+                        )}
+                      </AccountInfo>
+                      <UserBio>{userData.bio}</UserBio>
+                    </AccountInfoContainer>
+                    <AccountCreatedAtContainer>
+                      <CreatedAtParagraph>{t('placeholders:inputs.accCreateAt')}</CreatedAtParagraph>
+                      <CreatedAtDate>{dayjs(userData.createdAt).format('YYYY-MM-DD')}</CreatedAtDate>
+                    </AccountCreatedAtContainer>
+                  </UserProfilePicture>
+                )}
               </UserInfoContainer>
 
               <AccountContentContainer>

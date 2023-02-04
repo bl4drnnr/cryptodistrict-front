@@ -171,7 +171,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
                 </SettingsHeaderItemsWrapper>
               </SettingsPageHeaderSide>
 
-              <SettingsHeaderItemsWrapper>
+              <SettingsHeaderItemsWrapper className={'created-at'}>
                 <SettingsHeaderTextWrapper>
                   <CreatedAtParagraph>{t('placeholders:inputs.accCreateAt')}</CreatedAtParagraph>
                   <CreatedAtDate>{dayjs(personalInformation?.createdAt).format('YYYY-MM-DD')}</CreatedAtDate>

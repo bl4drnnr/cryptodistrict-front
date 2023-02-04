@@ -61,10 +61,13 @@ export const PersonalAccount = styled.p`
 
 export const SettingsHeaderItemsWrapper = styled.div`
   display: flex;
-  height: 100%;
   padding: 0 15px;
   align-items: center;
   justify-content: center;
+
+  &.created-at {
+    position: relative;
+  }
 `;
 
 export const UserProfilePicture = styled.div`

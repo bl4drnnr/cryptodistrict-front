@@ -59,12 +59,12 @@ export const AccountInfo = styled.div`
 `;
 
 export const Nickname = styled.h1`
-  margin-right: 15px;
   color: rgb(${(props) => props.theme.colors.textColor});
 `;
 
 export const FullName = styled.p`
   opacity: .75;
+  margin: 0 5px;
   color: rgb(${(props) => props.theme.colors.textColor});
 `;
 
@@ -105,4 +105,15 @@ export const UserTitle = styled.p`
   color: rgba(${(props) => props.theme.colors.textColor}, .5);
   text-align: center;
   margin: 10px 0;
+`;
+
+export const ContactField = styled.div`
+  display: flex;
+  margin-top: 15px;
+  cursor: pointer;
+`;
+
+export const ContactIcon = styled.div`
+  margin: 0 5px;
+  filter: ${(props) => props.theme.colors.svgIcon};
 `;
