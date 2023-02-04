@@ -49,14 +49,13 @@ const Account = ({ locale }: AccountProps) => {
       fetchTokenChecking.current = false;
       const token = sessionStorage.getItem('_at');
 
-      if (!token) {
-        handleRedirect('/').then();
-      } else {
-        checkUser(token).then((res) => {
-          sessionStorage.setItem('_at', res!._at);
-          setUserData(res!.user);
-        });
-      }
+      if (!token) handleRedirect('/').then();
+      else checkUser(token).then((res) => {
+        if (res) {
+          sessionStorage.setItem('_at', res._at);
+          setUserData(res.user);
+        }
+      });
     }
   }, []);
 

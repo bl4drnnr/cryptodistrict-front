@@ -88,6 +88,12 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
     }
   }, []);
 
+  const exceptionHandler = async (e: any) => {
+    handleException(e);
+    sessionStorage.removeItem('_at');
+    await handleRedirect('/');
+  };
+
   const fetchUserSettings = async (token: string) => {
     try {
       const { settings } = await getUserSettings({ token });
@@ -96,9 +102,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       setNotificationSettings(settings.notificationSettings);
       setSecuritySettings(settings.securitySettings);
     } catch (e) {
-      handleException(e);
-      sessionStorage.removeItem('_at');
-      await handleRedirect('/');
+      return exceptionHandler(e);
     }
   };
 
@@ -107,7 +111,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       const token = sessionStorage.getItem('_at');
       return await setPersonalUserSettings(token, { ...personalInformation });
     } catch (e) {
-      handleException(e);
+      return exceptionHandler(e);
     }
   };
 
@@ -116,7 +120,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       const token = sessionStorage.getItem('_at');
       const response = await setUserNotificationSettings(token, { ...notificationSettings });
     } catch (e) {
-      handleException(e);
+      return exceptionHandler(e);
     }
   };
 
@@ -125,7 +129,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       const token = sessionStorage.getItem('_at');
       const response = await closeAccount({ token });
     } catch (e) {
-      handleException(e);
+      return exceptionHandler(e);
     }
   };
 
@@ -134,7 +138,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
       const token = sessionStorage.getItem('_at');
       const response = await freezeAccount({ token });
     } catch (e) {
-      handleException(e);
+      return exceptionHandler(e);
     }
   };
 
