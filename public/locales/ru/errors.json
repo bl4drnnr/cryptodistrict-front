@@ -3,11 +3,11 @@
     "user-already-exists": "Пользователь существует",
     "Internal server error": "Internal server error",
     "wrong-credentials": "Неправильные учетные данные",
-    "account-not-confirmed": "Почта не подтверждена"
+    "account-not-confirmed": "Почта не подтверждена",
+    "unauthorized": "Неавторизовация",
+    "session-has-expired": "Срок действия сеанса истек"
   },
-  "generalError": {
-    "unauthorized": "Unauthorized"
-  },
+  "generalError": {},
   "unknownError": {
     "unknownError": "Неизвестная ошибка"
   }

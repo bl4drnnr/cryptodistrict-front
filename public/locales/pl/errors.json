@@ -3,11 +3,11 @@
     "user-already-exists": "Użytkownik już istnieje",
     "Internal server error": "Internal server error",
     "wrong-credentials": "Niepoprawne dane wejściowe",
-    "account-not-confirmed": "Konto nie zostało potwierdzone"
+    "account-not-confirmed": "Konto nie zostało potwierdzone",
+    "unauthorized": "Nieautoryzocyja",
+    "session-has-expired": "Sesja wygasła"
   },
-  "generalError": {
-    "unauthorized": "Unauthorized"
-  },
+  "generalError": {},
   "unknownError": {
     "unknownError": "Nieznany błąd"
   }

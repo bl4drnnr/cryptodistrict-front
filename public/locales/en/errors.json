@@ -3,11 +3,11 @@
     "user-already-exists": "User already exists",
     "Internal server error": "Internal server error",
     "wrong-credentials": "Wrong credentials",
-    "account-not-confirmed": "Account has not been confirmed"
+    "account-not-confirmed": "Account has not been confirmed",
+    "unauthorized": "Unauthorized",
+    "session-has-expired": "Session has expired"
   },
-  "generalError": {
-    "unauthorized": "Unauthorized"
-  },
+  "generalError": {},
   "unknownError": {
     "unknownError": "Unknown error"
   }
