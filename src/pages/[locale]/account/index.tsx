@@ -10,7 +10,6 @@ import { Button } from '@components/Button/Button.component';
 import { useHandleException } from '@hooks/useHandleException.hook';
 import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
-import { useCheckTokenService } from '@services/check-token/check-token.service';
 import { IPersonalInformation } from '@services/get-user-settings/get-user-settings.interface';
 import { useRefreshTokenService } from '@services/refresh-token/refresh-token.service';
 import {
@@ -38,8 +37,7 @@ const Account = ({ locale }: AccountProps) => {
   const router = useRouter();
 
   const fetchTokenChecking = React.useRef(true);
-  const { loading: l1, checkToken } = useCheckTokenService();
-  const { loading: l2, refreshToken } = useRefreshTokenService();
+  const { loading: l1, refreshToken } = useRefreshTokenService();
   const { handleException } = useHandleException();
 
   const [userData, setUserData] = React.useState<IPersonalInformation>();
@@ -78,7 +76,7 @@ const Account = ({ locale }: AccountProps) => {
       <Head>
         <title>Cryptodistrict | {t('pages:account.title')}</title>
       </Head>
-      <DefaultLayout locale={locale} translate={t} loading={l1 || l2}>
+      <DefaultLayout locale={locale} translate={t} loading={l1}>
         <Container>
           <Wrapper>
             <AccountContainer>
