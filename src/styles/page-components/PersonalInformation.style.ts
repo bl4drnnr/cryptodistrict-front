@@ -48,9 +48,6 @@ export const PersonalInfoItemsWrapper = styled.div`
   &.fields {
     width: 75%;
   }
-  &.changeAva {
-    width: 25%;
-  }
   
   &.end {
     text-align: end;
@@ -73,4 +70,10 @@ export const SeparationLine = styled.div`
 
 export const PersonalInfoSectionDescription = styled.p`
   color: rgb(${(props) => props.theme.colors.textColor}, .75);
+`;
+
+export const TitleWrapper = styled.p`
+  color: rgb(${(props) => props.theme.colors.textColor}, .75);
+  text-align: center;
+  margin-top: 15px;
 `;

@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { HydrationProvider, Client } from 'react-hydration-provider';
 
 import NotificationSettings from '@components/account-settings/NotificationSettings/NotificationSettings.component';
 import PersonalInformation from '@components/account-settings/PersonalInformation/PersonalInformation.component';
@@ -105,7 +106,7 @@ const AccountSettings = ({ locale }: AccountSettingsProps) => {
   const applyPersonalInformation = async () => {
     try {
       const token = sessionStorage.getItem('_at');
-      await setPersonalUserSettings(token, { ...personalInformation });
+      return await setPersonalUserSettings(token, { ...personalInformation });
     } catch (e) {
       handleException(e);
     }
