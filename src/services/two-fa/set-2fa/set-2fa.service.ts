@@ -7,12 +7,12 @@ import { Set2FaPayload, Set2FaResponse } from '@services/set-2fa/set-2fa.interfa
 export const useSet2FaService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const set2Fa = async (payload: Set2FaPayload)
+  const set2Fa = async (token: string | null,payload: Set2FaPayload)
     : Promise<Set2FaResponse> => {
     try {
       setLoading(true);
       const { data } = await ApiClient.post<Set2FaResponse>('/twofactor/set', payload, {
-        headers: { 'Application-Authorization': `Bearer ${payload.token}` }
+        headers: { 'Application-Authorization': `Bearer ${token}` }
       });
 
       return data;

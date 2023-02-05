@@ -7,12 +7,12 @@ import { Remove2FaPayload, Remove2FaResponse } from '@services/remove-2fa/remove
 export const useRemove2FaService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const remove2Fa = async (payload: Remove2FaPayload)
+  const remove2Fa = async (token: string | null, payload: Remove2FaPayload)
     : Promise<Remove2FaResponse> => {
     try {
       setLoading(true);
       const { data } = await ApiClient.post<Remove2FaResponse>('/twofactor/remove', payload, {
-        headers: { 'Application-Authorization': `Bearer ${payload.token}` }
+        headers: { 'Application-Authorization': `Bearer ${token}` }
       });
 
       return data;

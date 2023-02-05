@@ -7,12 +7,12 @@ import { ChangePasswordRequest, ChangePasswordResponse } from '@services/change-
 export const useChangePasswordService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const changePassword = async (payload: ChangePasswordRequest)
+  const changePassword = async (token: string | null, payload: ChangePasswordRequest)
     : Promise<ChangePasswordResponse> => {
     try {
       setLoading(true);
       const { data } = await ApiClient.patch<ChangePasswordResponse>('/user/change-password', payload, {
-        headers: { 'Application-Authorization': `Bearer ${payload.token}` }
+        headers: { 'Application-Authorization': `Bearer ${token}` }
       });
 
       return data;
