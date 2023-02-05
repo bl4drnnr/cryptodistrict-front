@@ -143,6 +143,14 @@
   "market": {
     "title": "Przegląd rynku",
     "marketDescriptionTitle": "Oto lista najpopularniejszych monet!",
-    "marketDescriptionOverview": "Lista zawiera 50 najpopularniejszych monet dostępnych na rynku. Możesz uzyskać więcej informacji o interesującym Cię zasobie, klikając go. Ponadto, jeśli masz konto, możesz dodawać zasoby do ulubionych, aby je monitorować."
+    "marketDescriptionOverview": "Lista zawiera 50 najpopularniejszych monet dostępnych na rynku. Możesz uzyskać więcej informacji o interesującym Cię zasobie, klikając go. Ponadto, jeśli masz konto, możesz dodawać zasoby do ulubionych, aby je monitorować.",
+    "currentPrice": "Cena bieżąca",
+    "marketCup": "Kapitalizacja",
+    "billion": "miliard",
+    "tier": "Poziom",
+    "rank": "Ranga",
+    "vol24": "Objętość 24h",
+    "assetChange": "Zmiana aktywów",
+    "btcPrice": "BTC cena"
   }
 }

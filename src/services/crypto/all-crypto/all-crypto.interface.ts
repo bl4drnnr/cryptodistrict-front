@@ -16,11 +16,13 @@ export interface ICoin {
   rank: number;
   updatedAt: Date;
   createdAt: Date;
+  sparkline: any;
 }
 
 export interface GetAllCryptoPayload {
   page: number;
   limit: number;
+  sort: string;
 }
 
 export interface GetAllCryptoResponse {
