@@ -1,5 +1,3 @@
-export interface ChangeEmailRequest {
-  token: string;
-}
+export interface ChangeEmailRequest {}
 
 export interface ChangeEmailResponse {}

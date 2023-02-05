@@ -2,16 +2,16 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { Set2FaPayload, Set2FaResponse } from '@services/set-2fa/set-2fa.interface';
+import { AddFavoritePayload, AddFavoriteResponse } from '@services/add-favorite/add-favorite.interface';
 
-export const useSet2FaService = () => {
+export const useAddFavoriteService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const set2Fa = async (token: string | null,payload: Set2FaPayload)
-    : Promise<Set2FaResponse> => {
+  const addFavorite = async (token: string | null, payload: AddFavoritePayload)
+    : Promise<AddFavoriteResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.post<Set2FaResponse>('/twofactor/set', payload, {
+      const { data } = await ApiClient.post('/crypto/add-favorite', payload, {
         headers: { 'Application-Authorization': `Bearer ${token}` }
       });
 
@@ -23,5 +23,5 @@ export const useSet2FaService = () => {
     }
   };
 
-  return { set2Fa, loading };
+  return { addFavorite, loading };
 };

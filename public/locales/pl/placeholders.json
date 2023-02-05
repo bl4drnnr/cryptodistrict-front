@@ -21,6 +21,10 @@
     "usernameError": "Nazwa użytkownika powinna zawierać co najmniej 1 symbol",
     "usernameDescription": "Nazwa użytkownika powinna być unikalna i będzie widoczna publicznie",
     "accCreateAt": "Konto utworzone:",
-    "copiedToClipboard": "Skopiowane"
+    "copiedToClipboard": "Skopiowane",
+    "sortByName": "Według nazwy",
+    "sortByTier": "Według poziomu",
+    "sortByRank": "Według rangi",
+    "sortByCap": "Według kapitalizacji rynkowej"
   }
 }

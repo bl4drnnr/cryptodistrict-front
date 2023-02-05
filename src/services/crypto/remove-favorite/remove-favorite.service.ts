@@ -2,16 +2,16 @@ import React from 'react';
 
 import { ApiClient } from '@api-client';
 import { ExceptionHandler } from '@exception-handler';
-import { Set2FaPayload, Set2FaResponse } from '@services/set-2fa/set-2fa.interface';
+import { RemoveFavoritePayload, RemoveFavoriteResponse } from '@services/remove-favorite/remove-favorite.interface';
 
-export const useSet2FaService = () => {
+export const useRemoveFavoriteService = () => {
   const [loading, setLoading] = React.useState(false);
 
-  const set2Fa = async (token: string | null,payload: Set2FaPayload)
-    : Promise<Set2FaResponse> => {
+  const removeFavorite = async (token: string | null, payload: RemoveFavoritePayload)
+    : Promise<RemoveFavoriteResponse> => {
     try {
       setLoading(true);
-      const { data } = await ApiClient.post<Set2FaResponse>('/twofactor/set', payload, {
+      const { data } = await ApiClient.post('/crypto/remove-favorite', payload, {
         headers: { 'Application-Authorization': `Bearer ${token}` }
       });
 
@@ -23,5 +23,5 @@ export const useSet2FaService = () => {
     }
   };
 
-  return { set2Fa, loading };
+  return { removeFavorite, loading };
 };
