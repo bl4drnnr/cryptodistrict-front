@@ -29,7 +29,7 @@ export const MarketDescriptionOverview = styled.p`
 
 export const CryptoItem = styled.div`
   width: 100%;
-  height: 80px;
+  height: 100px;
   margin-bottom: 10px;
   border-radius: 8px;
   cursor: pointer;
@@ -67,6 +67,21 @@ export const SortItem = styled.span`
   cursor: pointer;
   transition: .2s;
   
+  &.active {
+    border: 1px solid rgb(${(props) => props.theme.colors.opposite});
+    &:first-child {
+      border-radius: 8px 0 0 8px;
+      border-right: 1px solid rgb(${(props) => props.theme.colors.opposite});
+    }
+    &:nth-child(2) {
+      border-right: 1px solid rgb(${(props) => props.theme.colors.opposite});
+    }
+    &:last-child {
+      border-radius: 0 8px 8px 0;
+      border-left: 1px solid rgb(${(props) => props.theme.colors.opposite});
+    }
+  }
+  
   &:nth-child(2) {
     border-right: none;
   }
@@ -84,4 +99,17 @@ export const SortItem = styled.span`
   &:hover {
     border: 1px solid rgb(${(props) => props.theme.colors.opposite});
   }
+`;
+
+export const CryptoNames = styled.div`
+  padding-left: 20px;
+`;
+
+export const CryptoSymbol = styled.h1`
+  font-size: 18px;
+  color: rgb(${(props) => props.theme.colors.textColor});
+`;
+
+export const CryptoName = styled.p`
+  color: rgba(${(props) => props.theme.colors.textColor}, .5);
 `;

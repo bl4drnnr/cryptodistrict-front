@@ -12,7 +12,7 @@ export const useGetAllCryptoService = () => {
     try {
       setLoading(true);
       const { data } = await ApiClient.get<GetAllCryptoResponse>(
-        `/crypto/all/${payload.page}/${payload.limit}`
+        `/crypto/all/${payload.page}/${payload.limit}/${payload.sort}`
       );
 
       return data;

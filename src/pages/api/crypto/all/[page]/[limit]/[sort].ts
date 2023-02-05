@@ -8,8 +8,8 @@ export default async (
   res: NextApiResponse
 ) => {
   try {
-    const { limit, page } = req.query;
-    const { data } = await Api.get(`/crypto/all/${page}/${limit}`);
+    const { limit, page, sort } = req.query;
+    const { data } = await Api.get(`/crypto/all/${page}/${limit}/${sort}`);
 
     return res.json(data);
   } catch (error: any) {
