@@ -9,7 +9,7 @@ export default async (
 ) => {
   try {
     const { limit, page } = req.query;
-    const { data } = await Api.get(`/crypto/all/${limit}/${page}`);
+    const { data } = await Api.get(`/crypto/all/${page}/${limit}`);
 
     return res.json(data);
   } catch (error: any) {

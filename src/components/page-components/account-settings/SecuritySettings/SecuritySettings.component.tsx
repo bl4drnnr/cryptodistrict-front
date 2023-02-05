@@ -39,10 +39,10 @@ const SecuritySettings = ({
   const [twoFaToken, setTwoFaToken] = React.useState('');
   const [twoFaQr, setTwoFaQr] = React.useState('');
 
-  const { loading: l1, set2Fa } = useSet2FaService();
-  const { loading: l2, remove2Fa } = useRemove2FaService();
-  const { loading: l3, changeEmail } = useChangeEmailService();
-  const { loading: l4, changePassword } = useChangePasswordService();
+  const { loading: l0, set2Fa } = useSet2FaService();
+  const { loading: l1, remove2Fa } = useRemove2FaService();
+  const { loading: l2, changeEmail } = useChangeEmailService();
+  const { loading: l3, changePassword } = useChangePasswordService();
 
   const { handleException } = useHandleException();
   const router = useRouter();
@@ -100,7 +100,7 @@ const SecuritySettings = ({
 
   return (
     <>
-      <Loader loading={l1 || l2 || l3 || l4} />
+      <Loader loading={l0 || l1 || l2 || l3} />
       <SecurityTitleBox>
         <SecurityTitle>
           {translate('placeholders:inputs.securitySettings')}
