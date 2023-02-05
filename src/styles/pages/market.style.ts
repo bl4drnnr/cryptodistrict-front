@@ -32,12 +32,12 @@ export const CryptoItem = styled.div`
   height: 100px;
   margin-bottom: 10px;
   border-radius: 8px;
-  cursor: pointer;
   transition: .2s;
   display: flex;
   justify-content: space-between;
   border: 1px solid rgb(${(props) => props.theme.colors.opposite}, .5);
   padding: 15px;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.02);
@@ -48,7 +48,11 @@ export const CryptoItem = styled.div`
 export const CryptoItemSide = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  width: 300px;
+  
+  &.small-width {
+    width: 100px;
+  }
 `;
 
 export const SortBar = styled.div`
@@ -63,22 +67,22 @@ export const SortItem = styled.span`
   align-items: center;
   justify-content: center;
   width: 100%;
-  border: 1px solid rgb(${(props) => props.theme.colors.opposite}, .5);
+  border: 1px solid rgb(${(props) => props.theme.colors.primary}, .5);
   cursor: pointer;
   transition: .2s;
   
   &.active {
-    border: 1px solid rgb(${(props) => props.theme.colors.opposite});
+    border: 1px solid rgb(${(props) => props.theme.colors.primary});
     &:first-child {
       border-radius: 8px 0 0 8px;
-      border-right: 1px solid rgb(${(props) => props.theme.colors.opposite});
+      border-right: 1px solid rgb(${(props) => props.theme.colors.primary});
     }
     &:nth-child(2) {
-      border-right: 1px solid rgb(${(props) => props.theme.colors.opposite});
+      border-right: 1px solid rgb(${(props) => props.theme.colors.primary});
     }
     &:last-child {
       border-radius: 0 8px 8px 0;
-      border-left: 1px solid rgb(${(props) => props.theme.colors.opposite});
+      border-left: 1px solid rgb(${(props) => props.theme.colors.primary});
     }
   }
   
@@ -97,7 +101,7 @@ export const SortItem = styled.span`
   }
   
   &:hover {
-    border: 1px solid rgb(${(props) => props.theme.colors.opposite});
+    border: 1px solid rgb(${(props) => props.theme.colors.primary});
   }
 `;
 

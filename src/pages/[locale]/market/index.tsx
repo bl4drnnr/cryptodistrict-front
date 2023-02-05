@@ -81,7 +81,8 @@ const Market = ({ locale }: AccountProps) => {
         return {
           ...item,
           sparkline: parsedSparklines,
-          price: parseFloat(item.price).toFixed(8)
+          price: parseFloat(item.price).toFixed(4),
+          marketCap: (parseFloat(item.marketCap) / 1000000000).toFixed(2)
         };
       });
 
@@ -128,7 +129,7 @@ const Market = ({ locale }: AccountProps) => {
                 {cryptoList.map((item) =>
                   <CryptoItem key={item.id}>
 
-                    <CryptoItemSide>
+                    <CryptoItemSide className={'small-width'}>
                       <Image src={item.iconUrl} alt={item.name} width={48} height={48} />
                       <CryptoNames>
                         <CryptoSymbol>{item.symbol}</CryptoSymbol>
@@ -136,11 +137,44 @@ const Market = ({ locale }: AccountProps) => {
                       </CryptoNames>
                     </CryptoItemSide>
 
-                    <CryptoSymbol>{item.price}</CryptoSymbol>
-                    <CryptoSymbol>{item.marketCap}</CryptoSymbol>
+                    <CryptoItemSide>
+                      <CryptoNames>
+                        <CryptoSymbol>
+                          {t('pages:market.currentPrice')}: {item.price} $
+                        </CryptoSymbol>
+                        <CryptoName>
+                          {t('pages:market.marketCup')}: {item.marketCap} {t('pages:market.billion')} $
+                        </CryptoName>
+                      </CryptoNames>
+                    </CryptoItemSide>
+
+                    <CryptoItemSide className={'small-width'}>
+                      <CryptoNames>
+                        <CryptoSymbol>
+                          {t('pages:market.tier')}: {item.tier}
+                        </CryptoSymbol>
+                        <CryptoName>
+                          {t('pages:market.rank')}: {item.rank}
+                        </CryptoName>
+                      </CryptoNames>
+                    </CryptoItemSide>
+
+                    <CryptoItemSide>
+                      <CryptoNames>
+                        <CryptoSymbol>
+                          24h Volume: {item.Volume24h}
+                        </CryptoSymbol>
+                        <CryptoName>
+                          Asset change: {item.btcPrice}
+                        </CryptoName>
+                        <CryptoName>
+                          Change: {item.change}
+                        </CryptoName>
+                      </CryptoNames>
+                    </CryptoItemSide>
 
                     <LineChart
-                      width={500}
+                      width={300}
                       height={80}
                       data={item.sparkline}
                     >
@@ -151,8 +185,10 @@ const Market = ({ locale }: AccountProps) => {
                           Math.min(...item.sparkline.map((o: any) => o.value)),
                           Math.max(...item.sparkline.map((o: any) => o.value))
                         ]} />
-                      <XAxis hide={true} />
-                      <Line type="monotone" dataKey="value" stroke="#8884d8" />
+                      <Line
+                        dataKey="value"
+                        stroke={parseFloat(item.change) > 0 ? 'rgb(59, 232, 59)': 'rgb(255, 51, 51)'}
+                      />
                     </LineChart>
 
                   </CryptoItem>

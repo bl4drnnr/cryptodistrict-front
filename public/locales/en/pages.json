@@ -144,6 +144,11 @@
   "market": {
     "title": "Market overview",
     "marketDescriptionTitle": "Here is the list of the most popular coins!",
-    "marketDescriptionOverview": "The list consists 50 the most popular coins available on market. You can get more information about asset you are interested in just by clicking on it. Also, if you have account, you can add assets to favorites in order to monitor them."
+    "marketDescriptionOverview": "The list consists 50 the most popular coins available on market. You can get more information about asset you are interested in just by clicking on it. Also, if you have account, you can add assets to favorites in order to monitor them.",
+    "currentPrice": "Current price",
+    "marketCup": "Market cup",
+    "billion": "billion",
+    "tier": "Tier",
+    "rank": "Rank"
   }
 }
