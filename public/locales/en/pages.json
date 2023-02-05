@@ -149,6 +149,9 @@
     "marketCup": "Market cup",
     "billion": "billion",
     "tier": "Tier",
-    "rank": "Rank"
+    "rank": "Rank",
+    "vol24": "24h Volume",
+    "assetChange": "Asset change",
+    "btcPrice": "BTC price"
   }
 }

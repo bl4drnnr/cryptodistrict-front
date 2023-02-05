@@ -70,6 +70,7 @@ export const SortItem = styled.span`
   border: 1px solid rgb(${(props) => props.theme.colors.primary}, .5);
   cursor: pointer;
   transition: .2s;
+  color: rgb(${(props) => props.theme.colors.textColor});
   
   &.active {
     border: 1px solid rgb(${(props) => props.theme.colors.primary});
@@ -117,3 +118,29 @@ export const CryptoSymbol = styled.h1`
 export const CryptoName = styled.p`
   color: rgba(${(props) => props.theme.colors.textColor}, .5);
 `;
+
+export const CryptoMetadata = styled.p`
+  font-size: 14px;
+  color: rgba(${(props) => props.theme.colors.textColor}, .5);
+  
+  &.success {
+    color: rgba(${(props) => props.theme.colors.success}, .5);
+  }
+  &.error {
+    color: rgba(${(props) => props.theme.colors.error}, .5);
+  }
+`;
+
+export const PaginationContainer = styled.div`
+  width: 100%;
+  height: 30px;
+  margin: 15px 0;
+`;
+
+export const PaginationBlock = styled.div`
+  height: 100%;
+  width: 30%;
+  min-width: 300px;
+  margin: 0 auto;
+`;
+

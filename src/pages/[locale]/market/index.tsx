@@ -14,10 +14,10 @@ import { useGetAllCryptoService } from '@services/all-crypto/all-crypto.services
 import {
   Container,
   CryptoItem,
-  CryptoItemSide, CryptoName, CryptoNames, CryptoSymbol,
+  CryptoItemSide, CryptoMetadata, CryptoName, CryptoNames, CryptoSymbol,
   MarketDescription,
   MarketDescriptionOverview,
-  MarketDescriptionTitle,
+  MarketDescriptionTitle, PaginationBlock, PaginationContainer,
   SortBar,
   SortItem,
   Wrapper
@@ -82,7 +82,9 @@ const Market = ({ locale }: AccountProps) => {
           ...item,
           sparkline: parsedSparklines,
           price: parseFloat(item.price).toFixed(4),
-          marketCap: (parseFloat(item.marketCap) / 1000000000).toFixed(2)
+          marketCap: (parseFloat(item.marketCap) / 1000000000).toFixed(2),
+          Volume24h: (parseFloat(item.Volume24h) / 1000000000).toFixed(2),
+          btcPrice: (parseFloat(item.btcPrice)).toFixed(8)
         };
       });
 
@@ -161,15 +163,15 @@ const Market = ({ locale }: AccountProps) => {
 
                     <CryptoItemSide>
                       <CryptoNames>
-                        <CryptoSymbol>
-                          24h Volume: {item.Volume24h}
-                        </CryptoSymbol>
-                        <CryptoName>
-                          Asset change: {item.btcPrice}
-                        </CryptoName>
-                        <CryptoName>
-                          Change: {item.change}
-                        </CryptoName>
+                        <CryptoMetadata>
+                          {t('pages:market.vol24')}: {item.Volume24h} {t('pages:market.billion')} $
+                        </CryptoMetadata>
+                        <CryptoMetadata>
+                          {t('pages:market.btcPrice')}: {item.btcPrice}
+                        </CryptoMetadata>
+                        <CryptoMetadata>
+                          {t('pages:market.assetChange')} (%): {item.change}
+                        </CryptoMetadata>
                       </CryptoNames>
                     </CryptoItemSide>
 
@@ -195,6 +197,11 @@ const Market = ({ locale }: AccountProps) => {
                 )}
               </>
             )}
+            <PaginationContainer>
+              <PaginationBlock>
+
+              </PaginationBlock>
+            </PaginationContainer>
           </Wrapper>
         </Container>
       </DefaultLayout>

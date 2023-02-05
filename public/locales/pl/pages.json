@@ -148,6 +148,9 @@
     "marketCup": "Kapitalizacja",
     "billion": "miliard",
     "tier": "Poziom",
-    "rank": "Ranga"
+    "rank": "Ranga",
+    "vol24": "Objętość 24h",
+    "assetChange": "Zmiana aktywów",
+    "btcPrice": "BTC cena"
   }
 }
