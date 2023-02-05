@@ -6,7 +6,7 @@ const nextConfig = {
   },
   swcMinify: true,
   images: {
-    domains: ['chart.googleapis.com']
+    domains: ['chart.googleapis.com', 'cdn.coinranking.com']
   }
 };
 

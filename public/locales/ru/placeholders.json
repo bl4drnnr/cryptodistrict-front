@@ -21,6 +21,10 @@
     "usernameError": "Имя пользователя должно содержать не менее 1 символа",
     "usernameDescription": "Имя пользователя должно быть уникальным и будет отображаться публично",
     "accCreateAt": "Аккаунт создан:",
-    "copiedToClipboard": "Скопировано"
+    "copiedToClipboard": "Скопировано",
+    "sortByName": "По имени",
+    "sortByTier": "По уровню",
+    "sortByRank": "По рангу",
+    "sortByCap": "По рыночной капитализации"
   }
 }

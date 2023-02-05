@@ -139,5 +139,10 @@
     "personalInfoDescription": "Zarządzaj ustawieniami widocznych publicznie danych osobowych",
     "securitySettingDescription": "Zarządzaj bezpieczeństwem swojego konta",
     "notificationSettingsDescription": "Zarządzaj ustawieniami powiadomień"
+  },
+  "market": {
+    "title": "Przegląd rynku",
+    "marketDescriptionTitle": "Oto lista najpopularniejszych monet!",
+    "marketDescriptionOverview": "Lista zawiera 50 najpopularniejszych monet dostępnych na rynku. Możesz uzyskać więcej informacji o interesującym Cię zasobie, klikając go. Ponadto, jeśli masz konto, możesz dodawać zasoby do ulubionych, aby je monitorować."
   }
 }

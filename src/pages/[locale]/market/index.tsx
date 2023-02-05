@@ -2,6 +2,7 @@ import React from 'react';
 
 import { useTranslation } from 'next-i18next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { useHandleException } from '@hooks/useHandleException.hook';
@@ -9,7 +10,11 @@ import DefaultLayout from '@layouts/Default.layout';
 import { getStaticPaths, makeStaticProps } from '@lib/getStatic';
 import { ICoin } from '@services/all-crypto/all-crypto.interface';
 import { useGetAllCryptoService } from '@services/all-crypto/all-crypto.services';
-import { Container, Wrapper } from '@styles/market.style';
+import {
+  Container,
+  CryptoItem, CryptoItemSide, MarketDescription, MarketDescriptionOverview, MarketDescriptionTitle, SortBar, SortItem,
+  Wrapper
+} from '@styles/market.style';
 
 interface AccountProps {
   locale: string;
@@ -29,7 +34,7 @@ const Market = ({ locale }: AccountProps) => {
 
   React.useEffect(() => {
     fetchCryptocurrencies({ page, limit }).then();
-  });
+  }, [page, limit]);
 
   const fetchCryptocurrencies = async ({ page, limit }: { page: number; limit: number }) => {
     try {
@@ -47,11 +52,37 @@ const Market = ({ locale }: AccountProps) => {
   return (
     <>
       <Head>
-        <title>Cryptodistrict | {t('pages:account.title')}</title>
+        <title>Cryptodistrict | {t('pages:market.title')}</title>
       </Head>
-      <DefaultLayout locale={locale} translate={t}>
+      <DefaultLayout locale={locale} translate={t} loading={l0}>
         <Container>
           <Wrapper>
+            <MarketDescription>
+              <MarketDescriptionTitle>
+                {t('pages:market.marketDescriptionTitle')}
+              </MarketDescriptionTitle>
+              <MarketDescriptionOverview>
+                {t('pages:market.marketDescriptionOverview')}
+              </MarketDescriptionOverview>
+            </MarketDescription>
+            <SortBar>
+              <SortItem>{t('placeholder:inputs.sortByName')}</SortItem>
+              <SortItem>{t('placeholder:inputs.sortByTier')}</SortItem>
+              <SortItem>{t('placeholder:inputs.sortByRank')}</SortItem>
+              <SortItem>{t('placeholder:inputs.sortByCap')}</SortItem>
+            </SortBar>
+            {cryptoList && (
+              <>
+                {cryptoList.map((item) =>
+                  <CryptoItem key={item.id}>
+                    <CryptoItemSide>
+                      <Image src={item.iconUrl} alt={item.name} width={48} height={48} />
+                    </CryptoItemSide>
+                    <CryptoItemSide></CryptoItemSide>
+                  </CryptoItem>
+                )}
+              </>
+            )}
           </Wrapper>
         </Container>
       </DefaultLayout>

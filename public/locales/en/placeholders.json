@@ -21,6 +21,10 @@
     "usernameError": "Username should contain at least 1 symbol",
     "usernameDescription": "Username should be unique and will be shown publicly",
     "accCreateAt": "Account created at:",
-    "copiedToClipboard": "Copied to clipboard"
+    "copiedToClipboard": "Copied to clipboard",
+    "sortByName": "By name",
+    "sortByTier": "By tier",
+    "sortByRank": "By rank",
+    "sortByCap": "By market cap"
   }
 }

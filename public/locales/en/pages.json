@@ -140,5 +140,10 @@
     "personalInfoDescription": "Manage your public visible personal information settings",
     "securitySettingDescription": "Manage security of your account",
     "notificationSettingsDescription": "Manage your notification settings"
+  },
+  "market": {
+    "title": "Market overview",
+    "marketDescriptionTitle": "Here is the list of the most popular coins!",
+    "marketDescriptionOverview": "The list consists 50 the most popular coins available on market. You can get more information about asset you are interested in just by clicking on it. Also, if you have account, you can add assets to favorites in order to monitor them."
   }
 }
