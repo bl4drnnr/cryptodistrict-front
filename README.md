@@ -135,7 +135,6 @@ There are 3 layouts in this project: `Credentials`, `Default`, `NotificationMess
 
 - Developer contact - [contact@mikhailbahdashych.me](mailto:contact@mikhailbahdashych.me)
 - Project's API - [repository link](https://github.com/bl4drnnr/cryptodistrict-api)
-- Project's infrastructure - [repository link](https://github.com/bl4drnnr/cryptodistrict-infrastructure)
 
 ### License
 
